@@ -1,0 +1,112 @@
+#logoScroll {
+  padding: 50px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  background: var(--bg-color);
+  position: relative;
+
+  @media screen and (max-width: 992px) {
+    padding: 20px 0;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 800px;
+    z-index: 1;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-color) 0%, transparent 100%);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
+  }
+
+  .residAtaSozu {
+    background: #0C0C0C;
+    width: 175px;
+    text-align: center;
+    color: #afafaf;
+    position: relative;
+    z-index: 999;
+    top: 20px;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    margin: 10px 0;
+    position: relative;
+    white-space: nowrap;
+
+    .box {
+      padding: 0;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      height: 50px;
+      object-fit: contain;
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+
+      img {
+        height: 100%;
+
+        @media screen and (max-width: 992px) {
+          height: 80%;
+        }
+      }
+    }
+  }
+
+  .left {
+    animation: scrollLeft 75s linear infinite;
+  }
+
+  .right {
+    animation: scrollRight 900s linear infinite;
+    margin-left: 100%;
+  }
+
+  @media (max-width: 768px) {
+    &::before,
+    &::after {
+      width: 100px;
+    }
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

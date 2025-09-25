@@ -1,0 +1,104 @@
+#workCard {
+  padding: 0 8px;
+  margin-top: 32px;
+  .box {
+    position: relative;
+    background: url("/src/assets/mid.png") no-repeat center center;
+    background-size: cover;
+    aspect-ratio: 16/8;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 36px;
+    padding: 0 80px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(20px);
+      filter: brightness(40%);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .midImage {
+      position: relative;
+      z-index: 1;
+      max-width: 360px;
+      width: 100%;
+      aspect-ratio: .75/1;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 0 8px 0 #E6E6E640;
+      padding: 0 !important;
+    }
+
+    .boxLeft {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 100%;
+
+      h2 {
+        position: relative;
+        z-index: 1;
+        font-weight: 600;
+        font-size: 40px;
+        color: var(--bg-color);
+      }
+
+      p {
+        position: relative;
+        z-index: 1;
+        max-width: 300px;
+        width: 100%;
+        color: var(--work-card-color);
+        font-weight: 300;
+      }
+    }
+
+    .boxLeft1 {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      height: 100%;
+      padding: 0 0 0 100px;
+
+      h2 {
+        position: relative;
+        z-index: 1;
+        font-weight: 600;
+        font-size: 40px;
+        color: var(--bg-color);
+      }
+
+      p {
+        position: relative;
+        z-index: 1;
+        max-width: 300px;
+        width: 100%;
+        color: var(--work-card-color);
+        font-weight: 300;
+      }
+
+      .p {
+        position: relative;
+        z-index: 1;
+        font-weight: 400;
+        margin: 4px 0;
+        font-size: 18px;
+        color: var(--bg-color);
+      }
+
+      .pe {
+        position: relative;
+        z-index: 1;
+        font-weight: 500;
+        margin: 4px 0;
+        font-size: 24px;
+        color: var(--bg-color);
+      }
+    }
+  }
+}
