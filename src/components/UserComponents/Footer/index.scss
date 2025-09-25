@@ -5,6 +5,50 @@
   bottom: 0;
   right: 0;
   left: 0;
+  height: 80dvh;
   z-index: -1;
-  height: 50dvh;
+
+  .bottomFooter {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); // üfüqi ortalama
+    margin-bottom: -20px;
+    font-weight: 700;
+    font-size: 200px;
+    line-height: 1;
+    background: linear-gradient(360deg, #B3B3B3 20.19%, #FFFFFF 55.77%);
+    -webkit-background-clip: text; /* Safari və Chrome */
+    background-clip: text; /* Digər browserlər */
+    color: transparent; /* Text rəngini şəffaf edir */
+    z-index: 90;
+  }
+
+  .mavisi {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1200px;
+    height: 700px;
+  }
+
+  .sarisi {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 1200px;
+    height: 700px;
+  }
+
+  .design {
+    height: 83px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF1A;
+    backdrop-filter: blur(3px);
+    z-index: 150;
+  }
 }

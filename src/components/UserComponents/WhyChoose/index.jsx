@@ -47,7 +47,7 @@ function WhyChoose() {
             <div className="container" style={{ maxWidth: "1200px"}}>
                 <section id="whyChoose" style={{ minHeight: sectionHeight }}>
                     <div className="centerContent">
-                        <h2>Why Choose Buytech for Your Next Big Idea?</h2>
+                        <h2>Why Choose BuyonTech for Your Next Big Idea?</h2>
                         <button>Contact Us</button>
                     </div>
 

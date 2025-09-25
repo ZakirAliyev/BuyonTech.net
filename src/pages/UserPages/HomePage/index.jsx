@@ -21,7 +21,7 @@ function HomePage() {
             <WhyChoose/>
             <Faq/>
             <div style={{
-                height: "50dvh",
+                height: "80dvh",
             }}></div>
             <Footer/>
         </section>
