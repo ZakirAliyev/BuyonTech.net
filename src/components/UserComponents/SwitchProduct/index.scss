@@ -51,18 +51,21 @@
       top: 0;
       bottom: 0;
       width: 50%;
-      background: #527FE9;
       border-radius: 50px;
-      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); // smooth spring animasiya
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+      background 0.3s ease;
       z-index: 1;
+      background: #527FE9; // default development rəngi
     }
 
     .slider.development {
       transform: translateX(0%);
+      background: #527FE9; // mavi
     }
 
     .slider.marketing {
       transform: translateX(100%);
+      background: #FFBB00; // sarı
     }
   }
 }

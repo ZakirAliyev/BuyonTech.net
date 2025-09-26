@@ -1,0 +1,92 @@
+/* index.scss */
+
+#aboutScrollMarketing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--bg-color);
+  position: relative;
+  z-index: 10;
+
+  .aboutText {
+    font-family: "Dancing Script", cursive;
+    font-size: 40px;
+    color: var(--about-text);
+
+    @media screen and (max-width: 992px) {
+      font-size: 32px;
+    }
+  }
+
+  button {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+    border: none;
+    border-radius: 8px;
+    background: var(--text-color-secondary);
+    color: var(--bg-color);
+    padding: 8px 24px;
+    font-size: 16px;
+    margin-top: 16px;
+
+    @media screen and (max-width: 992px) {
+      font-size: 14px;
+      padding: 4px 24px;
+    }
+  }
+
+  .text-container {
+    max-width: 950px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    color: #666666;
+
+    @media screen and (max-width: 992px) {
+      font-size: 1.3rem;
+      padding: 0 16px;
+    }
+  }
+
+  .discover {
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .discoverColor {
+    color: #FFBB00;
+  }
+
+  .rocket {
+    height: 55px;
+    margin-left: 5px;
+  }
+
+  /* index.scss */
+
+  .word {
+    display: inline-block;
+
+    // Progress 0 → #D3D3D3 (boz), Progress 1 → #000 (qara)
+    color: color-mix(in srgb, #cfcfcf calc(100% - var(--word-progress, 0) * 100%), #000);
+
+    transition: color 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: color, transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    margin-right: 10px;
+  }
+}

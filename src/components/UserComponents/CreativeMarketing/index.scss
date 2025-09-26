@@ -1,0 +1,61 @@
+#creativeMarketing {
+  margin: 20px 0;
+
+  .growth {
+    height: 60px;
+  }
+
+  .marketingText {
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 80px;
+    text-align: center;
+  }
+
+  .marketingTextColor {
+    color: #FFBB00;
+  }
+
+  .wordWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #666666;
+    margin-top: 20px;
+  }
+
+  button {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+    border: none;
+    border-radius: 8px;
+    background: #FFBB00;
+    color: var(--bg-color);
+    padding: 8px 24px;
+    font-size: 16px;
+    margin: 40px auto 0;
+
+    @media screen and (max-width: 992px) {
+      font-size: 14px;
+      padding: 4px 24px;
+    }
+  }
+
+  .buyontechFrame {
+    display: flex;
+    width: 100%;
+    margin-top: 40px;
+  }
+}
