@@ -23,7 +23,7 @@ function WhyChoose() {
 
     useEffect(() => {
         const cardHeight = 440;
-        setSectionHeight(window.innerHeight + cardCount * cardHeight);
+        setSectionHeight(window.innerHeight + cardCount * cardHeight + 200);
 
         const cards = document.querySelectorAll(".card");
         const observer = new IntersectionObserver(
@@ -43,7 +43,7 @@ function WhyChoose() {
     }, [cardCount]);
 
     return (
-        <div style={{background: 'var(--bg-color)', width: '100%' }}>
+        <div style={{background: 'var(--bg-color)', width: '100%', position: 'relative', zIndex: '10' }}>
             <div className="container" style={{ maxWidth: "1200px"}}>
                 <section id="whyChoose" style={{ minHeight: sectionHeight }}>
                     <div className="centerContent">

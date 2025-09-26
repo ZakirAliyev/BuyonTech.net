@@ -5,23 +5,77 @@
   bottom: 0;
   right: 0;
   left: 0;
-  height: 80dvh;
-  z-index: -1;
+  z-index: 9;
+  padding: 60px 8px;
+  overflow: hidden;
+
+  @media screen and (max-width: 992px){
+    padding: 30px 8px 60px;
+  }
+
+  .row {
+    position: relative;
+    z-index: 400;
+  }
+
+  .row70 {
+    margin-top: 70px;
+    margin-bottom: 15px;
+
+    @media screen and (max-width: 992px) {
+      margin-top: 0;
+    }
+  }
+
+  .portugal {
+    @media screen and (max-width: 992px) {
+      padding: 10px !important;
+      text-align: center !important;
+    }
+  }
 
   .bottomFooter {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%); // üfüqi ortalama
+    transform: translateX(-50%);
     margin-bottom: -20px;
     font-weight: 700;
     font-size: 200px;
     line-height: 1;
     background: linear-gradient(360deg, #B3B3B3 20.19%, #FFFFFF 55.77%);
-    -webkit-background-clip: text; /* Safari və Chrome */
-    background-clip: text; /* Digər browserlər */
-    color: transparent; /* Text rəngini şəffaf edir */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     z-index: 90;
+
+    @media screen and (max-width: 992px) {
+      font-size: 60px;
+      margin-bottom: 0;
+    }
+  }
+
+  .title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #9A9A9A;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 992px) {
+      font-size: 14px;
+    }
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 992px) {
+      font-size: 18px;
+    }
   }
 
   .mavisi {
@@ -50,5 +104,18 @@
     background: #FFFFFF1A;
     backdrop-filter: blur(3px);
     z-index: 150;
+
+    @media screen and (max-width: 992px) {
+      height: 30px;
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  // ✅ Mobil və tablet üçün düzəliş → scroll problemsiz olsun
+  @media screen and (max-width: 992px) {
+    position: relative; // fixed olmayacaq
+    bottom: auto;
+    right: auto;
+    left: auto;
   }
 }

@@ -1,6 +1,8 @@
 #servicesGrid {
   padding: 50px 0;
   background: var(--bg-color);
+  position: relative;
+  z-index: 10;
 
   .servicesText {
     text-align: center;

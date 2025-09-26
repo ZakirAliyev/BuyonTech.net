@@ -8,6 +8,8 @@
   flex-direction: column;
   gap: 16px;
   background: var(--bg-color);
+  position: relative;
+  z-index: 10;
 
   .aboutText {
     font-family: "Dancing Script", cursive;

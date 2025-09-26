@@ -2,12 +2,8 @@
   background-color: var(--bg-color);
   color: var(--text-color);
   padding: 12px 8px;
-  margin-top: 84px;
-
-  @media screen and (max-width: 992px) {
-    margin-top: 75px;
-  }
-
+  position: relative;
+  z-index: 10;
   .wrapper {
     display: flex;
     align-items: center;

@@ -1,0 +1,68 @@
+#switchProduct {
+  position: relative;
+  z-index: 10;
+  background: var(--bg-color);
+  margin-top: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .zakirinki {
+    box-shadow: 0px 0px 8px 0px #33333340 inset;
+    max-width: 350px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 50px;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 992px) {
+    margin-top: 75px;
+  }
+
+  .switch-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    cursor: pointer;
+    background: transparent;
+    border-radius: 100px;
+
+    .switch-option {
+      flex: 1;
+      text-align: center;
+      padding: 8px 0;
+      font-size: 12px;
+      font-weight: 500;
+      color: #000;
+      z-index: 2;
+      transition: color 0.3s ease;
+    }
+
+    .switch-option.active {
+      color: #fff;
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: #527FE9;
+      border-radius: 50px;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); // smooth spring animasiya
+      z-index: 1;
+    }
+
+    .slider.development {
+      transform: translateX(0%);
+    }
+
+    .slider.marketing {
+      transform: translateX(100%);
+    }
+  }
+}
