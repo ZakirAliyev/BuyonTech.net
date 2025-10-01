@@ -1,19 +1,30 @@
 import './index.scss'
-import {useTranslation} from "react-i18next";
-import {useNavigate} from "react-router";
-import {FaMinus, FaPlus} from "react-icons/fa6";
 import {useState, useRef, useEffect} from "react";
+import {FaMinus, FaPlus} from "react-icons/fa6";
+import question from "/src/assets/question.png";
 
 function FaqMarketing() {
-    const {t} = useTranslation();
-    const navigate = useNavigate();
-
     const faqs = [
-        "What technologies do you use for web development?",
-        "How long does it take to build a custom website?",
-        "Do you provide post-launch support and maintenance?",
-        "Can you integrate third-party tools and APIs?",
-        "How much does a development project usually cost?"
+        {
+            title: "Why should you choose our company?",
+            content: "Because we focus only on results – delivering measurable, creative, and sales-driven marketing strategies that grow your business."
+        },
+        {
+            title: "Who can benefit from our services?",
+            content: "Our services are tailored for startups, SMEs, and enterprises looking to boost their online presence and drive real growth."
+        },
+        {
+            title: "What kind of results do our services deliver?",
+            content: "From higher conversion rates to increased engagement and brand awareness, we deliver tangible improvements that impact your bottom line."
+        },
+        {
+            title: "How do we differentiate you from competitors?",
+            content: "We combine creativity with data-driven strategies, ensuring every campaign is both innovative and effective."
+        },
+        {
+            title: "How can you get started with us?",
+            content: "Simply reach out through our contact form or book a consultation. We’ll guide you step by step."
+        }
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
@@ -24,24 +35,25 @@ function FaqMarketing() {
 
     return (
         <section id="faqMarketing">
+            <div className="faq-head">
+                <h2 id="faq-heading" className="faq-title">FAQ</h2>
+                <p className="faq-subtitle">( <span>Frequently asked questions</span> )</p>
+            </div>
             <div className="container">
                 <div className="row">
-                    {/* Sol tərəf - Sticky */}
-                    <div className="col-5 col-md-6 col-sm-12 col-xs-12 leftSticky">
-                        <h2>Frequently asked questions</h2>
+                    <div className="col-5 col-md-5 col-sm-12 col-xs-12">
+                        <img src={question} className="question" alt="FAQ Illustration"/>
                     </div>
-
-                    {/* Sağ tərəf - Scroll content */}
-                    <div className="col-7 col-md-6 col-sm-12 col-xs-12">
-                        {faqs.map((title, index) => (
-                            <div key={index}>
-                                <AccordionItem
-                                    title={title}
-                                    isOpen={activeIndex === index}
-                                    toggle={() => toggleAccordion(index)}
-                                    isLast={index === faqs.length - 1}
-                                />
-                            </div>
+                    <div className="col-7 col-md-7 col-sm-12 col-xs-12">
+                        {faqs.map((faq, index) => (
+                            <AccordionItem
+                                key={index}
+                                title={faq.title}
+                                content={faq.content}
+                                isOpen={activeIndex === index}
+                                toggle={() => toggleAccordion(index)}
+                                isLast={index === faqs.length - 1}
+                            />
                         ))}
                     </div>
                 </div>
@@ -50,7 +62,7 @@ function FaqMarketing() {
     );
 }
 
-const AccordionItem = ({title, isOpen, toggle, isLast}) => {
+const AccordionItem = ({title, content, isOpen, toggle, isLast}) => {
     const contentRef = useRef(null);
 
     useEffect(() => {
@@ -73,15 +85,11 @@ const AccordionItem = ({title, isOpen, toggle, isLast}) => {
                 <div className="textWrapper">
                     <h3>{title}</h3>
                     <div ref={contentRef} className="accordion-content">
-                        <p>
-                            We use modern technologies like React, Next.js, and ASP.NET Core to build
-                            fast, secure, and scalable solutions tailored to your project.
-                        </p>
+                        <p>{content}</p>
                     </div>
                 </div>
                 {isOpen ? <FaMinus className="icon"/> : <FaPlus className="icon"/>}
             </div>
-            {!isLast && <div className="line"></div>}
         </>
     );
 };

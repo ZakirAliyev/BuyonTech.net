@@ -1,4 +1,11 @@
 import './index.scss'
+import mobileApp from "/src/assets/mobileApp.png"
+import macbook from "/src/assets/macbook.png"
+import tablet from "/src/assets/tablet.png"
+import design from "/src/assets/design.png"
+import adminPanel from "/src/assets/adminPanel.png"
+import seo from "/src/assets/seo.png"
+import technic from "/src/assets/technic.png"
 
 function ServicesGrid() {
     return (
@@ -10,27 +17,71 @@ function ServicesGrid() {
                         <h2>Mobil App Development</h2>
                         <p>We design and build user-friendly mobile applications for iOS and Android, tailored to your
                             business needs.</p>
+                        <img src={mobileApp} alt={"Image"} className={"mobileApp"}/>
                     </div>
                     <div className="divdiv div2">
-                        <h2>Mobil App Development</h2>
-                        <p>We design and build user-friendly mobile applications for iOS and Android, tailored to your
-                            business needs.</p>
+                        <div>
+                            <h2>Mobil App Development</h2>
+                            <p>We design and build user-friendly mobile applications for iOS and Android, tailored to
+                                your
+                                business needs.</p>
+                        </div>
+                        <img src={macbook} alt={"Image"} className={"macbook"}/>
                     </div>
-                    <div className="div div3"></div>
+                    <div className="div div3 div100" style={{
+                        color: "black"
+                    }}>
+                        <div>
+                            <h2>Mobil App Development</h2>
+                            <p>We design and build user-friendly mobile applications for iOS and Android, tailored to
+                                your
+                                business needs.</p>
+                        </div>
+                        <img src={tablet} alt={"Image"} className={"tablet"}/>
+                    </div>
                     <div className="div div4"></div>
                     <div className="divdivdiv div5">
-                        <h2>Mobil App Development</h2>
-                        <p>We design and build user-friendly mobile applications for iOS and Android, tailored to your
-                            business needs.</p>
+                        <h2>Design & UI/UX</h2>
+                        <p style={{
+                            maxWidth: '280px',
+                            width: '100%'
+                        }}>A modern design is created, ensuring a smooth and user-friendly experience.</p>
+                        <img src={design} alt={"Image"} className={"design"}/>
                     </div>
-                    <div className="divdiv div6">
-                        <h2>Mobil App Development</h2>
-                        <p>We design and build user-friendly mobile applications for iOS and Android, tailored to your
-                            business needs.</p>
+                    <div className="divdivdiv div6" style={{
+                        color: "black"
+                    }}>
+                        <h2>Design & UI/UX</h2>
+                        <p style={{
+                            maxWidth: '280px',
+                            width: '100%'
+                        }}>A modern design is created, ensuring a smooth and user-friendly experience.</p>
+                        <img src={adminPanel} alt={"Image"} className={"adminPanel"}/>
                     </div>
-                    <div className="div div7"></div>
-                    <div className="div div8"></div>
-                    <div className="div div9"></div>
+                    <div className="div div3 div100 div7">
+                        <div>
+                            <h2>Payment System Integration</h2>
+                            <p>Customers can pay via card, cash, or bank transfer.</p>
+                        </div>
+                        <img src={tablet} alt={"Image"} className={"tablet"}/>
+                    </div>
+                    <div className="div div3 div100 div8" style={{
+                        color: "black"
+                    }}>
+                        <div>
+                            <h2>SEO Support</h2>
+                            <p>Optimization is applied so your website ranks better on Google and other search
+                                engines.</p>
+                        </div>
+                        <img src={seo} alt={"Image"} className={"seo"}/>
+                    </div>
+                    <div className="div div3 div100 div9">
+                        <div>
+                            <h2>Technical Support & Updates</h2>
+                            <p>Continuous technical support and regular updates are provided after launch.</p>
+                        </div>
+                        <img src={technic} alt={"Image"} className={"technic"}/>
+                    </div>
                 </div>
             </div>
         </section>
