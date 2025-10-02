@@ -10,7 +10,7 @@ function PortfolioGrid() {
         {
             id: 1,
             desc: "We created a sleek and user-friendly website for LEGNO to showcase their interior design expertise and portfolio.",
-            title: "Legno",
+            title: "LEGNO",
             year: "2025",
             category: "Portfolio website",
             services: ["Website design", "Branding", "Development"],

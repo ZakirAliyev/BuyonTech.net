@@ -13,11 +13,23 @@
   }
 
   .centerContent {
-    position: sticky;
+    position: fixed;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 40px));
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.6s ease, opacity 0.6s ease;
     text-align: center;
-    z-index: 10;
+    z-index: 20;
+    width: min(100%, 960px);
+    padding: 0 16px;
+
+    &.in-view {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+      pointer-events: auto;
+    }
 
     h2 {
       line-height: 70px;

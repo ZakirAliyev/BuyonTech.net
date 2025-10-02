@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import './index.scss';
 import {TbUserCheck} from "react-icons/tb";
 
@@ -42,11 +42,37 @@ function WhyChoose() {
         return () => observer.disconnect();
     }, [cardCount]);
 
+    const centerContentRef = useRef(null);
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const sectionNode = sectionRef.current;
+        const centerNode = centerContentRef.current;
+
+        if (!sectionNode || !centerNode) {
+            return undefined;
+        }
+
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                requestAnimationFrame(() => {
+                    centerNode.classList.add("in-view");
+                });
+            } else {
+                centerNode.classList.remove("in-view");
+            }
+        });
+
+        observer.observe(sectionNode);
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <div style={{background: 'var(--bg-color)', width: '100%', position: 'relative', zIndex: '10' }}>
             <div className="container" style={{ maxWidth: "1200px"}}>
-                <section id="whyChoose" style={{ minHeight: sectionHeight }}>
-                    <div className="centerContent">
+                <section id="whyChoose" ref={sectionRef} style={{ minHeight: sectionHeight }}>
+                    <div className="centerContent" ref={centerContentRef}>
                         <h2>Why Choose BuyonTech for Your Next Big Idea?</h2>
                         <button>Contact Us</button>
                     </div>
