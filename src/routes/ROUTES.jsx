@@ -5,36 +5,41 @@ import OurWorksPageDetail from "../pages/UserPages/OurWorksPageDetail/index.jsx"
 import CaseStudyHeaderMarketing from "../components/UserComponents/CaseStudyHeaderMarketing/index.jsx";
 import ContactPage from "../pages/UserPages/ContactPage/index.jsx";
 import NotFoundPage from "../pages/UserPages/NotFoundPage/index.jsx";
+import AboutPage from "../pages/UserPages/AboutPage/index.jsx";
 
 export const ROUTES = [
     {
         path: '/',
-        element: <MainPage/>,
+        element: <MainPage />,
         children: [
             {
                 index: true,
-                element: <HomePage/>,
+                element: <HomePage />,
             },
             {
                 path: 'our-works',
-                element: <OurWorksPage/>,
+                element: <OurWorksPage />,
             },
             {
                 path: 'our-works/:id',
-                element: <OurWorksPageDetail/>,
+                element: <OurWorksPageDetail />,
             },
             {
                 path: 'zakir',
-                element: <CaseStudyHeaderMarketing/>,
+                element: <CaseStudyHeaderMarketing />,
             },
             {
                 path: 'contact',
-                element: <ContactPage/>,
+                element: <ContactPage />,
             },
             {
                 path: '*',
-                element: <NotFoundPage/>
-            }
+                element: <NotFoundPage />
+            },
+            {
+                path: 'about',
+                element: <AboutPage />,
+            },
         ]
     }
 ];
