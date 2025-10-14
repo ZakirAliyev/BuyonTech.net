@@ -15,7 +15,7 @@ const AboutPageFirst = () => {
                                     development, and marketing boost your project’s value.</p>
                             </div>
                         </div>
-                        <div className="col-4 col-md-4 col-sm-12 col-xs-12">
+                        <div className=" colImage col-4 col-md-4 col-sm-12 col-xs-12">
                             <img src={professor} alt="" className={"professor"}/>
                         </div>
                     </div>
