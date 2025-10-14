@@ -3,6 +3,7 @@ import './index.scss'
 import Navbar from "../../../components/UserComponents/Navbar";
 import Footer from "../../../components/UserComponents/Footer";
 import AboutPageFirst from "../../../components/UserComponents/AboutPageComponents/FirstSection";
+import AboutPageSecond from "../../../components/UserComponents/AboutPageComponents/SecondSection";
 
 function AboutPage() {
     const [footerHeight, setFooterHeight] = useState(0);
@@ -30,6 +31,7 @@ function AboutPage() {
             }}>
                 <Navbar />
                 <AboutPageFirst />
+                <AboutPageSecond />
             </div>
             {showFooter && (
                 windowWidth >= 992 ? (
