@@ -1,0 +1,54 @@
+#ourWorksPageDetailThird {
+    margin-top: 84px;
+
+    @media screen and (max-width: 992px) {
+        margin-top: 70px;
+    }
+
+    .mySwiperBoxDetail {
+        width: 100%;
+
+        .works-slider {
+            position: relative;
+            width: 100%;
+
+
+        }
+
+    }
+
+    .textWrapperDetail {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            font-weight: 500;
+            font-size: 24px;
+            color: var(--title-text-color);
+
+            @media screen and (max-width: 992px) {
+                font-size: 24px;
+            }
+        }
+
+        .buttonBox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            button {
+                display: flex;
+                width: 40px;
+                height: 40px;
+                background: transparent;
+                padding: 6px 13px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 100px;
+                border: 1px solid var(--button-border-color-first);
+            }
+        }
+    }
+}
