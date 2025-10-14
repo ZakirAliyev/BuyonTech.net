@@ -5,10 +5,39 @@ import nas from "/src/assets/nas.png";
 import OurWorksPageDetailThird from '../../../components/UserComponents/OurWorksPageDetail/ThirdSection/index.jsx';
 import OurWorksPageDetailSecond from '../../../components/UserComponents/OurWorksPageDetail/SecondSection/index.jsx';
 import Footer from "../../../components/UserComponents/Footer/index.jsx";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
+import OurWorksPageDetailFirst from '../../../components/UserComponents/OurWorksPageDetail/FirstSection/index.jsx';
 
 function OurWorksPageDetail() {
+    const imageBox = [
+        {
+            id: 1,
+            image: mid
 
+        },
+        {
+            id: 2,
+            image: nas
+
+        },
+        {
+            id: 3,
+            image: mid
+
+        }
+        ,
+        {
+            id: 4,
+            image: nas
+
+        }
+        ,
+        {
+            id: 5,
+            image: mid
+
+        }
+    ]
     const worksData = [
         {
             id: 1,
@@ -100,15 +129,16 @@ function OurWorksPageDetail() {
     }, []);
 
     return (
-        <main id={"ourWorksPageDetail"} style={{overflow: "hidden", position: "relative", background: "#fff"}}>
+        <main id={"ourWorksPageDetail"} style={{ overflow: "hidden", position: "relative", background: "#fff" }}>
             <div style={{
                 position: "relative",
                 zIndex: 100,
                 background: "var(--bg-color)",
             }}>
-                <Navbar/>
-                <OurWorksPageDetailSecond/>
-                <OurWorksPageDetailThird worksData={worksData}/>
+                <Navbar />
+                <OurWorksPageDetailFirst imageBox={imageBox} />
+                <OurWorksPageDetailSecond />
+                <OurWorksPageDetailThird worksData={worksData} />
             </div>
             {showFooter && (
                 windowWidth >= 992 ? (
@@ -118,10 +148,10 @@ function OurWorksPageDetail() {
                             position: "relative",
                             zIndex: -90,
                         }}></div>
-                        <Footer setFooterHeight={setFooterHeight}/>
+                        <Footer setFooterHeight={setFooterHeight} />
                     </>
                 ) : (
-                    <Footer setFooterHeight={setFooterHeight}/>
+                    <Footer setFooterHeight={setFooterHeight} />
                 )
             )}
         </main>

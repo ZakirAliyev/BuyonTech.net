@@ -7,6 +7,11 @@
 
     .ourWorksTexts {
         width: 100%;
+        padding: 0 8px;
+
+        @media screen and (max-width: 992px) {
+            padding: 0 16px;
+        }
 
         ul {
             li {
@@ -17,10 +22,24 @@
                 border-bottom: 1px solid var(--text-border-bottom-color);
                 justify-content: space-between;
 
+                @media screen and (max-width: 992px) {
+                    padding-bottom: 32px;
+                    flex-direction: column;
+                    justify-content: start;
+                    gap: 16px;
+                    margin-bottom: 40px;
+
+                }
+
                 h3 {
                     font-size: 18px;
                     font-weight: 500;
                     color: var(--title-text-color-second);
+
+                    @media screen and (max-width: 992px) {
+                        font-size: 16px;
+
+                    }
                 }
 
                 p {
@@ -29,6 +48,19 @@
                     width: 75%;
                     font-size: 24px;
                     font-weight: 500;
+
+                    @media screen and (max-width: 992px) {
+                        font-size: 18px;
+                        width: 95%;
+
+
+                    }
+
+                    @media screen and (max-width: 575px) {
+                        width: 100%;
+
+
+                    }
                 }
             }
         }

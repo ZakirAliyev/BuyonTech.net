@@ -1,6 +1,4 @@
-
 import React, { useRef } from 'react'
-import WorkCard from '../../WorkCard'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -8,17 +6,17 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import './index.scss'
-const OurWorksPageDetailThird = ({ worksData }) => {
+const OurWorksPageDetailFirst = ({ imageBox }) => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const paginationRef = useRef(null);
 
     return (
-        <section id='ourWorksPageDetailThird'>
+        <section id='ourWorksPageDetailFirst'>
             <div className={"container"}>
                 <div className={"ourWorks"}>
-                    <div className={"textWrapperDetail"}>
-                        <h2>Other Project </h2>
+                    <div className={"textWrapperDetailFirst"}>
+                        <h2>Legno Project  </h2>
                         <div className={"buttonBox"}>
                             <button ref={prevRef} className="prev">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
@@ -33,19 +31,20 @@ const OurWorksPageDetailThird = ({ worksData }) => {
                             </button>
                         </div>
                     </div>
-                    <div className="mySwiperBoxDetail">
+                    <div className="mySwiperBoxDetailSwip">
                         <Swiper
                             modules={[Navigation, Pagination]}
+
+                            navigation={{
+                                prevEl: prevRef.current,
+                                nextEl: nextRef.current,
+                            }}
                             pagination={{
                                 el: paginationRef.current,
                                 clickable: true,
                                 renderBullet: (index, className) => {
                                     return `<span class="${className}"></span>`;
                                 },
-                            }}
-                            navigation={{
-                                prevEl: prevRef.current,
-                                nextEl: nextRef.current,
                             }}
                             onInit={(swiper) => {
                                 swiper.params.navigation.prevEl = prevRef.current;
@@ -58,9 +57,9 @@ const OurWorksPageDetailThird = ({ worksData }) => {
                             }}
                             className="works-swiper"
                         >
-                            {worksData?.map((work) => (
-                                <SwiperSlide key={work.id}>
-                                    <WorkCard {...work} />
+                            {imageBox?.map((work) => (
+                                <SwiperSlide key={work.id} className='imageSlider'>
+                                    <img src={work.image} alt="" className='imageBox' />
                                 </SwiperSlide>
                             ))}
                         </Swiper>
@@ -68,9 +67,53 @@ const OurWorksPageDetailThird = ({ worksData }) => {
                     <div ref={paginationRef} className="custom-pagination"></div>
 
                 </div>
+                <div className="ourWorkBoxAbout">
+                    <div className="ourWorksDetailBottom">
+                        <div className="ourWorksDetailBottomLeft">
+                            <p>
+                                Category
+                            </p>
+                            <h4>
+                                Portfolio website
+                            </h4>
+                        </div>
+                        <div className="ourWorksDetailBottomMiddle">
+                            <a>
+                                <span>
+                                    Visit Website
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M0.258214 12.4004L11.0858 1.57282L1.80501 1.57282L1.72546 0.326542L13.2159 0.326541L13.2159 11.817L11.9697 11.7375L11.9697 2.4567L1.1421 13.2843L0.258214 12.4004Z" fill="black" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div className="ourWorksDetailBottomBottom">
+                            <p>
+                                Year
+                            </p>
+                            <h4>
+                                2025
+                            </h4>
+                        </div>
+
+                    </div>
+
+
+                    <div className="ourWebsiteLink">
+                        <a>
+                            <span>
+                                Visit Website
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                <path d="M0.258214 12.4004L11.0858 1.57282L1.80501 1.57282L1.72546 0.326542L13.2159 0.326541L13.2159 11.817L11.9697 11.7375L11.9697 2.4567L1.1421 13.2843L0.258214 12.4004Z" fill="black" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     )
 }
 
-export default OurWorksPageDetailThird
+export default OurWorksPageDetailFirst
+
