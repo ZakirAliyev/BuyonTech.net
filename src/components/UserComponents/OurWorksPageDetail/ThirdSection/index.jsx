@@ -1,0 +1,61 @@
+import React, { useRef } from 'react'
+import WorkCard from '../../WorkCard'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import './index.scss'
+const OurWorksPageDetailThird = ({ worksData }) => {
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
+
+    return (
+        <section id='ourWorksPageDetailThird'>
+            <div className={"container"}>
+                <div className={"ourWorks"}>
+                    <div className={"textWrapperDetail"}>
+                        <h2>Our Works</h2>
+                        <div className={"buttonBox"}>
+                            <button ref={prevRef} className="prev">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
+                                    <path d="M9.13935 14.3233L7.90152 15.56L1.15935 8.82018C1.05067 8.71218 0.964419 8.58376 0.905563 8.4423C0.846707 8.30084 0.816407 8.14914 0.816407 7.99593C0.816407 7.84271 0.846707 7.69101 0.905563 7.54956C0.964419 7.4081 1.05067 7.27967 1.15935 7.17168L7.90151 0.428344L9.13818 1.66501L2.81018 7.99418L9.13935 14.3233Z" fill="black" />
+                                </svg>
+                            </button>
+
+                            <button ref={nextRef} className="next">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
+                                    <path d="M0.860652 1.67665L2.09849 0.439988L8.84065 7.17982C8.94933 7.28782 9.03558 7.41624 9.09444 7.5577C9.15329 7.69916 9.18359 7.85086 9.18359 8.00407C9.18359 8.15729 9.15329 8.30899 9.09444 8.45044C9.03558 8.5919 8.94933 8.72033 8.84065 8.82832L2.09849 15.5717L0.861818 14.335L7.18982 8.00582L0.860652 1.67665Z" fill="black" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div className="mySwiperBoxDetail">
+                        <Swiper
+                            modules={[Navigation]}
+                      
+                            navigation={{
+                                prevEl: prevRef.current,
+                                nextEl: nextRef.current,
+                            }}
+                            onInit={(swiper) => {
+                                swiper.params.navigation.prevEl = prevRef.current;
+                                swiper.params.navigation.nextEl = nextRef.current;
+                                swiper.navigation.init();
+                                swiper.navigation.update();
+                            }}
+                            className="works-swiper"
+                        >
+                            {worksData.map((work) => (
+                                <SwiperSlide key={work.id}>
+                                    <WorkCard {...work} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default OurWorksPageDetailThird

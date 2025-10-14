@@ -1,0 +1,36 @@
+#ourWorksPageDetailSecond {
+    margin-top: 84px;
+
+    @media screen and (max-width: 992px) {
+        margin-top: 70px;
+    }
+
+    .ourWorksTexts {
+        width: 100%;
+
+        ul {
+            li {
+                margin-bottom: 80px;
+                display: flex;
+                align-items: start;
+                padding-bottom: 48px;
+                border-bottom: 1px solid var(--text-border-bottom-color);
+                justify-content: space-between;
+
+                h3 {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: var(--title-text-color-second);
+                }
+
+                p {
+                    color: #1A1A1A;
+                    color: var(--subtitle-text-color-third);
+                    width: 75%;
+                    font-size: 24px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
