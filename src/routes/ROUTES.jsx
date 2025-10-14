@@ -4,6 +4,7 @@ import OurWorksPage from "../pages/UserPages/OurWorksPage/index.jsx";
 import OurWorksPageDetail from "../pages/UserPages/OurWorksPageDetail/index.jsx";
 import CaseStudyHeaderMarketing from "../components/UserComponents/CaseStudyHeaderMarketing/index.jsx";
 import ContactPage from "../pages/UserPages/ContactPage/index.jsx";
+import NotFoundPage from "../pages/UserPages/NotFoundPage/index.jsx";
 
 export const ROUTES = [
     {
@@ -29,6 +30,10 @@ export const ROUTES = [
             {
                 path: 'contact',
                 element: <ContactPage/>,
+            },
+            {
+                path: '*',
+                element: <NotFoundPage/>
             }
         ]
     }
