@@ -13,7 +13,7 @@ function Footer({setFooterHeight}) {
             let newHeight = footerRef.current.offsetHeight;
 
             if (window.innerWidth > 992) {
-                newHeight += 200; // yalnız böyük ekranlarda əlavə et
+                newHeight += 200;
             }
 
             footerRef.current.style.height = newHeight + "px";

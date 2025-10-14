@@ -3,7 +3,7 @@ import HomePage from "../pages/UserPages/HomePage/index.jsx";
 import OurWorksPage from "../pages/UserPages/OurWorksPage/index.jsx";
 import OurWorksPageDetail from "../pages/UserPages/OurWorksPageDetail/index.jsx";
 import CaseStudyHeaderMarketing from "../components/UserComponents/CaseStudyHeaderMarketing/index.jsx";
-import AboutPage from "../pages/UserPages/AboutPage/index.jsx";
+import ContactPage from "../pages/UserPages/ContactPage/index.jsx";
 
 export const ROUTES = [
     {
@@ -27,8 +27,8 @@ export const ROUTES = [
                 element: <CaseStudyHeaderMarketing/>,
             },
             {
-                path: 'about',
-                element: <AboutPage/>,
+                path: 'contact',
+                element: <ContactPage/>,
             }
         ]
     }
