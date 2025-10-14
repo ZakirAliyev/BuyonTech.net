@@ -1,102 +1,143 @@
 #aboutPageFirst {
-    margin-top: 44px;
-    padding-top: 60px;
+  margin-top: 44px;
+  padding-top: 60px;
 
-    @media screen and (max-width:992px) {}
+  .ortalama {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    .container {
-        padding: 0 8px;
+  .aboutPageFirstBox {
+    background: #f1c1c1;
+    background: var(--sssssss, linear-gradient(259deg, rgba(210, 222, 249, 0.90) 0.17%, rgba(232, 238, 252, 0.40) 40.03%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 248, 229, 0.40) 59.97%, rgba(255, 242, 204, 0.90) 99.83%));
 
-        @media screen and (max-width:992px) {
-            padding: 0 16px;
-
-        }
-
-        height: 600px;
-
-        @media screen and (max-width:992px) {
-            height: 850px;
-
-        }
-
-        .aboutPageFirstBox {
-            padding-left: 41px;
-            border-radius: 24px;
-            width: 100%;
-            background: var(--sssssss, linear-gradient(259deg, rgba(210, 222, 249, 0.90) 0.17%, rgba(232, 238, 252, 0.40) 40.03%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 248, 229, 0.40) 59.97%, rgba(255, 242, 204, 0.90) 99.83%));
-            height: 100%;
-
-            @media screen and (max-width:992px) {
-                padding-left: 16px;
-                padding-right: 16px;
-                background: linear-gradient(312deg, rgba(210, 222, 249, 0.90) 30.06%, rgba(232, 238, 252, 0.40) 46.01%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 248, 229, 0.40) 53.99%, rgba(255, 242, 204, 0.90) 69.94%);
-
-            }
-
-            .row {
-                height: 100%;
-
-            
-                img {
-                    width: 100%;
-                }
-
-                .col-8 {
-                    height: 100%;
-                    display: flex;
-                    align-items: end;
-
-                    @media screen and (max-width:992px) {
-                        padding: 0;
-                        height: auto;
-
-                    }
-
-                    .textBox {
-                        padding-bottom: 100px;
-
-
-                        @media screen and (max-width:992px) {
-                            padding-bottom: 0px;
-                            padding-top: 80px;
-
-                        }
-
-                        h1 {
-                            color: #1A1A1A;
-                            font-size: 48px;
-                            font-weight: 600;
-                            margin-bottom: 28px;
-
-                            @media screen and (max-width:992px) {
-                                font-size: 32px;
-                                margin-bottom: 32px;
-                                text-align: center;
-
-                            }
-
-                        }
-
-                        p {
-                            color: #4D4D4D;
-                            font-size: 18px;
-                            font-weight: 400;
-                            width: 88%;
-
-                            @media screen and (max-width:992px) {
-                                width: 100%;
-
-
-                            }
-
-                            @media screen and (max-width:992px) {
-                                text-align: center;
-                            }
-
-                        }
-                    }
-                }
-            }
-        }
+    .professor {
+      width: 100%;
     }
+
+    h1 {
+      color: #1A1A1A;
+      font-size: 48px;
+      font-weight: 600;
+      margin-bottom: 28px;
+
+      @media screen and (max-width: 992px) {
+        font-size: 32px;
+        margin-bottom: 32px;
+        text-align: center;
+      }
+    }
+
+    p {
+      color: #4D4D4D;
+      font-size: 18px;
+      font-weight: 400;
+      width: 88%;
+
+      @media screen and (max-width: 992px) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 992px) {
+        text-align: center;
+      }
+    }
+  }
+
+
+  //.container {
+  //    padding: 0 8px;
+  //
+  //    @media screen and (max-width:992px) {
+  //        padding: 0 16px;
+  //
+  //    }
+  //
+  //    height: 600px;
+  //
+  //    @media screen and (max-width:992px) {
+  //        height: 850px;
+  //
+  //    }
+  //
+  //    .aboutPageFirstBox {
+  //        padding-left: 41px;
+  //        border-radius: 24px;
+  //        width: 100%;
+  //        height: 100%;
+  //
+  //        @media screen and (max-width:992px) {
+  //            padding-left: 16px;
+  //            padding-right: 16px;
+  //            background: linear-gradient(312deg, rgba(210, 222, 249, 0.90) 30.06%, rgba(232, 238, 252, 0.40) 46.01%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 248, 229, 0.40) 53.99%, rgba(255, 242, 204, 0.90) 69.94%);
+  //
+  //        }
+  //
+  //        .row {
+  //            height: 100%;
+  //
+  //
+  //            img {
+  //                width: 100%;
+  //            }
+  //
+  //            .col-8 {
+  //                height: 100%;
+  //                display: flex;
+  //                align-items: end;
+  //
+  //                @media screen and (max-width:992px) {
+  //                    padding: 0;
+  //                    height: auto;
+  //
+  //                }
+  //
+  //                .textBox {
+  //                    padding-bottom: 100px;
+  //
+  //
+  //                    @media screen and (max-width:992px) {
+  //                        padding-bottom: 0px;
+  //                        padding-top: 80px;
+  //
+  //                    }
+  //
+  //                    h1 {
+  //                        color: #1A1A1A;
+  //                        font-size: 48px;
+  //                        font-weight: 600;
+  //                        margin-bottom: 28px;
+  //
+  //                        @media screen and (max-width:992px) {
+  //                            font-size: 32px;
+  //                            margin-bottom: 32px;
+  //                            text-align: center;
+  //
+  //                        }
+  //
+  //                    }
+  //
+  //                    p {
+  //                        color: #4D4D4D;
+  //                        font-size: 18px;
+  //                        font-weight: 400;
+  //                        width: 88%;
+  //
+  //                        @media screen and (max-width:992px) {
+  //                            width: 100%;
+  //
+  //
+  //                        }
+  //
+  //                        @media screen and (max-width:992px) {
+  //                            text-align: center;
+  //                        }
+  //
+  //                    }
+  //                }
+  //            }
+  //        }
+  //    }
+  //}
 }
