@@ -4,6 +4,8 @@ import mid from "/src/assets/mid.png";
 import nas from "/src/assets/nas.png";
 import OurWorksPageDetailThird from '../../../components/UserComponents/OurWorksPageDetail/ThirdSection/index.jsx';
 import OurWorksPageDetailSecond from '../../../components/UserComponents/OurWorksPageDetail/SecondSection/index.jsx';
+import Footer from "../../../components/UserComponents/Footer/index.jsx";
+import {useEffect, useState} from "react";
 
 function OurWorksPageDetail() {
 
@@ -81,11 +83,47 @@ function OurWorksPageDetail() {
             image: nas
         }
     ];
+
+    const [footerHeight, setFooterHeight] = useState(0);
+    const [showFooter, setShowFooter] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setShowFooter(true), 0);
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
-        <main id={"ourWorksPageDetail"}>
-            <Navbar />
-            <OurWorksPageDetailSecond/>
-            <OurWorksPageDetailThird  worksData={worksData}/>
+        <main id={"ourWorksPageDetail"} style={{overflow: "hidden", position: "relative", background: "#fff"}}>
+            <div style={{
+                position: "relative",
+                zIndex: 100,
+                background: "var(--bg-color)",
+            }}>
+                <Navbar/>
+                <OurWorksPageDetailSecond/>
+                <OurWorksPageDetailThird worksData={worksData}/>
+            </div>
+            {showFooter && (
+                windowWidth >= 992 ? (
+                    <>
+                        <div style={{
+                            height: `${footerHeight}px`,
+                            position: "relative",
+                            zIndex: -90,
+                        }}></div>
+                        <Footer setFooterHeight={setFooterHeight}/>
+                    </>
+                ) : (
+                    <Footer setFooterHeight={setFooterHeight}/>
+                )
+            )}
         </main>
     );
 }
