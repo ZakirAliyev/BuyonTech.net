@@ -1,14 +1,18 @@
 #ourWorksPage {
-  margin-top: 84px;
+  padding-top: 50px;
+  margin-top: 14px;
 
-  @media screen and (max-width: 992px) {
-    margin-top: 70px;
-  }
+  @media screen and (max-width: 992px) {}
 
   .textWrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 8px 0;
+
+    @media screen and (max-width: 992px) {
+      padding: 10px 16px 0;
+    }
 
     h2 {
       font-weight: 600;
