@@ -10,26 +10,35 @@ const stories = [
 
 function CaseStudyHeaderMarketing() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const videoRef = useRef(null);
+    const [activeVideo, setActiveVideo] = useState(0); // 0 və ya 1 — hansı video göstərilir
+    const videoRefs = [useRef(null), useRef(null)];
     const timerRef = useRef(null);
 
     const currentStory = stories[currentIndex];
 
-    // Story dəyişəndə hadisələri idarə et
     useEffect(() => {
         clearTimeout(timerRef.current);
 
         if (currentStory.type === 'video') {
-            const video = videoRef.current;
-            if (video) {
-                video.onloadedmetadata = () => {
-                    video.currentTime = 0;
-                    video.play();
-                    startProgress(video.duration * 1000);
-                };
-            }
+            const inactiveVideoIndex = activeVideo === 0 ? 1 : 0;
+            const newVideo = videoRefs[inactiveVideoIndex].current;
+
+            // Yeni videonu hazırla, görünmədən yüklə
+            newVideo.src = currentStory.src;
+            newVideo.load();
+
+            const handleLoaded = () => {
+                newVideo.currentTime = 0;
+                newVideo.play();
+                startProgress(newVideo.duration * 1000);
+
+                // Yüklənəndən sonra aktiv videonu dəyiş
+                setActiveVideo(inactiveVideoIndex);
+            };
+
+            newVideo.addEventListener('loadeddata', handleLoaded, { once: true });
         } else if (currentStory.type === 'image') {
-            const duration = 10000; // şəkil üçün 10 saniyə
+            const duration = 10000;
             startProgress(duration);
             timerRef.current = setTimeout(() => {
                 goNext();
@@ -45,7 +54,7 @@ function CaseStudyHeaderMarketing() {
         const fills = document.querySelectorAll('.progressFill');
         fills.forEach((fill, idx) => {
             fill.style.animation = 'none';
-            fill.offsetHeight; // force reflow
+            fill.offsetHeight;
             if (idx === currentIndex) {
                 fill.style.animation = `storyProgress ${duration}ms linear forwards`;
             } else if (idx < currentIndex) {
@@ -64,7 +73,6 @@ function CaseStudyHeaderMarketing() {
         if (currentIndex < stories.length - 1) {
             setCurrentIndex((prev) => prev + 1);
         } else {
-            // ✅ Ən son story-dən sonra birinciyə qayıdır
             setCurrentIndex(0);
         }
     };
@@ -73,7 +81,6 @@ function CaseStudyHeaderMarketing() {
         if (currentIndex > 0) {
             setCurrentIndex((prev) => prev - 1);
         } else {
-            // ✅ Əvvələ klikləyəndə sonuncuya qayıtmaq opsiyası (insta kimi)
             setCurrentIndex(stories.length - 1);
         }
     };
@@ -94,7 +101,7 @@ function CaseStudyHeaderMarketing() {
         <section id="caseStudyHeaderMarketing">
             <div className="container">
                 <div className="row">
-                    <div className="col-8">
+                    <div className="col-8 col-md-8 col-sm-12 col-xs-12">
                         <div className="title">Leon Study Group</div>
                         <div className="description">
                             We provide full-scale marketing services for Leon Group Studio. This includes creative post
@@ -110,53 +117,71 @@ function CaseStudyHeaderMarketing() {
                             <div className="des">Social Media Management</div>
                         </div>
                     </div>
-                    <div className="col-4">
-                       <div className={"storyWrapper"}>
-                           <div className="story" onClick={handleClick}>
-                               {/* Overlay və header */}
-                               <div className="storyHeader">
-                                   <div className="progressBars">
-                                       {stories.map((_, idx) => (
-                                           <div key={idx} className="progress">
-                                               <div
-                                                   className={`progressFill ${
-                                                       idx < currentIndex ? 'filled' : idx === currentIndex ? 'active' : ''
-                                                   }`}
-                                               ></div>
-                                           </div>
-                                       ))}
-                                   </div>
-                                   <div className="profile">
-                                       <img
-                                           src="/src/assets/profileImage.png"
-                                           alt="profile"
-                                           className="profileImg"
-                                       />
-                                       <span className="username">leonstudygroup</span>
-                                   </div>
-                               </div>
+                    <div className="col-4 col-md-4 col-sm-12 col-xs-12">
+                        <div className="storyWrapper">
+                            <div className="story" onClick={handleClick}>
+                                <div className="storyContentWrapper">
+                                    <div className="storyHeader">
+                                        <div className="progressBars">
+                                            {stories.map((_, idx) => (
+                                                <div key={idx} className="progress">
+                                                    <div
+                                                        className={`progressFill ${
+                                                            idx < currentIndex
+                                                                ? 'filled'
+                                                                : idx === currentIndex
+                                                                    ? 'active'
+                                                                    : ''
+                                                        }`}
+                                                    ></div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div className="profile">
+                                            <img
+                                                src="/src/assets/profileImage.png"
+                                                alt="profile"
+                                                className="profileImg"
+                                            />
+                                            <span className="username">leonstudygroup</span>
+                                        </div>
+                                    </div>
 
-                               {/* Video + şəkil hissəsi — ağarma olmaması üçün eyni yerdə overlay ilə opacity */}
-                               <div className="storyContentWrapper">
-                                   <video
-                                       ref={videoRef}
-                                       className={`storyVideo ${currentStory.type === 'video' ? 'visible' : 'hidden'}`}
-                                       autoPlay
-                                       muted
-                                       playsInline
-                                       onEnded={handleEnded}
-                                       src={currentStory.type === 'video' ? currentStory.src : ''}
-                                       type="video/mp4"
-                                   ></video>
+                                    {/* İki video elementi ilə crossfade */}
+                                    <video
+                                        ref={videoRefs[0]}
+                                        className={`storyVideo ${
+                                            currentStory.type === 'video' && activeVideo === 0 ? 'visible' : 'hidden'
+                                        }`}
+                                        autoPlay
+                                        muted
+                                        playsInline
+                                        onEnded={handleEnded}
+                                        type="video/mp4"
+                                    ></video>
 
-                                   <img
-                                       src={currentStory.type === 'image' ? currentStory.src : ''}
-                                       alt=""
-                                       className={`storyImage ${currentStory.type === 'image' ? 'visible' : 'hidden'}`}
-                                   />
-                               </div>
-                           </div>
-                       </div>
+                                    <video
+                                        ref={videoRefs[1]}
+                                        className={`storyVideo ${
+                                            currentStory.type === 'video' && activeVideo === 1 ? 'visible' : 'hidden'
+                                        }`}
+                                        autoPlay
+                                        muted
+                                        playsInline
+                                        onEnded={handleEnded}
+                                        type="video/mp4"
+                                    ></video>
+
+                                    <img
+                                        src={currentStory.type === 'image' ? currentStory.src : ''}
+                                        alt=""
+                                        className={`storyImage ${
+                                            currentStory.type === 'image' ? 'visible' : 'hidden'
+                                        }`}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

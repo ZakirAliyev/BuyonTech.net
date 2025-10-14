@@ -6,6 +6,9 @@
     font-size: 40px;
     font-weight: 500;
     line-height: normal;
+    @media screen and (max-width: 992px) {
+      font-size: 28px;
+    }
   }
 
   .description {
@@ -14,10 +17,15 @@
     font-weight: 300;
     line-height: 1.4;
     margin-top: 16px;
+
+    @media screen and (max-width: 992px) {
+      color: #4D4D4D;
+      font-size: 16px;
+    }
   }
 
   .serviceWrapper {
-    margin-top: 24px;
+    margin-top: 48px;
 
     .name {
       color: #666;
@@ -31,11 +39,23 @@
       font-size: 18px;
       font-weight: 400;
       margin-top: 4px;
+
+      @media screen and (max-width: 992px) {
+        color: #4D4D4D;
+        margin-top: 6px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .row {
+    @media screen and (max-width: 992px) {
+      flex-direction: column-reverse;
     }
   }
 
   .storyWrapper {
-    border-radius: 24px;
+    border-radius: 22px;
     background: #FFF;
     box-shadow: 0 0 10px 0 rgba(79, 74, 74, 0.25);
     aspect-ratio: 9 / 16;
@@ -43,6 +63,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
 
   .story {
@@ -52,15 +73,17 @@
     box-shadow: 0 0 10px rgba(79, 74, 74, 0.25);
     overflow: hidden;
     aspect-ratio: 9 / 16;
-    max-width: 320px;
+    max-width: 336px;
+    padding: 12px;
     width: 100%;
-    margin: 0 8px;
     cursor: pointer;
 
     .storyContentWrapper {
       position: relative;
       width: 100%;
       height: 100%;
+      overflow: hidden;
+      border-radius: 12px;
 
       .storyVideo,
       .storyImage {
@@ -70,7 +93,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.35s ease; // crossfade smooth
       }
 
       .hidden {
@@ -84,18 +107,6 @@
       }
     }
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 60px;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
-      z-index: 3;
-      pointer-events: none;
-    }
-
     .storyHeader {
       position: absolute;
       top: 0;
@@ -105,7 +116,9 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-      z-index: 5;
+      z-index: 81;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.50) 25%, rgba(0, 0, 0, 0.40) 50%, rgba(0, 0, 0, 0.20) 75%, rgba(0, 0, 0, 0.00) 100%);
+
 
       .progressBars {
         display: flex;
@@ -141,7 +154,6 @@
           height: 28px;
           border-radius: 50%;
           object-fit: cover;
-          border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .username {
@@ -162,11 +174,15 @@
       width: 100%;
     }
   }
+  .col-4 {
+    display: flex;
+    justify-content: center;  // sağ-sol bərabər məsafə üçün
+    align-items: center;      // istəsən vertical da ortalaya bilər
+    padding-left: 0;
+    padding-right: 0;
 
-  @media (max-width: 992px) {
-    .story {
-      margin: 24px auto 0;
-      max-width: 100%;
+    @media screen and (max-width: 992px) {
+      justify-content: center; // mobil üçün də ortada qalsın
     }
   }
 }
