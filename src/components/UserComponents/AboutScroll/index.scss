@@ -4,12 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
+  padding: 60px 0;
   flex-direction: column;
   gap: 16px;
   background: var(--bg-color);
   position: relative;
   z-index: 10;
+
 
   .aboutText {
     font-family: "Dancing Script", cursive;
@@ -39,6 +40,10 @@
     @media screen and (max-width: 992px) {
       font-size: 14px;
       padding: 4px 24px;
+    }
+
+    @media screen and (max-width: 625px) {
+      width: 90%;
     }
   }
 

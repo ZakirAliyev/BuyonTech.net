@@ -79,7 +79,10 @@
         margin-top: 10px;
 
         @media screen and (max-width: 992px) {
-          font-size: 12px;
+          font-size: 14px;
+          width: 100%;
+          padding: 14px 32px;
+
         }
 
         &:hover {

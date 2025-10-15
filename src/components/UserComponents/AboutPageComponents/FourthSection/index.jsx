@@ -24,11 +24,8 @@ const AboutFourthSection = ({ data = [] }) => {
 
           <div className="row">
             {visibleData.map((item, index) => (
-              <div
-                key={index}
-                className="col-3 col-md-4 col-sm-6 col-xs-12"
-                style={{ padding: "0" }}
-              >
+              <div className="col-3 col-md-4 col-sm-6 col-xs-12" key={index}>
+            
                 <TeamCard data={item} />
               </div>
             ))}

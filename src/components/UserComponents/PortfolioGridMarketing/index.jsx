@@ -31,9 +31,7 @@ function PortfolioGridMarketing() {
         <section id={"portfolioGridMarketing"}>
             <div className={"container"}>
                 <div className={"portfolioText"}>PORTFOLIO</div>
-                <div style={{
-                    marginTop: '-75px'
-                }}>
+                <div className='marketingCard'>
                     {worksData.map((work) => (
                         <WorkCard key={work.id} {...work} />
                     ))}

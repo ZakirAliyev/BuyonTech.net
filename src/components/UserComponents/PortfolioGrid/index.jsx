@@ -31,9 +31,7 @@ function PortfolioGrid() {
         <section id={"portfolioGrid"}>
             <div className={"container"}>
                 <div className={"portfolioText"}>PORTFOLIO</div>
-                <div style={{
-                    marginTop: '-75px'
-                }}>
+                <div  className='portfolioCards' >
                     {worksData.map((work) => (
                         <WorkCard key={work.id} {...work} />
                     ))}

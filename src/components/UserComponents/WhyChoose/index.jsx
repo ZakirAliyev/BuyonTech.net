@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import './index.scss';
-import {TbUserCheck} from "react-icons/tb";
+import { TbUserCheck } from "react-icons/tb";
 
 function WhyChoose() {
 
@@ -68,9 +68,10 @@ function WhyChoose() {
         return () => observer.disconnect();
     }, []);
 
+
     return (
-        <div style={{background: 'var(--bg-color)', width: '100%', position: 'relative', zIndex: '10' }}>
-            <div className="container" style={{ maxWidth: "1200px"}}>
+        <div style={{ background: 'var(--bg-color)', width: '100%', position: 'relative', zIndex: '10' }}>
+            <div className="container" style={{ maxWidth: "1200px" }}>
                 <section id="whyChoose" ref={sectionRef} style={{ minHeight: sectionHeight }}>
                     <div className="centerContent" ref={centerContentRef}>
                         <h2>Why Choose BuyonTech for Your Next Big Idea?</h2>
@@ -84,7 +85,7 @@ function WhyChoose() {
                                 className={`card card-${i + 1} ${i % 2 === 0 ? "left" : "right"}`}
                             >
                                 <div className="icon">
-                                    <TbUserCheck/>
+                                    <TbUserCheck />
                                 </div>
                                 <h3>Strong Expertise</h3>
                                 <p>
@@ -93,6 +94,11 @@ function WhyChoose() {
                                 </p>
                             </div>
                         ))}
+                    </div>
+                    <div className="choseBtn">
+                        <button>
+                            Contact Us
+                        </button>
                     </div>
                 </section>
             </div>

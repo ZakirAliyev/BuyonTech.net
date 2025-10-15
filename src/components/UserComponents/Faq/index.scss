@@ -9,7 +9,7 @@
 
   .leftSticky {
     position: sticky;
-    top: 100px; // yalnız desktop üçün işləsin
+    top: 100px;
     align-self: flex-start;
     height: fit-content;
 
@@ -20,15 +20,21 @@
       width: 100%;
       color: var(--text-color-secondary);
 
-      @media screen and (max-width: 992px){
+      @media screen and (max-width: 992px) {
         font-size: 30px;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
       }
+
+
     }
 
     // ✅ Mobil və tablet üçün sticky-ni söndürürük
     @media screen and (max-width: 992px) {
       position: static;
       top: auto;
+
     }
   }
 
@@ -44,7 +50,7 @@
       font-size: 24px;
       color: var(--accordion-text-color);
 
-      @media screen and (max-width: 992px){
+      @media screen and (max-width: 992px) {
         font-size: 18px;
       }
     }
@@ -62,7 +68,7 @@
         font-size: 16px;
         line-height: 1.5;
 
-        @media screen and (max-width: 992px){
+        @media screen and (max-width: 992px) {
           font-size: 14px;
         }
       }

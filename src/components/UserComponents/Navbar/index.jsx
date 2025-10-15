@@ -23,7 +23,7 @@ function Navbar() {
                     <img src={`${logo}`} alt={"Logo"} onClick={() => navigate("/")}/>
                     <div className={"buttonWrapper"}>
                         <button>Contact us</button>
-                        <TfiWorld className={"icon"}/>
+                        <TfiWorld className={"icon"} style={{fontSize:"20px"}}/>
                     </div>
                     <FaBarsStaggered className={"menuBar"}/>
                 </nav>

@@ -4,6 +4,8 @@ import aboutThird1 from '/src/assets/aboutThird1.svg'
 import aboutThird2 from '/src/assets/aboutThird2.svg'
 import aboutThird3 from '/src/assets/aboutThird3.svg'
 import aboutThird4 from '/src/assets/aboutThird4.svg'
+import aboutThird5 from '/src/assets/aboutThird5.svg'
+import aboutThird6 from '/src/assets/aboutThird6.svg'
 const AboutPageThird = () => {
     return (
         <section id='aboutPageThird'>
@@ -21,13 +23,13 @@ const AboutPageThird = () => {
                         </div>
                         <div className="thirdImageBox">
                             <img src={aboutThird3} className='thirdImage1' alt="svgLeft" />
-                            <img src={aboutThird3} className='thirdImage2' alt="svgLeft" />
+                            <img src={aboutThird5} className='thirdImage2' alt="svgLeft" />
                         </div>
                     </div>
                     <div className="aboutThirdCard aboutThirdCard2">
                         <div className="thirdImageBox">
                             <img src={aboutThird4} className='thirdImage1' alt="svgRight" />
-                            <img src={aboutThird4} className='thirdImage2' alt="svgRight" />
+                            <img src={aboutThird6} className='thirdImage2' alt="svgRight" />
                         </div>
                         <div className="thirdTextBox">
                             <div className="svg">

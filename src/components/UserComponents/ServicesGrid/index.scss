@@ -4,26 +4,30 @@
   position: relative;
   z-index: 10;
 
+  .container {
+    padding: 0 8px;
+
+
+  }
+
   .servicesText {
     text-align: center;
     font-size: 220px;
     font-weight: 600;
     text-transform: uppercase;
 
-    background: linear-gradient(
-                    180deg,
-                    #D9D9D9 0%,
-                    #ECECEC 30%,
-                    rgba(255, 255, 255, 0.6) 80%,
-                    rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(180deg,
+        #D9D9D9 0%,
+        #ECECEC 30%,
+        rgba(255, 255, 255, 0.6) 80%,
+        rgba(255, 255, 255, 0) 100%);
 
-    -webkit-background-clip: text; /* Safari və Chrome */
-    background-clip: text; /* Digər browserlər */
-    color: transparent; /* Text rəngini şəffaf edir */
-    line-height: 1; /* Yazını sıx göstərmək üçün */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
 
-    @media screen and (max-width: 992px){
+    @media screen and (max-width: 992px) {
       font-size: 70px;
     }
   }
@@ -36,7 +40,7 @@
     grid-row-gap: 15px;
     margin-top: -60px;
 
-    @media screen and (max-width: 992px){
+    @media screen and (max-width: 992px) {
       margin-top: -20px;
     }
   }
@@ -97,6 +101,14 @@
   .div1 {
     grid-area: 1 / 1 / 4 / 3;
     background: #10317F;
+    position: relative;
+
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   .div2 {
@@ -142,7 +154,15 @@
     color: white;
   }
 
-  .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9 {
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5,
+  .div6,
+  .div7,
+  .div8,
+  .div9 {
     border: 1px solid #fff;
     border-radius: 20px;
     min-height: 205px;
