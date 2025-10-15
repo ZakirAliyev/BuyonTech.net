@@ -1,0 +1,78 @@
+    #teamCard {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        background: linear-gradient(180deg, #EBF5FF 48.56%, #E0FDFF 100%);
+        position: relative;
+        padding-top: 20px;
+
+        @media screen and (max-width:992px) {
+            padding-top: 26px;
+        }
+
+        .imageBox {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+
+                width: 248px;
+                height: 329px;
+                flex-shrink: 0;
+                aspect-ratio: 248/329;
+
+                @media screen and (max-width:992px) {
+                    width: 324.318px;
+                    height: 430.217px;
+                    flex-shrink: 0;
+                    aspect-ratio: 324.32/430.22;
+                }
+
+
+
+            }
+        }
+
+        .absoluteBox {
+            position: absolute;
+            bottom: 10px;
+            padding: 0 10px;
+            width: 100%;
+
+            .absoluteBoxInside {
+                border-radius: 10px;
+                background: #FFF;
+                padding: 14px 0 14px 16px;
+                width: 100%;
+
+                h2 {
+                    color: #1A1A1A;
+                    font-family: Inter;
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin-bottom: 8px;
+
+                    @media screen and (max-width:992px) {
+                        font-size: 23.538px;
+                        margin-bottom: 11px;
+
+                    }
+                }
+
+                p {
+                    color: #666;
+                    font-family: Inter;
+                    font-size: 14px;
+                    font-weight: 400;
+
+                    @media screen and (max-width:992px) {
+                        font-size: 18.308px;
+
+                    }
+                }
+            }
+        }
+    }

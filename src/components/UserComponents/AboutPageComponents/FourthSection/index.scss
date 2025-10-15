@@ -1,0 +1,79 @@
+#aboutFourthSection {
+    margin-top: 80px;
+    padding-bottom: 40px;
+
+    @media screen and (max-width:992px) {
+        margin-top: 70px;
+
+    }
+
+    .container {
+        padding: 0 8px;
+
+        @media screen and (max-width:992px) {
+            padding: 0 16px;
+
+        }
+
+        .aboutFourthBox {
+            .aboutFourthTitle {
+                width: 100%;
+                color: #333;
+                text-align: center;
+                font-size: 40px;
+                font-weight: 600;
+                margin-bottom: 40px;
+
+                @media screen and (max-width:992px) {
+                    font-size: 32px;
+                    margin-bottom: 32px;
+
+                }
+            }
+
+            .row {
+                gap: 24px;
+
+            }
+
+            .loadMoreBtn {
+                width: 100%;
+                margin-top: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                button {
+                    display: flex;
+                    padding: 14px 34px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                    align-self: stretch;
+                    border-radius: 10px;
+                    border: 1px solid #000;
+
+                    color: #1A1A1A;
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: 500;
+                    background: transparent;
+                    width: 100%;
+                    max-width: 280px;
+                    transition: 0.3s linear;
+
+                    &:hover {
+                        background: #000;
+                        color: #fff;
+                    }
+
+                    @media screen and (max-width:992px) {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
