@@ -50,7 +50,7 @@
     text-align: center;
 
     h2 {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 500;
       padding-top: 32px;
     }
@@ -65,6 +65,7 @@
 
   .divdiv {
     padding: 32px;
+    height: 350px;
     color: #000000;
     position: relative;
 
@@ -85,6 +86,10 @@
     padding: 32px;
     color: #ffffff;
 
+    @media screen and (max-width: 992px){
+      height: 300px;
+    }
+
     h2 {
       font-size: 24px;
       font-weight: 500;
@@ -101,11 +106,9 @@
   .div1 {
     grid-area: 1 / 1 / 4 / 3;
     background: #10317F;
-    position: relative;
 
     img {
-      position: absolute;
-      bottom: 0;
+      bottom: -7px;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -221,6 +224,12 @@
     height: 100%;
     bottom: 0;
     right: 128px;
+
+    @media screen and (max-width: 992px){
+      left: 50%;
+      transform: translate(-50%);
+      bottom: 16px;
+    }
   }
 
   .div100 {
@@ -256,5 +265,11 @@
     right: 32px;
     bottom: 16px;
     height: 150px;
+
+    @media screen and (max-width: 992px){
+      left: 50%;
+      transform: translateX(-50%);
+      height: 45%;
+    }
   }
 }
