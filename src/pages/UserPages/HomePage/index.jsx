@@ -16,6 +16,7 @@ import AboutScrollMarketing from "../../../components/UserComponents/AboutScroll
 import PortfolioGridMarketing from "../../../components/UserComponents/PortfolioGridMarketing/index.jsx";
 import FaqMarketing from "../../../components/UserComponents/FaqMarketing/index.jsx";
 import MarketingVideos from "../../../components/UserComponents/MarketingVideos/index.jsx";
+import PerspectiveSection from "../../../components/UserComponents/PerspectiveSection/index.jsx";
 
 function HomePage() {
     const [footerHeight, setFooterHeight] = useState(0);
@@ -111,6 +112,7 @@ function HomePage() {
                                         <CreativeMarketing />
                                         <LogoScroll />
                                         <AboutScrollMarketing />
+                                        <PerspectiveSection/>
                                         <PortfolioGridMarketing />
                                         <MarketingVideos />
                                         <FaqMarketing />
