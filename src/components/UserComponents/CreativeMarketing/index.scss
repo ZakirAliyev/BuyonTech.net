@@ -3,6 +3,11 @@
 
   .growth {
     height: 60px;
+
+    @media screen and (max-width:992px) {
+      height: 36px;
+
+    }
   }
 
   .marketingText {
@@ -10,6 +15,11 @@
     font-size: 56px;
     line-height: 80px;
     text-align: center;
+
+    @media screen and (max-width:992px) {
+      font-size: 32px;
+      line-height: normal;
+    }
   }
 
   .marketingTextColor {
@@ -26,7 +36,6 @@
   p {
     font-weight: 300;
     font-size: 18px;
-    line-height: 100%;
     text-align: center;
     color: #666666;
     margin-top: 20px;
@@ -48,8 +57,15 @@
     margin: 40px auto 0;
 
     @media screen and (max-width: 992px) {
-      font-size: 14px;
+      font-size: 16px;
       padding: 4px 24px;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    @media screen and (max-width: 576px) {
+      width: 100%;
+      max-width: 90%;
     }
   }
 
@@ -57,5 +73,10 @@
     display: flex;
     width: 100%;
     margin-top: 40px;
+
+    @media screen and (max-width: 992px) {
+      scale: 1.2;
+    }
+
   }
 }

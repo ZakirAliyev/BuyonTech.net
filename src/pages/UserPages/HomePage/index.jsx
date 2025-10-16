@@ -1,5 +1,5 @@
-import {useState, useEffect} from "react";
-import {AnimatePresence, motion} from "framer-motion";
+import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Navbar from "../../../components/UserComponents/Navbar/index.jsx";
 import HomeBanner from "../../../components/UserComponents/HomeBanner/index.jsx";
@@ -15,6 +15,7 @@ import CreativeMarketing from "../../../components/UserComponents/CreativeMarket
 import AboutScrollMarketing from "../../../components/UserComponents/AboutScrollMarketing/index.jsx";
 import PortfolioGridMarketing from "../../../components/UserComponents/PortfolioGridMarketing/index.jsx";
 import FaqMarketing from "../../../components/UserComponents/FaqMarketing/index.jsx";
+import MarketingVideos from "../../../components/UserComponents/MarketingVideos/index.jsx";
 
 function HomePage() {
     const [footerHeight, setFooterHeight] = useState(0);
@@ -68,9 +69,9 @@ function HomePage() {
     };
 
     return (
-        <section id="homePage" style={{overflow: "hidden", position: "relative"}}>
-            <Navbar/>
-            <SwitchProduct active={active} setActive={handleSwitch} disabled={isTransitioning}/>
+        <section id="homePage" style={{ overflow: "hidden", position: "relative" }}>
+            <Navbar />
+            <SwitchProduct active={active} setActive={handleSwitch} disabled={isTransitioning} />
 
             <div style={{
                 position: "relative",
@@ -86,8 +87,8 @@ function HomePage() {
                         initial={isFirstLoad ? false : "enter"}
                         animate="center"
                         exit="exit"
-                        transition={{duration: 0.6, ease: "easeInOut"}}
-                        style={{width: "100%", height: "100%"}}
+                        transition={{ duration: 0.6, ease: "easeInOut" }}
+                        style={{ width: "100%", height: "100%" }}
                     >
                         <div style={{
                             position: "relative",
@@ -97,21 +98,22 @@ function HomePage() {
                             <div className="container">
                                 {active === "development" ? (
                                     <>
-                                        <HomeBanner/>
-                                        <LogoScroll/>
-                                        <AboutScroll/>
-                                        <ServicesGrid/>
-                                        <PortfolioGrid/>
-                                        <WhyChoose/>
-                                        <Faq/>
+                                        <HomeBanner />
+                                        <LogoScroll />
+                                        <AboutScroll />
+                                        <ServicesGrid />
+                                        <PortfolioGrid />
+                                        <WhyChoose />
+                                        <Faq />
                                     </>
                                 ) : (
                                     <>
-                                        <CreativeMarketing/>
-                                        <LogoScroll/>
-                                        <AboutScrollMarketing/>
-                                        <PortfolioGridMarketing/>
-                                        <FaqMarketing/>
+                                        <CreativeMarketing />
+                                        <LogoScroll />
+                                        <AboutScrollMarketing />
+                                        <PortfolioGridMarketing />
+                                        <MarketingVideos />
+                                        <FaqMarketing />
                                     </>
                                 )}
                             </div>
@@ -128,10 +130,10 @@ function HomePage() {
                             position: "relative",
                             zIndex: -90,
                         }}></div>
-                        <Footer setFooterHeight={setFooterHeight}/>
+                        <Footer setFooterHeight={setFooterHeight} />
                     </>
                 ) : (
-                    <Footer setFooterHeight={setFooterHeight}/>
+                    <Footer setFooterHeight={setFooterHeight} />
                 )
             )}
         </section>

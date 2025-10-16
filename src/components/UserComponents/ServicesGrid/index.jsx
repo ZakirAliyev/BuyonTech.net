@@ -6,7 +6,7 @@ import design from "/src/assets/design.png"
 import adminPanel from "/src/assets/adminPanel.png"
 import seo from "/src/assets/seo.png"
 import technic from "/src/assets/technic.png"
-
+import dnsImage from '/src/assets/dnsImage.svg'
 function ServicesGrid() {
     return (
         <section id={"servicesGrid"}>
@@ -17,7 +17,7 @@ function ServicesGrid() {
                         <h2>Mobil App Development</h2>
                         <p>We design and build user-friendly mobile applications for iOS and Android, tailored to your
                             business needs.</p>
-                        <img src={mobileApp} alt={"Image"} className={"mobileApp"}/>
+                        <img src={mobileApp} alt={"Image"} className={"mobileApp"} />
                     </div>
                     <div className="divdiv div2">
                         <div>
@@ -26,7 +26,7 @@ function ServicesGrid() {
                                 your
                                 business needs.</p>
                         </div>
-                        <img src={macbook} alt={"Image"} className={"macbook"}/>
+                        <img src={macbook} alt={"Image"} className={"macbook"} />
                     </div>
                     <div className="div div3 div100" style={{
                         color: "black"
@@ -37,16 +37,24 @@ function ServicesGrid() {
                                 your
                                 business needs.</p>
                         </div>
-                        <img src={tablet} alt={"Image"} className={"tablet"}/>
+                        <img src={tablet} alt={"Image"} className={"tablet"} />
                     </div>
-                    <div className="div div4"></div>
+                    <div className="div div4">
+                        <div>
+                            <h2>Domain & Hosting Setup</h2>
+                            <p>
+                                Your website’s domain name is registered and hosted on a reliable server.
+                            </p>
+                        </div>
+                        <img src={dnsImage} alt={"Image"} className={"mobileApp"} />
+                    </div>
                     <div className="divdivdiv div5">
                         <h2>Design & UI/UX</h2>
                         <p style={{
                             maxWidth: '280px',
                             width: '100%'
                         }}>A modern design is created, ensuring a smooth and user-friendly experience.</p>
-                        <img src={design} alt={"Image"} className={"design"}/>
+                        <img src={design} alt={"Image"} className={"design"} />
                     </div>
                     <div className="divdivdiv div6" style={{
                         color: "black"
@@ -56,14 +64,14 @@ function ServicesGrid() {
                             maxWidth: '280px',
                             width: '100%'
                         }}>A modern design is created, ensuring a smooth and user-friendly experience.</p>
-                        <img src={adminPanel} alt={"Image"} className={"adminPanel"}/>
+                        <img src={adminPanel} alt={"Image"} className={"adminPanel"} />
                     </div>
                     <div className="div div3 div100 div7">
                         <div>
                             <h2>Payment System Integration</h2>
                             <p>Customers can pay via card, cash, or bank transfer.</p>
                         </div>
-                        <img src={tablet} alt={"Image"} className={"tablet"}/>
+                        <img src={tablet} alt={"Image"} className={"tablet"} />
                     </div>
                     <div className="div div3 div100 div8" style={{
                         color: "black"
@@ -73,14 +81,14 @@ function ServicesGrid() {
                             <p>Optimization is applied so your website ranks better on Google and other search
                                 engines.</p>
                         </div>
-                        <img src={seo} alt={"Image"} className={"seo"}/>
+                        <img src={seo} alt={"Image"} className={"seo"} />
                     </div>
                     <div className="div div3 div100 div9">
                         <div>
                             <h2>Technical Support & Updates</h2>
                             <p>Continuous technical support and regular updates are provided after launch.</p>
                         </div>
-                        <img src={technic} alt={"Image"} className={"technic"}/>
+                        <img src={technic} alt={"Image"} className={"technic"} />
                     </div>
                 </div>
             </div>

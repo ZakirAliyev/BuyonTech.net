@@ -65,9 +65,13 @@
 
   .divdiv {
     padding: 32px;
-    height: 350px;
     color: #000000;
     position: relative;
+
+    @media screen and (max-width:768px) {
+      height: 350px;
+
+    }
 
     h2 {
       font-size: 24px;
@@ -86,7 +90,7 @@
     padding: 32px;
     color: #ffffff;
 
-    @media screen and (max-width: 992px){
+    @media screen and (max-width: 768px) {
       height: 300px;
     }
 
@@ -184,7 +188,7 @@
   // Mobil uyğunlaşma
   @media (max-width: 768px) {
     .parent {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       grid-template-rows: auto;
     }
 
@@ -225,7 +229,7 @@
     bottom: 0;
     right: 128px;
 
-    @media screen and (max-width: 992px){
+    @media screen and (max-width: 992px) {
       left: 50%;
       transform: translate(-50%);
       bottom: 16px;
@@ -266,7 +270,7 @@
     bottom: 16px;
     height: 150px;
 
-    @media screen and (max-width: 992px){
+    @media screen and (max-width: 992px) {
       left: 50%;
       transform: translateX(-50%);
       height: 45%;

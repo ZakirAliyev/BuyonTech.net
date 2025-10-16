@@ -30,16 +30,22 @@
     gap: 8px;
     border: none;
     border-radius: 8px;
-    background: var(--text-color-secondary);
+    background: #FB0;
     color: var(--bg-color);
     padding: 8px 24px;
     font-size: 16px;
     margin-top: 16px;
 
     @media screen and (max-width: 992px) {
-      font-size: 14px;
+      font-size: 16px;
       padding: 4px 24px;
+   width: 100%;
+   max-width: 280px;
     }
+        @media screen and (max-width:576px) {
+max-width: 90%;
+        }
+
   }
 
   .text-container {
@@ -64,6 +70,13 @@
     flex-direction: row;
     align-items: center;
     gap: 16px;
+
+    @media screen and (max-width: 992px) {
+      font-size: 28px;
+      line-height: normal;
+      gap: 8px;
+
+    }
   }
 
   .discoverColor {
@@ -73,6 +86,12 @@
   .rocket {
     height: 55px;
     margin-left: 5px;
+
+    @media screen and (max-width:992px) {
+      width: 32px;
+      height: 32px;
+      aspect-ratio: 1/1;
+    }
   }
 
   /* index.scss */
@@ -88,5 +107,9 @@
     transform: translateZ(0);
     backface-visibility: hidden;
     margin-right: 10px;
+
+    @media screen and (max-width:992px) {
+      font-size: 19px;
+    }
   }
 }
