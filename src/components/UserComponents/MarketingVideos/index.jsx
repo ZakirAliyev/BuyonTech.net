@@ -74,7 +74,6 @@ const MarketingVideos = () => {
                             </div>
                         </div>
                     </div>
-
                     <div className="marketingCardBox">
                         <div className="col-6 col-md-12 col-sm-12 col-xs-12">
                             <div className="marketingTextBoxs">

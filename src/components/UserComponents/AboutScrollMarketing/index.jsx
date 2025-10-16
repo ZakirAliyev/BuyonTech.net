@@ -1,7 +1,8 @@
-import {useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 import './index.scss';
-import {BsArrowRight} from "react-icons/bs";
+import { BsArrowRight } from "react-icons/bs";
 import rocket from "/src/assets/rocket.png"
+import { useNavigate } from 'react-router';
 
 const AboutScrollMarketing = () => {
     const text = "Our story is built on creativity and strategy that make every campaign stand out. We combine data-driven insights with fresh ideas to craft marketing that works. From small startups to established brands, we adapt our approach to fit every need. Discover how we help businesses grow and why so many trust us."
@@ -55,13 +56,21 @@ const AboutScrollMarketing = () => {
         };
     }, []);
 
+    const navigate = useNavigate()
+    const handleClickLink = (navigator) => {
+        navigate(navigator)
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
     return (
         <section id="aboutScrollMarketing" ref={sectionRef}>
             <div className={"aboutText"}>( {' '} About {' '} )</div>
             <div className={"discover"}>Discover
                 <div className={"discoverColor"}>Who</div>
                 We Are
-                <img src={rocket} alt={"Image"} className={"rocket"}/>
+                <img src={rocket} alt={"Image"} className={"rocket"} />
             </div>
             <div className="text-container">
                 {words.map((word, index) => (
@@ -70,9 +79,11 @@ const AboutScrollMarketing = () => {
                     </span>
                 ))}
             </div>
-            <button>
+            <button onClick={()=>{
+                handleClickLink('/about')
+            }}>
                 Learn More
-                <BsArrowRight/>
+                <BsArrowRight />
             </button>
         </section>
     );

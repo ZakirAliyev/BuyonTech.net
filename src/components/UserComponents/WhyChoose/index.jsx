@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import './index.scss';
 import { TbUserCheck } from "react-icons/tb";
+import { useNavigate } from "react-router";
 
 function WhyChoose() {
 
@@ -68,14 +69,23 @@ function WhyChoose() {
         return () => observer.disconnect();
     }, []);
 
-
+    const navigate = useNavigate()
+    const handleClickLink = (navigator) => {
+        navigate(navigator)
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
     return (
         <div style={{ background: 'var(--bg-color)', width: '100%', position: 'relative', zIndex: '10' }}>
             <div className="container" style={{ maxWidth: "1200px" }}>
                 <section id="whyChoose" ref={sectionRef} style={{ minHeight: sectionHeight }}>
                     <div className="centerContent" ref={centerContentRef}>
                         <h2>Why Choose BuyonTech for Your Next Big Idea?</h2>
-                        <button>Contact Us</button>
+                        <button onClick={() => {
+                            handleClickLink('/contact')
+                        }}>Contact Us</button>
                     </div>
 
                     <div className="cards">
@@ -96,7 +106,9 @@ function WhyChoose() {
                         ))}
                     </div>
                     <div className="choseBtn">
-                        <button>
+                        <button onClick={() => {
+                            handleClickLink('/contact')
+                        }}>
                             Contact Us
                         </button>
                     </div>

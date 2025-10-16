@@ -7,7 +7,13 @@ import arxaVideo from "/src/assets/arxaVideo.mp4"
 function HomeBanner() {
     const {t} = useTranslation();
     const navigate = useNavigate();
-
+    const handleClickLink = (navigator) => {
+        navigate(navigator)
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
     return (
         <section id="homeBanner">
             <div className="container">
@@ -24,7 +30,9 @@ function HomeBanner() {
                             Let’s transform your ideas into powerful digital solutions that work for
                             you and grow with your success.
                         </p>
-                        <button>
+                        <button onClick={()=>{
+                            handleClickLink('/contact')
+                        }}>
                             <svg width="20" height="20" viewBox="0 0 25 25" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path

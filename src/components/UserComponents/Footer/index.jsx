@@ -1,11 +1,12 @@
 import './index.scss'
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 import mavisi from "/src/assets/mavisi.png"
 import sarisi from "/src/assets/sarisi.png"
-import {useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
+import { useNavigate } from 'react-router';
 
-function Footer({setFooterHeight}) {
-    const {t} = useTranslation();
+function Footer({ setFooterHeight }) {
+    const { t } = useTranslation();
     const footerRef = useRef(null);
 
     useEffect(() => {
@@ -20,17 +21,32 @@ function Footer({setFooterHeight}) {
             setFooterHeight(newHeight);
         }
     }, [setFooterHeight]);
-
+    const navigate = useNavigate()
+    const handleClickLink = (navigator) => {
+        navigate(navigator)
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
     return (
         <section id="footer" ref={footerRef}>
             <div className="container">
                 <div className="row">
                     <div className="col-4 col-md-6 col-sm-12 col-xs-12">
                         <div className="title">Navigation</div>
-                        <p>Development</p>
-                        <p>Marketing</p>
-                        <p>About</p>
-                        <p>Portfolio</p>
+                        <p onClick={() => {
+                            handleClickLink('/')
+                        }}>Development</p>
+                        <p onClick={() => {
+                            handleClickLink('/')
+                        }}>Marketing</p>
+                        <p onClick={() => {
+                            handleClickLink('/about')
+                        }}>About</p>
+                        <p onClick={() => {
+                            handleClickLink('/our-works')
+                        }}>Portfolio</p>
                         <p>FAQ</p>
                     </div>
                     <div className="col-4 col-md-6 col-sm-12 col-xs-12">
@@ -51,13 +67,13 @@ function Footer({setFooterHeight}) {
                     <div className="portugal col-6 col-md-12 col-xs-12 col-sm-12">
                         © 2025 Agero. All rights reserved.
                     </div>
-                    <div className="col-6 col-md-12 col-xs-12 col-sm-12 portugal" style={{textAlign: "right"}}>
+                    <div className="col-6 col-md-12 col-xs-12 col-sm-12 portugal" style={{ textAlign: "right" }}>
                         Created by Buyontech
                     </div>
                 </div>
                 <div className="bottomFooter">BUYONTECH</div>
-                <img src={mavisi} alt="Image" className="mavisi"/>
-                <img src={sarisi} alt="Image" className="sarisi"/>
+                <img src={mavisi} alt="Image" className="mavisi" />
+                <img src={sarisi} alt="Image" className="sarisi" />
                 <div className="design"></div>
             </div>
         </section>

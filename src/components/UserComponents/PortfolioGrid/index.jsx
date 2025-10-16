@@ -2,10 +2,18 @@ import './index.scss'
 import WorkCard from "../WorkCard/index.jsx";
 import mid from "../../../assets/mid.png";
 import nas from "../../../assets/nas.png";
-import {IoIosArrowForward} from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+import { useNavigate } from 'react-router';
 
 function PortfolioGrid() {
-
+    const navigate = useNavigate()
+    const handleClickLink = (navigator) => {
+        navigate(navigator)
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
     const worksData = [
         {
             id: 1,
@@ -31,7 +39,7 @@ function PortfolioGrid() {
         <section id={"portfolioGrid"}>
             <div className={"container"}>
                 <div className={"portfolioText"}>PORTFOLIO</div>
-                <div  className='portfolioCards' >
+                <div className='portfolioCards' >
                     {worksData.map((work) => (
                         <WorkCard key={work.id} {...work} />
                     ))}
@@ -41,23 +49,25 @@ function PortfolioGrid() {
                         <div className="arrowWrapper">
                             <div className="arrowTrack">
                                 {Array(20).fill().map((_, i) => (
-                                    <IoIosArrowForward key={i} className="icon"/>
+                                    <IoIosArrowForward key={i} className="icon" />
                                 ))}
                                 {Array(20).fill().map((_, i) => (
-                                    <IoIosArrowForward key={`dup-${i}`} className="icon"/>
+                                    <IoIosArrowForward key={`dup-${i}`} className="icon" />
                                 ))}
                             </div>
                         </div>
 
-                        <div className="span">VIEW ALL</div>
+                        <div className="span" onClick={() => {
+                            handleClickLink('/our-works')
+                        }}>VIEW ALL</div>
 
                         <div className="arrowWrapper">
                             <div className="arrowTrack">
                                 {Array(20).fill().map((_, i) => (
-                                    <IoIosArrowForward key={i} className="icon"/>
+                                    <IoIosArrowForward key={i} className="icon" />
                                 ))}
                                 {Array(20).fill().map((_, i) => (
-                                    <IoIosArrowForward key={`dup-${i}`} className="icon"/>
+                                    <IoIosArrowForward key={`dup-${i}`} className="icon" />
                                 ))}
                             </div>
                         </div>

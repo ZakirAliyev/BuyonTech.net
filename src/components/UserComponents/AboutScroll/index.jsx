@@ -1,7 +1,8 @@
-import {useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 import './index.scss';
-import {FaArrowAltCircleRight} from "react-icons/fa";
-import {BsArrowRight} from "react-icons/bs";
+import { FaArrowAltCircleRight } from "react-icons/fa";
+import { BsArrowRight } from "react-icons/bs";
+import { useNavigate } from 'react-router';
 
 const AboutSection = () => {
     const text = "We create secure, scalable, and modern digital solutions designed to fit your business goals. Our focus is on turning ideas into powerful products that help you grow.";
@@ -54,7 +55,14 @@ const AboutSection = () => {
             }
         };
     }, []);
-
+    const navigate = useNavigate()
+    const handleClickLink = (navigator) => {
+        navigate(navigator)
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
     return (
         <section id="aboutSection" ref={sectionRef}>
             <div className={"aboutText"}>( {' '} About {' '} )</div>
@@ -65,9 +73,11 @@ const AboutSection = () => {
                     </span>
                 ))}
             </div>
-            <button>
+            <button onClick={()=>{
+                handleClickLink('/about')
+            }}>
                 Learn More
-                <BsArrowRight/>
+                <BsArrowRight />
             </button>
         </section>
     );
