@@ -1,0 +1,109 @@
+@use './mixin' as *; // mixinləri namespace-siz istifadə etmək üçün
+
+.scrolled {
+    top: 10px !important;
+}
+
+#adminHeader {
+    position: fixed;
+    top: 24px;
+    width: 100%;
+    padding: 0 25px;
+
+    z-index: 15;
+    transition: top 0.3s ease;
+
+
+
+    .adminHeaderInside {
+        padding: 25px 32px 25px;
+        width: 100%;
+        border-radius: 10px;
+        background: #FFF;
+        @include flex(flex, center, space-between);
+
+        .adminHeaderLeft {
+            img {
+                width: 100px;
+                height: 65px;
+                flex-shrink: 0;
+                aspect-ratio: 20/13;
+            }
+        }
+
+        .adminHeaderRight {
+            @include flex;
+            gap: 16px;
+
+            .adminImage {
+                img {
+                    width: 40px;
+                    height: 40px;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                }
+            }
+
+            .adminImageRight {
+                color: #000;
+                text-align: center;
+                font-family: Inter;
+                @include flex;
+                gap: 6px;
+                @include text(18px, 500, normal, normal);
+                position: relative;
+cursor: pointer;
+                .activeAdminDrop {
+                    transform: scale(1) !important;
+                    opacity: 1 !important;
+
+
+                }
+
+                .adminImageRightDrop {
+                    position: absolute;
+                    font-size: 0.9rem;
+                    margin-top: 0;
+                    top: 48px;
+                    right: 0;
+                    z-index: 10;
+                    margin: 0.125rem 0 0;
+                    color: #333333;
+                    text-align: left;
+                    list-style: none;
+                    background-color: #ffffff;
+                    background-clip: padding-box;
+                    left: auto;
+                    border: none;
+                    padding: 18px 12px 18px;
+
+                    border-radius: 4px;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                    min-width: 8rem !important;
+
+             transform: scale(0.8);
+  transform-origin: top right;
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+
+
+
+                    p {
+                        cursor: pointer;
+                        font-size: 0.875rem;
+                        color: #333333;
+
+                        line-height: 1;
+                        padding-left: 15px;
+
+                        &:hover {
+                            background-color: #f5f5f5;
+                            color: #000;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

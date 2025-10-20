@@ -4,9 +4,10 @@ import Cookies from "js-cookie";
 export const userApi = createApi({
     reducerPath: 'userApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://buyonidatech-production.up.railway.app/api/',
+        baseUrl: 'https://buyonidatech-production.up.railway.app/api/',
         prepareHeaders: (headers) => {
-            const token = Cookies.get('userToken');
+            const token = Cookies.get('adminToken') || sessionStorage.getItem('adminToken');
+
             if (token) {
                 headers.set('Authorization', `Bearer ${token}`);
             }

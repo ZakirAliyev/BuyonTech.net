@@ -1,0 +1,71 @@
+@use './mixin' as *; // mixinləri namespace-siz istifadə etmək üçün
+
+
+#sidebar {
+
+    display: inline-flex;
+    padding: 24px 0 0 0;
+    flex-direction: column;
+    border-radius: 12px;
+    background: #FFF;
+    align-items: center;
+    gap: 24px;
+
+    .logo {
+        align-self: stretch;
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        @include text(16px, 400, normal, normal);
+        padding-bottom: 16px;
+        border-bottom: 1px solid #E6E6E6;
+    }
+
+    .sidebarMenu {
+        width: 100%;
+        padding: 0 24px;
+        gap: 12px;
+        @include flex;
+        flex-direction: column;
+
+        .activeLi {
+            border-radius: 10px;
+            background: #B8B307;
+
+            a {
+                color: #FFF;
+            }
+        }
+
+        li {
+            padding: 12px 0;
+            width: 100%;
+            transition: background-color 0.3s ease; // 🔑 Hover üçün smooth keçid
+            border-radius: 10px;
+
+            &:hover {
+                border-radius: 10px;
+                background: #B8B307;
+
+                a {
+                    color: #FFF;
+                }
+            }
+
+            a {
+                color: #000;
+                text-align: center;
+                font-family: Inter;
+                @include text(18px, 600, normal, normal);
+                width: 100%;
+                display: block;
+                transition: color 0.3s ease; // 🔑 yazının rəngi smooth dəyişsin
+
+
+
+            }
+
+
+        }
+    }
+}

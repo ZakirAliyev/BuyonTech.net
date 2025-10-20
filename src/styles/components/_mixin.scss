@@ -1,0 +1,34 @@
+// ==== Flex Helper Mixin ====
+@mixin flex($df: flex, $aic: center, $jcc: center) {
+    display: $df;
+    align-items: $aic;
+    justify-content: $jcc;
+}
+
+@mixin padding($first: 14px, $second: 32px) {
+    padding: $first $second;
+}
+
+// ==== Typography Mixin ====
+@mixin text($size, $weight, $lineHeight: normal, $style: normal) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lineHeight;
+    font-style: $style;
+}
+
+// ==== Focus Ring (opsional) ====
+@mixin focus-ring($color: rgba(184,179,7,.35)) {
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px $color;
+  }
+}
+
+// ==== Reduce Motion Safe (opsional) ====
+@mixin safe-animate {
+  @media (prefers-reduced-motion: reduce) {
+    transition: none !important;
+    animation: none !important;
+  }
+}

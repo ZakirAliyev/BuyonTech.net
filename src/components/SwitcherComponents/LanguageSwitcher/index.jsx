@@ -1,19 +1,81 @@
-import { useTranslation } from 'react-i18next';
-import {useLanguage} from "../../../context/LanguageContext/index.jsx";
+import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "../../../context/LanguageContext";
 
-const LanguageSwitcher = () => {
-    const { language, changeLanguage } = useLanguage();
-    const { t } = useTranslation();
+const OPTIONS = [
+  { value: "az", short: "Az", label: "Azərbaycan" },
+  { value: "en", short: "En", label: "English" },
+];
 
-    return (
-        <div>
-            <h1>{t('welcome')}</h1>
-            <p>Aktif Dil: {language}</p>
-            <button onClick={() => changeLanguage('az')}>Azərbaycanca</button>
-            <button onClick={() => changeLanguage('en')}>English</button>
-            <button onClick={() => changeLanguage('ru')}>Русский</button>
-        </div>
-    );
-};
+export default function LanguageSelect() {
+  const { language, changeLanguage } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const [val, setVal] = useState(language);
+  const rootRef = useRef(null);
 
-export default LanguageSwitcher;
+  const current = OPTIONS.find((o) => o.value === val) || OPTIONS[0];
+
+  useEffect(() => {
+    setVal(language);
+  }, [language]);
+
+  // outside click
+  useEffect(() => {
+    const onDoc = (e) => {
+      if (rootRef.current && !rootRef.current.contains(e.target)) setOpen(false);
+    };
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, []);
+
+  const choose = (newVal) => {
+    setVal(newVal);
+    changeLanguage(newVal);
+    setOpen(false);
+  };
+
+  return (
+    <div className="lang" ref={rootRef}>
+      {/* Trigger */}
+      <button
+        type="button"
+        className="lang__btn"
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+      >
+        <span className="lang__short">{current.short}</span>
+        <svg
+          className={`lang__caret ${open ? "is-open" : ""}`}
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M7 10l5 5 5-5"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+
+      {/* Dropdown */}
+      <ul className={`lang__menu ${open ? "is-open2" : ""}`} role="listbox">
+        {OPTIONS.map((opt) => (
+          <li
+            key={opt.value}
+            role="option"
+            aria-selected={opt.value === val}
+            className={`lang__item ${opt.value === val ? "is-active" : ""}`}
+            onClick={() => choose(opt.value)}
+            tabIndex={0}
+          >
+            {opt.label}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

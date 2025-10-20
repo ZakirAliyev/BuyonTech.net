@@ -1,0 +1,473 @@
+@use './mixin' as *; // mixinləri namespace-siz istifadə etmək üçün
+
+.detailGuest {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 33;
+    background: rgba(0, 0, 0, 0.65);
+    @include flex;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+
+    &.activePopupDetail {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        visibility: visible !important;
+
+        .popupInsideDetail {
+            transform: scale(1) !important;
+            opacity: 1 !important;
+        }
+    }
+
+    .popupInsideDetail {
+        transform: scale(0.3);
+        opacity: 0;
+        transition: all 0.3s ease;
+        width: 100%;
+        @include flex;
+        position: relative;
+
+        .guestClose {
+            position: absolute;
+            top: -10px;
+            right: 590px;
+            background: none;
+            cursor: pointer;
+            border: none;
+            svg{
+                color: white;
+                font-size: 28px;
+            }
+        }
+
+        .guestCardWrap {
+            perspective: 1000px;
+            width: 100%;
+            background: transparent;
+        }
+
+        .guestCard {
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+            width: 90%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 4px;
+            background-size: 100% 300px;
+
+
+
+
+            /* Flip olunmuş vəziyyət */
+            &.is-flipped {
+                transform: rotateY(180deg);
+
+                .guestCard__front {
+                    display: none;
+                }
+
+                .guestCard__face2 {
+                    backface-visibility: visible;
+                    -webkit-backface-visibility: visible;
+                }
+            }
+
+            .guestCard__face {
+                position: absolute;
+                inset: 0;
+                z-index: 5;
+                border-radius: 4px;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 0;
+            }
+
+            .guestCard__face2 {
+                position: absolute;
+                z-index: 5;
+                border-radius: 4px;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 0;
+            }
+
+
+            .guestCard__front {
+                @include flex;
+                flex-direction: column;
+                position: relative;
+                width: 100%;
+                margin-top: 20px;
+                padding: 0 10px;
+
+                height: 100%;
+
+                .guestSvg6 {
+                    position: absolute;
+                    left: 5px;
+                    top: -25px;
+                    transform: rotate(30deg);
+
+                    svg {
+                        width: 123px;
+                        height: 103px;
+                    }
+
+
+                }
+
+                .guestSvg5 {
+                    position: absolute;
+                    right: -5px;
+                    bottom: -18px;
+                    transform: rotate(28deg);
+
+                    svg {
+                        width: 104px;
+                        height: 141px;
+                    }
+
+
+
+
+                }
+
+                .guestTextBox {
+                    text-align: center;
+                    @include flex;
+                    position: relative;
+                    z-index: 2;
+                    flex-direction: column;
+
+                    @media (max-width: 500px) {
+                        position: relative;
+                        margin-top: 30px;
+                        bottom: 20px;
+                    }
+
+                    p {
+                        margin-top: 8px;
+                        @include text(16px, 400, normal, normal);
+                        margin-bottom: 20px;
+                        color: #828282;
+                        text-align: center;
+                        font-family: "Helvetica Neue";
+
+
+                    }
+
+                    h3 {
+                        @include text(24px, 500, normal, normal);
+                        color: #333;
+
+                        text-align: center;
+                        font-family: "Helvetica Neue";
+
+                        @media (max-width:576px) {
+                            @include text(22px, 500, normal, normal);
+
+                        }
+
+
+                    }
+
+                    #guestBtns {
+                        @include padding(12px, 34px);
+                        font-weight: 400;
+                        border-radius: 80px;
+
+                        &:hover {
+                            background: #969105 !important;
+
+                        }
+
+                        &:active {
+                            background: #504303 !important;
+
+                        }
+
+                        @media (max-width: 770px) {
+                            width: 100%;
+                            margin-top: 30px;
+                            max-width: 200px !important;
+                            font-size: 17px !important;
+                        }
+
+
+                        @media (max-width: 567px) {
+                            width: 100%;
+                            margin-top: 30px;
+                            max-width: 120px !important;
+                            font-size: 15px !important;
+                        }
+
+
+
+
+                    }
+                }
+            }
+
+            .guestCard__back {
+                transform: rotateY(180deg);
+                width: 100%;
+                @include flex;
+                height: 300px;
+                display: flex !important;
+                align-items: start;
+                position: relative;
+
+                @media (max-width:756px) {
+                    margin-top: 10px;
+                }
+
+                .guestSvg7 {
+                    position: absolute;
+                    right: -4px;
+                    top: 0;
+                    width: 123px;
+                    height: 103px;
+
+
+                    svg {
+                        transform: rotate(90deg);
+                        width: 123px;
+                        height: 103px;
+
+                    }
+
+
+
+
+                }
+
+                .guestTextBox2 {
+                    position: relative;
+                    @include flex(flex, center, space-between);
+                    flex-direction: column;
+                    z-index: 2;
+                    height: 78%;
+                    padding-top: 20px;
+                    width: 100%;
+
+                    .ghost {
+                        @include padding(4px, 24px);
+                        transition: 0.3s linear;
+
+                        background: #B8B307;
+
+                    }
+
+                    .guestAllTexts {
+                        margin-top: 30px;
+
+                        p {
+                            margin-top: 8px;
+                            @include text(16px, 400, normal, normal);
+                            margin-bottom: 40px;
+                            color: #828282;
+
+                            &:first-child {
+                                text-align: center !important;
+                            }
+
+                            font-family: "Helvetica Neue";
+
+                            @media (max-width:576px) {
+                                @include text(15px, 500, normal, normal);
+
+                            }
+                        }
+
+                        h3 {
+                            @include text(20px, 500, normal, normal);
+                            color: #333;
+
+                            text-align: center;
+                            font-family: "Helvetica Neue";
+
+                            @media (max-width:576px) {
+                                @include text(20px, 500, normal, normal);
+
+                            }
+                        }
+
+                        .guestCard__desc {
+                            max-height: 96px;
+                            max-width: 320px;
+                            overflow: hidden;
+                            padding: 0 8px 0 15px;
+                            display: -webkit-box;
+                            margin: 0 auto;
+                            -webkit-line-clamp: 4;
+                            -webkit-box-orient: vertical;
+                            line-height: 1.35;
+                            margin-bottom: 16px;
+
+
+                        }
+
+
+
+                        .country {
+                            text-align: center;
+                        }
+                    }
+
+
+                    button {
+                        border-radius: 80px;
+                        background: linear-gradient(263deg, #B2B807 10.81%, #B8B307 50%, #B8AC07 69.59%, #B8AC07 89.19%);
+
+                    }
+
+                }
+
+            }
+
+
+
+        }
+    }
+}
+
+:root {
+    --card-bg: #ffffff;
+    --card-fg: #1a1a1a;
+    --muted: #60646c;
+    --border: #e9e9ee;
+    --surface: #ffffff;
+
+    --radius: 14px;
+    --shadow: 0 12px 32px rgba(17, 24, 39, 0.12);
+    --space-4: 20px;
+}
+
+.faqError,
+.faqEmpty {
+    color: var(--muted);
+    padding: var(--space-4);
+    text-align: center;
+}
+
+.fagWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 33;
+    background: rgba(0, 0, 0, 0.65);
+    @include flex;
+    padding: var(--space-4);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+
+    &.activeFagDetail {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        visibility: visible !important;
+
+        .faqDetailCard {
+            transform: scale(1) !important;
+            opacity: 1 !important;
+        }
+    }
+
+    .faqDetailCard {
+        transform: scale(0.3);
+        opacity: 0;
+        transition: all 0.3s ease;
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-4);
+
+
+        .faqClose {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #fff;
+            border: 1px solid var(--border);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, .08);
+            color: #111;
+            cursor: pointer;
+            svg{
+                font-size: 18px !important; 
+            }
+        }
+
+        .faqCard {
+            width: 100%;
+            max-width: 720px;
+            min-width: 300px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+
+        }
+
+        .faqHeader {
+            padding: 16px 20px 16px 20px;
+            border-bottom: 1px solid var(--border);
+            background: #fafafa;
+            position: relative;
+        }
+
+        .faqTitle {
+            margin: 0;
+            color: var(--card-fg);
+            font-weight: 700;
+            width: 100%;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            padding-right: 40px;
+            word-break: break-word;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .faqBody {
+            padding: 16px 20px;
+        }
+
+        .faqAnswer {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+    }
+}

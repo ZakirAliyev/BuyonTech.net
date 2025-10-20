@@ -1,0 +1,98 @@
+@use './mixin' as *; // mixinləri namespace-siz istifadə etmək üçün
+
+
+/* === Rəng tokenləri (istəsən variables.scss-ə daşıya bilərsən) === */
+$brand-olive: #B8B307;
+$brand-olive-600: #969105;
+$brand-olive-800: #504303;
+$text-on-brand: #FFFFFF;
+$text-dark: #000000;
+
+/* === Ölçü tokenləri === */
+$btn-radius: 8px;
+$btn-gap: 10px;
+$btn-pad-y: clamp(12px, 1.6vw, 12px);
+$btn-pad-x: clamp(20px, 3.2vw, 32px);
+$btn-fz: clamp(14px, 1.2vw, 16px);
+$btn-transition: 200ms ease;
+
+/* === Base Placeholder === */
+%btn-base {
+    @include flex; // mərkəzləndir
+    gap: $btn-gap;
+    border-radius: $btn-radius;
+    @include text($btn-fz, 500, normal, normal);
+    @include padding($btn-pad-y, $btn-pad-x);
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    transition:
+        background-color $btn-transition,
+        color $btn-transition,
+        border-color $btn-transition,
+        transform $btn-transition;
+
+    @include focus-ring(); // klaviatura fokus üçün
+    @include safe-animate;
+
+    &:disabled,
+    &[aria-disabled='true'] {
+        opacity: .55;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+/* === Primary (green) === */
+.greenBtn {
+    @extend %btn-base;
+    background: $brand-olive;
+    border-color: $brand-olive;
+    color: $text-on-brand;
+
+    @media (hover: hover) {
+        &:hover {
+            background: $brand-olive-600;
+        }
+    }
+
+    &:active {
+        background: $brand-olive-800;
+        transform: translateY(1px);
+    }
+}
+
+/* === Outline (white) === */
+.whiteBtn {
+    @extend %btn-base;
+    background: #fff;
+    border-color: $brand-olive;
+    color: $text-dark;
+    @include padding($btn-pad-y, 24px);
+
+    @media (hover: hover) {
+        &:hover {
+            background: $brand-olive;
+            color: $text-on-brand;
+            border-color: $brand-olive;
+        }
+    }
+
+    &:active {
+        background: $brand-olive-800;
+        color: $text-on-brand;
+        border-color: $brand-olive-800;
+        transform: translateY(1px);
+    }
+}
+
+/* === (Opsional) Ölçü modifierləri === */
+.btn--sm {
+    @include text(13px, 500);
+    @include padding(8px, 16px);
+}
+
+.btn--lg {
+    @include text(18px, 600);
+    @include padding(16px, 36px);
+}

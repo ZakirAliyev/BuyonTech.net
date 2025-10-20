@@ -1,0 +1,33 @@
+@use './Login/login';
+@use './Guest/adminGuest';
+
+#adminMain{
+    margin-top: 106px;
+}
+.adminGridLayout {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar content";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 308px 1fr;
+    min-height: 100dvh;
+}
+
+/* Header */
+.adminGridLayout> :nth-child(1) {
+    grid-area: header;
+}
+
+/* Sidebar */
+.adminGridLayout> :nth-child(2) {
+    grid-area: sidebar;
+    padding: 20px;
+    margin: 106px 0 24px 24px;
+}
+
+/* Content (Outlet) */
+.adminGridLayout> :nth-child(3) {
+    grid-area: content;
+    overflow-y: auto;
+}

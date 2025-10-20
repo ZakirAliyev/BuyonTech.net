@@ -1,1 +1,14 @@
 @use './theme' as *;
+
+@use './components/buttons';
+@use './components/tableTop';
+@use './components/details';
+@use './components/formElements';
+@use './components/loading';
+@use './components/popup';
+@use './components/customSelectBox';
+@use './components/language';
+@use './components/mixin' as *; // mixinləri namespace-siz istifadə etmək üçün
+@use './components/adminHeader';
+@use './components/adminSidebar';
+@use './components/Admin/admin';

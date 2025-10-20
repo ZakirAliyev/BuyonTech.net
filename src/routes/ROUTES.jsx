@@ -6,6 +6,8 @@ import CaseStudyHeaderMarketing from "../components/UserComponents/CaseStudyHead
 import ContactPage from "../pages/UserPages/ContactPage/index.jsx";
 import NotFoundPage from "../pages/UserPages/NotFoundPage/index.jsx";
 import AboutPage from "../pages/UserPages/AboutPage/index.jsx";
+import AdminLogin from "../pages/AdminPages/Login/index.jsx";
+import AdminRoot from "../pages/AdminPages/index.jsx";
 
 export const ROUTES = [
     {
@@ -40,6 +42,20 @@ export const ROUTES = [
                 path: 'about',
                 element: <AboutPage />,
             },
+        ]
+    },
+    {
+        path: '/login',
+        element: <AdminLogin />
+    },
+    {
+        path:'/admin',
+        element:<AdminRoot/>,
+        children:[
+            {
+                index:true,
+                // element
+            }
         ]
     }
 ];

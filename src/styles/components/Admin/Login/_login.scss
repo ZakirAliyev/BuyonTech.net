@@ -1,0 +1,160 @@
+@use '../../mixin' as *;
+
+#adminLogin {
+    .container {
+        height: 95dvh; // ekran boyu
+
+        .row {
+            .col-6 {
+                .LoginForm {
+                    height: 100%;
+                    @include flex;
+                    flex-direction: column;
+
+                    .LoginFormLogo {
+                        margin: 0 auto 64px;
+
+                        img {
+                            width: 109.433px;
+                            height: 72.557px;
+                            flex-shrink: 0;
+                        }
+                    }
+
+                    .LoginFormTitle {
+                        h1 {
+                            margin-bottom: 32px;
+                            color: #333;
+                            text-align: center;
+                            font-family: "Noto Serif";
+                            @include text(32px, 400, normal, normal);
+                        }
+                    }
+
+                    .LoginFormForm {
+                        button {
+                            height: 60px;
+                            padding: 18px 32px;
+                            @include flex;
+                            color: #FFF;
+                            width: 100%;
+                            font-family: "Helvetica Neue";
+                            gap: 10px;
+                            @include text(18px, 500, normal, normal);
+                            cursor: pointer;
+                            align-self: stretch;
+                            transition:
+                                background-color 200ms ease,
+                                color 200ms ease,
+                                border-color 200ms ease,
+                                transform 200ms ease;
+                            border-radius: 8px;
+                            border: 1px solid #B8B307;
+                            background: #B8B307;
+
+                            &:hover {
+                                background: #969105;
+                            }
+
+                            &:active {
+                                background: #504303;
+                                transform: translateY(1px);
+                            }
+                        }
+
+                        .rememberMe {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            margin-top: 20px;
+                            padding-bottom: 24px;
+                            border-bottom: 1px solid #CCC;
+                            margin-bottom: 24px;
+
+                            label {
+                                color: #666;
+                                cursor: pointer;
+                                display: flex;
+                                align-items: center;
+                                gap: 6px;
+
+                                @include text(12px, 400, normal, normal);
+
+                                input[type="checkbox"] {
+                                    accent-color: #4a90e2; // checkbox rəngi (istəsən dəyişə bilərsən)
+                                    width: 12px;
+                                    height: 12px;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+
+                        .passwordInputBox {
+                            margin-top: 16px;
+
+                            input {
+                                display: flex;
+                                height: 60px;
+                                width: 380px;
+                                padding: 0 0 0 20px;
+                                align-items: center;
+                                border-radius: 10px;
+                                border: 1px solid #999;
+                                background: #FFF;
+                                align-self: stretch;
+                                outline: none;
+                                color: #999;
+                                @include text(16px, 400, normal, normal);
+
+                                font-family: "Helvetica Neue";
+
+                                &::placeholder {
+                                    color: #999;
+
+                                }
+                            }
+                        }
+
+                        .emailInputBox {
+                            input {
+                                display: flex;
+                                height: 60px;
+                                width: 380px;
+                                padding: 0 0 0 20px;
+                                align-items: center;
+                                border-radius: 10px;
+                                border: 1px solid #999;
+                                background: #FFF;
+                                align-self: stretch;
+                                outline: none;
+                                color: #999;
+                                @include text(16px, 400, normal, normal);
+
+                                font-family: "Helvetica Neue";
+
+                                &::placeholder {
+                                    color: #999;
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .imgBox {
+                    width: 100%;
+                    height: 100%;
+
+                    img {
+                        max-height: 95dvh; // şəkil ekrandan böyük olmayacaq
+                        width: auto; // enini avtomatik saxlayır
+                        height: auto; // proporsiyanı qoruyur
+                        object-fit: contain;
+                        display: block;
+                        margin: 0 auto; // ortada qalsın
+                    }
+                }
+            }
+        }
+    }
+}

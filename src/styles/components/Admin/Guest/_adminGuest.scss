@@ -1,0 +1,114 @@
+@use '../../mixin' as *;
+
+#adminMain {
+    .customTable {
+        padding: 24px;
+        padding-top: 0;
+        width: 100%;
+
+        .customTableInside {
+            padding: 24px 24px 55px 24px;
+            border-radius: 10px;
+            background: #FFF;
+                  .tableWrapper {
+            max-height: 390px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        }
+
+  
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto; // sütunların balanslı paylanması üçün
+
+            thead {
+                position: sticky;
+                top: 0;
+                background: #FFF; // sticky üçün arxa fon vacibdir
+                z-index: 2;
+
+
+                tr {
+                    border-bottom: 1px solid #CCC;
+
+                    th {
+                        color: #666;
+                        padding: 12px 16px;
+                        font-family: Inter;
+                        @include text(14px, 400, normal, normal);
+
+                        &.data-col {
+                            text-align: left;
+                            width: auto;
+                        }
+
+                        &.action-col {
+                            text-align: center;
+                            width: 120px;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    border-bottom: 1px solid #CCC;
+
+                    td {
+                        color: #000;
+                        font-family: Inter;
+                        padding: 14px 16px;
+                        @include text(16px, 400, normal, normal);
+
+                        &.data-col {
+                            text-align: left;
+                            width: max-content;
+
+                        }
+
+                        &.action-col {
+                            text-align: center;
+                            width: 100px;
+                            vertical-align: middle;
+                        }
+
+                        .tableImageBox {
+                            @include flex(flex, center, start);
+                            gap: 16px;
+                            font-weight: 500;
+                            width: max-content;
+
+                            img {
+                                border-radius: 50%;
+                                width: 60px;
+                                height: 60px;
+                                aspect-ratio: 1/1;
+                                border: 1px solid #B2B2B2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+thead tr,
+tbody tr {
+    display: table-row; // table default
+}
+
+th,
+td {
+    display: table-cell; // default
+    text-align: left;
+}
+
+.text-center {
+    text-align: center; // ancaq istədiyimiz column ortalanır
+    vertical-align: middle;
+}

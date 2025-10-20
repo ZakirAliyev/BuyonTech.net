@@ -1,0 +1,97 @@
+@use './mixin' as *; // mixinləri namespace-siz istifadə etmək üçün
+
+.adminTableTop {
+    padding: 24px;
+    padding-top: 0;
+    width: 100%;
+
+    .adminTableTopInside {
+        @include flex (inline-flex, flex-start, space-between);
+        padding: 24px 32px;
+        border-radius: 10px;
+        background: #FFF;
+        width: 100%;
+
+        .adminTableTopInsideRight {
+            @include flex;
+            gap: 32px;
+
+            button {
+                cursor: pointer;
+                @include flex;
+                padding: 12px 16px;
+                gap: 6px;
+                border-radius: 6px;
+                border: 1px solid #B8B307;
+                color: #4D4D4D;
+                background: transparent;
+                text-align: center;
+                font-family: Inter;
+
+                @include text(14px, 400, normal, normal);
+                transition: 0.3s ease; // 🔑 Hover üçün smooth keçid
+
+
+                svg {
+                    path {
+                        transition: fill 0.3s ease; // 🔑 Hover üçün smooth keçid
+
+                    }
+                }
+
+                &:hover {
+                    background: #B8B307;
+
+                    color: #FFF;
+
+                    svg {
+                        path {
+                            fill: #FFF !important;
+                        }
+
+                    }
+                }
+            }
+
+        }
+
+        .adminTableTopInsideLeft {
+            position: relative;
+
+            .searchIcon {
+                position: absolute;
+                left: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            input {
+                display: flex;
+                height: 42px;
+                padding: 11px 0 11px 36px;
+                align-items: center;
+                border-radius: 6px;
+                width: 271px;
+                border: 1px solid #E6E6E6;
+                background: #FAFAFA;
+                color: #898787;
+                outline: none;
+                transition: 0.3s linear;
+
+                &::placeholder {
+                    color: #D1D1D1;
+
+                }
+
+                &:focus {
+                    border: 1px solid #B8B307;
+
+                }
+
+                font-family: Inter;
+                @include text(14px, 400, normal, normal);
+            }
+        }
+    }
+
+}

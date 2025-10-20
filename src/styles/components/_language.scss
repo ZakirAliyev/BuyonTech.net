@@ -1,0 +1,186 @@
+@use './mixin' as *; // mixinləri namespace-siz istifadə etmək üçün
+
+
+/* Rəng/ölçü tokenləri (istəsən variables.scss-ə daşı) */
+$menu-bg: #fff;
+$menu-border: #e6e6e6;
+$item-hover: #f5f5f5;
+$item-active-bg: #f0f7e6;
+$item-active-br: #B8B30733;
+
+.lang {
+  position: relative;
+  width: fit-content;
+  user-select: none;
+
+  /* Modifiers */
+  &.lang--right {
+
+    /* menunu sağdan hizala */
+    .lang__menu {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &.lang--compact {
+    .lang__btn {
+      padding: 4px 6px;
+    }
+
+    .lang__short {
+      @include text(14px, 500);
+    }
+  }
+
+  &__native {
+    display: none;
+  }
+
+  &__btn {
+    @include flex(flex, center, center);
+    gap: 6px;
+    background: transparent;
+    border: none;
+    padding: 8px 10px;
+    /* touch target ≥ 36px hündürlük */
+    cursor: pointer;
+    font: inherit;
+    color: #111;
+    outline: none;
+    border-radius: 8px;
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, .15);
+    }
+
+    /* Aria-expanded ilə caret animasiyası */
+    &[aria-expanded="true"]~.lang__menu,
+    &[data-open="true"]~.lang__menu {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+  }
+
+  &__short {
+    @include text(16px, 500);
+    letter-spacing: .2px;
+  }
+
+  &__caret {
+    transition: transform .15s ease;
+
+    /* həm .is-open class, həm də aria-expanded dəstəyi */
+    &.is-open {
+      transform: rotate(180deg);
+    }
+
+    [aria-expanded="true"] & {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__menu {
+  
+    position: absolute;
+    top: calc(100% + 6px);
+    left: -80px;
+    /* default sola çək */
+    min-width: 160px;
+    background: $menu-bg;
+    border: 1px solid $menu-border;
+    border-radius: 10px;
+    padding: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    z-index: 50;
+
+    /* Scroll oluna bilən uzun siyahılar üçün */
+    max-height: 60vh;
+    overflow: auto;
+
+    /* ilkin vəziyyət (gizli) */
+    opacity: 0;
+    transform: scale(0.95) translateY(-5px);
+    transform-origin: top center;
+    pointer-events: none;
+
+    transition:
+      opacity .28s cubic-bezier(0.16, 1, 0.3, 1),
+      transform .28s cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* həm .is-open2, həm .is-open dəstəklə */
+    &.is-open2,
+    &.is-open {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Kiçik ekranlarda sağa hizala (daşma olmasın) */
+    @media (max-width: 480px) {
+      left: auto;
+      right: 0;
+      min-width: 180px;
+    }
+  }
+
+  &__item {
+    padding: 14px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    @include text(14px, 500);
+  &:first-child{
+      margin-bottom: 5px;
+    }
+    &:hover {
+      background: $item-hover;
+    }
+
+    /* Klaviatura ilə seçim */
+    &:focus-visible {
+      outline: none;
+      box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .12);
+      background: $item-hover;
+    }
+
+    &.is-active {
+      background: $item-active-bg;
+      border: 1px solid $item-active-br;
+    }
+  }
+
+  /* RTL dəstəyi: menunu sağdan aç */
+  :dir(rtl) & {
+    .lang__menu {
+      left: auto;
+      right: -80px;
+    }
+  }
+
+  /* Az hərəkət istəyənlər üçün */
+  @media (prefers-reduced-motion: reduce) {
+    &__caret {
+      transition: none;
+    }
+
+    &__menu {
+      transition: none;
+    }
+  }
+}
+
+
+@media (max-width:1440px) {
+  .lang {
+
+    &__menu {
+      top: calc(100% + 6px);
+      left: -90px;
+
+    }
+
+
+
+  }
+}
