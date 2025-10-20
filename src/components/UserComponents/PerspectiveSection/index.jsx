@@ -7,11 +7,11 @@ const PerspectiveSection = () => {
                 <div className="row">
                     <div className="svgBoxLine">
                         <svg className='svg1' xmlns="http://www.w3.org/2000/svg" width="932" height="60" viewBox="0 0 932 60" fill="none">
-                            <path d="M1 24.0419C1 24.0419 86.1475 57.3147 226.483 57.9937C366.819 58.6727 525.761 4.12358 669.566 2.08647C813.37 0.0493674 931 34.6802 931 34.6802" stroke="#FFBB00" stroke-width="4" />
+                            <path d="M1 24.0419C1 24.0419 86.1475 57.3147 226.483 57.9937C366.819 58.6727 525.761 4.12358 669.566 2.08647C813.37 0.0493674 931 34.6802 931 34.6802" stroke="#FFBB00" strokeWidth="4" />
                         </svg>
 
                         <svg className='svg2' xmlns="http://www.w3.org/2000/svg" width="73" height="576" viewBox="0 0 73 576" fill="none">
-                            <path d="M43.8412 2C43.8412 2 2.84444 54.3703 2.00777 140.684C1.17109 226.998 68.3834 324.756 70.8934 413.204C73.4034 501.651 30.7334 574 30.7334 574" stroke="#FFBB00" stroke-width="4" />
+                            <path d="M43.8412 2C43.8412 2 2.84444 54.3703 2.00777 140.684C1.17109 226.998 68.3834 324.756 70.8934 413.204C73.4034 501.651 30.7334 574 30.7334 574" stroke="#FFBB00" strokeWidth="4" />
                         </svg>
                     </div>
                     <div className="col-4 col-md-12 col-sm-12 col-xs-12">
