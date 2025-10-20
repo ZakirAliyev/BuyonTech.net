@@ -1,3 +1,5 @@
+
+
 import './index.scss'
 import mobileApp from "/src/assets/mobileApp.png"
 import macbook from "/src/assets/macbook.png"

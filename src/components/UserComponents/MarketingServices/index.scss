@@ -1,0 +1,412 @@
+#marketingServices {
+  padding: 50px 0;
+  background: var(--bg-color);
+  position: relative;
+  z-index: 10;
+
+  .container {
+    padding: 0 8px;
+
+
+  }
+
+  .servicesText {
+    text-align: center;
+    font-size: 220px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    background: linear-gradient(180deg,
+        #D9D9D9 0%,
+        #ECECEC 30%,
+        rgba(255, 255, 255, 0.6) 80%,
+        rgba(255, 255, 255, 0) 100%);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+
+    @media screen and (max-width: 992px) {
+      font-size: 70px;
+    }
+
+    @media screen and (max-width:400px) {
+      font-size: 55px;
+    }
+  }
+
+  .cardBox1 {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+
+    @media screen and (max-width: 992px) {
+      flex-wrap: wrap;
+
+    }
+
+
+  }
+
+  .cardBoxs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -75px;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    @media screen and (max-width: 992px) {
+      margin-top: -25px;
+    }
+
+
+
+    .cubCard {
+
+      justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media screen and (max-width: 992px) {
+        flex-direction: column-reverse;
+
+      }
+
+    }
+
+    .duzCard {
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+
+      @media screen and (max-width: 992px) {
+        flex-direction: column;
+
+      }
+    }
+
+    .fourthCard {
+      width: 630px;
+      height: 308px;
+      flex-shrink: 0;
+      padding: 0 24px;
+
+      gap: 21px;
+
+
+      @media screen and (max-width: 992px) {
+        width: 70%;
+        height: 396px;
+        padding: 32px 24px 18px 24px;
+        gap: 41px;
+      }
+
+      @media screen and (max-width: 585px) {
+        width: 90%;
+
+      }
+
+      @media screen and (max-width: 468px) {
+        width: 100%;
+      }
+
+      img {
+        width: 220px;
+        height: 167px;
+        flex-shrink: 0;
+        aspect-ratio: 220/167;
+
+      }
+    }
+
+    .fifthCard {
+      width: 630px;
+      height: 308px;
+      flex-shrink: 0;
+      padding: 0 24px;
+      gap: 21px;
+
+      @media screen and (max-width: 992px) {
+        width: 70%;
+        height: 396px;
+        padding: 32px 24px 16px 24px;
+        gap: 18px;
+
+      }
+
+      @media screen and (max-width: 585px) {
+        width: 90%;
+
+      }
+
+      @media screen and (max-width: 468px) {
+        width: 100%;
+      }
+
+      img {
+        width: 200px;
+        height: 231px;
+        flex-shrink: 0;
+        aspect-ratio: 200/231;
+
+
+      }
+    }
+
+    .allCards {
+      border-radius: 20px;
+      background: #FFF;
+      border: 6px solid rgba(166, 166, 166, 0.15);
+
+      @media screen and (max-width: 992px) {
+        text-align: center;
+      }
+
+      .textBox {
+        h2 {
+          color: #333;
+          font-size: 22px;
+          font-weight: 600;
+          margin-bottom: 8px;
+
+          @media screen and (max-width: 992px) {
+            font-size: 26px;
+            margin-bottom: 12px;
+
+          }
+
+          @media screen and (max-width: 468px) {
+            font-size: 24px;
+
+
+          }
+
+          @media screen and (max-width: 390px) {
+            font-size: 22px;
+
+
+          }
+        }
+
+        p {
+          color: #666;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .firstCard {
+      width: 412px;
+      height: 412px;
+      padding: 24px 32px 39px 32px;
+
+      flex-shrink: 0;
+      gap: 40px;
+
+      @media screen and (max-width: 992px) {
+        width: 70%;
+
+        height: 396px;
+        padding: 32px 24px 12px 24px;
+        gap: 14px;
+      }
+
+      @media screen and (max-width: 585px) {
+        width: 90%;
+
+      }
+
+      @media screen and (max-width: 468px) {
+        width: 100%;
+
+      }
+
+      img {
+        width: 220px;
+        height: 220px;
+        aspect-ratio: 1/1;
+
+        @media screen and (max-width: 992px) {
+          width: 200px;
+          height: 200px;
+        }
+      }
+    }
+
+    .secondCard {
+      width: 412px;
+      gap: 40px;
+      height: 412px;
+      padding: 23px 38px 39px 26px;
+
+      @media screen and (max-width: 992px) {
+        width: 70%;
+
+        height: 396px;
+        padding: 32px 24px 12px 24px;
+        gap: 33px;
+      }
+
+      @media screen and (max-width: 585px) {
+        width: 90%;
+
+      }
+
+      @media screen and (max-width: 468px) {
+        width: 100%;
+
+      }
+
+      img {
+        width: 220px;
+        height: 220px;
+        aspect-ratio: 1/1;
+
+      }
+    }
+
+    .thirdCard {
+      width: 412px;
+      height: 412px;
+      padding: 23px 37px 39px 27px;
+      gap: 40px;
+
+      @media screen and (max-width: 992px) {
+        width: 70%;
+        height: 396px;
+        padding: 32px 24px 12px 24px;
+        gap: 33px;
+      }
+
+      @media screen and (max-width: 585px) {
+        width: 90%;
+
+      }
+
+      @media screen and (max-width: 468px) {
+        width: 100%;
+
+      }
+
+      img {
+        width: 220px;
+        height: 220px;
+        aspect-ratio: 1/1;
+
+        @media screen and (max-width: 992px) {
+          width: 200px;
+          height: 200px;
+        }
+      }
+    }
+
+    .sixthCard {
+      width: 412px;
+      height: 412px;
+      padding: 23px 32px 39px 32px;
+      gap: 40px;
+
+      @media screen and (max-width: 992px) {
+        width: 70%;
+        height: 396px;
+        padding: 32px 24px 18px 24px;
+        gap: 27px;
+      }
+
+      @media screen and (max-width: 585px) {
+        width: 90%;
+
+      }
+
+      @media screen and (max-width: 468px) {
+        width: 100%;
+
+      }
+
+      img {
+        width: 220px;
+        height: 220px;
+        aspect-ratio: 1/1;
+
+
+      }
+    }
+
+    .seventhCard {
+      width: 412px;
+      height: 412px;
+      padding: 22px 32px 32px 32px;
+      gap: 16px;
+
+      @media screen and (max-width: 992px) {
+        width: 70%;
+        height: 396px;
+        padding: 32px 24px 16px 24px;
+        gap: 20px;
+      }
+
+      @media screen and (max-width: 585px) {
+        width: 90%;
+
+      }
+
+      @media screen and (max-width: 468px) {
+        width: 100%;
+
+      }
+
+      img {
+        width: 220px;
+        height: 220px;
+        aspect-ratio: 1/1;
+
+        @media screen and (max-width: 992px) {
+          width: 190px;
+          height: 190px;
+          flex-shrink: 0;
+          aspect-ratio: 1/1;
+        }
+      }
+    }
+
+    .eightCard {
+      width: 412px;
+      height: 412px;
+      padding: 24px 32px 30px 32px;
+      gap: 25px;
+
+      @media screen and (max-width: 992px) {
+        width: 70%;
+        height: 396px;
+        padding: 32px 24px 16px 24px;
+        gap: 25px;
+      }
+
+      @media screen and (max-width: 585px) {
+        width: 90%;
+
+      }
+
+      @media screen and (max-width: 468px) {
+        width: 100%;
+
+      }
+
+      img {
+        width: 220px;
+        height: 220px;
+        aspect-ratio: 1/1;
+
+        @media screen and (max-width: 992px) {
+          width: 200px;
+          height: 200px;
+        }
+      }
+    }
+  }
+}
