@@ -7,6 +7,7 @@ import OurWorksPageDetailSecond from '../../../components/UserComponents/OurWork
 import Footer from "../../../components/UserComponents/Footer/index.jsx";
 import { useEffect, useState } from "react";
 import OurWorksPageDetailFirst from '../../../components/UserComponents/OurWorksPageDetail/FirstSection/index.jsx';
+import CaseStudyHeaderMarketing from '../../../components/UserComponents/CaseStudyHeaderMarketing/index.jsx';
 
 function OurWorksPageDetail() {
     const imageBox = [
@@ -136,7 +137,8 @@ function OurWorksPageDetail() {
                 background: "var(--bg-color)",
             }}>
                 <Navbar />
-                <OurWorksPageDetailFirst imageBox={imageBox} />
+                {/* <OurWorksPageDetailFirst imageBox={imageBox} /> */}
+                <CaseStudyHeaderMarketing/>
                 <OurWorksPageDetailSecond />
                 <OurWorksPageDetailThird worksData={worksData} />
             </div>

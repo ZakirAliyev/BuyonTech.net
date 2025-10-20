@@ -39,12 +39,17 @@
     @media screen and (max-width: 992px) {
       font-size: 16px;
       padding: 4px 24px;
-   width: 100%;
-   max-width: 280px;
+      width: 100%;
+      max-width: 280px;
+      height: 44px;
     }
-        @media screen and (max-width:576px) {
-max-width: 90%;
-        }
+
+    @media screen and (max-width:576px) {
+      max-width: 80%;
+      .icon{
+        font-size: 20px;
+      }
+    }
 
   }
 
@@ -99,8 +104,7 @@ max-width: 90%;
   .word {
     display: inline-block;
 
-    // Progress 0 → #D3D3D3 (boz), Progress 1 → #000 (qara)
-    color: color-mix(in srgb, #cfcfcf calc(100% - var(--word-progress, 0) * 100%), #000);
+    color: color-mix(in srgb, #cfcfcf calc(100% - var(--word-progress, 0) * 100%), #3a3a3a);
 
     transition: color 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
     will-change: color, transform;

@@ -43,7 +43,7 @@
     }
 
     @media screen and (max-width:620px) {
-      margin-top: -50px;
+      margin-top: -40px;
 
     }
 
@@ -87,10 +87,21 @@
           gap: 24px;
           animation: scroll-arrows 16s linear infinite;
 
+
+
           .icon {
             font-size: 50px;
             color: #FFBB00;
+
             flex-shrink: 0;
+            width: 80.671px;
+            height: 52.985px;
+
+            @media screen and (max-width:756px) {
+              font-size: 40px;
+              width: 20.671px;
+              height: 22.985px;
+            }
           }
         }
       }
@@ -102,11 +113,16 @@
         margin: 0 40px;
         white-space: nowrap;
         z-index: 2;
-              @media screen and (max-width:992px) {
+
+        @media screen and (max-width:992px) {
           font-size: 38px;
           margin: 0 10px;
 
 
+        }
+
+        @media screen and (max-width:575px) {
+          font-size: 34px;
         }
       }
     }

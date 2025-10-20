@@ -4,6 +4,10 @@
   position: relative;
   z-index: 10;
 
+  @media screen and (max-width:992px) {
+    padding: 10px 0 50px;
+  }
+
   .container {
     padding: 0 8px;
 
@@ -32,6 +36,10 @@
     }
 
     @media screen and (max-width:400px) {
+      font-size: 65px;
+    }
+
+    @media screen and (max-width:380px) {
       font-size: 55px;
     }
   }
@@ -62,6 +70,9 @@
       margin-top: -25px;
     }
 
+       @media screen and (max-width: 400px) {
+      margin-top: -15px;
+    }
 
 
     .cubCard {

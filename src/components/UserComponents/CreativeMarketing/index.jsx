@@ -27,7 +27,7 @@ function CreativeMarketing() {
             <button onClick={()=>{
                 handleClickLink('/contact')
             }}>
-                <svg width="18" height="18" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="20" height="20" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M4.5 10.5C4.5 6.729 4.5 4.843 5.672 3.672C6.844 2.501 8.729 2.5 12.5 2.5H14C17.771 2.5 19.657 2.5 20.828 3.672C21.999 4.844 22 6.729 22 10.5V14.5C22 18.271 22 20.157 20.828 21.328C19.656 22.499 17.771 22.5 14 22.5H12.5C8.729 22.5 6.843 22.5 5.672 21.328C4.501 20.156 4.5 18.271 4.5 14.5V10.5Z"
                         stroke="white" stroke-width="1.5" />

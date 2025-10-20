@@ -1,11 +1,13 @@
 #caseStudyHeaderMarketing {
   padding: 8px;
+  margin-top: 80px;
 
   .title {
     color: #333;
     font-size: 40px;
     font-weight: 500;
     line-height: normal;
+
     @media screen and (max-width: 992px) {
       font-size: 28px;
     }
@@ -170,14 +172,16 @@
     from {
       width: 0%;
     }
+
     to {
       width: 100%;
     }
   }
+
   .col-4 {
     display: flex;
-    justify-content: center;  // sağ-sol bərabər məsafə üçün
-    align-items: center;      // istəsən vertical da ortalaya bilər
+    justify-content: center; // sağ-sol bərabər məsafə üçün
+    align-items: center; // istəsən vertical da ortalaya bilər
     padding-left: 0;
     padding-right: 0;
 

@@ -38,7 +38,8 @@
       text-align: center;
       padding: 0 16px;
 
-      h2, p {
+      h2,
+      p {
         max-width: 700px;
         width: 100%;
         margin: 0 auto;
@@ -80,8 +81,10 @@
 
         @media screen and (max-width: 992px) {
           font-size: 14px;
-          width: 100%;
+          width: 90%;
           padding: 14px 32px;
+          height: 44px;
+
 
         }
 

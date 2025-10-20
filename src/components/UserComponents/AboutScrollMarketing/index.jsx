@@ -83,7 +83,7 @@ const AboutScrollMarketing = () => {
                 handleClickLink('/about')
             }}>
                 Learn More
-                <BsArrowRight />
+                <BsArrowRight className='icon' />
             </button>
         </section>
     );

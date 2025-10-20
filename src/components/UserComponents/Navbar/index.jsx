@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './index.scss'
 import { useTranslation } from "react-i18next";
 import { TfiWorld } from "react-icons/tfi";
@@ -20,6 +20,16 @@ function Navbar() {
             behavior: "smooth"
         });
     }
+
+
+    const menuRef = useRef(null);
+
+    const handleClickOutside = (e) => {
+        // Əgər klik edilən yer menyunun özündən və ya onun uşaqlarından deyilsə
+        if (menuRef.current && !menuRef.current.contains(e.target)) {
+            setOpen(false);
+        }
+    };
     return (
         <>
             <section id={"navbar"}>
@@ -53,8 +63,12 @@ function Navbar() {
 
 
             {open && (
-                <div className="menuOverlay">
-                    <div className="menuBox">
+                <div className="menuOverlay"
+                 onClick={() => setOpen(false)}
+                >
+                    <div className="menuBox"
+                      onClick={(e) => e.stopPropagation()} 
+                    >
                         <nav className="menuLinks">
                             <div onClick={() => handleClickLink("/")}>Home</div>
                             <div onClick={() => handleClickLink("/about")}>About</div>

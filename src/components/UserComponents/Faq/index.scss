@@ -79,6 +79,9 @@
       flex-shrink: 0;
       margin-left: 10px;
       transition: transform 0.3s ease;
+      @media screen and (max-width:992px) {
+        font-size: 18px;
+      }
     }
 
     &.open .icon {

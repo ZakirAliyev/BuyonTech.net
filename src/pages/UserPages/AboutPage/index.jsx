@@ -34,7 +34,7 @@ function AboutPage() {
             id: 5,
 
         },
-            {
+        {
             id: 3,
 
         }
@@ -45,6 +45,10 @@ function AboutPage() {
         }
         ,
         {
+            id: 5,
+
+        },
+          {
             id: 5,
 
         },

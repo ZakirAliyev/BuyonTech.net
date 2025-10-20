@@ -12,7 +12,6 @@
         justify-content: center;
         gap: 16px;
 
-
         .icon {
             cursor: pointer;
         }
@@ -36,13 +35,14 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     animation: fadeIn 0.2s ease-in;
     z-index: 800;
     padding: 0 8px;
 
     .menuBox {
+        margin-top: 90px;
         width: 100%;
         background: linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);
         border-radius: 14px;
