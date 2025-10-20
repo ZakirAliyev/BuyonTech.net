@@ -68,6 +68,51 @@ function WhyChoose() {
 
         return () => observer.disconnect();
     }, []);
+    useEffect(() => {
+        const section = sectionRef.current;
+        const center = centerContentRef.current;
+        if (!section || !center) return;
+
+        const sentinel = document.createElement("div");
+        sentinel.style.position = "absolute";
+        sentinel.style.bottom = "0";
+        sentinel.style.width = "100%";
+        sentinel.style.height = "1px";
+        section.appendChild(sentinel);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const isMobile = window.innerWidth <= 992; // ✅ responsive yoxlama
+                    if (entry.isIntersecting) {
+                        if (isMobile) {
+                            // 📱 mobil — section bitəndə tam gizlət
+                            center.classList.add("hideOnMobile");
+                            center.classList.remove("addClassCard");
+                        } else {
+                            // 💻 desktop — normal effekt
+                            center.classList.add("addClassCard");
+                            center.classList.remove("hideOnMobile");
+                        }
+                    } else {
+                        // görünmürsə hər iki class silinsin
+                        center.classList.remove("addClassCard");
+                        center.classList.remove("hideOnMobile");
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        observer.observe(sentinel);
+
+        return () => {
+            observer.disconnect();
+            sentinel.remove();
+        };
+    }, []);
+
+
 
     const navigate = useNavigate()
     const handleClickLink = (navigator) => {
