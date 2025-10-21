@@ -267,15 +267,26 @@
           "projectType": "Project Type (AZ)",
           "projectTypeEng": "Project Type (EN)",
           "services": "Services",
+          "categoryType": "Category Type",
+          "profilName": "Profile Name",
+          "links": "Links",
           "image": "Select Image"
         },
         "errors": {
           "titleAz": "Title (AZ) is required",
           "titleEng": "Title (EN) is required",
+          "subTitleAz": "Subtitle (AZ) is required",
+          "subTitleEng": "Subtitle (EN) is required",
           "year": "Year is required",
           "projectTypeAz": "Project Type (AZ) is required",
           "projectTypeEng": "Project Type (EN) is required",
-          "img": "Image must be selected"
+          "services": "At least one service must be provided",
+          "categoryType": "Category type is required",
+          "profilName": "Profile name is required",
+          "links": "At least one link must be provided",
+          "img": "Image must be selected",
+          "fileSize": "File cannot exceed 5MB",
+          "fileFormat": "Invalid format (JPG, PNG, WEBP)"
         }
       },
       "metaTitle": "Projects",

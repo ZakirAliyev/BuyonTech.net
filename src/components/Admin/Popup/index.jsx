@@ -1,6 +1,8 @@
 import React from 'react'
+import { useLocation } from 'react-router'
 
 const Popup = ({ isActive, onClose, children }) => {
+  const location = useLocation()
   return (
     <div
       id="popup"
@@ -9,6 +11,10 @@ const Popup = ({ isActive, onClose, children }) => {
     >
       <div
         className="popupInside"
+        style={{
+          width:
+            location.pathname == '/admin/projects' ? "1000px" : ""
+        }}
         onClick={(e) => e.stopPropagation()} // içində kliklənəndə bağlanmasın
       >
         <div className="closeBtnPopup" onClick={onClose}>
@@ -27,7 +33,7 @@ const Popup = ({ isActive, onClose, children }) => {
             16.9C18.4841 17.0833 18.5758 17.3167 18.5758 17.6C18.5758 
             17.8833 18.4841 18.1167 18.3008 18.3C18.1174 18.4833 17.8841 
             18.575 17.6008 18.575C17.3174 18.575 17.0841 18.4833 
-            16.9008 18.3L12.0008 13.4Z" fill="black"/>
+            16.9008 18.3L12.0008 13.4Z" fill="black" />
           </svg>
         </div>
         <div className="popupFormBox">{children}</div>

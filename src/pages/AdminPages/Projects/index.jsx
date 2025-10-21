@@ -18,6 +18,7 @@ import SingleImageUpload from '../../../components/Admin/FormElements/SingleElem
 import { Image } from 'antd';
 import { useCreateProjectsMutation, useDeleteProjectsMutation, useGetAllProjectsQuery } from '../../../services/apis/userApi';
 import DetailProject from './DetailProject';
+import TextareaElement from '../../../components/Admin/FormElements/TextareaElement';
 
 const AdminProjects = () => {
   const imgLocal = 'https://api.buyontech.net/files/projects/cards/'
@@ -69,7 +70,7 @@ const AdminProjects = () => {
   let filteringData = [...myData].filter((x) => {
     const name = getLocalizedName(x, i18n.language).toLowerCase();
     return (
-      name.includes(searchTerm.toLowerCase()) 
+      name.includes(searchTerm.toLowerCase())
     );
   })
 
@@ -149,7 +150,7 @@ const AdminProjects = () => {
         return <span>{getLocalizedCountry(row, i18n.language)}</span>
       },
     },
-  {
+    {
       header: t('adminRoot.projectPage.table.year'),
       accessor: "country",
       render: (row) => {
@@ -313,23 +314,23 @@ const AdminProjects = () => {
 
 
 
-const projectOptions = [
-  { value: "all", label: t("adminRoot.projectPage.sort.default") },
-  {
-    label: t("adminRoot.projectPage.sort.byName"),
-    options: [
-      { value: "title-asc", label: t("adminRoot.projectPage.sort.nameAsc") },
-      { value: "title-desc", label: t("adminRoot.projectPage.sort.nameDesc") },
-    ],
-  },
-  {
-    label: t("adminRoot.projectPage.sort.byYear"),
-    options: [
-      { value: "year-asc", label: t("adminRoot.projectPage.sort.yearAsc") },
-      { value: "year-desc", label: t("adminRoot.projectPage.sort.yearDesc") },
-    ],
-  },
-];
+  const projectOptions = [
+    { value: "all", label: t("adminRoot.projectPage.sort.default") },
+    {
+      label: t("adminRoot.projectPage.sort.byName"),
+      options: [
+        { value: "title-asc", label: t("adminRoot.projectPage.sort.nameAsc") },
+        { value: "title-desc", label: t("adminRoot.projectPage.sort.nameDesc") },
+      ],
+    },
+    {
+      label: t("adminRoot.projectPage.sort.byYear"),
+      options: [
+        { value: "year-asc", label: t("adminRoot.projectPage.sort.yearAsc") },
+        { value: "year-desc", label: t("adminRoot.projectPage.sort.yearDesc") },
+      ],
+    },
+  ];
 
 
   return (
@@ -384,74 +385,6 @@ const projectOptions = [
             <form onSubmit={formik.handleSubmit}>
               <div className="row">
 
-
-                <div className="inputsBox" style={{ marginBottom: "24px" }}>
-                  <div className="col-6" style={{ padding: "0", paddingRight: "24px", borderRight: "1px solid #CCC" }}>
-                    <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
-                      <InputElement
-                        name="fullName"
-                        placeholder={t('adminRoot.projectPage.form.placeholders.name')}
-                        imgSrc={az}
-                        value={formik.values.fullName}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        type={'text'}
-                        error={formik.errors.fullName}
-                        touched={formik.touched.fullName}
-                      />
-                    </div>
-                    <div className="col-12" style={{ padding: "0" }}>
-
-                      <InputElement
-                        name="position"
-                        placeholder={t('adminRoot.projectPage.form.placeholders.country')}
-                        imgSrc={az}
-                        value={formik.values.position}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={formik.errors.position}
-                        type={'text'}
-
-                        touched={formik.touched.position}
-                      />
-                    </div>
-
-                  </div>
-                  <div className="col-6" style={{ padding: "0", paddingLeft: "24px" }}>
-                    <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
-                      <InputElement
-                        name="fullNameEng"
-                        placeholder={t('adminRoot.projectPage.form.placeholders.nameEng')}
-                        imgSrc={en}
-                        value={formik.values.fullNameEng}
-                        onChange={formik.handleChange}
-                        type={'text'}
-
-                        onBlur={formik.handleBlur}
-                        error={formik.errors.fullNameEng}
-                        touched={formik.touched.fullNameEng}
-                      />
-                    </div>
-                    <div className="col-12" style={{ padding: "0" }}>
-
-                      <InputElement
-                        name="positionEng"
-                        placeholder={t('adminRoot.projectPage.form.placeholders.countryEng')}
-                        type={'text'}
-
-                        imgSrc={en}
-                        value={formik.values.positionEng}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        error={formik.errors.positionEng}
-                        touched={formik.touched.positionEng}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-
-
                 <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
 
                   <SingleImageUpload
@@ -466,7 +399,189 @@ const projectOptions = [
 
                   />
                 </div>
+                    <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
 
+                  <SingleImageUpload
+                    file={formik.values.cardImage}
+                    name="cardImage"
+                    formikData={formik}
+                    setFile={(file) => {
+                      formik.setFieldValue("cardImage", file);
+                      formik.setFieldTouched("cardImage", true, false);
+                      formik.validateField("cardImage");
+                    }}
+
+                  />
+                </div>
+                <div className="inputsBox" style={{ marginBottom: "24px" }}>
+                  <div className="col-6" style={{ padding: "0", paddingRight: "24px", borderRight: "1px solid #CCC" }}>
+                    <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+                      <InputElement
+                        name="title"
+                        placeholder={t('adminRoot.projectPage.form.placeholders.title')}
+                        imgSrc={az}
+                        value={formik.values.title}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        type={'text'}
+                        error={formik.errors.title}
+                        touched={formik.touched.title}
+                      />
+                    </div>
+                    <div className="col-12" style={{ padding: "0" }}>
+
+                      <InputElement
+                        name="subTitle"
+                        placeholder={t('adminRoot.projectPage.form.placeholders.subTitle')}
+                        imgSrc={az}
+                        value={formik.values.subTitle}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.errors.subTitle}
+                        type={'text'}
+
+                        touched={formik.touched.subTitle}
+                      />
+                    </div>
+
+                  </div>
+                  <div className="col-6" style={{ padding: "0", paddingLeft: "24px" }}>
+                    <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+                      <InputElement
+                        name="titleEng"
+                        placeholder={t('adminRoot.projectPage.form.placeholders.titleEng')}
+                        imgSrc={en}
+                        value={formik.values.titleEng}
+                        onChange={formik.handleChange}
+                        type={'text'}
+
+                        onBlur={formik.handleBlur}
+                        error={formik.errors.titleEng}
+                        touched={formik.touched.titleEng}
+                      />
+                    </div>
+                    <div className="col-12" style={{ padding: "0" }}>
+
+                      <InputElement
+                        name="subTitleEng"
+                        placeholder={t('adminRoot.projectPage.form.placeholders.subTitleEng')}
+                        type={'text'}
+
+                        imgSrc={en}
+                        value={formik.values.subTitleEng}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.errors.subTitleEng}
+                        touched={formik.touched.subTitleEng}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+
+                  <InputElement
+                    name="projectType"
+                    placeholder={t('adminRoot.projectPage.form.placeholders.projectType')}
+                    imgSrc={az}
+                    value={formik.values.projectType}
+                    onChange={formik.handleChange}
+                    type={'text'}
+
+                    onBlur={formik.handleBlur}
+                    error={formik.errors.projectType}
+                    touched={formik.touched.projectType}
+                  />
+                </div>
+
+
+                <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+
+                  <InputElement
+                    name="projectTypeEng"
+                    placeholder={t('adminRoot.projectPage.form.placeholders.projectTypeEng')}
+                    imgSrc={en}
+                    value={formik.values.projectTypeEng}
+                    onChange={formik.handleChange}
+                    type={'text'}
+
+                    onBlur={formik.handleBlur}
+                    error={formik.errors.projectTypeEng}
+                    touched={formik.touched.projectTypeEng}
+                  />
+                </div>
+                <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+
+                  <InputElement
+                    name="year"
+                    placeholder={t('adminRoot.projectPage.form.placeholders.year')}
+                    value={formik.values.year}
+                    onChange={formik.handleChange}
+                    type={'text'}
+
+                    onBlur={formik.handleBlur}
+                    error={formik.errors.year}
+                    touched={formik.touched.year}
+                  />
+                </div>
+                <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+
+                  <InputElement
+                    name="services"
+                    placeholder={t('adminRoot.projectPage.form.placeholders.services')}
+                    value={formik.values.services}
+                    onChange={formik.handleChange}
+                    type={'text'}
+
+                    onBlur={formik.handleBlur}
+                    error={formik.errors.services}
+                    touched={formik.touched.services}
+                  />
+                </div>
+                <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+
+                  <InputElement
+                    name="categoryType"
+                    placeholder={t('adminRoot.projectPage.form.placeholders.categoryType')}
+                    value={formik.values.categoryType}
+                    onChange={formik.handleChange}
+                    type={'text'}
+
+                    onBlur={formik.handleBlur}
+                    error={formik.errors.categoryType}
+                    touched={formik.touched.categoryType}
+                  />
+                </div>
+                <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+
+                  <InputElement
+                    name="profilName"
+                    placeholder={t('adminRoot.projectPage.form.placeholders.profilName')}
+                    value={formik.values.profilName}
+                    onChange={formik.handleChange}
+                    type={'text'}
+
+                    onBlur={formik.handleBlur}
+                    error={formik.errors.profilName}
+                    touched={formik.touched.profilName}
+                  />
+                </div>
+                <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+
+                  <TextareaElement
+                    name="links"
+                    placeholder={t('adminRoot.projectPage.form.placeholders.links')}
+                    value={formik.values.links}
+                    onChange={formik.handleChange}
+                    type={'text'}
+
+                    onBlur={formik.handleBlur}
+                    error={formik.errors.links}
+                    touched={formik.touched.links}
+                  />
+                </div>
                 <div className="col-12" style={{ padding: "0", marginBottom: "16px" }}>
                   <CreateButton createLoading={createLoading} />
                 </div>

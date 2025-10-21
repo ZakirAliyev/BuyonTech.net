@@ -267,15 +267,26 @@
           "projectType": "Layihə növü (AZ)",
           "projectTypeEng": "Layihə növü (EN)",
           "services": "Xidmətlər",
+          "categoryType": "Kateqoriya növü",
+          "profilName": "Profil adı",
+          "links": "Linklər",
           "image": "Şəkil seç"
         },
         "errors": {
           "titleAz": "Başlıq (AZ) tələb olunur",
           "titleEng": "Başlıq (EN) tələb olunur",
+          "subTitleAz": "Alt başlıq (AZ) tələb olunur",
+          "subTitleEng": "Alt başlıq (EN) tələb olunur",
           "year": "İl tələb olunur",
           "projectTypeAz": "Layihə növü (AZ) tələb olunur",
           "projectTypeEng": "Layihə növü (EN) tələb olunur",
-          "img": "Şəkil seçilməlidir"
+          "services": "Ən azı bir xidmət daxil edilməlidir",
+          "categoryType": "Kateqoriya növü tələb olunur",
+          "profilName": "Profil adı tələb olunur",
+          "links": "Ən azı bir link daxil edilməlidir",
+          "img": "Şəkil seçilməlidir",
+          "fileSize": "Fayl 5MB-dan böyük ola bilməz",
+          "fileFormat": "Düzgün format deyil (JPG, PNG, WEBP)"
         }
       },
       "metaTitle": "Layihələr",
