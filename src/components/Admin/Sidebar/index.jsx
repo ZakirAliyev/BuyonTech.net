@@ -8,7 +8,7 @@ const Sidebar = () => {
   const menuItems = [
     { title: t("adminRoot.sidebar.guests"), path: "/admin" },
     { title: t("adminRoot.sidebar.program"), path: "/admin/logo" },
-    { title: t("adminRoot.sidebar.faq"), path: "/admin/faq" },
+    { title: t("adminRoot.sidebar.faq"), path: "/admin/contact" },
   ];
   const checkActive = (itemPath) => {
     if (itemPath === "/admin") {

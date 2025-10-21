@@ -9,7 +9,7 @@
       "navigation": "Navigation",
       "guests": "Team",
       "program": "Logo",
-      "faq": "FAQ"
+      "faq": "Contact"
     },
     "login": {
       "title": "Log in",
@@ -191,6 +191,68 @@
         "success": "Logos reordered successfully",
         "error": "Error occurred while reordering logos"
       }
+    },
+    "contactPage": {
+      "sort": {
+        "default": "Default",
+        "byName": "By Name",
+        "nameAsc": "Name (A–Z)",
+        "nameDesc": "Name (Z–A)",
+        "bySurname": "By Surname",
+        "surnameAsc": "Surname (A–Z)",
+        "surnameDesc": "Surname (Z–A)",
+        "byEmail": "By Email",
+        "emailAsc": "Email (A–Z)",
+        "emailDesc": "Email (Z–A)",
+        "byNumber": "By Number",
+        "numberAsc": "Number (A–Z)",
+        "numberDesc": "Number (Z–A)"
+      },
+      "metaTitle": "Contacts",
+      "title": "Contacts",
+      "create": {
+        "title": "New Contact",
+        "success": "Contact created successfully",
+        "error": "An error occurred"
+      },
+      "detail": {
+        "notFound": "Contact not found.",
+        "nameFallback": "No name",
+        "infoFallback": "No information"
+      },
+      "table": {
+        "index": "№",
+        "fullName": "Full Name",
+        "email": "Email",
+        "number": "Phone Number",
+        "type": "Type",
+        "info": "Information",
+        "details": "Details",
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "fallback": {
+        "loadError": "Failed to load data, please try again.",
+        "preview": "Contact preview"
+      },
+      "search": {
+        "placeholder": "Search contact",
+        "notFound": "No contact found",
+        "noData": "No contact has been added yet"
+      }
+    },
+    "contactDetailModal": {
+      "title": "Contact Details",
+      "placeholders": {
+        "name": "Name",
+        "surname": "Surname",
+        "email": "Email",
+        "phoneNumber": "Phone Number",
+        "contactInfo": "Contact Info",
+
+        "description": "Description"
+      },
+      "loadError": "Failed to load contact information, please try again."
     },
     "adminTableTop": {
       "searchPlaceholder": "Search",

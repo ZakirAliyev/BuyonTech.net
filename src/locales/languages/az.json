@@ -9,7 +9,7 @@
       "navigation": "Naviqasiya",
       "guests": "Komanda",
       "program": "Loqo",
-      "faq": "FAQ"
+      "faq": "Kontakt"
     },
     "login": {
       "title": "Daxil ol",
@@ -191,6 +191,67 @@
         "success": "Loqoların sırası uğurla dəyişdirildi",
         "error": "Loqoların sırası dəyişdirilərkən xəta baş verdi"
       }
+    },
+    "contactPage": {
+      "sort": {
+        "default": "Standart",
+        "byName": "Ada görə",
+        "nameAsc": "Ad (A–Z)",
+        "nameDesc": "Ad (Z–A)",
+        "bySurname": "Soyada görə",
+        "surnameAsc": "Soyad (A–Z)",
+        "surnameDesc": "Soyad (Z–A)",
+        "byEmail": "Emailə görə",
+        "emailAsc": "Email (A–Z)",
+        "emailDesc": "Email (Z–A)",
+        "byNumber": "Nömrəyə görə",
+        "numberAsc": "Nömrə (A–Z)",
+        "numberDesc": "Nömrə (Z–A)"
+      },
+      "metaTitle": "Əlaqə məlumatları",
+      "title": "Əlaqə məlumatları",
+      "create": {
+        "title": "Yeni əlaqə məlumatı",
+        "success": "Əlaqə məlumatı uğurla yaradıldı",
+        "error": "Xəta baş verdi"
+      },
+      "detail": {
+        "notFound": "Əlaqə məlumatı tapılmadı.",
+        "nameFallback": "Ad yoxdur",
+        "infoFallback": "Məlumat yoxdur"
+      },
+      "table": {
+        "index": "№",
+        "fullName": "Tam ad",
+        "email": "Email",
+        "number": "Nömrə",
+        "type": "Növ",
+        "info": "Məlumat",
+        "details": "Detallar",
+        "edit": "Redaktə et",
+        "delete": "Sil"
+      },
+      "fallback": {
+        "loadError": "Məlumatları yükləmək mümkün olmadı, zəhmət olmasa yenidən cəhd edin.",
+        "preview": "Əlaqə məlumatı önizləmə"
+      },
+      "search": {
+        "placeholder": "Əlaqə məlumatı axtar",
+        "notFound": "Axtarışa uyğun əlaqə məlumatı tapılmadı",
+        "noData": "Hələ heç bir əlaqə məlumatı əlavə olunmayıb"
+      }
+    },
+    "contactDetailModal": {
+      "title": "Əlaqə məlumatı",
+      "placeholders": {
+        "name": "Ad",
+        "contactInfo": "Əlaqə Məlumatı",
+        "surname": "Soyad",
+        "email": "Email",
+        "phoneNumber": "Telefon nömrəsi",
+        "description": "Qeyd"
+      },
+      "loadError": "Məlumatı yükləmək mümkün olmadı, zəhmət olmasa yenidən cəhd edin."
     },
     "adminTableTop": {
       "searchPlaceholder": "Axtar",
