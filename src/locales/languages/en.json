@@ -1,51 +1,5 @@
 {
   "adminRoot": {
-    "reorder": {
-      "faq": {
-        "success": "FAQ items reordered successfully.",
-        "error": "An error occurred while reordering FAQ items."
-      },
-      "program": {
-        "success": "Program order updated successfully.",
-        "error": "An error occurred while updating the program order."
-      }
-    },
-    "reorderBox": {
-      "title": "Reorder",
-      "fields": {
-        "targetPosition": "Target position"
-      },
-      "validation": {
-        "typeError": "Please enter a number",
-        "integer": "Must be an integer",
-        "min": "Minimum {count}",
-        "max": "Maximum {count}",
-        "required": "This field is required"
-      },
-      "placeholder": {
-        "index": "Enter position"
-      },
-      "submit": "Apply",
-      "cancel": "Cancel"
-    },
-    "reorderPopup": {
-      "title": "Reorder",
-      "fields": {
-        "targetPosition": "Target position"
-      },
-      "validation": {
-        "typeError": "Please enter a number",
-        "integer": "Must be an integer",
-        "min": "Minimum {count}",
-        "max": "Maximum {count}",
-        "required": "This field is required"
-      },
-      "placeholder": {
-        "index": "Enter position"
-      },
-      "submit": "Apply",
-      "cancel": "Cancel"
-    },
     "adminHeader": {
       "role": "Admin",
       "logout": "Log out",
@@ -53,8 +7,8 @@
     },
     "sidebar": {
       "navigation": "Navigation",
-      "guests": "Guests",
-      "program": "Program",
+      "guests": "Team",
+      "program": "Logo",
       "faq": "FAQ"
     },
     "login": {
@@ -77,125 +31,11 @@
         "passwordRequired": "Password is required"
       }
     },
-    "programPage": {
-      "maxProgram": "The maximum number of programs is 4. Delete an existing one to add a new program.",
-      "title": "Program",
-      "newProgram": "New Program",
-      "table": {
-        "index": "№",
-        "image": "Image",
-        "edit": "Edit",
-        "delete": "Delete",
-        "searchNotFound": "No program found for search",
-        "noData": "No program has been added yet"
-      },
-      "toast": {
-        "createSuccess": "Program created successfully",
-        "createError": "An error occurred while creating program",
-        "deleteSuccess": "Program deleted",
-        "deleteError": "An error occurred",
-        "reorderSuccess": "Reorder successful",
-        "reorderError": "An error occurred during reorder"
-      },
-      "validation": {
-        "requiredAz": "Image (AZ) is required",
-        "requiredEn": "Image (EN) is required",
-        "fileSize": "File size must be less than 5MB",
-        "fileFormat": "Unsupported format (JPG, PNG, WEBP)"
-      },
-      "fallback": {
-        "loadError": "Unable to load data, please try again.",
-        "imagePreview": "Image preview"
-      },
-      "edit": {
-        "title": "Edit Program",
-        "validation": {
-          "requiredAz": "Image (AZ) is required",
-          "requiredEn": "Image (EN) is required",
-          "fileSize": "File size must be less than 5MB",
-          "fileFormat": "Unsupported format (JPG, PNG, WEBP)"
-        },
-        "toast": {
-          "success": "Program updated successfully ",
-          "error": "An error occurred while updating "
-        }
-      }
-    },
-    "fagPage": {
-      "title": "FAQ",
-      "detail": {
-        "ariaLabel": "FAQ detail",
-        "error": "Failed to load data, please try again.",
-        "empty": "No FAQ data found.",
-        "noQuestion": "No question available",
-        "noAnswer": "No answer available",
-        "close": "Close"
-      },
-      "edit": {
-        "title": "Edit FAQ",
-        "fields": {
-          "questionAz": "Question (AZ)",
-          "answerAz": "Answer (AZ)",
-          "questionEn": "Question (EN)",
-          "answerEn": "Answer (EN)"
-        },
-        "validation": {
-          "questionAz": "Question (AZ) is required",
-          "answerAz": "Answer (AZ) is required",
-          "questionEn": "Question (EN) is required",
-          "answerEn": "Answer (EN) is required"
-        },
-        "toast": {
-          "success": "FAQ updated successfully",
-          "error": "Error occurred while updating"
-        }
-      },
-      "search": {
-        "placeholder": "Search FAQ"
-      },
-      "table": {
-        "question": "Question",
-        "detail": "Details",
-        "edit": "Edit",
-        "delete": "Delete"
-      },
-      "create": {
-        "title": "New FAQ"
-      },
-      "fields": {
-        "questionAz": "Question (AZ)",
-        "answerAz": "Answer (AZ)",
-        "questionEn": "Question (EN)",
-        "answerEn": "Answer (EN)"
-      },
-      "validation": {
-        "questionAz": "Question (AZ) is required",
-        "answerAz": "Answer (AZ) is required",
-        "questionEn": "Question (EN) is required",
-        "answerEn": "Answer (EN) is required"
-      },
-      "toast": {
-        "createSuccess": "FAQ created successfully ",
-        "deleteSuccess": "FAQ deleted successfully",
-        "error": "An error occurred"
-      },
-      "error": {
-        "load": "Failed to load data, please try again.",
-        "notFound": "No FAQ found matching your search",
-        "empty": "No FAQ has been added yet"
-      },
-      "filter": {
-        "default": "Default",
-        "byQuestion": "By Question",
-        "asc": "Question (A–Z)",
-        "desc": "Question (Z–A)"
-      }
-    },
     "guestPage": {
-      "metaTitle": "Guests",
+      "metaTitle": "Team",
       "editGuest": {
-        "title": "Edit Guest",
-        "success": "Guest updated successfully ",
+        "title": "Edit Team Member",
+        "success": "Team member updated successfully",
         "error": "An error occurred while updating"
       },
       "form": {
@@ -204,74 +44,79 @@
           "surname": "Surname (AZ)",
           "nameEng": "Name (EN)",
           "surnameEng": "Surname (EN)",
-          "country": "Country (AZ)",
-          "countryEng": "Country (EN)",
+          "country": "Position (AZ)",
+          "countryEng": "Position (EN)",
           "description": "About (AZ)",
           "descriptionEng": "About (EN)"
         },
         "errors": {
-          "nameAz": "Name in AZ is required",
-          "surnameAz": "Surname in AZ is required",
-          "nameEn": "Name in EN is required",
-          "surnameEn": "Surname in EN is required"
+          "fullNameAz": "Full name in AZ is required",
+          "fullNameEn": "Full name in EN is required",
+          "positionAz": "Position in AZ is required",
+          "positionEn": "Position in EN is required",
+          "img": "Profile image is required"
         }
       },
-      "title": "Guests",
+      "title": "Team",
       "create": {
-        "title": "New Guest",
-        "success": "Guest created successfully ",
-        "error": "An error occurred "
+        "title": "New Team Member",
+        "success": "Team member created successfully",
+        "error": "An error occurred"
       },
       "edit": {
-        "title": "Edit Guest",
-        "success": "Guest updated successfully ",
-        "error": "Error occurred while updating "
+        "title": "Edit Team Member",
+        "success": "Team member updated successfully",
+        "error": "Error occurred while updating"
       },
       "sort": {
         "default": "Default",
         "byName": "By Name",
         "nameAsc": "Name (A–Z)",
         "nameDesc": "Name (Z–A)",
-        "byCountry": "By Country",
-        "countryAsc": "Country (A–Z)",
-        "countryDesc": "Country (Z–A)"
+        "byCountry": "By Position",
+        "countryAsc": "Position (A–Z)",
+        "countryDesc": "Position (Z–A)"
       },
       "delete": {
-        "success": "Guest deleted successfully ",
-        "error": "An error occurred "
+        "success": "Team member deleted successfully",
+        "error": "An error occurred"
+      },
+      "fallback": {
+        "loadError": "Unable to load data, please try again.",
+        "imagePreview": "Image preview"
       },
       "detail": {
-        "notFound": "Guest not found.",
+        "notFound": "Team member not found.",
         "nameFallback": "No name",
-        "countryFallback": "No country",
+        "countryFallback": "No position",
         "descriptionFallback": "No description"
       },
       "table": {
         "index": "№",
         "fullName": "Full Name",
-        "country": "Country",
+        "country": "Position",
         "details": "Details",
+        "image": "Image",
         "edit": "Edit",
         "delete": "Delete"
       },
       "search": {
-        "placeholder": "Search guest",
-        "notFound": "No guest found",
-        "noData": "No guests have been added yet"
+        "placeholder": "Search team member",
+        "notFound": "No team member found",
+        "noData": "No team members have been added yet"
       },
       "validation": {
-        "name": "Name is required",
-        "surname": "Surname is required",
-        "nameEng": "Name (EN) is required",
-        "surnameEng": "Surname (EN) is required",
-        "country": "Country is required",
-        "countryEng": "Country (EN) is required",
-        "description": "Description is required",
-        "descriptionEng": "Description (EN) is required"
+        "name": "Full name (AZ) is required",
+        "nameEng": "Full name (EN) is required",
+        "country": "Position (AZ) is required",
+        "countryEng": "Position (EN) is required",
+        "img": "Profile image is required",
+        "fileSize": "File size must be less than 5MB",
+        "fileFormat": "Unsupported format (JPG, PNG, WEBP)"
       },
       "reorder": {
-        "success": "Guests reordered successfully ",
-        "error": "Error occurred while reordering guests "
+        "success": "Team reordered successfully",
+        "error": "Error occurred while reordering team members"
       }
     },
     "adminTableTop": {

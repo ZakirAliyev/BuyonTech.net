@@ -22,7 +22,7 @@
                 padding: 12px 16px;
                 gap: 6px;
                 border-radius: 6px;
-                border: 1px solid #B8B307;
+                border: 1px solid #000;
                 color: #4D4D4D;
                 background: transparent;
                 text-align: center;
@@ -40,7 +40,7 @@
                 }
 
                 &:hover {
-                    background: #B8B307;
+                    background: #2b2b2b;
 
                     color: #FFF;
 
@@ -61,7 +61,7 @@
             .searchIcon {
                 position: absolute;
                 left: 12px;
-                top: 50%;
+                top: 57%;
                 transform: translateY(-50%);
             }
 
@@ -84,7 +84,7 @@
                 }
 
                 &:focus {
-                    border: 1px solid #B8B307;
+                    border: 1px solid #2b2b2b;
 
                 }
 

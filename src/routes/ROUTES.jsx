@@ -8,6 +8,8 @@ import NotFoundPage from "../pages/UserPages/NotFoundPage/index.jsx";
 import AboutPage from "../pages/UserPages/AboutPage/index.jsx";
 import AdminLogin from "../pages/AdminPages/Login/index.jsx";
 import AdminRoot from "../pages/AdminPages/index.jsx";
+import PrivateAdminRoute from "../pages/AdminPages/PrivateAdminRoot.jsx";
+import AdminGuests from "../pages/AdminPages/Guests/index.jsx";
 
 export const ROUTES = [
     {
@@ -54,7 +56,7 @@ export const ROUTES = [
         children:[
             {
                 index:true,
-                // element
+                element:<PrivateAdminRoute element={AdminGuests} />
             }
         ]
     }

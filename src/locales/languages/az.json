@@ -1,51 +1,5 @@
 {
   "adminRoot": {
-    "reorder": {
-      "faq": {
-        "success": "FAQ maddələrinin sırası uğurla dəyişdirildi.",
-        "error": "FAQ maddələrinin sırası dəyişdirilərkən xəta baş verdi."
-      },
-      "program": {
-        "success": "Proqramın (tədbir cədvəlinin) sırası uğurla yeniləndi.",
-        "error": "Proqramın sırası yenilənərkən xəta baş verdi."
-      }
-    },
-    "reorderBox": {
-      "title": "Sıralamanı dəyiş",
-      "fields": {
-        "targetPosition": "Hədəf mövqe"
-      },
-      "validation": {
-        "typeError": "Zəhmət olmasa rəqəm daxil edin",
-        "integer": "Tam ədəd olmalıdır",
-        "min": "Minimum {count}",
-        "max": "Maksimum {count}",
-        "required": "Bu sahə tələb olunur"
-      },
-      "placeholder": {
-        "index": "Mövqeyi daxil edin"
-      },
-      "submit": "Təsdiqlə",
-      "cancel": "İmtina et"
-    },
-    "reorderPopup": {
-      "title": "Sıralamanı dəyiş",
-      "fields": {
-        "targetPosition": "Hədəf mövqe"
-      },
-      "validation": {
-        "typeError": "Zəhmət olmasa rəqəm daxil edin",
-        "integer": "Tam ədəd olmalıdır",
-        "min": "Minimum {count}",
-        "max": "Maksimum {count}",
-        "required": "Bu sahə tələb olunur"
-      },
-      "placeholder": {
-        "index": "Mövqeyi daxil edin"
-      },
-      "submit": "Təsdiqlə",
-      "cancel": "İmtina et"
-    },
     "adminHeader": {
       "role": "Admin",
       "logout": "Çıxış",
@@ -53,8 +7,8 @@
     },
     "sidebar": {
       "navigation": "Naviqasiya",
-      "guests": "Qonaqlar",
-      "program": "Proqram",
+      "guests": "Komanda",
+      "program": "Loqo",
       "faq": "FAQ"
     },
     "login": {
@@ -77,134 +31,20 @@
         "passwordRequired": "Şifrə tələb olunur"
       }
     },
-    "programPage": {
-      "maxProgram":"Maksimum proqram sayı 4-dür. Yeni proqram əlavə etmək üçün mövcudlardan birini silin.",
-      "title": "Proqram",
-      "newProgram": "Yeni Proqram",
-      "table": {
-        "index": "№",
-        "image": "Şəkil",
-        "edit": "Redaktə Et",
-        "delete": "Sil",
-        "searchNotFound": "Axtarışa uyğun proqram tapılmadı",
-        "noData": "Hələ heç bir proqram əlavə olunmayıb"
-      },
-      "toast": {
-        "createSuccess": "Proqram uğurla yaradıldı",
-        "createError": "Proqram yaradılarkən xəta baş verdi",
-        "deleteSuccess": "Proqram silindi",
-        "deleteError": "Xəta baş verdi",
-        "reorderSuccess": "Sıralama uğurla dəyişdirildi",
-        "reorderError": "Sıralama zamanı xəta baş verdi"
-      },
-      "validation": {
-        "requiredAz": "Şəkil (AZ) tələb olunur",
-        "requiredEn": "Şəkil (EN) tələb olunur",
-        "fileSize": "Fayl 5MB-dan böyük ola bilməz",
-        "fileFormat": "Düzgün format deyil (JPG, PNG, WEBP)"
-      },
-      "fallback": {
-        "loadError": "Məlumatları yükləmək mümkün olmadı, zəhmət olmasa yenidən cəhd edin.",
-        "imagePreview": "Şəkil önizləmə"
-      },
-      "edit": {
-        "title": "Program Redaktə Et",
-        "validation": {
-          "requiredAz": "Şəkil (AZ) tələb olunur",
-          "requiredEn": "Şəkil (EN) tələb olunur",
-          "fileSize": "Fayl 5MB-dan böyük ola bilməz",
-          "fileFormat": "Düzgün format deyil (JPG, PNG, WEBP)"
-        },
-        "toast": {
-          "success": "Program uğurla yeniləndi ",
-          "error": "Yeniləmə zamanı xəta baş verdi "
-        }
-      }
-    },
-    "fagPage": {
-      "title": "FAQ",
-      "detail": {
-        "ariaLabel": "FAQ detalları",
-        "error": "Məlumat yüklənmədi, zəhmət olmasa yenidən cəhd edin.",
-        "empty": "FAQ məlumatı tapılmadı.",
-        "noQuestion": "Sual yoxdur",
-        "noAnswer": "Cavab yoxdur",
-        "close": "Bağla"
-      },
-      "edit": {
-        "title": "FAQ Redaktə Et",
-        "fields": {
-          "questionAz": "Sual (AZ)",
-          "answerAz": "Cavab (AZ)",
-          "questionEn": "Question (EN)",
-          "answerEn": "Answer (EN)"
-        },
-        "validation": {
-          "questionAz": "Sual tələb olunur",
-          "answerAz": "Cavab tələb olunur",
-          "questionEn": "Question is required",
-          "answerEn": "Answer is required"
-        },
-        "toast": {
-          "success": "FAQ uğurla yeniləndi",
-          "error": "Yeniləmə zamanı xəta baş verdi"
-        }
-      },
-      "search": {
-        "placeholder": "FAQ Axtar"
-      },
-      "table": {
-        "question": "Sual",
-        "detail": "Detallar",
-        "edit": "Redaktə Et",
-        "delete": "Sil"
-      },
-      "create": {
-        "title": "Yeni FAQ"
-      },
-      "fields": {
-        "questionAz": "Sual",
-        "answerAz": "Cavab",
-        "questionEn": "Question",
-        "answerEn": "Answer"
-      },
-      "validation": {
-        "questionAz": "Sual tələb olunur",
-        "answerAz": "Cavab tələb olunur",
-        "questionEn": "Question is required",
-        "answerEn": "Answer is required"
-      },
-      "toast": {
-        "createSuccess": "FAQ uğurla yaradıldı",
-        "deleteSuccess": "FAQ silindi",
-        "error": "Xəta baş verdi"
-      },
-      "error": {
-        "load": "Məlumatları yükləmək mümkün olmadı, zəhmət olmasa yenidən cəhd edin.",
-        "notFound": "Axtarışa uyğun FAQ tapılmadı",
-        "empty": "Hələ heç bir FAQ əlavə olunmayıb"
-      },
-      "filter": {
-        "default": "Standart",
-        "byQuestion": "Suala görə",
-        "asc": "Sual (A–Z)",
-        "desc": "Sual (Z–A)"
-      }
-    },
     "guestPage": {
       "editGuest": {
-        "title": "Qonağı Redaktə Et",
-        "success": "Qonaq uğurla yeniləndi ",
-        "error": "Yeniləmə zamanı xəta baş verdi "
+        "title": "Komanda üzvünü redaktə et",
+        "success": "Komanda üzvü uğurla yeniləndi",
+        "error": "Yeniləmə zamanı xəta baş verdi"
       },
       "sort": {
         "default": "Standart",
         "byName": "Ada görə",
         "nameAsc": "Ad (A–Z)",
         "nameDesc": "Ad (Z–A)",
-        "byCountry": "Ölkəyə görə",
-        "countryAsc": "Ölkə (A–Z)",
-        "countryDesc": "Ölkə (Z–A)"
+        "byCountry": "Vəzifəyə görə",
+        "countryAsc": "Vəzifə (A–Z)",
+        "countryDesc": "Vəzifə (Z–A)"
       },
       "form": {
         "placeholders": {
@@ -212,66 +52,71 @@
           "surname": "Soyad (AZ)",
           "nameEng": "Ad (EN)",
           "surnameEng": "Soyad (EN)",
-          "country": "Ölkə (AZ)",
-          "countryEng": "Ölkə (EN)",
+          "country": "Vəzifə (AZ)",
+          "countryEng": "Vəzifə (EN)",
           "description": "Haqqında (AZ)",
           "descriptionEng": "Haqqında (EN)"
         },
         "errors": {
-          "nameAz": "Ad tələb olunur",
-          "surnameAz": "Soyad tələb olunur",
-          "nameEn": "Name is required",
-          "surnameEn": "Surname is required"
+          "fullNameAz": "Tam ad (AZ) tələb olunur",
+          "fullNameEn": "Tam ad (EN) tələb olunur",
+          "positionAz": "Vəzifə (AZ) tələb olunur",
+          "positionEn": "Vəzifə (EN) tələb olunur",
+          "img": "Şəkil seçilməlidir"
         }
       },
-      "metaTitle": "Qonaqlar",
-      "title": "Qonaqlar",
+      "metaTitle": "Komanda",
+      "title": "Komanda",
       "create": {
-        "title": "Yeni Qonaq",
-        "success": "Qonaq uğurla yaradıldı ",
-        "error": "Xəta baş verdi "
+        "title": "Yeni komanda üzvü",
+        "success": "Komanda üzvü uğurla yaradıldı",
+        "error": "Xəta baş verdi"
       },
       "edit": {
-        "title": "Qonağı Redaktə Et",
-        "success": "Qonaq uğurla yeniləndi ",
-        "error": "Yeniləmə zamanı xəta baş verdi "
+        "title": "Komanda üzvünü redaktə et",
+        "success": "Komanda üzvü uğurla yeniləndi",
+        "error": "Yeniləmə zamanı xəta baş verdi"
       },
       "delete": {
-        "success": "Qonaq silindi ",
-        "error": "Xəta baş verdi "
+        "success": "Komanda üzvü silindi",
+        "error": "Xəta baş verdi"
       },
       "detail": {
-        "notFound": "Qonaq məlumatı tapılmadı.",
+        "notFound": "Komanda üzvü tapılmadı.",
         "nameFallback": "Ad yoxdur",
-        "countryFallback": "Ölkə yoxdur",
+        "countryFallback": "Vəzifə yoxdur",
         "descriptionFallback": "Haqqında məlumat yoxdur"
       },
       "table": {
         "index": "№",
         "fullName": "Tam ad",
-        "country": "Ölkə",
+        "country": "Vəzifə",
         "details": "Detallar",
-        "edit": "Redaktə Et",
+        "image": "Şəkil",
+        "edit": "Redaktə et",
         "delete": "Sil"
       },
+      "fallback": {
+        "loadError": "Məlumatları yükləmək mümkün olmadı, zəhmət olmasa yenidən cəhd edin.",
+        "imagePreview": "Şəkil önizləmə"
+      },
       "search": {
-        "placeholder": "Qonaq axtar",
-        "notFound": "Axtarışa uyğun qonaq tapılmadı",
-        "noData": "Hələ heç bir qonaq əlavə olunmayıb"
+        "placeholder": "Komanda üzvü axtar",
+        "notFound": "Axtarışa uyğun komanda üzvü tapılmadı",
+        "noData": "Hələ heç bir komanda üzvü əlavə olunmayıb"
       },
       "validation": {
-        "name": "Ad tələb olunur",
-        "surname": "Soyad tələb olunur",
-        "nameEng": "Name is required",
-        "surnameEng": "Surname is required",
-        "country": "Ölkə tələb olunur",
-        "countryEng": "Country is required",
-        "description": "Haqqında boş ola bilməz",
-        "descriptionEng": "Description is required"
+        "name": "Tam ad (AZ) tələb olunur",
+        "nameEng": "Tam ad (EN) tələb olunur",
+        "country": "Vəzifə (AZ) tələb olunur",
+        "countryEng": "Vəzifə (EN) tələb olunur",
+        "img": "Şəkil seçilməlidir",
+        "fileSize": "Fayl 5MB-dan böyük ola bilməz",
+        "fileFormat": "Düzgün format deyil (JPG, PNG, WEBP)"
       },
       "reorder": {
-        "success": "Qonaqların sırası uğurla dəyişdirildi ",
-        "error": "Qonaqların sırası dəyişdirilərkən xəta baş verdi "
+        "success": "Komanda sırası uğurla dəyişdirildi",
+        "error": "Komanda sırası dəyişdirilərkən xəta baş verdi"
       }
     },
     "adminTableTop": {

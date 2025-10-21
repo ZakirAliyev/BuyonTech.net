@@ -1,26 +1,26 @@
 import React, { useCallback, useRef, useState } from 'react'
-import AdminTables from '../../../components/Admin/AdminTables'
-import AdminTableBody from '../../../components/Admin/TableBody'
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet';
-import Popup from '../../../components/Admin/Popup';
-import InputElement from '../../../components/Admin/FormElements/InputElement';
-import az from '/public/admins/az.png'
-import en from '/public/admins/en.png'
-import TextareaElement from '../../../components/Admin/FormElements/TextareaElement';
-import CreateButton from '../../../components/Admin/FormElements/AddBtn';
+import az from '/src/assets/az.png'
+import en from '/src/assets/en.png'
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import { useCreateGuestsMutation, useDeleteGuestsMutation, useGetAllGuestsQuery, useUpdateGuestsWithReorderMutation } from "../../../services/userApi";
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
-import DeletePopup from '../../../components/Admin/DeletePopup';
+import { useCreateOurTeamsMutation, useDeleteOurTeamsMutation, useGetAllOurTeamsQuery } from '../../../services/apis/userApi';
+import AdminTables from '../../../components/Admin/AdminTables';
+import AdminTableBody from '../../../components/Admin/TableBody';
 import EditGuest from './EditGuest';
-import Loading from '../../../components/OurComponents/Loading';
+import Popup from '../../../components/Admin/Popup';
+import DeletePopup from '../../../components/Admin/DeletePopup';
+import InputElement from '../../../components/Admin/FormElements/InputElement';
+import CreateButton from '../../../components/Admin/FormElements/AddBtn';
+import SingleImageUpload from '../../../components/Admin/FormElements/SingleElement';
+import { Image } from 'antd';
 import DetailGuest from './DetailGuest';
-import ReorderPopup from '../../../components/Admin/ReorderPopup';
 
 const AdminGuests = () => {
+  const imgLocal = 'https://buyonidatech-production.up.railway.app/files/ourteam/'
   const [popupOpen, setPopupOpen] = useState(false)
   // Edit
   const [editPopupOpen, setEditPopupOpen] = useState(false);
@@ -35,15 +35,11 @@ const AdminGuests = () => {
   // Detail States
   const [detailPopupOpen, setDetailPopupOpen] = useState(false);
   const [detailId, setDetailId] = useState(null);
-  // Reorder
-  const reorderPopup = useRef(null);
-  const [targetIndex, setTargetIndex] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
+
   // Rtk
-  const [createGuest, { isLoading: createLoading, error: createError }] = useCreateGuestsMutation();
-  const { data: guestData, isLoading: guestLoading, isError: guestError, isFetching, error: fetchError } = useGetAllGuestsQuery();
-  const [deleteGuest, { isLoading: deleteLoading, error: deleteError }] = useDeleteGuestsMutation();
-  const [updateGuestWithReorder, { isLoading: reorderLoading }] = useUpdateGuestsWithReorderMutation();
+  const [createGuest, { isLoading: createLoading, error: createError }] = useCreateOurTeamsMutation();
+  const { data: guestData, isLoading: guestLoading, isError: guestError, isFetching, error: fetchError } = useGetAllOurTeamsQuery();
+  const [deleteGuest, { isLoading: deleteLoading, error: deleteError }] = useDeleteOurTeamsMutation();
 
   const load = guestLoading || isFetching;
   const error = guestError || createError || deleteError || fetchError;
@@ -53,21 +49,21 @@ const AdminGuests = () => {
   const getLocalizedName = (item, lang) => {
     switch (lang?.split("-")[0]) {
       case "az":
-        return `${item?.name || ""} ${item?.surname || ""}`.trim();
+        return `${item?.fullName || ""} `.trim();
       case "en":
-        return `${item?.nameEng || ""} ${item?.surnameEng || ""}`.trim();
+        return `${item?.fullNameEng || ""} `.trim();
       default:
-        return `${item?.name || ""} ${item?.surname || ""}`.trim();
+        return `${item?.fullName || ""}`.trim();
     }
   };
   const getLocalizedCountry = (item, lang) => {
     switch (lang?.split("-")[0]) {
       case "az":
-        return item?.country || "";
+        return item?.position || "";
       case "en":
-        return item?.countryEng || "";
+        return item?.positionEng || "";
       default:
-        return item?.country || "";
+        return item?.position || "";
     }
   };
   let filteringData = [...myData].filter((x) => {
@@ -115,51 +111,28 @@ const AdminGuests = () => {
     }
   };
 
-  //Reorder
 
-  const handleReorder = async (val) => {
-    if (!Array.isArray(myData) || myData.length === 0) return;
 
-    const targetIdx = Number(val) - 1;     // 1 → 0
-    const draggedIdx = Number(currentIndex);
-
-    if (
-      Number.isNaN(targetIdx) ||
-      targetIdx < 0 ||
-      targetIdx >= myData.length ||
-      targetIdx === draggedIdx
-    ) {
-      return;
-    }
-
-    const draggedItem = myData[draggedIdx];
-    const targetItem = myData[targetIdx];
-    if (!draggedItem || !targetItem) return;
-
-    const payload = [
-      { id: draggedItem.id, reorderId: targetItem.reorderId },
-      { id: targetItem.id, reorderId: draggedItem.reorderId }
-    ];
-
-    try {
-      await updateGuestWithReorder(payload).unwrap();
-      toast.success(t('adminRoot.guestPage.reorder.success'));
-    } catch (err) {
-      console.error('Failed to swap:', err);
-      toast.error(t('adminRoot.guestPage.reorder.error'));
-    }
-  };
-
-  const handleOpenReorderRef = useCallback(() => {
-    reorderPopup.current?.classList?.add('activeReorder');
-  }, [currentIndex]);
 
   const columns = [
     {
       header: t('adminRoot.guestPage.table.index'), accessor: "index",
       render: (row, rowIndex) => rowIndex + 1
     },
+    {
+      header: t("adminRoot.guestPage.table.image"),
+      accessor: "Image",
+      render: (row) => {
+        return <div className='tableImageBox'>
+          <Image
+            src={imgLocal + row?.cardImage}
+            alt={row.fullName || t("adminRoot.programPage.fallback.imagePreview")}
+            preview={true}
+          />
+        </div>
 
+      },
+    },
     {
       header: t('adminRoot.guestPage.table.fullName'),
       accessor: "name",
@@ -232,49 +205,48 @@ const AdminGuests = () => {
       isAction: true,
     },
   ];
-
+  const FILE_SIZE = 5 * 1024 * 1024;
+  const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png", "image/webp"];
   const formik = useFormik({
     initialValues: {
-      name: "",
-      surname: "",
-      nameEng: "",
-      surnameEng: "",
-      country: "",
-      countryEng: "",
-      description: "",
-      descriptionEng: "",
+      fullName: "",
+      fullNameEng: "",
+      position: "",
+      positionEng: "",
+      cardImage: null
     },
     validationSchema: Yup.object({
-      name: Yup.string().required(t('adminRoot.guestPage.validation.name')),
-      surname: Yup.string().required(t('adminRoot.guestPage.validation.surname')),
-      nameEng: Yup.string().required(t('adminRoot.guestPage.validation.nameEng')),
-      surnameEng: Yup.string().required(t('adminRoot.guestPage.validation.surnameEng')),
-      country: Yup.string().required(t('adminRoot.guestPage.validation.country')),
-      countryEng: Yup.string().required(t('adminRoot.guestPage.validation.countryEng')),
-      description: Yup.string().required(t('adminRoot.guestPage.validation.description')),
-      descriptionEng: Yup.string().required(t('adminRoot.guestPage.validation.descriptionEng')),
+      fullName: Yup.string().required(t('adminRoot.guestPage.validation.name')),
+      fullNameEng: Yup.string().required(t('adminRoot.guestPage.validation.nameEng')),
+      position: Yup.string().required(t('adminRoot.guestPage.validation.country')),
+      positionEng: Yup.string().required(t('adminRoot.guestPage.validation.countryEng')),
+      cardImage: Yup.mixed()
+        .required(t("adminRoot.guestPage.validation.img"))
+        .test("fileSize", t("adminRoot.guestPage.validation.fileSize"),
+          (value) => !value || (value && value.size <= FILE_SIZE)
+        )
+        .test("fileFormat", t("adminRoot.guestPage.validation.fileFormat"),
+          (value) => !value || (value && SUPPORTED_FORMATS.includes(value.type))
+        ),
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
         const fd = new FormData();
-        fd.append("Name", values.name);
-        fd.append("Surname", values.surname);
-        fd.append("NameEng", values.nameEng);
-        fd.append("SurnameEng", values.surnameEng);
-        fd.append("Country", values.country);
-        fd.append("CountryEng", values.countryEng);
-        fd.append("Description", values.description);
-        fd.append("DescriptionEng", values.descriptionEng);
-
+        fd.append("CardImage", values.cardImage);
+        fd.append("FullName", values.fullName);
+        fd.append("FullNameEng", values.fullNameEng);
+        fd.append("Position", values.position);
+        fd.append("PositionEng", values.positionEng);
         const res = await createGuest(fd).unwrap();
+        console.log(res)
         resetForm();
         toast.success(t('adminRoot.guestPage.create.success'));
 
         setPopupOpen(false);
       } catch (err) {
-        toast.success(t('adminRoot.guestPage.create.error'));
+        toast.error(t('adminRoot.guestPage.create.error'));
 
-        console.error("Guest create error:", err);
+        console.error("Team create error:", err);
       }
     },
   });
@@ -312,10 +284,14 @@ const AdminGuests = () => {
           {
             load ? (
               <div className="loadingWrapper">
-                <Loading />
+                {/* <Loading /> */}
               </div>
             ) : error ? (
-              <p>{t('adminRoot.guestPage.loadError')}</p>
+              <p style={{
+                display: 'flex',
+                alignItems: "center",
+                justifyContent: "center"
+              }}>{t('adminRoot.guestPage.fallback.loadError')}</p>
             ) : (
               <AdminTableBody
                 columns={columns}
@@ -323,16 +299,17 @@ const AdminGuests = () => {
                 searchTerm={searchTerm}
                 searchNotFound={t('adminRoot.guestPage.search.notFound')}
                 noData={t('adminRoot.guestPage.search.noData')}
-                setTargetIndex={setTargetIndex}
-                setCurrentIndex={setCurrentIndex}
-                handleOpenReorderRef={handleOpenReorderRef}
+
+
               >
-                <EditGuest
-                  editPopupOpen={editPopupOpen}
-                  setEditPopupOpen={setEditPopupOpen}
-                  editGuest={editGuest}
-                  setEditGuest={setEditGuest}
-                />
+                {editPopupOpen && (
+                  <EditGuest
+                    editPopupOpen={editPopupOpen}
+                    setEditPopupOpen={setEditPopupOpen}
+                    editGuest={editGuest}
+                    setEditGuest={setEditGuest}
+                  />
+                )}
               </AdminTableBody>)
           }
 
@@ -351,30 +328,30 @@ const AdminGuests = () => {
                   <div className="col-6" style={{ padding: "0", paddingRight: "24px", borderRight: "1px solid #CCC" }}>
                     <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
                       <InputElement
-                        name="name"
+                        name="fullName"
                         placeholder={t('adminRoot.guestPage.form.placeholders.name')}
                         imgSrc={az}
-                        value={formik.values.name}
+                        value={formik.values.fullName}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         type={'text'}
-                        error={formik.errors.name}
-                        touched={formik.touched.name}
+                        error={formik.errors.fullName}
+                        touched={formik.touched.fullName}
                       />
                     </div>
                     <div className="col-12" style={{ padding: "0" }}>
 
                       <InputElement
-                        name="surname"
-                        placeholder={t('adminRoot.guestPage.form.placeholders.surname')}
+                        name="position"
+                        placeholder={t('adminRoot.guestPage.form.placeholders.country')}
                         imgSrc={az}
-                        value={formik.values.surname}
+                        value={formik.values.position}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        error={formik.errors.surname}
+                        error={formik.errors.position}
                         type={'text'}
 
-                        touched={formik.touched.surname}
+                        touched={formik.touched.position}
                       />
                     </div>
 
@@ -382,95 +359,51 @@ const AdminGuests = () => {
                   <div className="col-6" style={{ padding: "0", paddingLeft: "24px" }}>
                     <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
                       <InputElement
-                        name="nameEng"
+                        name="fullNameEng"
                         placeholder={t('adminRoot.guestPage.form.placeholders.nameEng')}
                         imgSrc={en}
-                        value={formik.values.nameEng}
+                        value={formik.values.fullNameEng}
                         onChange={formik.handleChange}
                         type={'text'}
 
                         onBlur={formik.handleBlur}
-                        error={formik.errors.nameEng}
-                        touched={formik.touched.nameEng}
+                        error={formik.errors.fullNameEng}
+                        touched={formik.touched.fullNameEng}
                       />
                     </div>
                     <div className="col-12" style={{ padding: "0" }}>
 
                       <InputElement
-                        name="surnameEng"
-                        placeholder={t('adminRoot.guestPage.form.placeholders.surnameEng')}
+                        name="positionEng"
+                        placeholder={t('adminRoot.guestPage.form.placeholders.countryEng')}
                         type={'text'}
 
                         imgSrc={en}
-                        value={formik.values.surnameEng}
+                        value={formik.values.positionEng}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        error={formik.errors.surnameEng}
-                        touched={formik.touched.surnameEng}
+                        error={formik.errors.positionEng}
+                        touched={formik.touched.positionEng}
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
-                  <InputElement
-                    name="country"
-                    placeholder={t('adminRoot.guestPage.form.placeholders.country')}
-                    imgSrc={az}
-                    value={formik.values.country}
-                    onChange={formik.handleChange}
-                    type={'text'}
 
-                    onBlur={formik.handleBlur}
-                    error={formik.errors.country}
-                    touched={formik.touched.country} />
-
-                </div>
-                <div className="col-12" style={{ padding: "0", marginBottom: "24px" }}>
-                  <InputElement
-                    name="countryEng"
-                    placeholder={t('adminRoot.guestPage.form.placeholders.countryEng')}
-                    imgSrc={en}
-                    value={formik.values.countryEng}
-                    type={'text'}
-
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.errors.countryEng}
-                    touched={formik.touched.countryEng}
-                  />
-
-                </div>
 
                 <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
-                  <TextareaElement
-                    name="description"
-                    placeholder={t('adminRoot.guestPage.form.placeholders.description')}
-                    imgSrc={az}
-                    value={formik.values.description}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    error={formik.errors.description}
-                    type={'text'}
 
-                    touched={formik.touched.description}
+                  <SingleImageUpload
+                    file={formik.values.cardImage}
+                    name="cardImage"
+                    formikData={formik}
+                    setFile={(file) => {
+                      formik.setFieldValue("cardImage", file);
+                      formik.setFieldTouched("cardImage", true, false);
+                      formik.validateField("cardImage");
+                    }}
+
                   />
-
-                </div>
-                <div className="col-12" style={{ padding: "0", marginBottom: "16px" }}>
-                  <TextareaElement
-                    name="descriptionEng"
-                    placeholder={t('adminRoot.guestPage.form.placeholders.descriptionEng')}
-                    imgSrc={en}
-                    value={formik.values.descriptionEng}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    type={'text'}
-
-                    error={formik.errors.descriptionEng}
-                    touched={formik.touched.descriptionEng}
-                  />
-
                 </div>
 
                 <div className="col-12" style={{ padding: "0", marginBottom: "16px" }}>
@@ -485,19 +418,13 @@ const AdminGuests = () => {
           }}
             isOpen={detailPopupOpen}
             guestId={detailId} />
-          <ReorderPopup
-            handleReorder={handleReorder}
-            connectionRef={reorderPopup}
-            myData={myData}
-            targetIndex={targetIndex}
-            setTargetIndex={setTargetIndex}
-          />
+
           <DeletePopup isActive={deletePopupOpen}
             onClose={() => {
               setDeletePopupOpen(false);
               setDeleteId(null);
             }}
-            title={{ az: "Qonaq", en: "Guest" }}
+            title={{ az: "Komanda", en: "Team" }}
 
             onDelete={handleDelete} />
         </>

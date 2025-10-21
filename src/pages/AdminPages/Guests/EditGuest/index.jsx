@@ -2,52 +2,69 @@ import React from 'react'
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
-import az from "/public/admins/az.png";
-import en from "/public/admins/en.png";
+import az from "/src/assets/az.png";
+import en from "/src/assets/en.png";
 import Popup from '../../../../components/Admin/Popup';
 import InputElement from '../../../../components/Admin/FormElements/InputElement';
-import TextareaElement from '../../../../components/Admin/FormElements/TextareaElement';
 import EditButton from '../../../../components/Admin/FormElements/EditBtn';
-import { useUpdateGuestsMutation } from '../../../../services/userApi';
 import { useTranslation } from 'react-i18next';
+import { useUpdateOurTeamsMutation } from '../../../../services/apis/userApi';
+import SingleImageUpload from '../../../../components/Admin/FormElements/SingleElement';
 const EditGuest = ({ editPopupOpen, setEditPopupOpen, editGuest, setEditGuest }) => {
-    const [updateGuest, { isLoading: updateLoading }] = useUpdateGuestsMutation();
+    const [updateGuest, { isLoading: updateLoading }] = useUpdateOurTeamsMutation();
+    const imgLocal = 'https://buyonidatech-production.up.railway.app/files/ourteam/'
+
+    const FILE_SIZE = 5 * 1024 * 1024;
+    const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png", "image/webp"];
     const { t } = useTranslation()
     const formik = useFormik({
         enableReinitialize: true,
         initialValues: {
             id: editGuest?.id || "",
-            name: editGuest?.name || "",
-            surname: editGuest?.surname || "",
-            nameEng: editGuest?.nameEng || "",
-            surnameEng: editGuest?.surnameEng || "",
-            country: editGuest?.country || "",
-            countryEng: editGuest?.countryEng || "",
-            description: editGuest?.description || "",
-            descriptionEng: editGuest?.descriptionEng || "",
+            fullName: editGuest?.fullName || "",
+            fullNameEng: editGuest?.fullNameEng || "",
+            position: editGuest?.position || "",
+            positionEng: editGuest?.positionEng || "",
+            cardImage: editGuest?.cardImage || ""
         },
         validationSchema: Yup.object({
-            name: Yup.string().required(t('adminRoot.guestPage.validation.name')),
-            surname: Yup.string().required(t('adminRoot.guestPage.validation.surname')),
-            nameEng: Yup.string().required(t('adminRoot.guestPage.validation.nameEng')),
-            surnameEng: Yup.string().required(t('adminRoot.guestPage.validation.surnameEng')),
-            country: Yup.string().required(t('adminRoot.guestPage.validation.country')),
-            countryEng: Yup.string().required(t('adminRoot.guestPage.validation.countryEng')),
-            description: Yup.string().required(t('adminRoot.guestPage.validation.description')),
-            descriptionEng: Yup.string().required(t('adminRoot.guestPage.validation.descriptionEng')),
+            fullName: Yup.string().required(t('adminRoot.guestPage.validation.name')),
+            fullNameEng: Yup.string().required(t('adminRoot.guestPage.validation.nameEng')),
+            position: Yup.string().required(t('adminRoot.guestPage.validation.country')),
+            positionEng: Yup.string().required(t('adminRoot.guestPage.validation.countryEng')),
+            cardImage: Yup.mixed()
+                .test(
+                    "required-if-no-existing",
+                    t("adminRoot.guestPage.validation.img"),
+                    function (value) {
+                        const hasExisting = !!this.options.context?.existingImage;
+                        if (hasExisting) return true;
+                        return value !== null && value !== undefined;
+                    }
+                )
+                .test("fileSize", t("adminRoot.guestPage.validation.fileSize"),
+                    (value) => {
+                        if (!value) return false;
+                        if (typeof value === "string") return true;
+                        return value.size <= FILE_SIZE;
+                    })
+                .test("fileFormat", t("adminRoot.guestPage.validation.fileFormat"),
+                    (value) => {
+                        if (!value) return false;
+                        if (typeof value === "string") return true;
+                        return SUPPORTED_FORMATS.includes(value.type);
+                    }),
         }),
+        validationContext: { existingImage: editGuest?.cardImage },
         onSubmit: async (values, { resetForm }) => {
             try {
                 const fd = new FormData();
                 fd.append("Id", values.id);
-                fd.append("Name", values.name);
-                fd.append("Surname", values.surname);
-                fd.append("NameEng", values.nameEng);
-                fd.append("SurnameEng", values.surnameEng);
-                fd.append("Country", values.country);
-                fd.append("CountryEng", values.countryEng);
-                fd.append("Description", values.description);
-                fd.append("DescriptionEng", values.descriptionEng);
+                fd.append("CardImage", values.cardImage);
+                fd.append("FullName", values.fullName);
+                fd.append("FullNameEng", values.fullNameEng);
+                fd.append("Position", values.position);
+                fd.append("PositionEng", values.positionEng);
 
                 await updateGuest(fd).unwrap();
                 toast.success(t("adminRoot.guestPage.editGuest.success"));
@@ -91,28 +108,29 @@ const EditGuest = ({ editPopupOpen, setEditPopupOpen, editGuest, setEditGuest })
                                 style={{ padding: "0", marginBottom: "12px" }}
                             >
                                 <InputElement
-                                    name="name"
-                                    placeholder={t("adminRoot.guestPage.form.placeholders.name")}
+                                    name="fullName"
+                                    placeholder={t('adminRoot.guestPage.form.placeholders.name')}
                                     imgSrc={az}
-                                    value={formik.values.name}
+                                    value={formik.values.fullName}
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
-                                    type="text"
-                                    error={formik.errors.name}
-                                    touched={formik.touched.name}
+                                    type={'text'}
+                                    error={formik.errors.fullName}
+                                    touched={formik.touched.fullName}
                                 />
                             </div>
                             <div className="col-12" style={{ padding: "0" }}>
                                 <InputElement
-                                    name="surname"
-                                    placeholder={t("adminRoot.guestPage.form.placeholders.surname")}
+                                    name="position"
+                                    placeholder={t('adminRoot.guestPage.form.placeholders.country')}
                                     imgSrc={az}
-                                    value={formik.values.surname}
+                                    value={formik.values.position}
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
-                                    type="text"
-                                    error={formik.errors.surname}
-                                    touched={formik.touched.surname}
+                                    error={formik.errors.position}
+                                    type={'text'}
+
+                                    touched={formik.touched.position}
                                 />
                             </div>
                         </div>
@@ -126,99 +144,52 @@ const EditGuest = ({ editPopupOpen, setEditPopupOpen, editGuest, setEditGuest })
                                 style={{ padding: "0", marginBottom: "12px" }}
                             >
                                 <InputElement
-                                    name="nameEng"
-                                    placeholder={t("adminRoot.guestPage.form.placeholders.nameEng")}
+                                    name="fullNameEng"
+                                    placeholder={t('adminRoot.guestPage.form.placeholders.nameEng')}
                                     imgSrc={en}
-                                    value={formik.values.nameEng}
+                                    value={formik.values.fullNameEng}
                                     onChange={formik.handleChange}
+                                    type={'text'}
+
                                     onBlur={formik.handleBlur}
-                                    type="text"
-                                    error={formik.errors.nameEng}
-                                    touched={formik.touched.nameEng}
+                                    error={formik.errors.fullNameEng}
+                                    touched={formik.touched.fullNameEng}
                                 />
                             </div>
                             <div className="col-12" style={{ padding: "0" }}>
                                 <InputElement
-                                    name="surnameEng"
-                                    placeholder={t("adminRoot.guestPage.form.placeholders.surnameEng")}
+                                    name="positionEng"
+                                    placeholder={t('adminRoot.guestPage.form.placeholders.countryEng')}
+                                    type={'text'}
+
                                     imgSrc={en}
-                                    value={formik.values.surnameEng}
+                                    value={formik.values.positionEng}
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
-                                    type="text"
-                                    error={formik.errors.surnameEng}
-                                    touched={formik.touched.surnameEng}
+                                    error={formik.errors.positionEng}
+                                    touched={formik.touched.positionEng}
                                 />
                             </div>
                         </div>
                     </div>
 
-                    {/* Country */}
-                    <div
-                        className="col-12"
-                        style={{ padding: "0", marginBottom: "12px" }}
-                    >
-                        <InputElement
-                            name="country"
-                            placeholder={t("adminRoot.guestPage.form.placeholders.country")}
-                            imgSrc={az}
-                            value={formik.values.country}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            type="text"
-                            error={formik.errors.country}
-                            touched={formik.touched.country}
-                        />
-                    </div>
-                    <div
-                        className="col-12"
-                        style={{ padding: "0", marginBottom: "24px" }}
-                    >
-                        <InputElement
-                            name="countryEng"
-                            placeholder={t("adminRoot.guestPage.form.placeholders.countryEng")}
-                            imgSrc={en}
-                            value={formik.values.countryEng}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            type="text"
-                            error={formik.errors.countryEng}
-                            touched={formik.touched.countryEng}
-                        />
-                    </div>
 
-                    {/* Description */}
-                    <div
-                        className="col-12"
-                        style={{ padding: "0", marginBottom: "12px" }}
-                    >
-                        <TextareaElement
-                            name="description"
-                            placeholder={t("adminRoot.guestPage.form.placeholders.description")}
-                            imgSrc={az}
-                            value={formik.values.description}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            error={formik.errors.description}
-                            touched={formik.touched.description}
-                        />
-                    </div>
-                    <div
-                        className="col-12"
-                        style={{ padding: "0", marginBottom: "16px" }}
-                    >
-                        <TextareaElement
-                            name="descriptionEng"
-                            placeholder={t("adminRoot.guestPage.form.placeholders.descriptionEng")}
-                            imgSrc={en}
-                            value={formik.values.descriptionEng}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            error={formik.errors.descriptionEng}
-                            touched={formik.touched.descriptionEng}
-                        />
-                    </div>
 
+                    <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+
+                        <SingleImageUpload
+                            file={formik.values.cardImage}
+                            name="cardImage"
+                            existImageUrl={imgLocal}
+                            formikData={formik}
+                            setFile={(file) => {
+                                formik.setFieldValue("cardImage", file);
+                                formik.setFieldTouched("cardImage", true, false);
+                                formik.validateField("cardImage");
+                            }}
+                            existingImage={editGuest?.cardImage}
+                        />
+                    </div>
                     {/* Submit */}
                     <div
                         className="col-12"

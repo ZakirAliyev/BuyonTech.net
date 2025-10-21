@@ -104,13 +104,13 @@
 
             &:hover,
             &.focused {
-                background: #B8B307;
+                background: #2b2b2b;
 
                 color: #FFF;
             }
 
             &.selected {
-                background: #B8B307;
+                background: #2b2b2b;
 
                 color: #FFF;
             }
@@ -122,7 +122,7 @@
             }
 
             .cs-check {
-                color: #343a40;
+                color: #dddfe2;
                 font-weight: 700;
             }
         }

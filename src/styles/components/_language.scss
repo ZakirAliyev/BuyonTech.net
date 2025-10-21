@@ -5,7 +5,7 @@
 $menu-bg: #fff;
 $menu-border: #e6e6e6;
 $item-hover: #f5f5f5;
-$item-active-bg: #f0f7e6;
+$item-active-bg: #2b2b2b;
 $item-active-br: #B8B30733;
 
 .lang {
@@ -82,7 +82,7 @@ $item-active-br: #B8B30733;
   }
 
   &__menu {
-  
+
     position: absolute;
     top: calc(100% + 6px);
     left: -80px;
@@ -130,9 +130,11 @@ $item-active-br: #B8B30733;
     border-radius: 8px;
     cursor: pointer;
     @include text(14px, 500);
-  &:first-child{
+
+    &:first-child {
       margin-bottom: 5px;
     }
+
     &:hover {
       background: $item-hover;
     }
@@ -146,6 +148,7 @@ $item-active-br: #B8B30733;
 
     &.is-active {
       background: $item-active-bg;
+      color: white;
       border: 1px solid $item-active-br;
     }
   }

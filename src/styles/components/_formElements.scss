@@ -35,7 +35,7 @@
         height: 42px;
 
         &:focus {
-            border: 1px solid #B8B307;
+            border: 1px solid #2b2b2b;
 
         }
 
@@ -83,7 +83,7 @@
         resize: vertical;
 
         &:focus {
-            border: 1px solid #B8B307;
+            border: 1px solid #2b2b2b;
 
         }
 
@@ -134,7 +134,7 @@
 
 
         &:hover {
-            border-color: rgba(71, 164, 71, 0.5);
+            border-color: #2b2b2b;
         }
 
         &.active {
@@ -142,7 +142,7 @@
         }
 
         &:focus {
-            border: 1px dashed #B8B307;
+            border: 1px dashed #2b2b2b;
 
         }
 
@@ -257,7 +257,7 @@
 
 
         &:hover {
-            border-color: rgba(71, 164, 71, 0.5);
+            border-color: #2b2b2b;
         }
 
         &.active {
@@ -266,7 +266,7 @@
         }
 
         &:focus {
-            border: 1px dashed #B8B307;
+            border: 1px dashed #2b2b2b;
 
         }
 
@@ -313,7 +313,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 4px;
-    background: #58B100;
+    background: #000;
     color: #FFF;
     border: none;
     text-align: center;
@@ -331,11 +331,11 @@
         transform 200ms ease;
 
     &:hover {
-        background: #969105;
+        background: #2b2b2b;
     }
 
     &:active {
-        background: #504303;
+        background: #2b2b2b;
         transform: translateY(1px);
     }
 }
