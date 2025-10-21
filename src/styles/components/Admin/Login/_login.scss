@@ -32,6 +32,8 @@
                     }
 
                     .LoginFormForm {
+                        margin-bottom: 60px;
+
                         button {
                             height: 60px;
                             padding: 18px 32px;
@@ -49,15 +51,15 @@
                                 border-color 200ms ease,
                                 transform 200ms ease;
                             border-radius: 8px;
-                            border: 1px solid #B8B307;
-                            background: #B8B307;
+                            border: 1px solid #000;
+                            background: #000;
 
                             &:hover {
-                                background: #969105;
+                                background: #2b2b2b;
                             }
 
                             &:active {
-                                background: #504303;
+                                background: #2b2b2b;
                                 transform: translateY(1px);
                             }
                         }
@@ -142,16 +144,42 @@
                 }
 
                 .imgBox {
-                    width: 100%;
-                    height: 100%;
+                    width: 660px;
+                    border-radius: 40px;
+                    overflow: hidden;
+                    position: relative;
 
-                    img {
-                        max-height: 95dvh; // şəkil ekrandan böyük olmayacaq
-                        width: auto; // enini avtomatik saxlayır
-                        height: auto; // proporsiyanı qoruyur
-                        object-fit: contain;
+                    .buyonTechTitles {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        padding: 19px 48px 18px 48px;
+                        justify-content: center;
+                        align-items: center;
+                        flex-shrink: 0;
+                        border-radius: 16px;
+                        background: linear-gradient(135deg,
+                                rgba(255, 255, 255, 0.15) 0%,
+                                rgba(255, 255, 255, 0.05) 100%);
+
+                        box-shadow:
+                            inset 0 0 15px rgba(255, 255, 255, 0.1),
+                            0 4px 25px rgba(0, 0, 0, 0.1);
+
+                        p {
+                            color: #FFF;
+                            font-family: Poppins;
+                            @include text(64px, 800, normal, normal);
+                        }
+                    }
+
+                    video {
+                        max-height: 95dvh;
+                        object-fit: cover;
                         display: block;
-                        margin: 0 auto; // ortada qalsın
+                        width: 660px;
+                        margin: 0 auto;
                     }
                 }
             }

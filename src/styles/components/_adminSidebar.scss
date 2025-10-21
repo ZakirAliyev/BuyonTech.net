@@ -30,12 +30,14 @@
 
         .activeLi {
             border-radius: 10px;
-            background: #B8B307;
+            background: #000;
 
             a {
                 color: #FFF;
             }
         }
+
+   
 
         li {
             padding: 12px 0;
@@ -45,7 +47,7 @@
 
             &:hover {
                 border-radius: 10px;
-                background: #B8B307;
+                background: #2b2b2b;
 
                 a {
                     color: #FFF;

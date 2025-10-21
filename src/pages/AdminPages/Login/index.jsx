@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { Helmet } from 'react-helmet'
-import adminLogin from '/src/assets/adminLogin.webp'
+import adminLogin from '/src/assets/adminLogin.mp4'
 import headerLogo from '/src/assets/header-logo.webp'
 import { useNavigate } from 'react-router'
 import toast from 'react-hot-toast';
@@ -107,7 +107,6 @@ const AdminLogin = () => {
                                         }}
                                     >
                                         {showPassword ? (
-                                            // Bağlı (gözü bağlı) icon
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 width="20" height="20"
                                                 viewBox="0 0 24 24" fill="none">
@@ -117,7 +116,6 @@ const AdminLogin = () => {
                                                     stroke="#999999" strokeWidth="1.5" strokeLinecap="round" />
                                             </svg>
                                         ) : (
-                                            // Açıq (gözü açıq) icon
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 width="20" height="20"
                                                 viewBox="0 0 20 20" fill="none">
@@ -152,7 +150,18 @@ const AdminLogin = () => {
                     </div>
                     <div className="col-6">
                         <div className="imgBox">
-                            <img src={adminLogin} alt="adminLogin" />
+                            <video
+                                src={adminLogin}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                            />
+                            <div className="buyonTechTitles">
+                                <p>
+                                    BUYONTECH
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
