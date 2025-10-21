@@ -7,7 +7,6 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
-import { useCreateOurTeamsMutation, useDeleteOurTeamsMutation, useGetAllOurTeamsQuery } from '../../../services/apis/userApi';
 import AdminTables from '../../../components/Admin/AdminTables';
 import AdminTableBody from '../../../components/Admin/TableBody';
 import EditGuest from './EditGuest';
@@ -17,10 +16,12 @@ import InputElement from '../../../components/Admin/FormElements/InputElement';
 import CreateButton from '../../../components/Admin/FormElements/AddBtn';
 import SingleImageUpload from '../../../components/Admin/FormElements/SingleElement';
 import { Image } from 'antd';
-import DetailGuest from './DetailGuest';
+import { useCreateProjectsMutation, useDeleteProjectsMutation, useGetAllProjectsQuery } from '../../../services/apis/userApi';
+import DetailProject from './DetailProject';
 
-const AdminGuests = () => {
-  const imgLocal = 'https://api.buyontech.net/files/ourteam/'
+const AdminProjects = () => {
+  const imgLocal = 'https://api.buyontech.net/files/projects/cards/'
+  const imgLocal2 = 'https://api.buyontech.net/files/projects/files/'
   const [popupOpen, setPopupOpen] = useState(false)
   // Edit
   const [editPopupOpen, setEditPopupOpen] = useState(false);
@@ -37,41 +38,38 @@ const AdminGuests = () => {
   const [detailId, setDetailId] = useState(null);
 
   // Rtk
-  const [createGuest, { isLoading: createLoading, error: createError }] = useCreateOurTeamsMutation();
-  const { data: guestData, isLoading: guestLoading, isError: guestError, isFetching, error: fetchError } = useGetAllOurTeamsQuery();
-  const [deleteGuest, { isLoading: deleteLoading, error: deleteError }] = useDeleteOurTeamsMutation();
+  const [createGuest, { isLoading: createLoading, error: createError }] = useCreateProjectsMutation();
+  const { data: guestData, isLoading: guestLoading, isError: guestError, isFetching, error: fetchError } = useGetAllProjectsQuery();
+  const [deleteGuest, { isLoading: deleteLoading, error: deleteError }] = useDeleteProjectsMutation();
 
   const load = guestLoading || isFetching;
   const error = guestError || createError || deleteError || fetchError;
   const myData = guestData?.data || [];
   // Search Filter
-
   const getLocalizedName = (item, lang) => {
     switch (lang?.split("-")[0]) {
       case "az":
-        return `${item?.fullName || ""} `.trim();
+        return `${item?.title || ""} `.trim();
       case "en":
-        return `${item?.fullNameEng || ""} `.trim();
+        return `${item?.titleEng || ""} `.trim();
       default:
-        return `${item?.fullName || ""}`.trim();
+        return `${item?.title || ""}`.trim();
     }
   };
   const getLocalizedCountry = (item, lang) => {
     switch (lang?.split("-")[0]) {
       case "az":
-        return item?.position || "";
+        return item?.projectType || "";
       case "en":
-        return item?.positionEng || "";
+        return item?.projectTypeEng || "";
       default:
-        return item?.position || "";
+        return item?.projectType || "";
     }
   };
   let filteringData = [...myData].filter((x) => {
     const name = getLocalizedName(x, i18n.language).toLowerCase();
-    const country = getLocalizedCountry(x, i18n.language).toLowerCase();
     return (
-      name.includes(searchTerm.toLowerCase()) ||
-      country.includes(searchTerm.toLowerCase())
+      name.includes(searchTerm.toLowerCase()) 
     );
   })
 
@@ -102,11 +100,11 @@ const AdminGuests = () => {
   const handleDelete = async () => {
     try {
       await deleteGuest(deleteId).unwrap();
-      toast.success(t('adminRoot.guestPage.delete.success'));
+      toast.success(t('adminRoot.projectPage.delete.success'));
       setDeletePopupOpen(false);
       setDeleteId(null);
     } catch (err) {
-      toast.error(t('adminRoot.guestPage.delete.error'));
+      toast.error(t('adminRoot.projectPage.delete.error'));
       console.error(err);
     }
   };
@@ -116,11 +114,11 @@ const AdminGuests = () => {
 
   const columns = [
     {
-      header: t('adminRoot.guestPage.table.index'), accessor: "index",
+      header: t('adminRoot.projectPage.table.index'), accessor: "index",
       render: (row, rowIndex) => rowIndex + 1
     },
     {
-      header: t("adminRoot.guestPage.table.image"),
+      header: t("adminRoot.projectPage.table.image"),
       accessor: "Image",
       render: (row) => {
         return <div className='tableImageBox'>
@@ -136,7 +134,7 @@ const AdminGuests = () => {
       },
     },
     {
-      header: t('adminRoot.guestPage.table.fullName'),
+      header: t('adminRoot.projectPage.table.title'),
       accessor: "name",
       render: (row) => {
         return <span>{getLocalizedName(row, i18n.language)}</span>
@@ -145,16 +143,23 @@ const AdminGuests = () => {
     },
 
     {
-      header: t('adminRoot.guestPage.table.country'),
+      header: t('adminRoot.projectPage.table.projectType'),
       accessor: "country",
       render: (row) => {
         return <span>{getLocalizedCountry(row, i18n.language)}</span>
       },
     },
+  {
+      header: t('adminRoot.projectPage.table.year'),
+      accessor: "country",
+      render: (row) => {
+        return <span>{row?.year}</span>
+      },
+    },
 
 
     {
-      header: t('adminRoot.guestPage.table.details'),
+      header: t('adminRoot.projectPage.table.details'),
       render: (row) => (
         <Link
           onClick={(e) => {
@@ -172,7 +177,7 @@ const AdminGuests = () => {
       isAction: true,
     },
     {
-      header: t('adminRoot.guestPage.table.edit'),
+      header: t('adminRoot.projectPage.table.edit'),
       render: (row) => (
         <Link onClick={(e) => {
           e.preventDefault()
@@ -189,7 +194,7 @@ const AdminGuests = () => {
       isAction: true,
     },
     {
-      header: t('adminRoot.guestPage.table.delete'),
+      header: t('adminRoot.projectPage.table.delete'),
       render: (row) => (
         <button
           onClick={() => {
@@ -211,42 +216,95 @@ const AdminGuests = () => {
   const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png", "image/webp"];
   const formik = useFormik({
     initialValues: {
-      fullName: "",
-      fullNameEng: "",
-      position: "",
-      positionEng: "",
-      cardImage: null
+      title: "",
+      titleEng: "",
+      subTitle: "",
+      subTitleEng: "",
+      year: "",
+      projectType: "",
+      projectTypeEng: "",
+      services: [],
+      files: [],
+      profilName: "",
+      cardImage: null,
+      links: [],
+      descriptions: [],
+      categoryType: ""
     },
     validationSchema: Yup.object({
-      fullName: Yup.string().required(t('adminRoot.guestPage.validation.name')),
-      fullNameEng: Yup.string().required(t('adminRoot.guestPage.validation.nameEng')),
-      position: Yup.string().required(t('adminRoot.guestPage.validation.country')),
-      positionEng: Yup.string().required(t('adminRoot.guestPage.validation.countryEng')),
+      title: Yup.string().required(t("adminRoot.projectPage.validation.title")),
+      titleEng: Yup.string().required(t("adminRoot.projectPage.validation.titleEng")),
+
+      subTitle: Yup.string().required(t("adminRoot.projectPage.validation.subTitle")),
+      subTitleEng: Yup.string().required(t("adminRoot.projectPage.validation.subTitleEng")),
+
+      year: Yup.string().required(t("adminRoot.projectPage.validation.year")),
+
+      projectType: Yup.string().required(t("adminRoot.projectPage.validation.projectType")),
+      projectTypeEng: Yup.string().required(t("adminRoot.projectPage.validation.projectTypeEng")),
+
+      services: Yup.array()
+        .min(1, t("adminRoot.projectPage.validation.services"))
+        .required(t("adminRoot.projectPage.validation.services")),
+
+      files: Yup.array()
+        .min(1, t("adminRoot.projectPage.validation.files"))
+        .required(t("adminRoot.projectPage.validation.files")),
+
+      profilName: Yup.string().required(t("adminRoot.projectPage.validation.profilName")),
+
       cardImage: Yup.mixed()
-        .required(t("adminRoot.guestPage.validation.img"))
-        .test("fileSize", t("adminRoot.guestPage.validation.fileSize"),
-          (value) => !value || (value && value.size <= FILE_SIZE)
-        )
-        .test("fileFormat", t("adminRoot.guestPage.validation.fileFormat"),
-          (value) => !value || (value && SUPPORTED_FORMATS.includes(value.type))
-        ),
+        .required(t("adminRoot.projectPage.validation.cardImage"))
+        .test("fileSize", t("adminRoot.projectPage.validation.fileSize"), (value) => {
+          if (!value) return false;
+          if (typeof value === "string") return true;
+          return value.size <= FILE_SIZE;
+        })
+        .test("fileFormat", t("adminRoot.projectPage.validation.fileFormat"), (value) => {
+          if (!value) return false;
+          if (typeof value === "string") return true;
+          return SUPPORTED_FORMATS.includes(value.type);
+        }),
+
+      links: Yup.array()
+        .min(1, t("adminRoot.projectPage.validation.links"))
+        .required(t("adminRoot.projectPage.validation.links")),
+
+      categoryType: Yup.string().required(t("adminRoot.projectPage.validation.categoryType")),
+      // cardImage: Yup.mixed()
+      //   .required(t("adminRoot.projectPage.validation.img"))
+      //   .test("fileSize", t("adminRoot.projectPage.validation.fileSize"),
+      //     (value) => !value || (value && value.size <= FILE_SIZE)
+      //   )
+      //   .test("fileFormat", t("adminRoot.projectPage.validation.fileFormat"),
+      //     (value) => !value || (value && SUPPORTED_FORMATS.includes(value.type))
+      //   ),
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
         const fd = new FormData();
+        fd.append("Title", values.title);
+        fd.append("TitleEng", values.titleEng);
+        fd.append("SubTitle", values.subTitle);
+        fd.append("SubTitleEng", values.subTitleEng);
+        fd.append("Year", values.year);
+        fd.append("ProjectType", values.projectType);
+        fd.append("ProjectTypeEng", values.projectTypeEng);
+        fd.append("ProfilName", values.profilName);
         fd.append("CardImage", values.cardImage);
-        fd.append("FullName", values.fullName);
-        fd.append("FullNameEng", values.fullNameEng);
-        fd.append("Position", values.position);
-        fd.append("PositionEng", values.positionEng);
+        fd.append("CategoryType", values.categoryType);
+
+        // Arrays (services, files, links)
+        values.services.forEach((item, i) => fd.append(`Services[${i}].Id`, item.id));
+        values.files.forEach((item, i) => fd.append(`Files[${i}].Name`, item.name));
+        values.links.forEach((item, i) => fd.append(`Links[${i}].Name`, item.name));
         const res = await createGuest(fd).unwrap();
-        console.log(res)
         resetForm();
-        toast.success(t('adminRoot.guestPage.create.success'));
+        toast.success(t('adminRoot.projectPage.create.success'));
 
         setPopupOpen(false);
       } catch (err) {
-        toast.error(t('adminRoot.guestPage.create.error'));
+        toast.error(t('adminRoot.projectPage.create.error'));
 
         console.error("Team create error:", err);
       }
@@ -255,34 +313,35 @@ const AdminGuests = () => {
 
 
 
-  const guestOptions = [
-    { value: "all", label: t('adminRoot.guestPage.sort.default') },
-    {
-      label: t('adminRoot.guestPage.sort.byName'),
-      options: [
-        { value: "name-asc", label: t('adminRoot.guestPage.sort.nameAsc') },
-        { value: "name-desc", label: t('adminRoot.guestPage.sort.nameDesc') },
-      ],
-    },
-    {
-      label: t('adminRoot.guestPage.sort.byCountry'),
-      options: [
-        { value: "country-asc", label: t('adminRoot.guestPage.sort.countryAsc') },
-        { value: "country-desc", label: t('adminRoot.guestPage.sort.countryDesc') },
-      ],
-    },
-  ];
+const projectOptions = [
+  { value: "all", label: t("adminRoot.projectPage.sort.default") },
+  {
+    label: t("adminRoot.projectPage.sort.byName"),
+    options: [
+      { value: "title-asc", label: t("adminRoot.projectPage.sort.nameAsc") },
+      { value: "title-desc", label: t("adminRoot.projectPage.sort.nameDesc") },
+    ],
+  },
+  {
+    label: t("adminRoot.projectPage.sort.byYear"),
+    options: [
+      { value: "year-asc", label: t("adminRoot.projectPage.sort.yearAsc") },
+      { value: "year-desc", label: t("adminRoot.projectPage.sort.yearDesc") },
+    ],
+  },
+];
+
 
   return (
     <>
 
       <main id='adminMain' style={{ position: "relative" }}>
-        <Helmet><title>{t('adminRoot.guestPage.metaTitle')}</title></Helmet>
+        <Helmet><title>{t('adminRoot.projectPage.metaTitle')}</title></Helmet>
 
 
 
         <>
-          <AdminTables myData={myData} placeholder={t('adminRoot.guestPage.search.placeholder')} setPopupOpen={setPopupOpen} searchTerm={searchTerm} setSearchTerm={setSearchTerm} filterType={sortType} setFilterType={setSortType} guestOptions={guestOptions} title={t('adminRoot.guestPage.title')} />
+          <AdminTables myData={myData} placeholder={t('adminRoot.projectPage.search.placeholder')} setPopupOpen={setPopupOpen} searchTerm={searchTerm} setSearchTerm={setSearchTerm} filterType={sortType} setFilterType={setSortType} guestOptions={projectOptions} title={t('adminRoot.projectPage.title')} />
           {
             load ? (
               <div className="loadingWrapper">
@@ -293,14 +352,14 @@ const AdminGuests = () => {
                 display: 'flex',
                 alignItems: "center",
                 justifyContent: "center"
-              }}>{t('adminRoot.guestPage.fallback.loadError')}</p>
+              }}>{t('adminRoot.projectPage.fallback.loadError')}</p>
             ) : (
               <AdminTableBody
                 columns={columns}
                 data={filteringData}
                 searchTerm={searchTerm}
-                searchNotFound={t('adminRoot.guestPage.search.notFound')}
-                noData={t('adminRoot.guestPage.search.noData')}
+                searchNotFound={t('adminRoot.projectPage.search.notFound')}
+                noData={t('adminRoot.projectPage.search.noData')}
 
 
               >
@@ -321,7 +380,7 @@ const AdminGuests = () => {
             setPopupOpen(false)
             formik.resetForm()
           }}>
-            <h2>{t('adminRoot.guestPage.create.title')}</h2>
+            <h2>{t('adminRoot.projectPage.create.title')}</h2>
             <form onSubmit={formik.handleSubmit}>
               <div className="row">
 
@@ -331,7 +390,7 @@ const AdminGuests = () => {
                     <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
                       <InputElement
                         name="fullName"
-                        placeholder={t('adminRoot.guestPage.form.placeholders.name')}
+                        placeholder={t('adminRoot.projectPage.form.placeholders.name')}
                         imgSrc={az}
                         value={formik.values.fullName}
                         onChange={formik.handleChange}
@@ -345,7 +404,7 @@ const AdminGuests = () => {
 
                       <InputElement
                         name="position"
-                        placeholder={t('adminRoot.guestPage.form.placeholders.country')}
+                        placeholder={t('adminRoot.projectPage.form.placeholders.country')}
                         imgSrc={az}
                         value={formik.values.position}
                         onChange={formik.handleChange}
@@ -362,7 +421,7 @@ const AdminGuests = () => {
                     <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
                       <InputElement
                         name="fullNameEng"
-                        placeholder={t('adminRoot.guestPage.form.placeholders.nameEng')}
+                        placeholder={t('adminRoot.projectPage.form.placeholders.nameEng')}
                         imgSrc={en}
                         value={formik.values.fullNameEng}
                         onChange={formik.handleChange}
@@ -377,7 +436,7 @@ const AdminGuests = () => {
 
                       <InputElement
                         name="positionEng"
-                        placeholder={t('adminRoot.guestPage.form.placeholders.countryEng')}
+                        placeholder={t('adminRoot.projectPage.form.placeholders.countryEng')}
                         type={'text'}
 
                         imgSrc={en}
@@ -415,7 +474,7 @@ const AdminGuests = () => {
             </form>
           </Popup>
           {
-            detailPopupOpen ? <DetailGuest onClose={() => {
+            detailPopupOpen ? <DetailProject onClose={() => {
               setDetailPopupOpen(false);
               setDetailId(null);
             }}
@@ -428,7 +487,7 @@ const AdminGuests = () => {
               setDeletePopupOpen(false);
               setDeleteId(null);
             }}
-            title={{ az: "Komanda", en: "Team" }}
+            title={{ az: "Layihələr", en: "Projects" }}
 
             onDelete={handleDelete} />
         </>
@@ -438,4 +497,4 @@ const AdminGuests = () => {
   )
 }
 
-export default AdminGuests
+export default AdminProjects

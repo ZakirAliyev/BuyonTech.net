@@ -48,8 +48,19 @@
             }
         }
 
-        .col-3 {
-            @include flex;
+        .guestClose2 {
+            position: absolute;
+            top: -10px;
+            right: 15%;
+            transform: translateX(-50%);
+            background: none;
+            cursor: pointer;
+            border: none;
+
+            svg {
+                color: white;
+                font-size: 28px;
+            }
         }
 
         .formBoxDetail {
@@ -149,6 +160,246 @@
                     }
                 }
             }
+        }
+
+        .wokSection {
+            #workCardS {
+                padding: 0 8px;
+                margin-top: 32px;
+
+                .box {
+                    position: relative;
+                    background: url("/src/assets/mid.png") no-repeat center center;
+                    background-size: cover;
+                    aspect-ratio: 16/8;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 36px;
+                    padding: 0 80px;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        backdrop-filter: blur(20px);
+                        filter: brightness(40%);
+                    }
+
+                    .midImageWrapper {
+                        position: relative;
+                        z-index: 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 16px;
+                        border-radius: 28px;
+                        overflow: hidden;
+
+                        .midImageBackdrop {
+                            position: absolute;
+                            inset: 0;
+                            background-size: cover, 24px 24px;
+                            opacity: 0.65;
+                            border-radius: inherit;
+                            transition: opacity 0.4s ease;
+                        }
+                    }
+
+                    .midImage {
+                        position: relative;
+                        z-index: 1;
+                        max-width: 360px;
+                        width: 100%;
+                        aspect-ratio: .75/1;
+                        object-fit: cover;
+                        border-radius: 20px;
+                        border: 1px solid #E6E6E640;
+
+                        padding: 0;
+                    }
+
+                    .boxLeft {
+                        display: flex;
+                        justify-content: space-around;
+                        flex-direction: column;
+                        height: 100%;
+
+                        h2 {
+                            position: relative;
+                            z-index: 1;
+                            font-weight: 600;
+                            font-size: 40px;
+                            color: var(--bg-color);
+                        }
+
+                        p {
+                            position: relative;
+                            z-index: 1;
+                            max-width: 300px;
+                            width: 100%;
+                            color: var(--work-card-color);
+                            font-weight: 300;
+                        }
+                    }
+
+                    .boxLeft1 {
+                        display: flex;
+                        justify-content: space-evenly;
+                        flex-direction: column;
+                        height: 100%;
+                        padding: 0 0 0 100px;
+                        gap: 20px;
+
+                        h2 {
+                            position: relative;
+                            z-index: 1;
+                            font-weight: 600;
+                            font-size: 40px;
+                            color: var(--bg-color);
+                        }
+
+                        p {
+                            position: relative;
+                            z-index: 1;
+                            max-width: 300px;
+                            width: 100%;
+                            color: var(--work-card-color);
+                            font-weight: 300;
+                        }
+
+                        .detailBlock {
+                            position: relative;
+                            z-index: 1;
+                        }
+
+                        .p {
+                            position: relative;
+                            z-index: 1;
+                            font-weight: 400;
+                            margin: 4px 0;
+                            font-size: 18px;
+                            color: var(--bg-color);
+                        }
+
+                        .pe {
+                            position: relative;
+                            z-index: 1;
+                            font-weight: 500;
+                            margin: 4px 0;
+                            font-size: 24px;
+                            color: var(--bg-color);
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 992px) {
+                    padding: 0 16px;
+
+                    .box {
+                        aspect-ratio: auto;
+                        flex-direction: column;
+                        align-items: stretch;
+                        justify-content: flex-start;
+                        padding: 32px 24px 40px;
+                        gap: 28px;
+                        border-radius: 28px;
+
+                        &::before {
+                            backdrop-filter: blur(5px);
+
+                            filter: none;
+                            background: linear-gradient(180deg, rgba(22, 22, 22, 0.9), rgba(10, 10, 10, 0.75));
+                        }
+
+                        >[class*='col-'] {
+                            width: 100%;
+                            padding: 0 !important;
+                        }
+
+                        .boxLeft {
+                            justify-content: flex-start;
+                            gap: 14px;
+
+                            h2 {
+                                font-size: 32px;
+                            }
+
+                            p {
+                                font-size: 15px;
+                                color: rgba(255, 255, 255, 0.78);
+                            }
+                        }
+
+                        .midImageWrapper {
+                            padding: 0;
+                            min-height: 220px;
+                            border-radius: 24px;
+
+                            .midImageBackdrop {
+                                opacity: 1;
+                            }
+                        }
+
+                        .midImage {
+                            max-width: 300px;
+                            width: 100%;
+                            border-radius: 16px;
+                            aspect-ratio: 16/12;
+                            object-fit: cover;
+                        }
+
+                        .boxLeft1 {
+                            padding: 0;
+                            gap: 24px;
+
+                            .detailBlock {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 8px;
+
+                                p {
+                                    font-size: 13px;
+                                    letter-spacing: 0.08em;
+                                    text-transform: uppercase;
+                                    color: rgba(255, 255, 255, 0.55);
+                                }
+
+                                .p,
+                                .pe {
+                                    color: #fff;
+                                }
+                            }
+
+                            .detailBlock-year,
+                            .detailBlock-category {
+                                flex-direction: row;
+                                flex-direction: column;
+                                gap: 18px;
+
+                                .pe,
+                                .p {
+                                    font-size: 18px;
+                                }
+
+                                .pe {
+                                    font-size: 22px;
+                                    font-weight: 600;
+                                }
+                            }
+
+                            .detailBlock-services {
+                                .p {
+                                    margin: 0;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

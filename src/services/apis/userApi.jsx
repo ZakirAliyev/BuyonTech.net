@@ -4,7 +4,8 @@ import Cookies from "js-cookie";
 export const userApi = createApi({
     reducerPath: 'userApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://buyonidatech-production.up.railway.app/api/',
+        // baseUrl: 'https://buyonidatech-production.up.railway.app/api/',
+        baseUrl: 'https://api.buyontech.net/api/',
         prepareHeaders: (headers) => {
             const token = Cookies.get('adminToken') || sessionStorage.getItem('adminToken');
 

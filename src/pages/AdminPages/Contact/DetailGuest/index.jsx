@@ -13,7 +13,7 @@ const DetailContact = ({ isOpen, onClose, guestId }) => {
         skip: !guestId
     });
     const guest = guestData?.data
-    const imgLocal = 'https://buyonidatech-production.up.railway.app/files/ourteam/'
+    const imgLocal = 'https://api.buyontech.net/files/ourteam/'
 
 
 

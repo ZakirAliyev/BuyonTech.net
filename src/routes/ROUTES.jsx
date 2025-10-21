@@ -12,6 +12,7 @@ import PrivateAdminRoute from "../pages/AdminPages/PrivateAdminRoot.jsx";
 import AdminGuests from "../pages/AdminPages/Guests/index.jsx";
 import AdminLogos from "../pages/AdminPages/Logos/index.jsx";
 import AdminContact from "../pages/AdminPages/Contact/index.jsx";
+import AdminProjects from "../pages/AdminPages/Projects/index.jsx";
 
 export const ROUTES = [
     {
@@ -67,6 +68,10 @@ export const ROUTES = [
             {
                 path: 'contact',
                 element: <PrivateAdminRoute element={AdminContact} />
+            },
+             {
+                path: 'projects',
+                element: <PrivateAdminRoute element={AdminProjects} />
             }
         ]
     }

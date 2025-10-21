@@ -9,7 +9,8 @@
       "navigation": "Navigation",
       "guests": "Team",
       "program": "Logo",
-      "faq": "Contact"
+      "faq": "Contact",
+      "projects": "Projects"
     },
     "login": {
       "title": "Log in",
@@ -241,6 +242,105 @@
         "noData": "No contact has been added yet"
       }
     },
+    "projectPage": {
+      "editProject": {
+        "title": "Edit Project",
+        "success": "Project updated successfully",
+        "error": "An error occurred while updating"
+      },
+      "sort": {
+        "default": "Default",
+        "byName": "By Title",
+        "nameAsc": "Title (A–Z)",
+        "nameDesc": "Title (Z–A)",
+        "byYear": "By Year",
+        "yearAsc": "Year (Ascending)",
+        "yearDesc": "Year (Descending)"
+      },
+      "form": {
+        "placeholders": {
+          "title": "Title (AZ)",
+          "titleEng": "Title (EN)",
+          "subTitle": "Subtitle (AZ)",
+          "subTitleEng": "Subtitle (EN)",
+          "year": "Year",
+          "projectType": "Project Type (AZ)",
+          "projectTypeEng": "Project Type (EN)",
+          "services": "Services",
+          "image": "Select Image"
+        },
+        "errors": {
+          "titleAz": "Title (AZ) is required",
+          "titleEng": "Title (EN) is required",
+          "year": "Year is required",
+          "projectTypeAz": "Project Type (AZ) is required",
+          "projectTypeEng": "Project Type (EN) is required",
+          "img": "Image must be selected"
+        }
+      },
+      "metaTitle": "Projects",
+      "title": "Projects",
+      "create": {
+        "title": "New Project",
+        "success": "Project created successfully",
+        "error": "An error occurred"
+      },
+      "edit": {
+        "title": "Edit Project",
+        "success": "Project updated successfully",
+        "error": "An error occurred while updating"
+      },
+      "delete": {
+        "success": "Project deleted successfully",
+        "error": "An error occurred"
+      },
+      "detail": {
+        "notFound": "Project not found.",
+        "titleFallback": "No title",
+        "yearFallback": "No year",
+        "projectTypeFallback": "No project type"
+      },
+      "table": {
+        "index": "№",
+        "title": "Title",
+        "year": "Year",
+        "projectType": "Project Type",
+        "image": "Image",
+        "details": "Details",
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "fallback": {
+        "loadError": "Failed to load data, please try again.",
+        "imagePreview": "Image Preview"
+      },
+      "search": {
+        "placeholder": "Search project",
+        "notFound": "No project found",
+        "noData": "No projects have been added yet"
+      },
+      "validation": {
+        "title": "Title (AZ) is required",
+        "titleEng": "Title (EN) is required",
+        "subTitle": "Subtitle (AZ) is required",
+        "subTitleEng": "Subtitle (EN) is required",
+        "year": "Year is required",
+        "projectType": "Project Type (AZ) is required",
+        "projectTypeEng": "Project Type (EN) is required",
+        "services": "At least one service must be selected",
+        "files": "At least one file must be added",
+        "profilName": "Profile name is required",
+        "cardImage": "Project image must be selected",
+        "links": "At least one link must be added",
+        "categoryType": "Category type is required",
+        "fileSize": "File cannot exceed 5MB",
+        "fileFormat": "Invalid format (JPG, PNG, WEBP)"
+      },
+      "reorder": {
+        "success": "Projects reordered successfully",
+        "error": "An error occurred while reordering"
+      }
+    },
     "contactDetailModal": {
       "title": "Contact Details",
       "placeholders": {
@@ -249,7 +349,6 @@
         "email": "Email",
         "phoneNumber": "Phone Number",
         "contactInfo": "Contact Info",
-
         "description": "Description"
       },
       "loadError": "Failed to load contact information, please try again."

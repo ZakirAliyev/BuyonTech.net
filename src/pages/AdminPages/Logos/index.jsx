@@ -20,7 +20,7 @@ import { useCreateLogosMutation, useDeleteLogosMutation, useGetAllLogosQuery } f
 
 const AdminLogos
   = () => {
-    const imgLocal = 'https://buyonidatech-production.up.railway.app/files/logos/'
+    const imgLocal = 'https://api.buyontech.net/files/logos/'
     const [popupOpen, setPopupOpen] = useState(false)
     // Edit
     const [editPopupOpen, setEditPopupOpen] = useState(false);

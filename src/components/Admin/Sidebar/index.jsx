@@ -9,6 +9,7 @@ const Sidebar = () => {
     { title: t("adminRoot.sidebar.guests"), path: "/admin" },
     { title: t("adminRoot.sidebar.program"), path: "/admin/logo" },
     { title: t("adminRoot.sidebar.faq"), path: "/admin/contact" },
+    { title: t("adminRoot.sidebar.projects"), path: "/admin/projects" },
   ];
   const checkActive = (itemPath) => {
     if (itemPath === "/admin") {

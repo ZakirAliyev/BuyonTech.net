@@ -9,7 +9,8 @@
       "navigation": "Naviqasiya",
       "guests": "Komanda",
       "program": "Loqo",
-      "faq": "Kontakt"
+      "faq": "Kontakt",
+      "projects": "Layihələr"
     },
     "login": {
       "title": "Daxil ol",
@@ -239,6 +240,105 @@
         "placeholder": "Əlaqə məlumatı axtar",
         "notFound": "Axtarışa uyğun əlaqə məlumatı tapılmadı",
         "noData": "Hələ heç bir əlaqə məlumatı əlavə olunmayıb"
+      }
+    },
+    "projectPage": {
+      "editProject": {
+        "title": "Layihəni redaktə et",
+        "success": "Layihə uğurla yeniləndi",
+        "error": "Yeniləmə zamanı xəta baş verdi"
+      },
+      "sort": {
+        "default": "Standart",
+        "byName": "Başlığa görə",
+        "nameAsc": "Başlıq (A–Z)",
+        "nameDesc": "Başlıq (Z–A)",
+        "byYear": "İlə görə",
+        "yearAsc": "İl (artan)",
+        "yearDesc": "İl (azalan)"
+      },
+      "form": {
+        "placeholders": {
+          "title": "Başlıq (AZ)",
+          "titleEng": "Başlıq (EN)",
+          "subTitle": "Alt başlıq (AZ)",
+          "subTitleEng": "Alt başlıq (EN)",
+          "year": "İl",
+          "projectType": "Layihə növü (AZ)",
+          "projectTypeEng": "Layihə növü (EN)",
+          "services": "Xidmətlər",
+          "image": "Şəkil seç"
+        },
+        "errors": {
+          "titleAz": "Başlıq (AZ) tələb olunur",
+          "titleEng": "Başlıq (EN) tələb olunur",
+          "year": "İl tələb olunur",
+          "projectTypeAz": "Layihə növü (AZ) tələb olunur",
+          "projectTypeEng": "Layihə növü (EN) tələb olunur",
+          "img": "Şəkil seçilməlidir"
+        }
+      },
+      "metaTitle": "Layihələr",
+      "title": "Layihələr",
+      "create": {
+        "title": "Yeni layihə",
+        "success": "Layihə uğurla yaradıldı",
+        "error": "Xəta baş verdi"
+      },
+      "edit": {
+        "title": "Layihəni redaktə et",
+        "success": "Layihə uğurla yeniləndi",
+        "error": "Yeniləmə zamanı xəta baş verdi"
+      },
+      "delete": {
+        "success": "Layihə silindi",
+        "error": "Xəta baş verdi"
+      },
+      "detail": {
+        "notFound": "Layihə tapılmadı.",
+        "titleFallback": "Başlıq yoxdur",
+        "yearFallback": "İl yoxdur",
+        "projectTypeFallback": "Layihə növü yoxdur"
+      },
+      "table": {
+        "index": "№",
+        "title": "Başlıq",
+        "year": "İl",
+        "projectType": "Layihə növü",
+        "image": "Şəkil",
+        "details": "Detallar",
+        "edit": "Redaktə et",
+        "delete": "Sil"
+      },
+      "fallback": {
+        "loadError": "Məlumatları yükləmək mümkün olmadı, zəhmət olmasa yenidən cəhd edin.",
+        "imagePreview": "Şəkil önizləmə"
+      },
+      "search": {
+        "placeholder": "Layihə axtar",
+        "notFound": "Axtarışa uyğun layihə tapılmadı",
+        "noData": "Hələ heç bir layihə əlavə olunmayıb"
+      },
+      "validation": {
+        "title": "Başlıq (AZ) tələb olunur",
+        "titleEng": "Başlıq (EN) tələb olunur",
+        "subTitle": "Alt başlıq (AZ) tələb olunur",
+        "subTitleEng": "Alt başlıq (EN) tələb olunur",
+        "year": "İl tələb olunur",
+        "projectType": "Layihə növü (AZ) tələb olunur",
+        "projectTypeEng": "Layihə növü (EN) tələb olunur",
+        "services": "Ən azı bir xidmət seçilməlidir",
+        "files": "Ən azı bir fayl əlavə olunmalıdır",
+        "profilName": "Profil adı tələb olunur",
+        "cardImage": "Layihə şəkli seçilməlidir",
+        "links": "Ən azı bir link əlavə olunmalıdır",
+        "categoryType": "Kateqoriya növü tələb olunur",
+        "fileSize": "Fayl 5MB-dan böyük ola bilməz",
+        "fileFormat": "Düzgün format deyil (JPG, PNG, WEBP)"
+      },
+      "reorder": {
+        "success": "Layihələrin sırası uğurla dəyişdirildi",
+        "error": "Sıra dəyişdirilərkən xəta baş verdi"
       }
     },
     "contactDetailModal": {
