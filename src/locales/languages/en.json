@@ -119,6 +119,79 @@
         "error": "Error occurred while reordering team members"
       }
     },
+    "logoPage": {
+      "editLogo": {
+        "title": "Edit Logo",
+        "success": "Logo updated successfully",
+        "error": "An error occurred while updating"
+      },
+      "sort": {
+        "default": "Default",
+        "byName": "By Category",
+        "nameAsc": "Marketing",
+        "nameDesc": "Development"
+      },
+      "form": {
+        "placeholders": {
+          "name": "Category",
+          "nameEng": "Category (EN)",
+          "image": "Logo File"
+        },
+        "errors": {
+          "categoryAz": "Category is required",
+          "categoryEn": "Category (EN) is required",
+          "img": "Logo is required"
+        }
+      },
+      "metaTitle": "Logos",
+      "title": "Logos",
+      "create": {
+        "title": "New Logo",
+        "success": "Logo created successfully",
+        "error": "An error occurred"
+      },
+      "edit": {
+        "title": "Edit Logo",
+        "success": "Logo updated successfully",
+        "error": "An error occurred while updating"
+      },
+      "delete": {
+        "success": "Logo deleted successfully",
+        "error": "An error occurred"
+      },
+      "detail": {
+        "notFound": "Logo not found.",
+        "nameFallback": "No category",
+        "imageFallback": "No image"
+      },
+      "table": {
+        "index": "№",
+        "category": "Category",
+        "image": "Logo",
+        "details": "Details",
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "fallback": {
+        "loadError": "Failed to load data, please try again.",
+        "imagePreview": "Logo Preview"
+      },
+      "search": {
+        "placeholder": "Search logo",
+        "notFound": "No logo found",
+        "noData": "No logos have been added yet"
+      },
+      "validation": {
+        "name": "Category  is required",
+        "img": "Logo is required",
+        "fileSize": "File size cannot exceed 5MB",
+        "fileFormat": "Invalid format (JPG, PNG, WEBP)"
+      },
+      "reorder": {
+        "success": "Logos reordered successfully",
+        "error": "Error occurred while reordering logos"
+      }
+    },
     "adminTableTop": {
       "searchPlaceholder": "Search",
       "sortPlaceholder": "Sort",

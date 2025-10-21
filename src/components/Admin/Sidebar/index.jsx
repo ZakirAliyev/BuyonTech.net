@@ -7,7 +7,7 @@ const Sidebar = () => {
   const { t } = useTranslation()
   const menuItems = [
     { title: t("adminRoot.sidebar.guests"), path: "/admin" },
-    { title: t("adminRoot.sidebar.program"), path: "/admin/program" },
+    { title: t("adminRoot.sidebar.program"), path: "/admin/logo" },
     { title: t("adminRoot.sidebar.faq"), path: "/admin/faq" },
   ];
   const checkActive = (itemPath) => {

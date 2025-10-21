@@ -124,11 +124,13 @@ const AdminGuests = () => {
       accessor: "Image",
       render: (row) => {
         return <div className='tableImageBox'>
-          <Image
-            src={imgLocal + row?.cardImage}
-            alt={row.fullName || t("adminRoot.programPage.fallback.imagePreview")}
-            preview={true}
-          />
+          {
+            row?.cardImage ? <Image
+              src={imgLocal + row?.cardImage}
+              alt={row.fullName || t("adminRoot.programPage.fallback.imagePreview")}
+              preview={true}
+            /> : ""
+          }
         </div>
 
       },
@@ -412,12 +414,14 @@ const AdminGuests = () => {
               </div>
             </form>
           </Popup>
-          <DetailGuest onClose={() => {
-            setDetailPopupOpen(false);
-            setDetailId(null);
-          }}
-            isOpen={detailPopupOpen}
-            guestId={detailId} />
+          {
+            detailPopupOpen ? <DetailGuest onClose={() => {
+              setDetailPopupOpen(false);
+              setDetailId(null);
+            }}
+              isOpen={detailPopupOpen}
+              guestId={detailId} /> : ""
+          }
 
           <DeletePopup isActive={deletePopupOpen}
             onClose={() => {

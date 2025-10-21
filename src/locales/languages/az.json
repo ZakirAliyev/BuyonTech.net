@@ -119,6 +119,79 @@
         "error": "Komanda sırası dəyişdirilərkən xəta baş verdi"
       }
     },
+    "logoPage": {
+      "editLogo": {
+        "title": "Loqonu redaktə et",
+        "success": "Loqo uğurla yeniləndi",
+        "error": "Yeniləmə zamanı xəta baş verdi"
+      },
+      "sort": {
+        "default": "Standart",
+        "byName": "Kateqoriyaya görə",
+        "nameAsc": "Marketing",
+        "nameDesc": "Development"
+      },
+      "form": {
+        "placeholders": {
+          "name": "Kateqoriya (AZ)",
+          "nameEng": "Kateqoriya (EN)",
+          "image": "Loqo faylı"
+        },
+        "errors": {
+          "categoryAz": "Kateqoriya (AZ) tələb olunur",
+          "categoryEn": "Kateqoriya (EN) tələb olunur",
+          "img": "Loqo seçilməlidir"
+        }
+      },
+      "metaTitle": "Loqolar",
+      "title": "Loqolar",
+      "create": {
+        "title": "Yeni loqo",
+        "success": "Loqo uğurla yaradıldı",
+        "error": "Xəta baş verdi"
+      },
+      "edit": {
+        "title": "Loqonu redaktə et",
+        "success": "Loqo uğurla yeniləndi",
+        "error": "Yeniləmə zamanı xəta baş verdi"
+      },
+      "delete": {
+        "success": "Loqo silindi",
+        "error": "Xəta baş verdi"
+      },
+      "detail": {
+        "notFound": "Loqo tapılmadı.",
+        "nameFallback": "Kateqoriya yoxdur",
+        "imageFallback": "Loqo yoxdur"
+      },
+      "table": {
+        "index": "№",
+        "category": "Kateqoriya",
+        "image": "Loqo",
+        "details": "Detallar",
+        "edit": "Redaktə et",
+        "delete": "Sil"
+      },
+      "fallback": {
+        "loadError": "Məlumatları yükləmək mümkün olmadı, zəhmət olmasa yenidən cəhd edin.",
+        "imagePreview": "Loqo önizləmə"
+      },
+      "search": {
+        "placeholder": "Loqo axtar",
+        "notFound": "Axtarışa uyğun loqo tapılmadı",
+        "noData": "Hələ heç bir loqo əlavə olunmayıb"
+      },
+      "validation": {
+        "name": "Kateqoriya tələb olunur",
+        "img": "Loqo seçilməlidir",
+        "fileSize": "Fayl 5MB-dan böyük ola bilməz",
+        "fileFormat": "Düzgün format deyil (JPG, PNG, WEBP)"
+      },
+      "reorder": {
+        "success": "Loqoların sırası uğurla dəyişdirildi",
+        "error": "Loqoların sırası dəyişdirilərkən xəta baş verdi"
+      }
+    },
     "adminTableTop": {
       "searchPlaceholder": "Axtar",
       "sortPlaceholder": "Sırala",
