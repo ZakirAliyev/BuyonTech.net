@@ -6,55 +6,14 @@ import AboutPageFirst from "../../../components/UserComponents/AboutPageComponen
 import AboutPageSecond from "../../../components/UserComponents/AboutPageComponents/SecondSection";
 import AboutPageThird from "../../../components/UserComponents/AboutPageComponents/ThirdSection";
 import AboutFourthSection from "../../../components/UserComponents/AboutPageComponents/FourthSection";
+import { useGetAllOurTeamsQuery } from "../../../services/apis/userApi";
 
 function AboutPage() {
     const [footerHeight, setFooterHeight] = useState(0);
     const [showFooter, setShowFooter] = useState(false);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const imageBox = [
-        {
-            id: 1,
+    const { data: getAllTeams, isError, isLoading, isFetching } = useGetAllOurTeamsQuery()
 
-        },
-        {
-            id: 2,
-
-        },
-        {
-            id: 3,
-
-        }
-        ,
-        {
-            id: 4,
-
-        }
-        ,
-        {
-            id: 5,
-
-        },
-        {
-            id: 3,
-
-        }
-        ,
-        {
-            id: 4,
-
-        }
-        ,
-        {
-            id: 5,
-
-        },
-          {
-            id: 5,
-
-        },
-
-
-    ]
     useEffect(() => {
         const timer = setTimeout(() => setShowFooter(true), 0);
         return () => clearTimeout(timer);
@@ -65,7 +24,7 @@ function AboutPage() {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-
+    const myData = getAllTeams?.data
     return (
 
         <main id={"aboutPage"} style={{ overflow: "hidden", position: "relative", background: "#fff" }}>
@@ -78,7 +37,7 @@ function AboutPage() {
                 <AboutPageFirst />
                 <AboutPageSecond />
                 <AboutPageThird />
-                <AboutFourthSection data={imageBox} />
+                <AboutFourthSection data={myData} />
             </div>
             {showFooter && (
                 windowWidth >= 992 ? (

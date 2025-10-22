@@ -1,4 +1,107 @@
 {
+  "siteRoot": {
+    "contactPage": {
+      "titlePart1": "Let’s Build",
+      "titlePart2": "Something",
+      "subtitlePart1": "Great",
+      "subtitlePart2": "Together",
+      "form": {
+        "heading": "Contact",
+        "placeholders": {
+          "name": "Name",
+          "surname": "Surname",
+          "email": "Email",
+          "phone": "Phone",
+          "message": "Message"
+        },
+        "buttonSend": "Send",
+        "buttonSending": "Sending",
+        "success": "Message sent successfully!",
+        "error": "Failed to send message. Please try again later.",
+        "validation": {
+          "nameMin": "Name must be at least 2 characters",
+          "surnameMin": "Surname must be at least 2 characters",
+          "emailInvalid": "Invalid email address",
+          "phoneInvalid": "Invalid phone number",
+          "messageMin": "Message must be at least 5 characters"
+        }
+      }
+    },
+    "aboutPage": {
+      "firstSection": {
+        "title": "We Bring Ideas To Life With Design, Code, And Marketing.",
+        "text": "We don’t just create websites and apps, we enhance them with strategies. Design, development, and marketing boost your project’s value."
+      },
+      "fourthSection": {
+        "title": "Our Team",
+        "seeMore": "See More",
+        "loading": "Loading..."
+      },
+      "secondSection": {
+        "titlePart1": "Numbers That",
+        "titlePart2": "Reflect",
+        "titlePart3": "the",
+        "titlePart4": "Power",
+        "titlePart5": "of Our Work.",
+        "description": "Every project, every client, and every step makes us stronger. Our success is defined not by numbers, but by the value we create.",
+        "cards": {
+          "completedProjects": "Completed Project",
+          "adSpend": "Ad Spend",
+          "yearExperience": "Year Experience",
+          "country": "Country",
+          "coffeeDrank": "Coffee Drank"
+        }
+      },
+      "thirdSection": {
+        "visionTitle": "Our Vision",
+        "visionText": "Our vision is to become the most trusted creative and technological partner in the regional market. By building the digital ecosystem of the future, Buyontech aims to create a global bridge of success for businesses, standing out through innovation in both marketing and web development.",
+        "missionTitle": "Our Mission",
+        "missionText": "Our mission is to accelerate business growth – by combining innovative marketing solutions with modern web technologies, we provide entrepreneurs with both a strong brand presence and a solid digital infrastructure. At Buyontech, our goal is to transform every client’s idea into tangible results."
+      }
+    },
+    "header": {
+      "links": {
+        "home": "Home",
+        "about": "About",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+      },
+      "button": "Contact us"
+    },
+    "footer": {
+      "sections": {
+        "navigation": {
+          "title": "Navigation",
+          "links": {
+            "development": "Development",
+            "marketing": "Marketing",
+            "about": "About",
+            "portfolio": "Portfolio"
+          }
+        },
+        "social": {
+          "title": "Social",
+          "links": {
+            "instagram": "Instagram",
+            "tiktok": "TikTok",
+            "facebook": "Facebook",
+            "linkedin": "Linkedin",
+            "whatsapp": "Whatsapp"
+          }
+        },
+        "contact": {
+          "title": "Contact",
+          "phone": "+994 10 265 59 90",
+          "email": "info@buyontech.net"
+        }
+      },
+      "copyright": {
+        "textLeft": "© 2025 Agero. All rights reserved.",
+        "textRight": "Created by Buyontech"
+      },
+      "bottom": "BUYONTECH"
+    }
+  },
   "adminRoot": {
     "common": {
       "add": "Add"

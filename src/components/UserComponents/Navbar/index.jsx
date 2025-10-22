@@ -38,22 +38,31 @@ function Navbar() {
                         <div className={"links"}>
                             <div onClick={() => {
                                 handleClickLink('/')
-                            }} className={"link"}>Home</div>
+                            }} className={"link"}>
+                                {t("siteRoot.header.links.home")}
+                            </div>
                             <div onClick={() => {
                                 handleClickLink('/about')
-                            }} className={"link"}>About</div>
+                            }} className={"link"}>
+                                {t("siteRoot.header.links.about")}
+
+                            </div>
                             <div onClick={() => {
                                 handleClickLink('/our-works')
-                            }} className={"link"}>Portfolio</div>
-                            <div onClick={() => {
-                                handleClickLink('/')
-                            }} className={"link"}>FAQ</div>
+                            }} className={"link"}>
+                                {t("siteRoot.header.links.portfolio")}
+
+                            </div>
+
                         </div>
                         <img src={`${logo}`} alt={"Logo"} onClick={() => navigate("/")} />
                         <div className={"buttonWrapper"}>
                             <button onClick={() => {
                                 handleClickLink('/contact')
-                            }}>Contact us</button>
+                            }}>
+                                {t("siteRoot.header.button")}
+
+                            </button>
                             <TfiWorld className={"icon"} style={{ fontSize: "20px" }} />
                         </div>
                         <MobileMenu setOpen={setOpen} open={open} />
@@ -64,16 +73,28 @@ function Navbar() {
 
             {open && (
                 <div className="menuOverlay"
-                 onClick={() => setOpen(false)}
+                    onClick={() => setOpen(false)}
                 >
                     <div className="menuBox"
-                      onClick={(e) => e.stopPropagation()} 
+                        onClick={(e) => e.stopPropagation()}
                     >
                         <nav className="menuLinks">
-                            <div onClick={() => handleClickLink("/")}>Home</div>
-                            <div onClick={() => handleClickLink("/about")}>About</div>
-                            <div onClick={() => handleClickLink("/our-works")}>Portfolio</div>
-                            <div onClick={() => handleClickLink("/contact")}>Contact</div>
+                            <div onClick={() => handleClickLink("/")}>
+                                {t("siteRoot.header.links.home")}
+
+                            </div>
+                            <div onClick={() => handleClickLink("/about")}>
+                                {t("siteRoot.header.links.about")}
+
+                            </div>
+                            <div onClick={() => handleClickLink("/our-works")}>
+                                {t("siteRoot.header.links.portfolio")}
+
+                            </div>
+                            <div onClick={() => handleClickLink("/contact")}>
+                                {t("siteRoot.header.links.contact")}
+
+                            </div>
                         </nav>
                     </div>
                 </div>

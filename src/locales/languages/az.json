@@ -1,9 +1,111 @@
 {
-  "adminRoot": {
-    "common":{
-      "add":"Əlavə et"
+  "siteRoot": {
+    "contactPage": {
+      "titlePart1": "Gəlin birlikdə",
+      "titlePart2": "nə isə yaradaq",
+      "subtitlePart1": "Nəhəng",
+      "subtitlePart2": "bir layihə",
+      "form": {
+        "heading": "Əlaqə",
+        "placeholders": {
+          "name": "Ad",
+          "surname": "Soyad",
+          "email": "Email",
+          "phone": "Telefon",
+          "message": "Mesaj"
+        },
+        "buttonSend": "Göndər",
+        "buttonSending": "Göndərilir",
+        "success": "Mesaj uğurla göndərildi!",
+        "error": "Göndərmə zamanı xəta baş verdi. Yenidən cəhd edin.",
+        "validation": {
+          "nameMin": "Ad ən azı 2 simvol olmalıdır",
+          "surnameMin": "Soyad ən azı 2 simvol olmalıdır",
+          "emailInvalid": "Email düzgün deyil",
+          "phoneInvalid": "Telefon nömrəsi düzgün deyil",
+          "messageMin": "Mesaj ən azı 5 simvol olmalıdır"
+        }
+      }
     },
-
+    "aboutPage": {
+      "firstSection": {
+        "title": "Biz ideyaları dizayn, kod və marketinq ilə həyata keçiririk.",
+        "text": "Biz yalnız saytlar və tətbiqlər yaratmırıq — onları strategiyalarla gücləndiririk. Dizayn, inkişaf və marketinq layihənizin dəyərini artırır."
+      },
+      "secondSection": {
+        "titlePart1": "Əməkdaşlığımızın",
+        "titlePart2": "Qüdrətini",
+        "titlePart3": "Göstərən",
+        "titlePart4": "Rəqəmlər",
+        "titlePart5": ".",
+        "description": "Hər layihə, hər müştəri və hər addım bizi daha güclü edir. Uğurumuz rəqəmlərlə deyil, yaratdığımız dəyərlə ölçülür.",
+        "cards": {
+          "completedProjects": "Tamamlanmış layihə",
+          "adSpend": "Reklam büdcəsi",
+          "yearExperience": "İllik təcrübə",
+          "country": "Ölkə",
+          "coffeeDrank": "İçilən qəhvə"
+        }
+      },
+      "fourthSection": {
+        "title": "Komandamız",
+        "seeMore": "Daha çox",
+        "loading": "Yüklənir..."
+      },
+      "thirdSection": {
+        "visionTitle": "Bizim Vizyonumuz",
+        "visionText": "Bizim vizyonumuz regional bazarda ən etibarlı yaradıcı və texnoloji tərəfdaş olmaqdır. Buyontech gələcəyin rəqəmsal ekosistemini quraraq bizneslər üçün qlobal uğur körpüsü yaratmağı, həm marketinqdə, həm də veb inkişafda innovasiyalarla fərqlənməyi hədəfləyir.",
+        "missionTitle": "Bizim Missiyamız",
+        "missionText": "Bizim missiyamız bizneslərin inkişafını sürətləndirməkdir – innovativ marketinq həllərini müasir veb texnologiyalarla birləşdirərək sahibkarlara güclü brend imici və etibarlı rəqəmsal infrastruktur təqdim edirik. Buyontech-in məqsədi hər bir müştərinin ideyasını real nəticəyə çevirməkdir."
+      }
+    },
+    "header": {
+      "links": {
+        "home": "Ana səhifə",
+        "about": "Haqqımızda",
+        "portfolio": "Portfolio",
+        "contact": "Əlaqə"
+      },
+      "button": "Bizimlə əlaqə"
+    },
+    "footer": {
+      "sections": {
+        "navigation": {
+          "title": "Naviqasiya",
+          "links": {
+            "development": "İnkişaf",
+            "marketing": "Marketinq",
+            "about": "Haqqımızda",
+            "portfolio": "Portfolio"
+          }
+        },
+        "social": {
+          "title": "Sosial şəbəkələr",
+          "links": {
+            "instagram": "Instagram",
+            "tiktok": "TikTok",
+            "facebook": "Facebook",
+            "linkedin": "Linkedin",
+            "whatsapp": "Whatsapp"
+          }
+        },
+        "contact": {
+          "title": "Əlaqə",
+          "phone": "+994 10 265 59 90",
+          "email": "info@buyontech.net"
+        }
+      },
+      "copyright": {
+        "textLeft": "© 2025 Agero. Bütün hüquqlar qorunur.",
+        "textRight": "Buyontech tərəfindən yaradılıb"
+      },
+      "bottom": "BUYONTECH"
+    }
+  },
+  "adminRoot": {
+    "common": {
+      "add": "Əlavə et"
+    },
     "adminHeader": {
       "role": "Admin",
       "logout": "Çıxış",

@@ -6,7 +6,9 @@ import aboutThird3 from '/src/assets/aboutThird3.svg'
 import aboutThird4 from '/src/assets/aboutThird4.svg'
 import aboutThird5 from '/src/assets/aboutThird5.svg'
 import aboutThird6 from '/src/assets/aboutThird6.svg'
+import { useTranslation } from 'react-i18next'
 const AboutPageThird = () => {
+    const { t } = useTranslation()
     return (
         <section id='aboutPageThird'>
             <div className="container">
@@ -16,10 +18,8 @@ const AboutPageThird = () => {
                             <div className="svg">
                                 <img src={aboutThird1} alt="about-svg1" />
                             </div>
-                            <h2 >Our Vision</h2>
-                            <p >
-                                Our vision is to become the most trusted creative and technological partner in the regional market. By building the digital ecosystem of the future, Buyontech aims to create a global bridge of success for businesses, standing out through innovation in both marketing and web development.
-                            </p>
+                            <h2>{t("siteRoot.aboutPage.thirdSection.visionTitle")}</h2>
+                            <p>{t("siteRoot.aboutPage.thirdSection.visionText")}</p>
                         </div>
                         <div className="thirdImageBox">
                             <img src={aboutThird3} className='thirdImage1' alt="svgLeft" />
@@ -36,10 +36,8 @@ const AboutPageThird = () => {
                                 <img src={aboutThird2} alt="about-svg2" />
 
                             </div>
-                            <h2 >Our Mission</h2>
-                            <p >
-                                Our mission is to accelerate business growth – by combining innovative marketing solutions with modern web technologies, we provide entrepreneurs with both a strong brand presence and a solid digital infrastructure. At Buyontech, our goal is to transform every client’s idea into tangible results.
-                            </p>
+                            <h2>{t("siteRoot.aboutPage.thirdSection.missionTitle")}</h2>
+                            <p>{t("siteRoot.aboutPage.thirdSection.missionText")}</p>
                         </div>
 
                     </div>

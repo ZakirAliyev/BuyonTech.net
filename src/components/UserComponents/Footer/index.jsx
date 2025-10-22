@@ -34,44 +34,83 @@ function Footer({ setFooterHeight }) {
             <div className="container">
                 <div className="row">
                     <div className="col-4 col-md-6 col-sm-12 col-xs-12">
-                        <div className="title">Navigation</div>
+                        <div className="title">
+                            {t("siteRoot.footer.sections.navigation.title")}
+                        </div>
                         <p onClick={() => {
                             handleClickLink('/')
-                        }}>Development</p>
+                        }}>
+                            {t("siteRoot.footer.sections.navigation.links.development")}
+
+                        </p>
                         <p onClick={() => {
                             handleClickLink('/')
-                        }}>Marketing</p>
+                        }}>
+                            {t("siteRoot.footer.sections.navigation.links.marketing")}
+
+                        </p>
                         <p onClick={() => {
                             handleClickLink('/about')
-                        }}>About</p>
+                        }}>
+                            {t("siteRoot.footer.sections.navigation.links.about")}
+
+                        </p>
                         <p onClick={() => {
                             handleClickLink('/our-works')
-                        }}>Portfolio</p>
-                        <p>FAQ</p>
+                        }}>
+                            {t("siteRoot.footer.sections.navigation.links.portfolio")}
+
+                        </p>
                     </div>
                     <div className="col-4 col-md-6 col-sm-12 col-xs-12">
-                        <div className="title">Social</div>
-                        <p>Instagram</p>
-                        <p>Tik-Tok</p>
-                        <p>Facebook</p>
-                        <p>Linkedin</p>
-                        <p>Whatsapp</p>
+                        <div className="title">
+                            {t("siteRoot.footer.sections.social.title")}
+
+                        </div>
+                        <p>
+                            {t("siteRoot.footer.sections.social.links.instagram")}
+
+                        </p>
+                        <p>
+                            {t("siteRoot.footer.sections.social.links.tiktok")}
+
+                        </p>
+                        <p>
+                            {t("siteRoot.footer.sections.social.links.facebook")}
+
+                        </p>
+                        <p>
+                            {t("siteRoot.footer.sections.social.links.linkedin")}
+
+                        </p>
+                        <p>
+                            {t("siteRoot.footer.sections.social.links.whatsapp")}
+
+                        </p>
                     </div>
                     <div className="col-4 col-md-6 col-sm-12 col-xs-12">
-                        <div className="title">Contact</div>
+                        <div className="title">
+                            {t("siteRoot.footer.sections.contact.title")}
+
+                        </div>
                         <p>+994 10 265 59 90</p>
                         <p>info@buyontech.net</p>
                     </div>
                 </div>
                 <div className="row row70">
                     <div className="portugal col-6 col-md-12 col-xs-12 col-sm-12">
-                        © 2025 Agero. All rights reserved.
+                        {t("siteRoot.footer.copyright.textLeft")}
+
                     </div>
                     <div className="col-6 col-md-12 col-xs-12 col-sm-12 portugal" style={{ textAlign: "right" }}>
-                        Created by Buyontech
+                        {t("siteRoot.footer.copyright.textRight")}
+
                     </div>
                 </div>
-                <div className="bottomFooter">BUYONTECH</div>
+                <div className="bottomFooter">
+                        {t("siteRoot.footer.bottom")}
+
+                </div>
                 <img src={mavisi} alt="Image" className="mavisi" />
                 <img src={sarisi} alt="Image" className="sarisi" />
                 <div className="design"></div>
