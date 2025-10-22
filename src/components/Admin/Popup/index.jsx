@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router'
 
 const Popup = ({ isActive, onClose, children }) => {
   const location = useLocation()
+
   return (
     <div
       id="popup"
@@ -15,7 +16,7 @@ const Popup = ({ isActive, onClose, children }) => {
           width:
             location.pathname == '/admin/projects' ? "1000px" : ""
         }}
-        onClick={(e) => e.stopPropagation()} // içində kliklənəndə bağlanmasın
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="closeBtnPopup" onClick={onClose}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

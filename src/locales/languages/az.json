@@ -270,7 +270,11 @@
           "categoryType": "Kateqoriya növü",
           "profilName": "Profil adı",
           "links": "Linklər",
-          "image": "Şəkil seç"
+          "image": "Şəkil seç",
+          "key": "Açar (AZ)",
+          "keyEng": "Açar (EN)",
+          "value": "Dəyər (AZ)",
+          "valueEng": "Dəyər (EN)"
         },
         "errors": {
           "titleAz": "Başlıq (AZ) tələb olunur",
@@ -286,7 +290,11 @@
           "links": "Ən azı bir link daxil edilməlidir",
           "img": "Şəkil seçilməlidir",
           "fileSize": "Fayl 5MB-dan böyük ola bilməz",
-          "fileFormat": "Düzgün format deyil (JPG, PNG, WEBP)"
+          "fileFormat": "Düzgün format deyil (JPG, PNG, WEBP)",
+          "key": "Açar (AZ) tələb olunur",
+          "keyEng": "Açar (EN) tələb olunur",
+          "value": "Dəyər (AZ) tələb olunur",
+          "valueEng": "Dəyər (EN) tələb olunur"
         }
       },
       "metaTitle": "Layihələr",
@@ -339,7 +347,7 @@
         "projectType": "Layihə növü (AZ) tələb olunur",
         "projectTypeEng": "Layihə növü (EN) tələb olunur",
         "services": "Ən azı bir xidmət seçilməlidir",
-        "files": "Ən azı bir fayl əlavə olunmalıdır",
+        "files": "Ən azı 4 fayl əlavə olunmalıdır",
         "profilName": "Profil adı tələb olunur",
         "cardImage": "Layihə şəkli seçilməlidir",
         "links": "Ən azı bir link əlavə olunmalıdır",
@@ -382,6 +390,29 @@
         "update": "Yenilə",
         "saving": "Yenilənir"
       }
+    },
+    "imageError": {
+      "image_required": "Şəkil yüklənməlidir",
+      "image_size": "Şəkil 5 MB-dan böyük ola bilməz",
+      "image_type": "Yalnız JPEG, PNG, WEBP, MP4, MOV, AVI və WEBM formatlarında fayllara icazə verilir",
+      "project_min_4": "Layihə şəkilləri üçün ən azı 4 şəkil əlavə edilməlidir.",
+      "slider_min_3": "Slider üçün ən azı 3 şəkil əlavə edilməlidir."
+    },
+    "multiFileUpload": {
+      "dropHint": "Faylları sürüklə-burax və ya kliklə: {{type}}",
+      "types": {
+        "imagePlural": "şəkillər",
+        "videoPlural": "videolar"
+      },
+      "actions": {
+        "deleteOld": "Sil (köhnə URL)",
+        "deleteNew": "Sil (yeni fayl)"
+      },
+      "badges": {
+        "old": "Köhnə",
+        "new": "Yeni"
+      },
+      "previewAlt": "Ön baxış"
     },
     "imageUpload": {
       "previewAlt": "Şəkil önizləmə",

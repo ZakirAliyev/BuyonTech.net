@@ -15,7 +15,6 @@
     visibility: hidden;
     transition: opacity 0.3s ease;
 
-
     &.activePopup {
         opacity: 1 !important;
         pointer-events: auto !important;
@@ -34,32 +33,11 @@
         padding: 32px 48px 28px;
         position: relative;
         transform: scale(0.3);
-        opacity: 0; 
-        max-height: 700px;
+        opacity: 0;
+        max-height: 600px;
         overflow-y: auto;
         transition: all 0.3s ease;
-    scrollbar-color: #2b2b2b #f1f1f1;                                                                                                                                             ;
-
-        &::-webkit-scrollbar {
-            width: 5px;
-
-
-        }
-
-        &::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 12px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background: #2b2b2b;
-            border-radius: 12px;
-        }
-
-        &::-webkit-scrollbar-thumb:hover {
-            background: #2b2b2b;
-            cursor: pointer;
-        }
+   
 
         .closeBtnPopup {
             position: absolute;
@@ -128,8 +106,7 @@
         max-height: 700px;
         overflow-y: auto;
         transition: all 0.3s ease;
-        scrollbar-width: thin;
-        scrollbar-color: #2b2b2b #f1f1f1;
+
 
         .deletePopupFormBox {
             height: 100%;

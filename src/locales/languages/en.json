@@ -270,7 +270,11 @@
           "categoryType": "Category Type",
           "profilName": "Profile Name",
           "links": "Links",
-          "image": "Select Image"
+          "image": "Select Image",
+          "key": "Key (AZ)",
+          "keyEng": "Key (EN)",
+          "value": "Value (AZ)",
+          "valueEng": "Value (EN)"
         },
         "errors": {
           "titleAz": "Title (AZ) is required",
@@ -286,7 +290,11 @@
           "links": "At least one link must be provided",
           "img": "Image must be selected",
           "fileSize": "File cannot exceed 5MB",
-          "fileFormat": "Invalid format (JPG, PNG, WEBP)"
+          "fileFormat": "Invalid format (JPG, PNG, WEBP)",
+          "key": "Key (AZ) is required",
+          "keyEng": "Key (EN) is required",
+          "value": "Value (AZ) is required",
+          "valueEng": "Value (EN) is required"
         }
       },
       "metaTitle": "Projects",
@@ -339,7 +347,7 @@
         "projectType": "Project Type (AZ) is required",
         "projectTypeEng": "Project Type (EN) is required",
         "services": "At least one service must be selected",
-        "files": "At least one file must be added",
+        "files": "At least 4 file must be added",
         "profilName": "Profile name is required",
         "cardImage": "Project image must be selected",
         "links": "At least one link must be added",
@@ -382,6 +390,29 @@
         "update": "Update",
         "saving": "Updating"
       }
+    },
+    "imageError": {
+      "image_required": "Image is required",
+      "image_size": "Image must be smaller than 5 MB",
+      "image_type": "Only JPEG, PNG, WEBP, MP4, MOV, AVI and WEBM formats are allowed",
+      "project_min_4": "At least 4 project images are required.",
+      "slider_min_3": "At least 3 slider images are required."
+    },
+     "multiFileUpload": {
+      "dropHint": "Drag & drop or click to add: {{type}}",
+      "types": {
+        "imagePlural": "images",
+        "videoPlural": "videos"
+      },
+      "actions": {
+        "deleteOld": "Delete (existing URL)",
+        "deleteNew": "Delete (new file)"
+      },
+      "badges": {
+        "old": "Existing",
+        "new": "New"
+      },
+      "previewAlt": "Preview"
     },
     "imageUpload": {
       "previewAlt": "Image preview",

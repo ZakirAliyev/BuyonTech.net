@@ -44,7 +44,7 @@ function FaqMarketing() {
                     <div className="col-5 col-md-5 col-sm-12 col-xs-12">
                         <img src={question} className="question" alt="FAQ Illustration"/>
                     </div>
-                    <div className="col-7 col-md-7 col-sm-12 col-xs-12">
+                    <div className="col-7 col-md-12 col-sm-12 col-xs-12">
                         {faqs.map((faq, index) => (
                             <AccordionItem
                                 key={index}

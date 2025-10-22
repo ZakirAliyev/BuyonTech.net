@@ -100,7 +100,7 @@
     align-items: start;
 
     flex-direction: column;
-    gap: 16px;
+    gap: 2px;
 
     .uploadInfo {
         small {
@@ -138,7 +138,7 @@
         }
 
         &.active {
-            border-color: rgba(71, 164, 71, 0.8);
+            border-color: #2b2b2b;
         }
 
         &:focus {
@@ -165,8 +165,7 @@
 
     flex-direction: column;
     gap: 16px;
-    margin-left: 40px;
-    margin-bottom: 200px;
+    margin: 15px 0;
 
     .uploadInfo {
         small {
@@ -186,12 +185,13 @@
     .previewListProjects {
         display: flex;
         align-items: center;
-        column-gap: 10px;
+        column-gap: 8px;
         flex-wrap: wrap;
         margin-top: 15px;
 
         .previewItem {
             width: 120px;
+            margin-bottom: 10px;
 
 
             .previewInsideBox {
@@ -236,6 +236,15 @@
         }
     }
 
+    small {
+        color: #666;
+        font-family: "Helvetica Neue";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
     .dropzone {
 
         padding: 30px 0;
@@ -253,6 +262,7 @@
         font-size: 14px;
         transition: border-color 0.15s ease, background-color 0.15s ease;
         position: relative;
+        margin-bottom: 10px;
 
 
 
@@ -261,8 +271,7 @@
         }
 
         &.active {
-            border-color: rgba(71, 164, 71, 0.8);
-            background-color: #1f2329;
+            border-color: #2b2b2b;
         }
 
         &:focus {
@@ -275,6 +284,7 @@
             height: 100px;
             object-fit: cover;
             border-radius: 2px;
+
         }
 
         input {

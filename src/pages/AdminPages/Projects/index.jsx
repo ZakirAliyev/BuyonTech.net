@@ -19,6 +19,7 @@ import { Image } from 'antd';
 import { useCreateProjectsMutation, useDeleteProjectsMutation, useGetAllProjectsQuery } from '../../../services/apis/userApi';
 import DetailProject from './DetailProject';
 import TextareaElement from '../../../components/Admin/FormElements/TextareaElement';
+import MultiFileUpload from '../../../components/Admin/FormElements/MultipleUploadElement';
 
 const AdminProjects = () => {
   const imgLocal = 'https://api.buyontech.net/files/projects/cards/'
@@ -213,8 +214,15 @@ const AdminProjects = () => {
       isAction: true,
     },
   ];
+
+  const [projectImages, setProjectImages] = useState([]);
   const FILE_SIZE = 5 * 1024 * 1024;
   const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png", "image/webp"];
+  const handleSplit = (val) => {
+    const arr = val.split(",")
+      .map((s) => s.trim())
+    return arr;
+  }
   const formik = useFormik({
     initialValues: {
       title: "",
@@ -228,7 +236,7 @@ const AdminProjects = () => {
       files: [],
       profilName: "",
       cardImage: null,
-      links: [],
+      links: '',
       descriptions: [],
       categoryType: ""
     },
@@ -245,11 +253,10 @@ const AdminProjects = () => {
       projectTypeEng: Yup.string().required(t("adminRoot.projectPage.validation.projectTypeEng")),
 
       services: Yup.array()
-        .min(1, t("adminRoot.projectPage.validation.services"))
         .required(t("adminRoot.projectPage.validation.services")),
 
       files: Yup.array()
-        .min(1, t("adminRoot.projectPage.validation.files"))
+        .min(4, t("adminRoot.projectPage.validation.files"))
         .required(t("adminRoot.projectPage.validation.files")),
 
       profilName: Yup.string().required(t("adminRoot.projectPage.validation.profilName")),
@@ -267,8 +274,7 @@ const AdminProjects = () => {
           return SUPPORTED_FORMATS.includes(value.type);
         }),
 
-      links: Yup.array()
-        .min(1, t("adminRoot.projectPage.validation.links"))
+      links: Yup.string()
         .required(t("adminRoot.projectPage.validation.links")),
 
       categoryType: Yup.string().required(t("adminRoot.projectPage.validation.categoryType")),
@@ -294,13 +300,17 @@ const AdminProjects = () => {
         fd.append("ProfilName", values.profilName);
         fd.append("CardImage", values.cardImage);
         fd.append("CategoryType", values.categoryType);
-        fd.append("DescriptionJson", JSON.stringify(values.descriptions));
-        // Arrays (services, files, links)
-        values.services.forEach((item, i) => fd.append(`Services[${i}].Id`, item.id));
-        values.files.forEach((item, i) => fd.append(`Files[${i}].Name`, item.name));
-        values.links.forEach((item, i) => fd.append(`Links[${i}].Name`, item.name));
+        fd.append("descriptionsJson", JSON.stringify(values.descriptions));
+        values.services.forEach((item, i) => fd.append(`Services`, item));
+        // values.files.forEach((item, i) => fd.append(`Files[${i}].Name`, item.name));
+        if (projectImages?.length) {
+          projectImages.forEach((file) => fd.append("Files", file));
+        }
+        const allLinks = handleSplit(values.links);
+        allLinks.forEach((item, i) => fd.append(`Links`, item));
         const res = await createGuest(fd).unwrap();
         resetForm();
+        setProjectImages([])
         toast.success(t('adminRoot.projectPage.create.success'));
 
         setPopupOpen(false);
@@ -381,7 +391,7 @@ const AdminProjects = () => {
             formik.resetForm()
           }}>
             <h2>{t('adminRoot.projectPage.create.title')}</h2>
-            <form onSubmit={formik.handleSubmit}>
+            <form onSubmit={formik.handleSubmit}  >
               <div className="row">
 
                 <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
@@ -400,15 +410,11 @@ const AdminProjects = () => {
                 </div>
                 <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
 
-                  <SingleImageUpload
-                    file={formik.values.cardImage}
-                    name="cardImage"
-                    formikData={formik}
-                    setFile={(file) => {
-                      formik.setFieldValue("cardImage", file);
-                      formik.setFieldTouched("cardImage", true, false);
-                      formik.validateField("cardImage");
-                    }}
+                  <MultiFileUpload
+                    type={'image'}
+                    files={projectImages}
+                    setFiles={setProjectImages}
+                    formik={formik} name={'files'}
 
                   />
                 </div>
@@ -530,10 +536,14 @@ const AdminProjects = () => {
                   <InputElement
                     name="services"
                     placeholder={t('adminRoot.projectPage.form.placeholders.services')}
-                    value={formik.values.services}
-                    onChange={formik.handleChange}
                     type={'text'}
 
+                    value={formik.values.services}
+                    onChange={(e) => {
+                      const arr = e.target.value.split(",")
+                        .map((s) => s.trim())
+                      formik.setFieldValue("services", arr);
+                    }}
                     onBlur={formik.handleBlur}
                     error={formik.errors.services}
                     touched={formik.touched.services}
@@ -572,10 +582,9 @@ const AdminProjects = () => {
                   <TextareaElement
                     name="links"
                     placeholder={t('adminRoot.projectPage.form.placeholders.links')}
+                    type={'text'}
                     value={formik.values.links}
                     onChange={formik.handleChange}
-                    type={'text'}
-
                     onBlur={formik.handleBlur}
                     error={formik.errors.links}
                     touched={formik.touched.links}
@@ -585,7 +594,7 @@ const AdminProjects = () => {
 
                 <>
                   {formik.values.descriptions.map((desc, index) => (
-                    <div key={index} className="inputsBox" style={{ marginBottom: "24px",position:'relative' }}>
+                    <div key={index} className="inputsBox" style={{ marginBottom: "24px", position: 'relative' }}>
                       <button
                         type="button"
                         onClick={() => {
@@ -594,8 +603,8 @@ const AdminProjects = () => {
                         }}
                         style={{
                           position: "absolute",
-                          top: "-10px",
-                          right: "-10px",
+                          top: "10px",
+                          right: "-35px",
                           background: "#ff4d4f",
                           color: "white",
                           border: "none",

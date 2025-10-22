@@ -56,7 +56,7 @@ function ContactPage() {
                                     <input placeholder={"Email"}/>
                                     <input placeholder={"Phone"}/>
                                     <textarea rows={7} placeholder={"Message"}/>
-                                    <button>Send</button>
+                                    <button className='contactButton'> Send</button>
                                 </form>
                             </div>
                         </div>
