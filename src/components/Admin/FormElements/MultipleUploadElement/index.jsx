@@ -361,7 +361,7 @@ const MultiFileUpload = ({
   const renderItems = useMemo(() => {
     const existing = (existingFiles || []).map((url, eIndex) => ({
       kind: "existing",
-      value: url,
+      value: url?.name,
       eIndex,
     }));
     const news = (files || []).map((f, nIndex) => ({
@@ -371,7 +371,7 @@ const MultiFileUpload = ({
     }));
     return [...existing, ...news];
   }, [existingFiles, files]);
-
+console.log(existingFiles)
   const totalCount = (files?.length || 0) + (existingFiles?.length || 0);
 
   return (
@@ -403,7 +403,6 @@ const MultiFileUpload = ({
             {renderItems.map((item, i) => {
               const src =
                 item.kind === "existing" ? item.value : getFileSrc(item.value);
-
               const isVideo =
                 item.kind === "existing"
                   ? /\.(mp4|mov|webm|mkv|avi)$/i.test(item.value)

@@ -1,5 +1,8 @@
 {
   "adminRoot": {
+    "common": {
+      "add": "Add"
+    },
     "adminHeader": {
       "role": "Admin",
       "logout": "Log out",
@@ -398,7 +401,7 @@
       "project_min_4": "At least 4 project images are required.",
       "slider_min_3": "At least 3 slider images are required."
     },
-     "multiFileUpload": {
+    "multiFileUpload": {
       "dropHint": "Drag & drop or click to add: {{type}}",
       "types": {
         "imagePlural": "images",

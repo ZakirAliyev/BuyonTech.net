@@ -1,5 +1,9 @@
 {
   "adminRoot": {
+    "common":{
+      "add":"Əlavə et"
+    },
+
     "adminHeader": {
       "role": "Admin",
       "logout": "Çıxış",

@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 import AdminTables from '../../../components/Admin/AdminTables';
 import AdminTableBody from '../../../components/Admin/TableBody';
-import EditGuest from './EditGuest';
+import EditGuest from './EditProject';
 import Popup from '../../../components/Admin/Popup';
 import DeletePopup from '../../../components/Admin/DeletePopup';
 import InputElement from '../../../components/Admin/FormElements/InputElement';
@@ -20,6 +20,7 @@ import { useCreateProjectsMutation, useDeleteProjectsMutation, useGetAllProjects
 import DetailProject from './DetailProject';
 import TextareaElement from '../../../components/Admin/FormElements/TextareaElement';
 import MultiFileUpload from '../../../components/Admin/FormElements/MultipleUploadElement';
+import EditProject from './EditProject';
 
 const AdminProjects = () => {
   const imgLocal = 'https://api.buyontech.net/files/projects/cards/'
@@ -374,7 +375,7 @@ const AdminProjects = () => {
 
               >
                 {editPopupOpen && (
-                  <EditGuest
+                  <EditProject
                     editPopupOpen={editPopupOpen}
                     setEditPopupOpen={setEditPopupOpen}
                     editGuest={editGuest}
@@ -388,6 +389,7 @@ const AdminProjects = () => {
 
           <Popup isActive={popupOpen} onClose={() => {
             setPopupOpen(false)
+            setProjectImages([])
             formik.resetForm()
           }}>
             <h2>{t('adminRoot.projectPage.create.title')}</h2>
