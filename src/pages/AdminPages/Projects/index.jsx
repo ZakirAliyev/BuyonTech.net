@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import az from '/src/assets/az.png'
 import en from '/src/assets/en.png'
 import * as Yup from "yup";
-import { useFormik } from "formik";
+import { FieldArray, useFormik } from "formik";
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 import AdminTables from '../../../components/Admin/AdminTables';
@@ -294,7 +294,7 @@ const AdminProjects = () => {
         fd.append("ProfilName", values.profilName);
         fd.append("CardImage", values.cardImage);
         fd.append("CategoryType", values.categoryType);
-
+        fd.append("DescriptionJson", JSON.stringify(values.descriptions));
         // Arrays (services, files, links)
         values.services.forEach((item, i) => fd.append(`Services[${i}].Id`, item.id));
         values.files.forEach((item, i) => fd.append(`Files[${i}].Name`, item.name));
@@ -331,7 +331,6 @@ const AdminProjects = () => {
       ],
     },
   ];
-
 
   return (
     <>
@@ -399,7 +398,7 @@ const AdminProjects = () => {
 
                   />
                 </div>
-                    <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+                <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
 
                   <SingleImageUpload
                     file={formik.values.cardImage}
@@ -582,6 +581,158 @@ const AdminProjects = () => {
                     touched={formik.touched.links}
                   />
                 </div>
+
+
+                <>
+                  {formik.values.descriptions.map((desc, index) => (
+                    <div key={index} className="inputsBox" style={{ marginBottom: "24px",position:'relative' }}>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const newDescriptions = formik.values.descriptions.filter((_, i) => i !== index)
+                          formik.setFieldValue("descriptions", newDescriptions)
+                        }}
+                        style={{
+                          position: "absolute",
+                          top: "-10px",
+                          right: "-10px",
+                          background: "#ff4d4f",
+                          color: "white",
+                          border: "none",
+                          borderRadius: "50%",
+                          width: "24px",
+                          height: "24px",
+                          cursor: "pointer",
+                          fontSize: "14px",
+                          lineHeight: "24px",
+                          textAlign: "center",
+                        }}
+                      >
+                        ×
+                      </button>
+
+                      <div
+                        className="col-6"
+                        style={{
+                          padding: "0",
+                          paddingRight: "24px",
+                          borderRight: "1px solid #CCC",
+                        }}
+                      >
+                        <div
+                          className="col-12"
+                          style={{ padding: "0", marginBottom: "12px" }}
+                        >
+                          <InputElement
+                            name={`descriptions.${index}.key`}
+                            placeholder={t("adminRoot.projectPage.form.placeholders.key")}
+                            imgSrc={az}
+                            value={formik.values.descriptions[index].key}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            type={"text"}
+                            error={
+                              formik.errors.descriptions?.[index]?.key
+                            }
+                            touched={
+                              formik.touched.descriptions?.[index]?.key
+                            }
+                          />
+                        </div>
+                        <div className="col-12" style={{ padding: "0" }}>
+                          <TextareaElement
+                            name={`descriptions.${index}.value`}
+                            placeholder={t(
+                              "adminRoot.projectPage.form.placeholders.value"
+                            )}
+                            imgSrc={az}
+                            value={formik.values.descriptions[index].value}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={
+                              formik.errors.descriptions?.[index]?.value
+                            }
+                            touched={
+                              formik.touched.descriptions?.[index]?.value
+                            }
+                          />
+                        </div>
+                      </div>
+
+                      <div
+                        className="col-6"
+                        style={{ padding: "0", paddingLeft: "24px" }}
+                      >
+                        <div
+                          className="col-12"
+                          style={{ padding: "0", marginBottom: "12px" }}
+                        >
+                          <InputElement
+                            name={`descriptions.${index}.keyEng`}
+                            placeholder={t(
+                              "adminRoot.projectPage.form.placeholders.keyEng"
+                            )}
+                            imgSrc={en}
+                            value={formik.values.descriptions[index].keyEng}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            type={"text"}
+                            error={
+                              formik.errors.descriptions?.[index]?.keyEng
+                            }
+                            touched={
+                              formik.touched.descriptions?.[index]?.keyEng
+                            }
+                          />
+                        </div>
+                        <div className="col-12" style={{ padding: "0" }}>
+                          <TextareaElement
+                            name={`descriptions.${index}.valueEng`}
+                            placeholder={t(
+                              "adminRoot.projectPage.form.placeholders.valueEng"
+                            )}
+                            imgSrc={en}
+                            value={formik.values.descriptions[index].valueEng}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={
+                              formik.errors.descriptions?.[index]?.valueEng
+                            }
+                            touched={
+                              formik.touched.descriptions?.[index]?.valueEng
+                            }
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+
+                  <button
+                    type="button"
+                    className="addButton"
+                    onClick={() =>
+                      formik.setFieldValue("descriptions", [
+                        ...formik.values.descriptions,
+                        {
+                          key: "",
+                          value: "",
+                          keyEng: "",
+                          valueEng: "",
+                        },
+                      ])
+                    }
+                    style={{
+                      marginBottom: "20px",
+                      background: "#E0E0E0",
+                      border: "none",
+                      padding: "8px 16px",
+                      cursor: "pointer",
+                      borderRadius: "6px",
+                    }}
+                  >
+                    + Əlavə et
+                  </button>
+                </>
                 <div className="col-12" style={{ padding: "0", marginBottom: "16px" }}>
                   <CreateButton createLoading={createLoading} />
                 </div>
