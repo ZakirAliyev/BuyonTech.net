@@ -88,16 +88,30 @@ const AdminProjects = () => {
         .toLowerCase()
         .localeCompare(getLocalizedName(a, i18n.language).toLowerCase());
     }
-    if (sortType === "country-asc") {
-      return getLocalizedCountry(a, i18n.language)
-        .toLowerCase()
-        .localeCompare(getLocalizedCountry(b, i18n.language).toLowerCase());
+    if (sortType === "year-asc") {
+      const ay = (() => {
+        const m = String(a?.year ?? "").match(/\d+/);
+        return m ? Number(m[0]) : Number.POSITIVE_INFINITY; // olmayanlar sonda
+      })();
+      const by = (() => {
+        const m = String(b?.year ?? "").match(/\d+/);
+        return m ? Number(m[0]) : Number.POSITIVE_INFINITY;
+      })();
+      return ay - by;
     }
-    if (sortType === "country-desc") {
-      return getLocalizedCountry(b, i18n.language)
-        .toLowerCase()
-        .localeCompare(getLocalizedCountry(a, i18n.language).toLowerCase());
+    if (sortType === "year-desc") {
+      const ay = (() => {
+        const m = String(a?.year ?? "").match(/\d+/);
+        return m ? Number(m[0]) : Number.NEGATIVE_INFINITY; // olmayanlar sonda
+      })();
+      const by = (() => {
+        const m = String(b?.year ?? "").match(/\d+/);
+        return m ? Number(m[0]) : Number.NEGATIVE_INFINITY;
+      })();
+      return by - ay;
     }
+    // --- YEAR hissəsinin düzəlişi bitdi ---
+
     return 0;
   });
   const handleDelete = async () => {
@@ -330,8 +344,8 @@ const AdminProjects = () => {
     {
       label: t("adminRoot.projectPage.sort.byName"),
       options: [
-        { value: "title-asc", label: t("adminRoot.projectPage.sort.nameAsc") },
-        { value: "title-desc", label: t("adminRoot.projectPage.sort.nameDesc") },
+        { value: "name-asc", label: t("adminRoot.projectPage.sort.nameAsc") },
+        { value: "name-desc", label: t("adminRoot.projectPage.sort.nameDesc") },
       ],
     },
     {
