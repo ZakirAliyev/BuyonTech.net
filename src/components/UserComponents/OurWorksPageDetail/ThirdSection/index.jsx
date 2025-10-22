@@ -8,17 +8,19 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import './index.scss'
+import { useTranslation } from 'react-i18next';
 const OurWorksPageDetailThird = ({ worksData }) => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const paginationRef = useRef(null);
-
+    const { t } = useTranslation();
+    const workedData = worksData?.data
     return (
         <section id='ourWorksPageDetailThird'>
             <div className={"container"}>
                 <div className={"ourWorks"}>
                     <div className={"textWrapperDetail"}>
-                        <h2>Other Project </h2>
+                        <h2>{t("siteRoot.portfolioPage.detailSection.otherProjects")} </h2>
                         <div className={"buttonBox"}>
                             <button ref={prevRef} className="prev">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
@@ -36,6 +38,7 @@ const OurWorksPageDetailThird = ({ worksData }) => {
                     <div className="mySwiperBoxDetail">
                         <Swiper
                             modules={[Navigation, Pagination]}
+                            loop={true}
                             pagination={{
                                 el: paginationRef.current,
                                 clickable: true,
@@ -58,9 +61,9 @@ const OurWorksPageDetailThird = ({ worksData }) => {
                             }}
                             className="works-swiper"
                         >
-                            {worksData?.map((work) => (
+                            {workedData?.map((work) => (
                                 <SwiperSlide key={work.id}>
-                                    <WorkCard {...work} />
+                                    <WorkCard item={work} />
                                 </SwiperSlide>
                             ))}
                         </Swiper>

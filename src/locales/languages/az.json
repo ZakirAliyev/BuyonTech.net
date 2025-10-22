@@ -59,6 +59,18 @@
         "missionText": "Bizim missiyamız bizneslərin inkişafını sürətləndirməkdir – innovativ marketinq həllərini müasir veb texnologiyalarla birləşdirərək sahibkarlara güclü brend imici və etibarlı rəqəmsal infrastruktur təqdim edirik. Buyontech-in məqsədi hər bir müştərinin ideyasını real nəticəyə çevirməkdir."
       }
     },
+    "portfolioPage": {
+      "title": "Layihələrimiz",
+      "workCard": {
+        "year": "İl",
+        "category": "Kateqoriya",
+        "services": "Xidmətlər"
+      },
+      "detailSection": {
+        "otherProjects": "Digər layihələr",
+         "title": "Layihə Təfərrüatları"
+      }
+    },
     "header": {
       "links": {
         "home": "Ana səhifə",

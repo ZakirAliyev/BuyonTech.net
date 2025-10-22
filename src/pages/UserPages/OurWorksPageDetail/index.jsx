@@ -8,116 +8,21 @@ import Footer from "../../../components/UserComponents/Footer/index.jsx";
 import { useEffect, useState } from "react";
 import OurWorksPageDetailFirst from '../../../components/UserComponents/OurWorksPageDetail/FirstSection/index.jsx';
 import CaseStudyHeaderMarketing from '../../../components/UserComponents/CaseStudyHeaderMarketing/index.jsx';
+import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet';
+import { useGetAllProjectsQuery, useGetOneProjectsQuery } from '../../../services/apis/userApi.jsx';
+import { useParams } from 'react-router';
 
 function OurWorksPageDetail() {
-    const imageBox = [
-        {
-            id: 1,
-            image: mid
 
-        },
-        {
-            id: 2,
-            image: nas
-
-        },
-        {
-            id: 3,
-            image: mid
-
-        }
-        ,
-        {
-            id: 4,
-            image: nas
-
-        }
-        ,
-        {
-            id: 5,
-            image: mid
-
-        }
-    ]
-    const worksData = [
-        {
-            id: 1,
-            desc: "We created a sleek and user-friendly website for LEGNO to showcase their interior design expertise and portfolio.",
-            title: "Legno",
-            year: "2025",
-            category: "Portfolio website",
-            services: ["Website design", "Branding", "Development"],
-            image: mid
-        },
-        {
-            id: 2,
-            desc: "We designed a vibrant and dynamic website for Nasimi Festival to celebrate art, culture, and creativity in a modern digital space.",
-            title: "Nəsimi Fest",
-            year: "2025",
-            category: "Festival website",
-            services: ["Website design", "Branding", "Development"],
-            image: nas
-        },
-        {
-            id: 3,
-            desc: "We designed a vibrant and dynamic website for Nasimi Festival to celebrate art, culture, and creativity in a modern digital space.",
-            title: "Nəsimi Fest",
-            year: "2025",
-            category: "Festival website",
-            services: ["Website design", "Branding", "Development"],
-            image: nas
-        },
-        {
-            id: 4,
-            desc: "We designed a vibrant and dynamic website for Nasimi Festival to celebrate art, culture, and creativity in a modern digital space.",
-            title: "Nəsimi Fest",
-            year: "2025",
-            category: "Festival website",
-            services: ["Website design", "Branding", "Development"],
-            image: nas
-        },
-        {
-            id: 5,
-            desc: "We designed a vibrant and dynamic website for Nasimi Festival to celebrate art, culture, and creativity in a modern digital space.",
-            title: "Nəsimi Fest",
-            year: "2025",
-            category: "Festival website",
-            services: ["Website design", "Branding", "Development"],
-            image: nas
-        },
-        {
-            id: 6,
-            desc: "We designed a vibrant and dynamic website for Nasimi Festival to celebrate art, culture, and creativity in a modern digital space.",
-            title: "Nəsimi Fest",
-            year: "2025",
-            category: "Festival website",
-            services: ["Website design", "Branding", "Development"],
-            image: nas
-        },
-        {
-            id: 7,
-            desc: "We designed a vibrant and dynamic website for Nasimi Festival to celebrate art, culture, and creativity in a modern digital space.",
-            title: "Nəsimi Fest",
-            year: "2025",
-            category: "Festival website",
-            services: ["Website design", "Branding", "Development"],
-            image: nas
-        },
-        {
-            id: 8,
-            desc: "We designed a vibrant and dynamic website for Nasimi Festival to celebrate art, culture, and creativity in a modern digital space.",
-            title: "Nəsimi Fest",
-            year: "2025",
-            category: "Festival website",
-            services: ["Website design", "Branding", "Development"],
-            image: nas
-        }
-    ];
+    const { id } = useParams()
+    const { data: getAllProjects, isLoading, isError, isFetching } = useGetAllProjectsQuery()
+    const { data: getOneProject, isLoading: getOneLoading, isError: getOneError, isFetching: getOneFetc } = useGetOneProjectsQuery(id)
 
     const [footerHeight, setFooterHeight] = useState(0);
     const [showFooter, setShowFooter] = useState(false);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+    const { t } = useTranslation()
     useEffect(() => {
         const timer = setTimeout(() => setShowFooter(true), 0);
         return () => clearTimeout(timer);
@@ -128,9 +33,16 @@ function OurWorksPageDetail() {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-
+    const oneProje = getOneProject?.data
     return (
         <main id={"ourWorksPageDetail"} style={{ overflow: "hidden", position: "relative", background: "#fff" }}>
+            <Helmet>
+                <title>
+                    {
+                        t('siteRoot.portfolioPage.detailSection.title')
+                    }
+                </title>
+            </Helmet>
             <div style={{
                 position: "relative",
                 zIndex: 100,
@@ -138,9 +50,9 @@ function OurWorksPageDetail() {
             }}>
                 <Navbar />
                 {/* <OurWorksPageDetailFirst imageBox={imageBox} /> */}
-                <CaseStudyHeaderMarketing/>
+                <CaseStudyHeaderMarketing />
                 <OurWorksPageDetailSecond />
-                <OurWorksPageDetailThird worksData={worksData} />
+                <OurWorksPageDetailThird worksData={getAllProjects} />
             </div>
             {showFooter && (
                 windowWidth >= 992 ? (

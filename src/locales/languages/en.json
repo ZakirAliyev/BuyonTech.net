@@ -37,6 +37,18 @@
         "seeMore": "See More",
         "loading": "Loading..."
       },
+      "portfolioPage": {
+        "title": "Our Works",
+        "workCard": {
+          "year": "Year",
+          "category": "Category",
+          "services": "Services"
+        },
+        "detailSection": {
+          "otherProjects": "Other Projects",
+          "title": "Our Works Detail"
+        }
+      },
       "secondSection": {
         "titlePart1": "Numbers That",
         "titlePart2": "Reflect",

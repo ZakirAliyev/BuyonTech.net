@@ -7,13 +7,15 @@ import AboutPageSecond from "../../../components/UserComponents/AboutPageCompone
 import AboutPageThird from "../../../components/UserComponents/AboutPageComponents/ThirdSection";
 import AboutFourthSection from "../../../components/UserComponents/AboutPageComponents/FourthSection";
 import { useGetAllOurTeamsQuery } from "../../../services/apis/userApi";
+import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 
 function AboutPage() {
     const [footerHeight, setFooterHeight] = useState(0);
     const [showFooter, setShowFooter] = useState(false);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const { data: getAllTeams, isError, isLoading, isFetching } = useGetAllOurTeamsQuery()
-
+    const { t } = useTranslation()
     useEffect(() => {
         const timer = setTimeout(() => setShowFooter(true), 0);
         return () => clearTimeout(timer);
@@ -28,6 +30,13 @@ function AboutPage() {
     return (
 
         <main id={"aboutPage"} style={{ overflow: "hidden", position: "relative", background: "#fff" }}>
+            <Helmet>
+                <title>
+                    {
+                        t('siteRoot.header.links.about')
+                    }
+                </title>
+            </Helmet>
             <div style={{
                 position: "relative",
                 zIndex: 100,
