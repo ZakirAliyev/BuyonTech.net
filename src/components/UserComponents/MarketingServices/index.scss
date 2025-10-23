@@ -311,7 +311,7 @@
         width: 70%;
         height: 396px;
         padding: 32px 24px 12px 24px;
-        gap: 33px;
+        gap: 24px;
       }
 
       @media screen and (max-width: 585px) {
@@ -409,8 +409,10 @@
       @media screen and (max-width: 1300px) and (min-width: 992px) {
         flex-direction: row-reverse;
       }
-
-      flex-direction: column-reverse;
+     @media screen and (max-width: 992px)  {
+        flex-direction: column-reverse;
+      }
+      flex-direction: column;
 
     }
 

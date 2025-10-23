@@ -1,0 +1,36 @@
+.searchBoxUser {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 12px;
+    background: #fff;
+    width: 100%;
+    max-width: 520px;
+
+    @media screen and (max-width: 992px) {
+        max-width: 100% !important;
+
+    }
+
+    .leftIcon,
+    .rightIcon {
+        font-size: 18px;
+        opacity: .6;
+        flex: 0 0 auto;
+    }
+
+    input {
+        flex: 1 1 auto;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        color: var(--text-color-third, #333);
+
+        &::placeholder {
+            color: #b9b9b9;
+        }
+    }
+}

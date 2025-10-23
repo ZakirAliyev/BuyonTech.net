@@ -2,7 +2,38 @@
   padding-top: 50px;
   margin-top: 14px;
 
-  @media screen and (max-width: 992px) {}
+  @media screen and (max-width: 992px) {
+    margin-top: 24px;
+
+  }
+
+  .listState {
+    font-weight: 600;
+    font-size: 35px;
+    color: var(--text-color-third);
+    text-align: center;
+    margin-top: 20px;
+
+    @media screen and (max-width: 992px) {
+      font-size: 30px;
+    }
+  }
+
+  .filteringBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media screen and (max-width: 992px) {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 520px) {
+      flex-direction: column;
+    }
+
+  }
 
   .textWrapper {
     display: flex;
@@ -12,7 +43,12 @@
 
     @media screen and (max-width: 992px) {
       padding: 10px 16px 0;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
     }
+
+
 
     h2 {
       font-weight: 600;
@@ -27,15 +63,76 @@
     .select {
       border: 1px solid var(--select-border-color);
       padding: 0 16px;
+      min-width: 180px;
       height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 14px;
       border-radius: 8px;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      transition: border-color .2s ease;
 
       @media screen and (max-width: 992px) {
         font-size: 12px;
+      }
+
+      @media screen and (max-width: 520px) {
+        min-width: 100%;
+      }
+
+      &.open {
+        .icon {
+          transform: rotate(180deg);
+        }
+      }
+
+      .icon {
+        font-size: 16px;
+        transition: transform .2s ease;
+      }
+
+      /* ▼ Dropdown menu */
+      .menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        z-index: 5;
+        background: #fff;
+        border: 1px solid var(--select-border-color);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+        padding: 8px 0;
+        min-width: 180px;
+
+        @media screen and (max-width: 520px) {
+          min-width: 100%;
+        }
+
+        z-index: 50;
+      }
+
+      .item {
+        width: 100%;
+        text-align: left;
+        padding: 12px 16px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        color: var(--select-color);
+        cursor: pointer;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.04);
+        }
+
+        &.active {
+          font-weight: 600;
+          background: rgba(0, 0, 0, 0.06);
+        }
       }
 
       .option {
@@ -44,6 +141,10 @@
         justify-content: center;
         gap: 8px;
         color: var(--select-color);
+
+        @media screen and (max-width: 520px) {
+          font-size: 16px;
+        }
       }
 
       .icon {

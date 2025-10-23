@@ -1,5 +1,10 @@
 {
   "siteRoot": {
+    "common": {
+      "searchProject": "Layihə axtar",
+      "loading": "Loading…",
+      "nothingFound": "Nothing found"
+    },
     "homePage": {
       "homeBanner": {
         "title": "Gələcəyə davamlı rəqəmsal həllər yaradırıq",
@@ -132,6 +137,7 @@
     },
     "portfolioPage": {
       "title": "Layihələrimiz",
+      "selectTitle": "All projects",
       "workCard": {
         "year": "İl",
         "category": "Kateqoriya",

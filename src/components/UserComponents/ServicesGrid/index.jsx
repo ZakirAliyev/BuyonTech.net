@@ -47,22 +47,27 @@ function ServicesGrid() {
                         </div>
                         <img src={dnsImage} alt={"Image"} className={"dnsImage"} />
                     </div>
-                    <div className="divdivdiv div5">
-                        <h2>Design & UI/UX</h2>
-                        <p style={{
-                            maxWidth: '280px',
-                            width: '100%'
-                        }}>A modern design is created, ensuring a smooth and user-friendly experience.</p>
+                    <div className="divdivdiv fifthDiv div5">
+                        <div>
+                            <h2>Design & UI/UX</h2>
+                            <p style={{
+                                maxWidth: '280px',
+                                width: '100%'
+                            }}>A modern design is created, ensuring a smooth and user-friendly experience.</p>
+                        </div>
                         <img src={design} alt={"Image"} className={"design"} />
                     </div>
-                    <div className="divdivdiv div6" style={{
+                    <div className="divdivdiv sixthDiv div6" style={{
                         color: "black"
                     }}>
-                        <h2>Admin Panel</h2>
-                        <p style={{
-                            maxWidth: '280px',
-                            width: '100%'
-                        }}>A simple and easy-to-use management panel is provided for business owners.</p>
+                        <div>
+                            <h2>Admin Panel</h2>
+                            <p style={{
+                                maxWidth: '280px',
+                                width: '100%'
+                            }}>A simple and easy-to-use management panel is provided for business owners.</p>
+
+                        </div>
                         <img src={adminPanel} alt={"Image"} className={"adminPanel"} />
                     </div>
                     <div className="div div3 div100 div7">

@@ -33,7 +33,8 @@ function MarketingServices() {
                                     Branding & Identity
                                 </h2>
                                 <p>
-                                    Developing logos, color palettes, and overall brand strategy.                            </p>
+                                    Developing logos, color palettes, and overall brand strategy.
+                                </p>
                             </div>
                         </div>
                         <div className="thirdCard duzCard2 cubCard allCards">
