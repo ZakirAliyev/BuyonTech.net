@@ -44,16 +44,21 @@
     }
   }
 
+  .cardBox2 {
+    @media screen and (max-width: 1300px) and (min-width: 992px) {
+      flex-wrap: wrap-reverse !important;
+
+    }
+  }
+
   .cardBox1 {
     display: flex;
     align-items: center;
     gap: 24px;
     justify-content: center;
+    flex-wrap: wrap;
 
-    @media screen and (max-width: 992px) {
-      flex-wrap: wrap;
 
-    }
 
 
   }
@@ -70,7 +75,7 @@
       margin-top: -25px;
     }
 
-       @media screen and (max-width: 400px) {
+    @media screen and (max-width: 400px) {
       margin-top: -15px;
     }
 
@@ -108,6 +113,9 @@
 
       gap: 21px;
 
+      @media screen and (max-width: 1300px) and (min-width: 992px) {
+        width: 850px;
+      }
 
       @media screen and (max-width: 992px) {
         width: 70%;
@@ -140,6 +148,10 @@
       flex-shrink: 0;
       padding: 0 24px;
       gap: 21px;
+
+      @media screen and (max-width: 1300px) and (min-width: 992px) {
+        width: 850px;
+      }
 
       @media screen and (max-width: 992px) {
         width: 70%;
@@ -287,6 +299,14 @@
       padding: 23px 37px 39px 27px;
       gap: 40px;
 
+      @media screen and (max-width: 1300px) and (min-width: 992px) {
+        width: 850px;
+        height: 308px;
+        flex-shrink: 0;
+        padding: 0 24px;
+        gap: 21px;
+      }
+
       @media screen and (max-width: 992px) {
         width: 70%;
         height: 396px;
@@ -385,11 +405,28 @@
       }
     }
 
+    .duzCard2 {
+      @media screen and (max-width: 1300px) and (min-width: 992px) {
+        flex-direction: row-reverse;
+      }
+
+      flex-direction: column-reverse;
+
+    }
+
     .eightCard {
       width: 412px;
       height: 412px;
       padding: 24px 32px 30px 32px;
       gap: 25px;
+
+      @media screen and (max-width: 1300px) and (min-width: 992px) {
+        width: 850px;
+        height: 308px;
+        flex-shrink: 0;
+        padding: 0 24px;
+        gap: 21px;
+      }
 
       @media screen and (max-width: 992px) {
         width: 70%;

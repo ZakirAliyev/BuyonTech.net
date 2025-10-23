@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 import { TfiWorld } from "react-icons/tfi";
 import logo from "/src/assets/sariLogo.webp"
 import { useNavigate } from "react-router";
-import { FaBarsStaggered } from "react-icons/fa6";
+
 import MobileMenu from '../MobileMenu';
-import LanguageSelect from '../../SwitcherComponents/LanguageSwitcher';
+import LanguageSelectForHome from '../../SwitcherComponents/LanguageSwitcherForSite';
 
 function Navbar() {
     const [open, setOpen] = useState(false);
@@ -65,7 +65,7 @@ function Navbar() {
 
                             </button>
                             {/* <TfiWorld className={"icon"} style={{ fontSize: "20px" }} /> */}
-                            <LanguageSelect />
+                            <LanguageSelectForHome />
                         </div>
                         <MobileMenu setOpen={setOpen} open={open} />
                     </nav>

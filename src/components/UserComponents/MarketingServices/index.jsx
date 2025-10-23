@@ -14,7 +14,7 @@ function MarketingServices() {
             <div className={"container"}>
                 <div className={"servicesText"}>SERVICES</div>
                 <div className="cardBoxs">
-                    <div className="cardBox1">
+                    <div className="cardBox1 cardBox2">
                         <div className="firstCard cubCard allCards">
                             <img src={marketingVoice} alt="marketingVoice" />
                             <div className="textBox">
@@ -36,7 +36,7 @@ function MarketingServices() {
                                     Developing logos, color palettes, and overall brand strategy.                            </p>
                             </div>
                         </div>
-                        <div className="thirdCard cubCard allCards">
+                        <div className="thirdCard duzCard2 cubCard allCards">
                             <img src={marketingCamara} alt="marketingVoice" />
                             <div className="textBox">
                                 <h2>
@@ -74,39 +74,39 @@ function MarketingServices() {
                         </div>
 
                     </div>
-             <div className="cardBox1">
-                       <div className="sixthCard cubCard allCards">
-                        <img src={analytkSvg} alt="analytkSvg" />
-                        <div className="textBox">
-                            <h2>
-                                Analytics & Reporting
-                            </h2>
-                            <p>
-                                Tracking ad campaign performance and delivering monthly reports.
-                            </p>
+                    <div className="cardBox1">
+                        <div className="sixthCard cubCard allCards">
+                            <img src={analytkSvg} alt="analytkSvg" />
+                            <div className="textBox">
+                                <h2>
+                                    Analytics & Reporting
+                                </h2>
+                                <p>
+                                    Tracking ad campaign performance and delivering monthly reports.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="seventhCard cubCard allCards">
+                            <img src={strategySvg} alt="strategySvg" />
+                            <div className="textBox">
+                                <h2>
+                                    Marketing Strategy Development
+                                </h2>
+                                <p>
+                                    Building a long-term marketing roadmap tailored to business goals.                          </p>
+                            </div>
+                        </div>
+                        <div className="eightCard duzCard2 cubCard allCards">
+                            <img src={seoSvg} alt="seoSvg" />
+                            <div className="textBox">
+                                <h2>
+                                    SEO-SAM Support
+                                </h2>
+                                <p>
+                                    We enhance your online visibility with effective SEO solutions tailored to your business.                            </p>
+                            </div>
                         </div>
                     </div>
-                    <div className="seventhCard cubCard allCards">
-                        <img src={strategySvg} alt="strategySvg" />
-                        <div className="textBox">
-                            <h2>
-                                Marketing Strategy Development
-                            </h2>
-                            <p>
-                                Building a long-term marketing roadmap tailored to business goals.                          </p>
-                        </div>
-                    </div>
-                    <div className="eightCard cubCard allCards">
-                        <img src={seoSvg} alt="seoSvg" />
-                        <div className="textBox">
-                            <h2>
-                                SEO-SAM Support
-                            </h2>
-                            <p>
-                                We enhance your online visibility with effective SEO solutions tailored to your business.                            </p>
-                        </div>
-                    </div>
-             </div>
                 </div>
             </div>
         </section>

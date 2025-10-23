@@ -63,10 +63,12 @@
     }
   }
 
-  .divdiv {
+  .secondDiv {
     padding: 32px;
     color: #000000;
     position: relative;
+    display: flex;
+    align-items: start;
 
     @media screen and (max-width:768px) {
       height: 350px;
@@ -107,15 +109,28 @@
     }
   }
 
+  .firstDiv {
+
+
+    @media screen and (max-width:922px) {}
+  }
+
+  .fourthDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .dnsImage {
+      margin-bottom: 32px;
+      width: calc(100% - 105px);
+    }
+  }
+
   .div1 {
     grid-area: 1 / 1 / 4 / 3;
     background: #10317F;
 
-    img {
-      bottom: -7px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
   }
 
   .div2 {
@@ -175,7 +190,6 @@
     min-height: 205px;
   }
 
-  // Kvadrat olanlar
   .div3,
   .div4,
   .div7,
@@ -185,7 +199,6 @@
     min-height: auto; // artıq lazım deyil
   }
 
-  // Mobil uyğunlaşma
   @media (max-width: 768px) {
     .parent {
       grid-template-columns: 1fr;
@@ -218,22 +231,16 @@
   .mobileApp {
     width: 100%;
     position: relative;
-    bottom: -7px;
     padding: 32px 64px 0 64px;
   }
 
   .macbook {
-    position: absolute;
-    max-height: 175px;
+    max-height: 232px;
     height: 100%;
     bottom: 0;
-    right: 128px;
+    margin-left: 80px;
 
-    @media screen and (max-width: 992px) {
-      left: 50%;
-      transform: translate(-50%);
-      bottom: 16px;
-    }
+
   }
 
   .div100 {
@@ -242,6 +249,7 @@
     justify-content: space-between;
     flex-direction: column;
   }
+
 
   .tablet {
     width: calc(100% - 175px);

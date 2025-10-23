@@ -88,25 +88,30 @@ function WhyChoose() {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    const isMobile = window.innerWidth <= 992; // ✅ responsive yoxlama
+                    const isMobile = window.innerWidth <= 992; 
                     if (entry.isIntersecting) {
                         if (isMobile) {
-                            // 📱 mobil — section bitəndə tam gizlət
                             center.classList.add("hideOnMobile");
                             center.classList.remove("addClassCard");
                         } else {
-                            // 💻 desktop — normal effekt
-                            center.classList.add("addClassCard");
-                            center.classList.remove("hideOnMobile");
+                            // center.style.transition = "all 0.8s ease-in";
+                            // center.classList.add("addClassCard");
+                            // center.classList.remove("hideOnMobile");
+                            center.style.transition = "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease";
+                            center.style.willChange = "transform, opacity";
+
+                            requestAnimationFrame(() => {
+                                center.classList.add("addClassCard");
+                                center.classList.remove("hideOnMobile");
+                            });
                         }
                     } else {
-                        // görünmürsə hər iki class silinsin
-                        center.classList.remove("addClassCard");
-                        center.classList.remove("hideOnMobile");
+                            center.classList.remove("addClassCard");
+                            center.classList.remove("hideOnMobile");
                     }
                 });
             },
-            { threshold: 0.1 }
+            { threshold: 0.5 }
         );
 
         observer.observe(sentinel);
@@ -170,7 +175,7 @@ function WhyChoose() {
                         <button onClick={() => {
                             handleClickLink('/contact')
                         }}>
-                             {buttonText}
+                            {buttonText}
                         </button>
                     </div>
                 </section>
