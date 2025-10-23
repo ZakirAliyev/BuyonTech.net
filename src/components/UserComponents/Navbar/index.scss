@@ -9,6 +9,10 @@
   border-bottom: 1px solid #F0F0F0;
   z-index: 9999;
 
+  .activeNav {
+    background-color: var(--hover-color) !important;
+  }
+
   nav {
     display: flex;
     align-items: center;
@@ -30,6 +34,7 @@
         border-radius: 100px;
         cursor: pointer;
         font-size: 14px;
+        color: #000;
 
         &:hover {
           background-color: var(--hover-color);
@@ -54,7 +59,7 @@
         display: none;
       }
 
-      button {
+      .contactLink {
         padding: 8px 20px;
         border-radius: 10px;
         cursor: pointer;

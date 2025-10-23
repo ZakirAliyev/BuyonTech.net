@@ -41,10 +41,9 @@ function WorkCard({ item }) {
     return (
         <section id="workCard" style={{ cursor: "pointer" }} onClick={() => {
             navigate(`/our-works/${item?.id}`)
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+       setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, 200);
 
         }}>
             <div className="container">

@@ -1033,6 +1033,7 @@ import MultiFileUpload from "../../../../components/Admin/FormElements/MultipleU
 import EditButton from "../../../../components/Admin/FormElements/EditBtn";
 
 import { useUpdateProjectsMutation } from "../../../../services/apis/userApi";
+import SelectElement from "../../../../components/Admin/FormElements/SelectBoxElement";
 
 const FILE_SIZE = 5 * 1024 * 1024;
 const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png", "image/webp"];
@@ -1382,16 +1383,21 @@ const EditProject = ({ editPopupOpen, setEditPopupOpen, editGuest, setEditGuest 
                     </div>
 
                     <div className="col-12" style={{ padding: 0, marginBottom: 12 }}>
-                        <InputElement
+
+                        <SelectElement
                             name="categoryType"
-                            placeholder={t("adminRoot.projectPage.form.placeholders.categoryType")}
+                            placeholder={t('adminRoot.logoPage.form.placeholders.name')}
                             value={formik.values.categoryType}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            type="text"
                             error={formik.errors.categoryType}
                             touched={formik.touched.categoryType}
+                            options={[
+                                { value: "marketing", label: "Marketing" },
+                                { value: "development", label: "Development" },
+                            ]}
                         />
+
                     </div>
 
                     <div className="col-12" style={{ padding: 0, marginBottom: 12 }}>

@@ -21,6 +21,7 @@ import DetailProject from './DetailProject';
 import TextareaElement from '../../../components/Admin/FormElements/TextareaElement';
 import MultiFileUpload from '../../../components/Admin/FormElements/MultipleUploadElement';
 import EditProject from './EditProject';
+import SelectElement from '../../../components/Admin/FormElements/SelectBoxElement';
 
 const AdminProjects = () => {
   const imgLocal = 'https://api.buyontech.net/files/projects/cards/'
@@ -567,17 +568,23 @@ const AdminProjects = () => {
                 </div>
                 <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
 
-                  <InputElement
+          
+
+
+                  <SelectElement
                     name="categoryType"
-                    placeholder={t('adminRoot.projectPage.form.placeholders.categoryType')}
+                    placeholder={t('adminRoot.logoPage.form.placeholders.name')}
                     value={formik.values.categoryType}
                     onChange={formik.handleChange}
-                    type={'text'}
-
                     onBlur={formik.handleBlur}
                     error={formik.errors.categoryType}
                     touched={formik.touched.categoryType}
+                    options={[
+                      { value: "marketing", label: "Marketing" },
+                      { value: "development", label: "Development" },
+                    ]}
                   />
+
                 </div>
                 <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
 

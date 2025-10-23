@@ -6,6 +6,7 @@ import logo from "/src/assets/sariLogo.webp"
 import { useNavigate } from "react-router";
 import { FaBarsStaggered } from "react-icons/fa6";
 import MobileMenu from '../MobileMenu';
+import LanguageSelect from '../../SwitcherComponents/LanguageSwitcher';
 
 function Navbar() {
     const [open, setOpen] = useState(false);
@@ -38,18 +39,18 @@ function Navbar() {
                         <div className={"links"}>
                             <div onClick={() => {
                                 handleClickLink('/')
-                            }} className={"link"}>
+                            }} className={`link ${location.pathname == '/' ? "activeNav" : ""}`}>
                                 {t("siteRoot.header.links.home")}
                             </div>
                             <div onClick={() => {
                                 handleClickLink('/about')
-                            }} className={"link"}>
+                            }} className={`link ${location.pathname == '/about' ? "activeNav" : ""}`}>
                                 {t("siteRoot.header.links.about")}
 
                             </div>
                             <div onClick={() => {
                                 handleClickLink('/our-works')
-                            }} className={"link"}>
+                            }} className={`link ${location.pathname == '/our-works' ? "activeNav" : ""}`}>
                                 {t("siteRoot.header.links.portfolio")}
 
                             </div>
@@ -57,13 +58,14 @@ function Navbar() {
                         </div>
                         <img src={`${logo}`} alt={"Logo"} onClick={() => navigate("/")} />
                         <div className={"buttonWrapper"}>
-                            <button onClick={() => {
+                            <button className='contactLink' onClick={() => {
                                 handleClickLink('/contact')
                             }}>
                                 {t("siteRoot.header.button")}
 
                             </button>
-                            <TfiWorld className={"icon"} style={{ fontSize: "20px" }} />
+                            {/* <TfiWorld className={"icon"} style={{ fontSize: "20px" }} /> */}
+                            <LanguageSelect />
                         </div>
                         <MobileMenu setOpen={setOpen} open={open} />
                     </nav>
@@ -79,19 +81,19 @@ function Navbar() {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <nav className="menuLinks">
-                            <div onClick={() => handleClickLink("/")}>
+                            <div className={` ${location.pathname == '/' ? "activeNav" : ""}`} onClick={() => handleClickLink("/")}>
                                 {t("siteRoot.header.links.home")}
 
                             </div>
-                            <div onClick={() => handleClickLink("/about")}>
+                            <div className={` ${location.pathname == '/about' ? "activeNav" : ""}`} onClick={() => handleClickLink("/about")}>
                                 {t("siteRoot.header.links.about")}
 
                             </div>
-                            <div onClick={() => handleClickLink("/our-works")}>
+                            <div className={` ${location.pathname == '/our-works' ? "activeNav" : ""}`} onClick={() => handleClickLink("/our-works")}>
                                 {t("siteRoot.header.links.portfolio")}
 
                             </div>
-                            <div onClick={() => handleClickLink("/contact")}>
+                            <div className={` ${location.pathname == '/contact' ? "activeNav" : ""}`} onClick={() => handleClickLink("/contact")}>
                                 {t("siteRoot.header.links.contact")}
 
                             </div>

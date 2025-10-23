@@ -17,6 +17,7 @@ import SingleImageUpload from '../../../components/Admin/FormElements/SingleElem
 import { Image } from 'antd';
 import DetailGuest from './DetailGuest';
 import { useCreateLogosMutation, useDeleteLogosMutation, useGetAllLogosQuery } from '../../../services/apis/userApi';
+import SelectElement from '../../../components/Admin/FormElements/SelectBoxElement';
 
 const AdminLogos
   = () => {
@@ -222,16 +223,22 @@ const AdminLogos
                 <div className="row">
 
                   <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
-                    <InputElement
+                
+
+                    <SelectElement
                       name="categoryType"
                       placeholder={t('adminRoot.logoPage.form.placeholders.name')}
                       value={formik.values.categoryType}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      type={'text'}
                       error={formik.errors.categoryType}
                       touched={formik.touched.categoryType}
+                      options={[
+                        { value: "marketing", label: "Marketing" },
+                        { value: "development", label: "Development" },
+                      ]}
                     />
+
                   </div>
 
 

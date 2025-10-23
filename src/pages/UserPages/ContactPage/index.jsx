@@ -96,10 +96,10 @@ function ContactPage() {
                     </div>
                     <div className={"formWrapper"}>
                         <div className={"row"}>
-                            <div className={"colsifirla1 col-5 col-md-5 col-sm-12 col-xs-12"}>
+                            <div className={"colsifirla1 col-5 col-md-6 col-sm-12 col-xs-12"}>
                                 <img src={buyontechAbout} alt="buyontech logo" className={"buyontechAbout"} />
                             </div>
-                            <div className={"colsifirla1 col-7 col-md-7 col-sm-12 col-xs-12"}>
+                            <div className={"colsifirla1 col-7 col-md-6 col-sm-12 col-xs-12"}>
                                 <form onSubmit={formik.handleSubmit}>
                                     <div className="contact">
                                         {t("siteRoot.contactPage.form.heading")}
