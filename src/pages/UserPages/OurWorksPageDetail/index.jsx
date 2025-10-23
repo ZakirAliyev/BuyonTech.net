@@ -55,7 +55,12 @@ function OurWorksPageDetail() {
                 }
 
                 <OurWorksPageDetailSecond oneProje={oneProje} />
-                <OurWorksPageDetailThird worksData={getAllProjects} />
+                {/* <OurWorksPageDetailThird worksData={getAllProjects} /> */}
+                <OurWorksPageDetailThird
+                    worksData={getAllProjects?.data?.filter(
+                        (item) => item.id !== oneProje?.id
+                    )}
+                />
             </div>
             {showFooter && (
                 windowWidth >= 992 ? (

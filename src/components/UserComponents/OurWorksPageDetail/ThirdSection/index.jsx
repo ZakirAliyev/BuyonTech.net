@@ -14,7 +14,7 @@ const OurWorksPageDetailThird = ({ worksData }) => {
     const nextRef = useRef(null);
     const paginationRef = useRef(null);
     const { t } = useTranslation();
-    const workedData = worksData?.data
+    const workedData = worksData
     return (
         <section id='ourWorksPageDetailThird'>
             <div className={"container"}>
