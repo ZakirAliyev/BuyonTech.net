@@ -6,17 +6,41 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import './index.scss'
-const OurWorksPageDetailFirst = ({ imageBox }) => {
+import { useTranslation } from 'react-i18next';
+const OurWorksPageDetailFirst = ({ oneProje }) => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const paginationRef = useRef(null);
-
+    const imgLocal2 = 'https://api.buyontech.net/files/projects/files/'
+    const { i18n, t } = useTranslation()
+    const getLocalizedProject = (item, lang) => {
+        switch (lang?.split("-")[0]) {
+            case "az":
+                return item?.projectType || "";
+            case "en":
+                return item?.projectTypeEng || "";
+            default:
+                return item?.projectType || "";
+        }
+    };
+    const getLocalizedName = (item, lang) => {
+        switch (lang?.split("-")[0]) {
+            case "az":
+                return item?.title || "";
+            case "en":
+                return item?.titleEng || "";
+            default:
+                return item?.title || "";
+        }
+    };
     return (
         <section id='ourWorksPageDetailFirst'>
             <div className={"container"}>
                 <div className={"ourWorks"}>
                     <div className={"textWrapperDetailFirst"}>
-                        <h2>Legno Project  </h2>
+                        <h2>{
+                            getLocalizedName(oneProje, i18n.language)
+                        } </h2>
                         <div className={"buttonBox"}>
                             <button ref={prevRef} className="prev">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
@@ -57,9 +81,9 @@ const OurWorksPageDetailFirst = ({ imageBox }) => {
                             }}
                             className="works-swiper"
                         >
-                            {imageBox?.map((work) => (
+                            {oneProje?.files?.map((work) => (
                                 <SwiperSlide key={work.id} className='imageSlider'>
-                                    <img src={work.image} alt="" className='imageBox' />
+                                    <img src={imgLocal2 + work.name} alt="" className='imageBox' />
                                 </SwiperSlide>
                             ))}
                         </Swiper>
@@ -71,16 +95,22 @@ const OurWorksPageDetailFirst = ({ imageBox }) => {
                     <div className="ourWorksDetailBottom">
                         <div className="ourWorksDetailBottomLeft">
                             <p>
-                                Category
+                                {t("siteRoot.portfolioPage.detailSection.category")}
                             </p>
                             <h4>
-                                Portfolio website
+                                {
+                                    getLocalizedProject(oneProje, i18n.language)
+                                }
                             </h4>
                         </div>
                         <div className="ourWorksDetailBottomMiddle">
-                            <a>
+                            <a
+                                target='_blank'
+                                href={oneProje?.links[0]?.name}
+                            >
                                 <span>
-                                    Visit Website
+                                    {t("siteRoot.portfolioPage.detailSection.visitWebsite")}
+
                                 </span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                                     <path d="M0.258214 12.4004L11.0858 1.57282L1.80501 1.57282L1.72546 0.326542L13.2159 0.326541L13.2159 11.817L11.9697 11.7375L11.9697 2.4567L1.1421 13.2843L0.258214 12.4004Z" fill="black" />
@@ -89,10 +119,13 @@ const OurWorksPageDetailFirst = ({ imageBox }) => {
                         </div>
                         <div className="ourWorksDetailBottomBottom">
                             <p>
-                                Year
+                                {t("siteRoot.portfolioPage.detailSection.year")}
+
                             </p>
                             <h4>
-                                2025
+                                {
+                                    oneProje?.year
+                                }
                             </h4>
                         </div>
 
@@ -100,9 +133,12 @@ const OurWorksPageDetailFirst = ({ imageBox }) => {
 
 
                     <div className="ourWebsiteLink">
-                        <a>
+                        <a
+                            target='_blank'
+                            href={oneProje?.links[0]?.name}>
                             <span>
-                                Visit Website
+                                {t("siteRoot.portfolioPage.detailSection.visitWebsite")}
+
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                                 <path d="M0.258214 12.4004L11.0858 1.57282L1.80501 1.57282L1.72546 0.326542L13.2159 0.326541L13.2159 11.817L11.9697 11.7375L11.9697 2.4567L1.1421 13.2843L0.258214 12.4004Z" fill="black" />

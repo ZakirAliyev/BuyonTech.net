@@ -1,5 +1,76 @@
 {
   "siteRoot": {
+    "homePage": {
+      "homeBanner": {
+        "title": "Gələcəyə davamlı rəqəmsal həllər yaradırıq",
+        "text": "Biznesiniz üçün bir vizyonunuz var, amma haradan başlamalı olduğunuzu bilmirsiniz? Gəlin ideyalarınızı sizin üçün işləyən və uğurunuzla böyüyən güclü rəqəmsal həllərə çevirək.",
+        "button": "Əlaqə"
+      },
+      "aboutSection": {
+        "title": "Haqqımızda",
+        "text": "Biz təhlükəsiz, miqyaslana bilən və müasir rəqəmsal həllər yaradırıq. Məqsədimiz ideyalarınızı inkişafınıza töhfə verən güclü məhsullara çevirməkdir.",
+        "button": "Daha ətraflı"
+      },
+      "worksSection": {
+        "title": "PORTFOLİO",
+        "button": "Hamısına bax"
+      },
+      "whyChooseSection": {
+        "title": "Növbəti böyük ideyanız üçün niyə BuyonTech-i seçməlisiniz?",
+        "button": "Əlaqə",
+        "cards": [
+          {
+            "title": "Güclü Təcrübə",
+            "description": "Komandamız illərin təcrübəsi ilə etibarlı və innovativ həllər təqdim edir."
+          },
+          {
+            "title": "Yaradıcı Baxış",
+            "description": "Markanızı önə çıxarmaq üçün təsəvvür və strategiya ilə dizayn edirik."
+          },
+          {
+            "title": "Tam Dəstək Prosesi",
+            "description": "Strategiyadan tutmuş texniki dəstəyə qədər hər mərhələdə yanınızdayıq."
+          },
+          {
+            "title": "Müasir Texnologiyalar",
+            "description": "Layihənizin trendlərdən geri qalmaması üçün ən son texnologiyalardan istifadə edirik."
+          },
+          {
+            "title": "Nəticəyönümlü Yanaşma",
+            "description": "Biz yalnız dizayna deyil, konkret nəticələrə fokuslanırıq."
+          },
+          {
+            "title": "Etibarlı Əməkdaşlıq",
+            "description": "Uzunmüddətli, şəffaf və etimad üzərində qurulan tərəfdaşlığa dəyər veririk."
+          }
+        ]
+      },
+      "faqSection": {
+        "title": "Tez-tez verilən suallar",
+        "faqs": [
+          {
+            "question": "Veb inkişaf üçün hansı texnologiyalardan istifadə edirsiniz?",
+            "answer": "Layihənizə uyğun, sürətli, təhlükəsiz və miqyaslana bilən həllər yaratmaq üçün React, Next.js və ASP.NET Core kimi müasir texnologiyalardan istifadə edirik."
+          },
+          {
+            "question": "Fərdi veb-saytın hazırlanması nə qədər vaxt aparır?",
+            "answer": "Layihənin mürəkkəbliyindən asılı olaraq, dizayndan yayımlanmağa qədər orta hesabla 4-8 həftə çəkir."
+          },
+          {
+            "question": "Sayt istifadəyə verildikdən sonra texniki dəstək göstərirsinizmi?",
+            "answer": "Bəli, saytın daim aktual və stabil qalması üçün davamlı texniki dəstək və baxım xidməti təqdim edirik."
+          },
+          {
+            "question": "Üçüncü tərəf alətlərini və API-ləri inteqrasiya edə bilirsinizmi?",
+            "answer": "Əlbəttə. API, CRM və digər biznes alətlərinin veb-saytlara və tətbiqlərə inteqrasiyasında geniş təcrübəmiz var."
+          },
+          {
+            "question": "Layihənin dəyəri adətən nə qədər olur?",
+            "answer": "Qiymət layihənin həcmi və tələblərindən asılıdır. Biz məqsədlərinizi öyrəndikdən sonra ətraflı təklif təqdim edirik."
+          }
+        ]
+      }
+    },
     "contactPage": {
       "titlePart1": "Gəlin birlikdə",
       "titlePart2": "nə isə yaradaq",
@@ -68,7 +139,11 @@
       },
       "detailSection": {
         "otherProjects": "Digər layihələr",
-         "title": "Layihə Təfərrüatları"
+        "title": "Layihə Təfərrüatları",
+        "projectTitle": "Legno Layihəsi",
+        "category": "Kateqoriya",
+        "year": "İl",
+        "visitWebsite": "Sayta keçid et"
       }
     },
     "header": {

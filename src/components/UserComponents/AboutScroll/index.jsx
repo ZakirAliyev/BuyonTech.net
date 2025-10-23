@@ -3,9 +3,12 @@ import './index.scss';
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { BsArrowRight } from "react-icons/bs";
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 const AboutSection = () => {
-    const text = "We create secure, scalable, and modern digital solutions designed to fit your business goals. Our focus is on turning ideas into powerful products that help you grow.";
+    const { t } = useTranslation()
+    const text = t("siteRoot.homePage.aboutSection.text")
+
     const words = text.split(' ');
 
     // useRef kullanarak elemente daha performanslı erişim sağlıyoruz
@@ -65,7 +68,7 @@ const AboutSection = () => {
     }
     return (
         <section id="aboutSection" ref={sectionRef}>
-            <div className={"aboutText"}>( {' '} About {' '} )</div>
+            <div className={"aboutText"}>( {' '} {t("siteRoot.homePage.aboutSection.title")} {' '} )</div>
             <div className="text-container">
                 {words.map((word, index) => (
                     <span key={index} className="word">
@@ -73,10 +76,10 @@ const AboutSection = () => {
                     </span>
                 ))}
             </div>
-            <button onClick={()=>{
+            <button onClick={() => {
                 handleClickLink('/about')
             }}>
-                Learn More
+                {t("siteRoot.homePage.aboutSection.button")}
                 <BsArrowRight />
             </button>
         </section>

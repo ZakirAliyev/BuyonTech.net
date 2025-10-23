@@ -40,11 +40,11 @@ function WorkCard({ item }) {
     };
     return (
         <section id="workCard" style={{ cursor: "pointer" }} onClick={() => {
+            navigate(`/our-works/${item?.id}`)
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             });
-            navigate(`/our-works/${item?.id}`)
 
         }}>
             <div className="container">

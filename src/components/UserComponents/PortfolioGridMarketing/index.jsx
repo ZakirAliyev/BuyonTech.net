@@ -4,9 +4,12 @@ import mid from "../../../assets/mid.png";
 import nas from "../../../assets/nas.png";
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
-function PortfolioGridMarketing() {
+function PortfolioGridMarketing({ marketingProjects }) {
     const navigate = useNavigate()
+    const { t } = useTranslation()
+
     const handleClickLink = (navigator) => {
         navigate(navigator)
         window.scrollTo({
@@ -14,34 +17,22 @@ function PortfolioGridMarketing() {
             behavior: "smooth"
         });
     }
-    const worksData = [
-        {
-            id: 1,
-            desc: "We created a sleek and user-friendly website for LEGNO to showcase their interior design expertise and portfolio.",
-            title: "Legno",
-            year: "2025",
-            category: "Portfolio website",
-            services: ["Website design", "Branding", "Development"],
-            image: mid
-        },
-        {
-            id: 2,
-            desc: "We designed a vibrant and dynamic website for Nasimi Festival to celebrate art, culture, and creativity in a modern digital space.",
-            title: "Nəsimi Fest",
-            year: "2025",
-            category: "Festival website",
-            services: ["Website design", "Branding", "Development"],
-            image: nas
-        }
-    ];
+
+    const allProjects = marketingProjects?.slice(0, 3)
+
+
 
     return (
         <section id={"portfolioGridMarketing"}>
             <div className={"container"}>
-                <div className={"portfolioText"}>PORTFOLIO</div>
+                <div className={"portfolioText"}>
+                    {
+                        t('siteRoot.homePage.worksSection.title')
+                    }
+                </div>
                 <div className='marketingCard'>
-                    {worksData.map((work) => (
-                        <WorkCard key={work.id} {...work} />
+                    {allProjects?.map((work) => (
+                        <WorkCard key={work.id} item={work} />
                     ))}
                 </div>
                 <div className="workCardViewAll">
@@ -65,7 +56,12 @@ function PortfolioGridMarketing() {
 
                         <div className="span" style={{ cursor: "pointer" }} onClick={() => {
                             handleClickLink('/our-works')
-                        }}>VIEW ALL</div>
+                        }}>
+                            {
+                                t('siteRoot.homePage.worksSection.button')
+
+                            }
+                        </div>
 
                         <div className="arrowWrapper">
                             <div className="arrowTrack">

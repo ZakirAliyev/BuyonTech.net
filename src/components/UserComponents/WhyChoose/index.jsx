@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import './index.scss';
 import { TbUserCheck } from "react-icons/tb";
 import { useNavigate } from "react-router";
+import { useTranslation } from "react-i18next";
 
 function WhyChoose() {
+    const { t } = useTranslation();
 
     const arr = [
         {
@@ -17,8 +19,11 @@ function WhyChoose() {
             icon: <></>
         },
     ]
+    const cards = t("siteRoot.homePage.whyChooseSection.cards", { returnObjects: true }) || [];
+    const title = t("siteRoot.homePage.whyChooseSection.title");
+    const buttonText = t("siteRoot.homePage.whyChooseSection.button");
 
-    const cardCount = 6;
+    const cardCount = cards.length;
 
     const [sectionHeight, setSectionHeight] = useState(window.innerHeight);
 
@@ -127,14 +132,14 @@ function WhyChoose() {
             <div className="container" style={{ maxWidth: "1200px" }}>
                 <section id="whyChoose" ref={sectionRef} style={{ minHeight: sectionHeight }}>
                     <div className="centerContent" ref={centerContentRef}>
-                        <h2>Why Choose BuyonTech for Your Next Big Idea?</h2>
+                        <h2>{title}</h2>
                         <button onClick={() => {
                             handleClickLink('/contact')
-                        }}>Contact Us</button>
+                        }}>      {buttonText}</button>
                     </div>
 
                     <div className="cards">
-                        {[...Array(cardCount)].map((_, i) => (
+                        {/* {[...Array(cardCount)].map((_, i) => (
                             <div
                                 key={i}
                                 className={`card card-${i + 1} ${i % 2 === 0 ? "left" : "right"}`}
@@ -148,13 +153,24 @@ function WhyChoose() {
                                     reliable and innovative solutions.
                                 </p>
                             </div>
+                        ))} */}
+
+                        {cards.map((card, i) => (
+                            <div
+                                key={i}
+                                className={`card card-${i + 1} ${i % 2 === 0 ? "left" : "right"}`}
+                            >
+                                <div className="icon"><TbUserCheck /></div>
+                                <h3>{card.title}</h3>
+                                <p>{card.description}</p>
+                            </div>
                         ))}
                     </div>
                     <div className="choseBtn">
                         <button onClick={() => {
                             handleClickLink('/contact')
                         }}>
-                            Contact Us
+                             {buttonText}
                         </button>
                     </div>
                 </section>

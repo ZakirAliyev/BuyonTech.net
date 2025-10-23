@@ -50,8 +50,11 @@ function OurWorksPageDetail() {
             }}>
                 <Navbar />
                 {/* <OurWorksPageDetailFirst imageBox={imageBox} /> */}
-                <CaseStudyHeaderMarketing />
-                <OurWorksPageDetailSecond />
+                {
+                    oneProje?.categoryType == "marketing" ? <CaseStudyHeaderMarketing oneProje={oneProje} /> : <OurWorksPageDetailFirst oneProje={oneProje} />
+                }
+
+                <OurWorksPageDetailSecond oneProje={oneProje} />
                 <OurWorksPageDetailThird worksData={getAllProjects} />
             </div>
             {showFooter && (

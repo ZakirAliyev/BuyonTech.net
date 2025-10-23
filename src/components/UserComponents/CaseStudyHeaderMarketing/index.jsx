@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './index.scss';
+import { useTranslation } from 'react-i18next';
 
 const stories = [
     { type: 'video', src: '/src/assets/story.mp4' },
@@ -8,12 +9,12 @@ const stories = [
     { type: 'image', src: '/src/assets/buyontechFrame.png' },
 ];
 
-function CaseStudyHeaderMarketing() {
+function CaseStudyHeaderMarketing({ oneProje }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [activeVideo, setActiveVideo] = useState(0); // 0 və ya 1 — hansı video göstərilir
     const videoRefs = [useRef(null), useRef(null)];
     const timerRef = useRef(null);
-
+    const { t, i18n } = useTranslation()
     const currentStory = stories[currentIndex];
 
     useEffect(() => {
@@ -96,25 +97,56 @@ function CaseStudyHeaderMarketing() {
             goNext();
         }
     };
-
+    const getLocalizedName = (item, lang) => {
+        switch (lang?.split("-")[0]) {
+            case "az":
+                return item?.title || "";
+            case "en":
+                return item?.titleEng || "";
+            default:
+                return item?.title || "";
+        }
+    };
+    const getLocalizedSubName = (item, lang) => {
+        switch (lang?.split("-")[0]) {
+            case "az":
+                return item?.subTitle || "";
+            case "en":
+                return item?.subTitleEng || "";
+            default:
+                return item?.subTitle || "";
+        }
+    };
     return (
         <section id="caseStudyHeaderMarketing">
             <div className="container">
                 <div className="row">
                     <div className="col-8 col-md-8 col-sm-12 col-xs-12">
-                        <div className="title">Leon Study Group</div>
+                        <div className="title">{
+                            getLocalizedName(oneProje, i18n.language)
+                        }</div>
                         <div className="description">
-                            We provide full-scale marketing services for Leon Group Studio. This includes creative post
+                            {/* We provide full-scale marketing services for Leon Group Studio. This includes creative post
                             designs, SMM content planning and management. We also deliver professional graphic design
                             and videography to strengthen the company’s visual identity. As a result, the brand gains
-                            more visibility and builds stronger connections with its audience.
+                            more visibility and builds stronger connections with its audience. */}
+                            {
+                                getLocalizedSubName(oneProje, i18n.language)
+
+                            }
                         </div>
                         <div className="serviceWrapper">
-                            <div className="name">Services</div>
-                            <div className="des">Post Design</div>
-                            <div className="des">Content Strategy</div>
-                            <div className="des">Videography</div>
-                            <div className="des">Social Media Management</div>
+                            <div className="name">
+                                {
+                                    t('siteRoot.portfolioPage.workCard.services')
+                                }
+                            </div>
+                            {
+                                oneProje?.services?.map((item, index) => {
+                                    return <div key={index} className="des">{item.name}</div>
+
+                                })
+                            }
                         </div>
                     </div>
                     <div className="col-4 col-md-4 col-sm-12 col-xs-12">
@@ -126,13 +158,12 @@ function CaseStudyHeaderMarketing() {
                                             {stories.map((_, idx) => (
                                                 <div key={idx} className="progress">
                                                     <div
-                                                        className={`progressFill ${
-                                                            idx < currentIndex
-                                                                ? 'filled'
-                                                                : idx === currentIndex
-                                                                    ? 'active'
-                                                                    : ''
-                                                        }`}
+                                                        className={`progressFill ${idx < currentIndex
+                                                            ? 'filled'
+                                                            : idx === currentIndex
+                                                                ? 'active'
+                                                                : ''
+                                                            }`}
                                                     ></div>
                                                 </div>
                                             ))}
@@ -143,16 +174,19 @@ function CaseStudyHeaderMarketing() {
                                                 alt="profile"
                                                 className="profileImg"
                                             />
-                                            <span className="username">leonstudygroup</span>
+                                            <span className="username">
+                                                {
+                                                    oneProje?.profilName
+                                                }
+                                            </span>
                                         </div>
                                     </div>
 
                                     {/* İki video elementi ilə crossfade */}
                                     <video
                                         ref={videoRefs[0]}
-                                        className={`storyVideo ${
-                                            currentStory.type === 'video' && activeVideo === 0 ? 'visible' : 'hidden'
-                                        }`}
+                                        className={`storyVideo ${currentStory.type === 'video' && activeVideo === 0 ? 'visible' : 'hidden'
+                                            }`}
                                         autoPlay
                                         muted
                                         playsInline
@@ -162,9 +196,8 @@ function CaseStudyHeaderMarketing() {
 
                                     <video
                                         ref={videoRefs[1]}
-                                        className={`storyVideo ${
-                                            currentStory.type === 'video' && activeVideo === 1 ? 'visible' : 'hidden'
-                                        }`}
+                                        className={`storyVideo ${currentStory.type === 'video' && activeVideo === 1 ? 'visible' : 'hidden'
+                                            }`}
                                         autoPlay
                                         muted
                                         playsInline
@@ -175,9 +208,8 @@ function CaseStudyHeaderMarketing() {
                                     <img
                                         src={currentStory.type === 'image' ? currentStory.src : ''}
                                         alt=""
-                                        className={`storyImage ${
-                                            currentStory.type === 'image' ? 'visible' : 'hidden'
-                                        }`}
+                                        className={`storyImage ${currentStory.type === 'image' ? 'visible' : 'hidden'
+                                            }`}
                                     />
                                 </div>
                             </div>

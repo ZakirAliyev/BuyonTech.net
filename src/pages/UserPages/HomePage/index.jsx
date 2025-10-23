@@ -18,6 +18,9 @@ import FaqMarketing from "../../../components/UserComponents/FaqMarketing/index.
 import MarketingVideos from "../../../components/UserComponents/MarketingVideos/index.jsx";
 import PerspectiveSection from "../../../components/UserComponents/PerspectiveSection/index.jsx";
 import MarketingServices from "../../../components/UserComponents/MarketingServices/index.jsx";
+import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
+import { useGetAllLogosQuery, useGetAllProjectsQuery } from "../../../services/apis/userApi.jsx";
 
 function HomePage() {
     const [footerHeight, setFooterHeight] = useState(0);
@@ -26,6 +29,30 @@ function HomePage() {
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [showFooter, setShowFooter] = useState(false);
     const [isFirstLoad, setIsFirstLoad] = useState(true); // ✅ ilk açılışı izləmək
+    const { t } = useTranslation()
+
+    const { data: getAllProject, isLoading, isError, isFetching } = useGetAllProjectsQuery()
+    const { data: getAllLogos } = useGetAllLogosQuery()
+
+    const allLogos = getAllLogos?.data
+    const allProjects = getAllProject?.data
+
+    const marketingProjects = allProjects?.filter(
+        (item) => item.categoryType?.toLowerCase() == "marketing"
+    );
+
+    const developmentProjects = allProjects?.filter(
+        (item) => item.categoryType?.toLowerCase() == "development"
+    );
+
+    // --- LOGO-ları filterləyirik
+    const marketingLogos = allLogos?.filter(
+        (item) => item.categoryType?.toLowerCase() == "marketing"
+    );
+
+    const developmentLogos = allLogos?.filter(
+        (item) => item.categoryType?.toLowerCase() == "development"
+    );
 
     useEffect(() => {
         const timer = setTimeout(() => setShowFooter(true), 4000);
@@ -74,7 +101,13 @@ function HomePage() {
         <section id="homePage" style={{ overflow: "hidden", position: "relative" }}>
             <Navbar />
             <SwitchProduct active={active} setActive={handleSwitch} disabled={isTransitioning} />
-
+            <Helmet>
+                <title>
+                    {
+                        t('siteRoot.header.links.home')
+                    }
+                </title>
+            </Helmet>
             <div style={{
                 position: "relative",
                 width: "100%",
@@ -101,21 +134,21 @@ function HomePage() {
                                 {active === "development" ? (
                                     <>
                                         <HomeBanner />
-                                        <LogoScroll />
+                                        <LogoScroll developmentLogos={developmentLogos} />
                                         <AboutScroll />
                                         <ServicesGrid />
-                                        <PortfolioGrid />
+                                        <PortfolioGrid  developmentProjects={developmentProjects}/>
                                         <WhyChoose />
                                         <Faq />
                                     </>
                                 ) : (
                                     <>
                                         <CreativeMarketing />
-                                        <LogoScroll />
+                                        <LogoScroll  marketingLogos={marketingLogos}/>
                                         <AboutScrollMarketing />
-                                        <PerspectiveSection/>
-                                        <MarketingServices/>
-                                        <PortfolioGridMarketing />
+                                        <PerspectiveSection />
+                                        <MarketingServices />
+                                        <PortfolioGridMarketing marketingProjects={marketingProjects} />
                                         <MarketingVideos />
                                         <FaqMarketing />
                                     </>

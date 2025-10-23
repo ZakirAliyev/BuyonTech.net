@@ -4,9 +4,11 @@ import mid from "../../../assets/mid.png";
 import nas from "../../../assets/nas.png";
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
-function PortfolioGrid() {
+function PortfolioGrid({ developmentProjects = [] }) {
     const navigate = useNavigate()
+    const { t } = useTranslation()
     const handleClickLink = (navigator) => {
         navigate(navigator)
         window.scrollTo({
@@ -14,34 +16,20 @@ function PortfolioGrid() {
             behavior: "smooth"
         });
     }
-    const worksData = [
-        {
-            id: 1,
-            desc: "We created a sleek and user-friendly website for LEGNO to showcase their interior design expertise and portfolio.",
-            title: "LEGNO",
-            year: "2025",
-            category: "Portfolio website",
-            services: ["Website design", "Branding", "Development"],
-            image: mid
-        },
-        {
-            id: 2,
-            desc: "We designed a vibrant and dynamic website for Nasimi Festival to celebrate art, culture, and creativity in a modern digital space.",
-            title: "Nəsimi Fest",
-            year: "2025",
-            category: "Festival website",
-            services: ["Website design", "Branding", "Development"],
-            image: nas
-        }
-    ];
+    const allProjects = developmentProjects?.slice(0, 3)
+
 
     return (
         <section id={"portfolioGrid"}>
             <div className={"container"}>
-                <div className={"portfolioText"}>PORTFOLIO</div>
+                <div className={"portfolioText"}>
+                    {
+                        t('siteRoot.homePage.worksSection.title')
+                    }
+                </div>
                 <div className='portfolioCards' >
-                    {worksData.map((work) => (
-                        <WorkCard key={work.id} {...work} />
+                    {allProjects?.map((work) => (
+                        <WorkCard key={work.id} item={work} />
                     ))}
                 </div>
                 <div className="workCardViewAll">
@@ -65,11 +53,14 @@ function PortfolioGrid() {
 
                         <div className="span" onClick={() => {
                             handleClickLink('/our-works')
-                        }}>VIEW ALL</div>
+                        }}>{
+                                t('siteRoot.homePage.worksSection.button')
+
+                            }</div>
 
                         <div className="arrowWrapper">
                             <div className="arrowTrack">
-                                 {Array(20).fill().map((_, i) => (
+                                {Array(20).fill().map((_, i) => (
 
                                     <svg key={i} className="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="41" viewBox="0 0 24 41" fill="none">
                                         <path d="M22.9426 19.0683L3.43712 0.483333C3.11167 0.173076 2.67927 -9.09468e-07 2.22962 -9.29123e-07C1.77998 -9.48777e-07 1.34758 0.173076 1.02213 0.483333L1.00112 0.504333C0.8428 0.654739 0.716732 0.835782 0.630585 1.03645C0.544437 1.23711 0.500011 1.45321 0.500011 1.67158C0.500011 1.88996 0.544437 2.10605 0.630585 2.30672C0.716732 2.50738 0.8428 2.68843 1.00112 2.83883L19.3691 20.3388L1.00112 37.8318C0.842798 37.9822 0.71673 38.1633 0.630583 38.364C0.544436 38.5646 0.50001 38.7807 0.50001 38.9991C0.50001 39.2175 0.544436 39.4336 0.630583 39.6342C0.71673 39.8349 0.842798 40.0159 1.00112 40.1663L1.02212 40.1873C1.34758 40.4976 1.77997 40.6707 2.22962 40.6707C2.67927 40.6707 3.11166 40.4976 3.43712 40.1873L22.9426 21.6023C23.1142 21.4389 23.2507 21.2423 23.344 21.0245C23.4374 20.8067 23.4855 20.5723 23.4855 20.3353C23.4855 20.0984 23.4374 19.8639 23.344 19.6461C23.2507 19.4283 23.1142 19.2318 22.9426 19.0683Z" fill="#527FE9" />

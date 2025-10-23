@@ -1,5 +1,76 @@
 {
   "siteRoot": {
+    "homePage": {
+      "homeBanner": {
+        "title": "Building Future Proof Digital Solutions",
+        "text": "Do you have a vision for your business but don’t know where to start? Let’s transform your ideas into powerful digital solutions that work for you and grow with your success.",
+        "button": "Contact"
+      },
+      "aboutSection": {
+        "title": "About",
+        "text": "We create secure, scalable, and modern digital solutions designed to fit your business goals. Our focus is on turning ideas into powerful products that help you grow.",
+        "button": "Learn More"
+      },
+      "worksSection": {
+        "button": "VIEW ALL",
+        "title": "PORTFOLIO"
+      },
+      "faqSection": {
+        "title": "Frequently Asked Questions",
+        "faqs": [
+          {
+            "question": "What technologies do you use for web development?",
+            "answer": "We use modern technologies like React, Next.js, and ASP.NET Core to build fast, secure, and scalable solutions tailored to your project."
+          },
+          {
+            "question": "How long does it take to build a custom website?",
+            "answer": "Depending on the complexity, a typical project can take between 4 to 8 weeks from design to deployment."
+          },
+          {
+            "question": "Do you provide post-launch support and maintenance?",
+            "answer": "Yes, we offer ongoing support and maintenance to ensure your website stays updated and performs optimally."
+          },
+          {
+            "question": "Can you integrate third-party tools and APIs?",
+            "answer": "Absolutely. We have extensive experience integrating APIs, CRMs, and other business tools into websites and web apps."
+          },
+          {
+            "question": "How much does a development project usually cost?",
+            "answer": "Project pricing depends on scope and requirements. We provide detailed quotes after understanding your business goals."
+          }
+        ]
+      },
+      "whyChooseSection": {
+        "title": "Why Choose BuyonTech for Your Next Big Idea?",
+        "button": "Contact Us",
+        "cards": [
+          {
+            "title": "Strong Expertise",
+            "description": "Our team brings years of experience to deliver reliable and innovative solutions."
+          },
+          {
+            "title": "Creative Vision",
+            "description": "We design with imagination and strategy to make your brand stand out."
+          },
+          {
+            "title": "Full-Cycle Support",
+            "description": "From strategy to maintenance — we accompany you at every stage of your digital journey."
+          },
+          {
+            "title": "Modern Technologies",
+            "description": "We use the latest frameworks and tools to ensure your project stays ahead of trends."
+          },
+          {
+            "title": "Result-Driven Approach",
+            "description": "We focus on measurable outcomes, not just visuals."
+          },
+          {
+            "title": "Trusted Partnership",
+            "description": "We value long-term collaboration built on transparency and trust."
+          }
+        ]
+      }
+    },
     "contactPage": {
       "titlePart1": "Let’s Build",
       "titlePart2": "Something",
@@ -69,6 +140,22 @@
         "visionText": "Our vision is to become the most trusted creative and technological partner in the regional market. By building the digital ecosystem of the future, Buyontech aims to create a global bridge of success for businesses, standing out through innovation in both marketing and web development.",
         "missionTitle": "Our Mission",
         "missionText": "Our mission is to accelerate business growth – by combining innovative marketing solutions with modern web technologies, we provide entrepreneurs with both a strong brand presence and a solid digital infrastructure. At Buyontech, our goal is to transform every client’s idea into tangible results."
+      }
+    },
+    "portfolioPage": {
+      "title": "Our Works",
+      "detailSection": {
+        "title": "Our Works Detail",
+        "otherProjects": "Other Projects",
+        "projectTitle": "Legno Project",
+        "category": "Category",
+        "year": "Year",
+        "visitWebsite": "Visit Website"
+      },
+      "workCard": {
+        "year": "Year",
+        "category": "Category",
+        "services": "Services"
       }
     },
     "header": {
