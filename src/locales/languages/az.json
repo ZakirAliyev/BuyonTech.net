@@ -3,7 +3,8 @@
     "common": {
       "searchProject": "Layihə axtar",
       "loading": "Loading…",
-      "nothingFound": "Nothing found"
+      "nothingFound": "Nothing found",
+      "rangeBox":"Tarix aralığını seç"
     },
     "homePage": {
       "homeBanner": {

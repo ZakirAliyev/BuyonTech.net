@@ -3,7 +3,9 @@
     "common": {
       "searchProject": "Search Project",
       "loading": "Loading…",
-      "nothingFound": "Nothing found"
+      "nothingFound": "Nothing found",
+      "rangeBox":"Select date range"
+
     },
     "homePage": {
       "homeBanner": {

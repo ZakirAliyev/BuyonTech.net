@@ -193,7 +193,11 @@ export default function SearchBoxWithFilter({
 
             {isOpen && (
                 <div className="filterDropdown">
-                    <p className="filterTitle">Select date range</p>
+                    <p className="filterTitle">
+                        {
+                            t('siteRoot.common.rangeBox')
+                        }
+                    </p>
                     <div className="inputs">
                         {/* ======= Start Date ======= */}
                         <div className="dateBox">
