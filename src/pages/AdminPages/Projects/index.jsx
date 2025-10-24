@@ -22,6 +22,7 @@ import TextareaElement from '../../../components/Admin/FormElements/TextareaElem
 import MultiFileUpload from '../../../components/Admin/FormElements/MultipleUploadElement';
 import EditProject from './EditProject';
 import SelectElement from '../../../components/Admin/FormElements/SelectBoxElement';
+import DateInputElement from '../../../components/Admin/FormElements/DateInputElement';
 
 const AdminProjects = () => {
   const imgLocal = 'https://api.buyontech.net/files/projects/cards/'
@@ -254,7 +255,8 @@ const AdminProjects = () => {
       cardImage: null,
       links: '',
       descriptions: [],
-      categoryType: ""
+      categoryType: "",
+      createTime: ""
     },
     validationSchema: Yup.object({
       title: Yup.string().required(t("adminRoot.projectPage.validation.title")),
@@ -262,6 +264,17 @@ const AdminProjects = () => {
 
       subTitle: Yup.string().required(t("adminRoot.projectPage.validation.subTitle")),
       subTitleEng: Yup.string().required(t("adminRoot.projectPage.validation.subTitleEng")),
+      createTime: Yup.string()
+        .required(t("adminRoot.projectPage.validation.createTime")).test(
+          "valid-date-format",
+          t("adminRoot.projectPage.validation.createTimeFormat"),
+          (value) => {
+            if (!value) return false;
+            // Gözlənilən format: dd.MM.yyyy
+            const regex = /^\d{2}\.\d{2}\.\d{4}$/;
+            return regex.test(value);
+          }
+        ),
 
       year: Yup.string().required(t("adminRoot.projectPage.validation.year")),
 
@@ -305,12 +318,14 @@ const AdminProjects = () => {
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
+        console.log(values)
         const fd = new FormData();
         fd.append("Title", values.title);
         fd.append("TitleEng", values.titleEng);
         fd.append("SubTitle", values.subTitle);
         fd.append("SubTitleEng", values.subTitleEng);
         fd.append("Year", values.year);
+        fd.append("CreateTime", values.createTime);
         fd.append("ProjectType", values.projectType);
         fd.append("ProjectTypeEng", values.projectTypeEng);
         fd.append("ProfilName", values.profilName);
@@ -333,7 +348,7 @@ const AdminProjects = () => {
       } catch (err) {
         toast.error(t('adminRoot.projectPage.create.error'));
 
-        console.error("Team create error:", err);
+        console.error("Project create error:", err);
       }
     },
   });
@@ -568,7 +583,7 @@ const AdminProjects = () => {
                 </div>
                 <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
 
-          
+
 
 
                   <SelectElement
@@ -598,6 +613,18 @@ const AdminProjects = () => {
                     onBlur={formik.handleBlur}
                     error={formik.errors.profilName}
                     touched={formik.touched.profilName}
+                  />
+                </div>
+                <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+                  <DateInputElement
+                    name="createTime"
+                    // label={t("adminRoot.projectPage.form.labels.createTime")}
+                    placeholder={t("adminRoot.projectPage.form.placeholders.createTime")}
+                    value={formik.values.createTime}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    error={formik.errors.createTime}
+                    touched={formik.touched.createTime}
                   />
                 </div>
                 <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>

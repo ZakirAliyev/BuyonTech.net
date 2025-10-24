@@ -1034,6 +1034,7 @@ import EditButton from "../../../../components/Admin/FormElements/EditBtn";
 
 import { useUpdateProjectsMutation } from "../../../../services/apis/userApi";
 import SelectElement from "../../../../components/Admin/FormElements/SelectBoxElement";
+import DateInputElement from "../../../../components/Admin/FormElements/DateInputElement";
 
 const FILE_SIZE = 5 * 1024 * 1024;
 const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png", "image/webp"];
@@ -1071,6 +1072,7 @@ const EditProject = ({ editPopupOpen, setEditPopupOpen, editGuest, setEditGuest 
             year: editGuest?.year || "",
             projectType: editGuest?.projectType || "",
             projectTypeEng: editGuest?.projectTypeEng || "",
+            createTime: editGuest?.createTime || "",
             // formdaxili array
             services: (editGuest?.services || []).map(s => s.name),
             profilName: editGuest?.profilName || "",
@@ -1091,6 +1093,9 @@ const EditProject = ({ editPopupOpen, setEditPopupOpen, editGuest, setEditGuest 
         subTitleEng: Yup.string().required(t("adminRoot.projectPage.validation.subTitleEng")),
         year: Yup.string().required(t("adminRoot.projectPage.validation.year")),
         projectType: Yup.string().required(t("adminRoot.projectPage.validation.projectType")),
+        createTime: Yup.string()
+            .required(t("adminRoot.projectPage.validation.createTime")),
+
         projectTypeEng: Yup.string().required(t("adminRoot.projectPage.validation.projectTypeEng")),
         services: Yup.array().required(t("adminRoot.projectPage.validation.services")),
         profilName: Yup.string().required(t("adminRoot.projectPage.validation.profilName")),
@@ -1164,6 +1169,7 @@ const EditProject = ({ editPopupOpen, setEditPopupOpen, editGuest, setEditGuest 
                 fd.append("Year", values.year);
                 fd.append("ProjectType", values.projectType);
                 fd.append("ProjectTypeEng", values.projectTypeEng);
+                fd.append("CreateTime", values.createTime);
                 fd.append("ProfilName", values.profilName);
                 fd.append("CategoryType", values.categoryType);
                 fd.append("CardImage", values.cardImage);
@@ -1410,6 +1416,19 @@ const EditProject = ({ editPopupOpen, setEditPopupOpen, editGuest, setEditGuest 
                             type="text"
                             error={formik.errors.profilName}
                             touched={formik.touched.profilName}
+                        />
+                    </div>
+                    <div className="col-12" style={{ padding: "0", marginBottom: "12px" }}>
+
+                        <DateInputElement
+                            name="createTime"
+                            // label={t("adminRoot.projectPage.form.labels.createTime")}
+                            placeholder={t("adminRoot.projectPage.form.placeholders.createTime")}
+                            value={formik.values.createTime}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.errors.createTime}
+                            touched={formik.touched.createTime}
                         />
                     </div>
 

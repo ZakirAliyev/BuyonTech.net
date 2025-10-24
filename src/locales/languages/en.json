@@ -115,7 +115,7 @@
       },
       "portfolioPage": {
         "title": "Our Works",
-        "selectTitle": "Bütün layihələr",
+        "selectTitle": "All projects",
         "workCard": {
           "year": "Year",
           "category": "Category",
@@ -162,7 +162,8 @@
         "year": "Year",
         "category": "Category",
         "services": "Services"
-      }
+      },
+      "selectTitle": "All projects"
     },
     "header": {
       "links": {
@@ -469,6 +470,9 @@
         "yearDesc": "Year (Descending)"
       },
       "form": {
+        "labels": {
+          "createTime": "Creation Date"
+        },
         "placeholders": {
           "title": "Title (AZ)",
           "titleEng": "Title (EN)",
@@ -485,7 +489,8 @@
           "key": "Key (AZ)",
           "keyEng": "Key (EN)",
           "value": "Value (AZ)",
-          "valueEng": "Value (EN)"
+          "valueEng": "Value (EN)",
+          "createTime": "Select a date"
         },
         "errors": {
           "titleAz": "Title (AZ) is required",
@@ -505,7 +510,8 @@
           "key": "Key (AZ) is required",
           "keyEng": "Key (EN) is required",
           "value": "Value (AZ) is required",
-          "valueEng": "Value (EN) is required"
+          "valueEng": "Value (EN) is required",
+          "createTime": "Creation date is required"
         }
       },
       "metaTitle": "Projects",
@@ -564,7 +570,9 @@
         "links": "At least one link must be added",
         "categoryType": "Category type is required",
         "fileSize": "File cannot exceed 5MB",
-        "fileFormat": "Invalid format (JPG, PNG, WEBP)"
+        "fileFormat": "Invalid format (JPG, PNG, WEBP)",
+        "createTime": "Creation date is required",
+        "createTimeFormat": "Invalid date format. Correct format: dd.MM.yyyy"
       },
       "reorder": {
         "success": "Projects reordered successfully",

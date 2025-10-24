@@ -137,7 +137,7 @@
     },
     "portfolioPage": {
       "title": "Layihələrimiz",
-      "selectTitle": "All projects",
+      "selectTitle": "Bütün layihələr",
       "workCard": {
         "year": "İl",
         "category": "Kateqoriya",
@@ -457,6 +457,9 @@
         "yearDesc": "İl (azalan)"
       },
       "form": {
+        "labels": {
+          "createTime": "Yaradılma tarixi"
+        },
         "placeholders": {
           "title": "Başlıq (AZ)",
           "titleEng": "Başlıq (EN)",
@@ -473,7 +476,8 @@
           "key": "Açar (AZ)",
           "keyEng": "Açar (EN)",
           "value": "Dəyər (AZ)",
-          "valueEng": "Dəyər (EN)"
+          "valueEng": "Dəyər (EN)",
+          "createTime": "Tarix seçin"
         },
         "errors": {
           "titleAz": "Başlıq (AZ) tələb olunur",
@@ -493,7 +497,8 @@
           "key": "Açar (AZ) tələb olunur",
           "keyEng": "Açar (EN) tələb olunur",
           "value": "Dəyər (AZ) tələb olunur",
-          "valueEng": "Dəyər (EN) tələb olunur"
+          "valueEng": "Dəyər (EN) tələb olunur",
+          "createTime": "Yaradılma tarixi tələb olunur"
         }
       },
       "metaTitle": "Layihələr",
@@ -552,7 +557,9 @@
         "links": "Ən azı bir link əlavə olunmalıdır",
         "categoryType": "Kateqoriya növü tələb olunur",
         "fileSize": "Fayl 5MB-dan böyük ola bilməz",
-        "fileFormat": "Düzgün format deyil (JPG, PNG, WEBP)"
+        "fileFormat": "Düzgün format deyil (JPG, PNG, WEBP)",
+        "createTime": "Yaradılma tarixi tələb olunur",
+        "createTimeFormat": "Tarix formatı yanlışdır. Düzgün format: dd.MM.yyyy"
       },
       "reorder": {
         "success": "Layihələrin sırası uğurla dəyişdirildi",
