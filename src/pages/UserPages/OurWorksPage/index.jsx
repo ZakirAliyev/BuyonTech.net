@@ -367,7 +367,6 @@ function OurWorksPage() {
         });
     }, [query, selected, dateRange, i18n.language, myProjects]);
 
-    console.log(filteredProjects)
     return (
         <section
             id="ourWorksPage"
