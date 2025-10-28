@@ -4,13 +4,12 @@
       "searchProject": "Search Project",
       "loading": "Loading…",
       "nothingFound": "Nothing found",
-      "rangeBox":"Select date range"
-
+      "rangeBox": "Select date range"
     },
     "homePage": {
       "homeBanner": {
-        "title": "Building Future Proof Digital Solutions",
-        "text": "Do you have a vision for your business but don’t know where to start? Let’s transform your ideas into powerful digital solutions that work for you and grow with your success.",
+        "title": "Where Technology Meets Creativity",
+        "text": "From coding your next big idea to shaping its global identity — Buyontech turns your vision into an unstoppable digital force.",
         "button": "Contact"
       },
       "aboutSection": {
@@ -22,28 +21,53 @@
         "button": "VIEW ALL",
         "title": "PORTFOLIO"
       },
+      "serviceSection": {
+        "title": "Services",
+        "mobileAppTitle": "Mobile App Development",
+        "mobileAppDesc": "We design and build user-friendly mobile applications for iOS and Android, tailored to your business needs.",
+        "frontendTitle": "Frontend Development",
+        "frontendDesc": "The website is optimized for both mobile and desktop with a fast and aesthetic interface.",
+        "backendTitle": "Backend Development",
+        "backendDesc": "A powerful management system is built for handling products, orders, and users.",
+        "domainTitle": "Domain & Hosting Setup",
+        "domainDesc": "Your website’s domain name is registered and hosted on a reliable server.",
+        "designTitle": "Design & UI/UX",
+        "designDesc": "A modern design is created, ensuring a smooth and user-friendly experience.",
+        "adminTitle": "Admin Panel",
+        "adminDesc": "A simple and easy-to-use management panel is provided for business owners.",
+        "paymentTitle": "Payment System Integration",
+        "paymentDesc": "Customers can pay via card, cash, or bank transfer.",
+        "seoTitle": "SEO Support",
+        "seoDesc": "Optimization is applied so your website ranks better on Google and other search engines.",
+        "technicTitle": "Technical Support & Updates",
+        "technicDesc": "Continuous technical support and regular updates are provided after launch."
+      },
       "faqSection": {
         "title": "Frequently Asked Questions",
         "faqs": [
           {
             "question": "What technologies do you use for web development?",
-            "answer": "We use modern technologies like React, Next.js, and ASP.NET Core to build fast, secure, and scalable solutions tailored to your project."
-          },
-          {
-            "question": "How long does it take to build a custom website?",
-            "answer": "Depending on the complexity, a typical project can take between 4 to 8 weeks from design to deployment."
-          },
-          {
-            "question": "Do you provide post-launch support and maintenance?",
-            "answer": "Yes, we offer ongoing support and maintenance to ensure your website stays updated and performs optimally."
+            "answer": "We use modern and proven technologies like *React, Next.js, ASP.NET Core, Node.js, and PostgreSQL* to create secure, scalable, and high-performance digital platforms."
           },
           {
             "question": "Can you integrate third-party tools and APIs?",
-            "answer": "Absolutely. We have extensive experience integrating APIs, CRMs, and other business tools into websites and web apps."
+            "answer": "Yes — we can seamlessly integrate *payment systems, CRM tools, analytics, chatbots*, and any other third-party services your business needs. Our goal is to make all your tools work together effortlessly."
           },
           {
-            "question": "How much does a development project usually cost?",
-            "answer": "Project pricing depends on scope and requirements. We provide detailed quotes after understanding your business goals."
+            "question": "Do you provide post-launch support and maintenance?",
+            "answer": "Absolutely. After your project goes live, our team continues to support it — handling updates, monitoring performance, and ensuring everything runs smoothly as your business grows."
+          },
+          {
+            "question": "How do you ensure the security and reliability of your projects?",
+            "answer": "Security is our top priority. We use *encrypted data storage, authentication protocols (JWT / OAuth), SSL certificates, and server-side validation* to ensure complete protection and stability."
+          },
+          {
+            "question": "What is your development process like?",
+            "answer": "We follow five key stages:Research → Design → Development → Testing → Support.This approach keeps the process clear, agile, and transparent."
+          },
+          {
+            "question": "Do you work with international clients?",
+            "answer": "Yes — BuyonTech collaborates with clients worldwide. Our solutions are multilingual, globally scalable, and designed to adapt to any market."
           }
         ]
       },
@@ -56,28 +80,29 @@
             "description": "Our team brings years of experience to deliver reliable and innovative solutions."
           },
           {
+            "title": "End-to-End Solutions",
+            "description": "From idea to launch — we handle every stage of your digital journey, ensuring a smooth and scalable transformation for your business."
+          },
+          {
             "title": "Creative Vision",
-            "description": "We design with imagination and strategy to make your brand stand out."
+            "description": "We design with imagination and purpose — crafting digital identities that inspire trust and make your brand stand out."
           },
           {
-            "title": "Full-Cycle Support",
-            "description": "From strategy to maintenance — we accompany you at every stage of your digital journey."
+            "title": "Reliability & Transparency",
+            "description": "We value long-term partnerships built on trust, open communication, and consistent delivery of high-quality results."
           },
           {
-            "title": "Modern Technologies",
-            "description": "We use the latest frameworks and tools to ensure your project stays ahead of trends."
+            "title": "Innovation-Driven Approach",
+            "description": "At BuyonTech, innovation isn’t an add-on — it’s our core. We use modern technologies and smart strategies to move your ideas forward."
           },
           {
-            "title": "Result-Driven Approach",
-            "description": "We focus on measurable outcomes, not just visuals."
-          },
-          {
-            "title": "Trusted Partnership",
-            "description": "We value long-term collaboration built on transparency and trust."
+            "title": "Global Mindset",
+            "description": "We think beyond borders — delivering digital products and campaigns that perform globally while staying authentic to your brand."
           }
         ]
       }
     },
+    "homePageMarketing":{},
     "contactPage": {
       "titlePart1": "Let’s Build",
       "titlePart2": "Something",
@@ -107,8 +132,8 @@
     },
     "aboutPage": {
       "firstSection": {
-        "title": "We Bring Ideas To Life With Design, Code, And Marketing.",
-        "text": "We don’t just create websites and apps, we enhance them with strategies. Design, development, and marketing boost your project’s value."
+        "title": "From Vision to Impact — We Make Digital Dreams Work.",
+        "text": "Through design, code, and marketing, we turn bold ideas into digital experiences that inspire, perform, and last."
       },
       "fourthSection": {
         "title": "Our Team",
@@ -133,8 +158,8 @@
         "titlePart2": "Reflect",
         "titlePart3": "the",
         "titlePart4": "Power",
-        "titlePart5": "of Our Work.",
-        "description": "Every project, every client, and every step makes us stronger. Our success is defined not by numbers, but by the value we create.",
+        "titlePart5": "Behind  Our Work.",
+        "description": "Every project, every client, and every result tells our story — built on trust, creativity, and performance.",
         "cards": {
           "completedProjects": "Completed Project",
           "adSpend": "Ad Spend",

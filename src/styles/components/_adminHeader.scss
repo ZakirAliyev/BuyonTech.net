@@ -24,10 +24,12 @@
 
         .adminHeaderLeft {
             img {
-                width: 100px;
+                width: 220px;
                 height: 65px;
                 flex-shrink: 0;
                 aspect-ratio: 20/13;
+      filter: brightness(0);
+
             }
         }
 

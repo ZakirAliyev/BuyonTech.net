@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import "./index.scss";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import logo from "/src/assets/zaraLogo.webp";
-import logo1 from "/src/assets/allbirdsLogo.png";
 
 
 function LogoScroll({ developmentLogos = [], marketingLogos = [] }) {

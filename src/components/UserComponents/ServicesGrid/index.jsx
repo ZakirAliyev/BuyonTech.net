@@ -10,22 +10,23 @@ import seo from "/src/assets/seo.png"
 import technic from "/src/assets/technic.png"
 import dnsImage from '/src/assets/dnsImage.png'
 import payments from '/src/assets/payments.png'
+import { useTranslation } from 'react-i18next'
 function ServicesGrid() {
+    const { t } = useTranslation()
     return (
         <section id={"servicesGrid"}>
             <div className={"container"}>
-                <div className={"servicesText"}>SERVICES</div>
+                <div className={"servicesText"}>    {t("siteRoot.homePage.serviceSection.title")}</div>
                 <div className="parent">
                     <div className="div firstDiv div1">
-                        <h2>Mobil App Development</h2>
-                        <p>We design and build user-friendly mobile applications for iOS and Android, tailored to your
-                            business needs.</p>
+                        <h2>{t("siteRoot.homePage.serviceSection.mobileAppTitle")}</h2>
+                        <p>{t("siteRoot.homePage.serviceSection.mobileAppDesc")}</p>
                         <img src={mobileApp} alt={"Image"} className={"mobileApp"} />
                     </div>
                     <div className="secondDiv div2">
                         <div>
-                            <h2>Frontend Development</h2>
-                            <p>The website is optimized for both mobile and desktop with a fast and aesthetic interface..</p>
+                            <h2>{t("siteRoot.homePage.serviceSection.frontendTitle")}</h2>
+                            <p>{t("siteRoot.homePage.serviceSection.frontendDesc")}</p>
                         </div>
                         <img src={macbook} alt={"Image"} className={"macbook"} />
                     </div>
@@ -33,27 +34,24 @@ function ServicesGrid() {
                         color: "black"
                     }}>
                         <div>
-                            <h2>Backend Development</h2>
-                            <p>A powerful management system is built for handling products, orders, and users.</p>
-                        </div>
+                            <h2>{t("siteRoot.homePage.serviceSection.backendTitle")}</h2>
+                            <p>{t("siteRoot.homePage.serviceSection.backendDesc")}</p> </div>
                         <img src={tablet} alt={"Image"} className={"tablet"} />
                     </div>
                     <div className="div fourthDiv div4">
                         <div>
-                            <h2>Domain & Hosting Setup</h2>
-                            <p>
-                                Your website’s domain name is registered and hosted on a reliable server.
-                            </p>
+                            <h2>{t("siteRoot.homePage.serviceSection.domainTitle")}</h2>
+                            <p>{t("siteRoot.homePage.serviceSection.domainDesc")}</p>
                         </div>
                         <img src={dnsImage} alt={"Image"} className={"dnsImage"} />
                     </div>
                     <div className="divdivdiv fifthDiv div5">
                         <div>
-                            <h2>Design & UI/UX</h2>
+                            <h2>{t("siteRoot.homePage.serviceSection.designTitle")}</h2>
                             <p style={{
                                 maxWidth: '280px',
                                 width: '100%'
-                            }}>A modern design is created, ensuring a smooth and user-friendly experience.</p>
+                            }}>{t("siteRoot.homePage.serviceSection.designDesc")}</p>
                         </div>
                         <img src={design} alt={"Image"} className={"design"} />
                     </div>
@@ -61,19 +59,18 @@ function ServicesGrid() {
                         color: "black"
                     }}>
                         <div>
-                            <h2>Admin Panel</h2>
+                            <h2>{t("siteRoot.homePage.serviceSection.adminTitle")}</h2>
                             <p style={{
                                 maxWidth: '280px',
                                 width: '100%'
-                            }}>A simple and easy-to-use management panel is provided for business owners.</p>
-
+                            }}>{t("siteRoot.homePage.serviceSection.adminDesc")}</p>
                         </div>
                         <img src={adminPanel} alt={"Image"} className={"adminPanel"} />
                     </div>
                     <div className="div div3 div100 div7">
                         <div>
-                            <h2>Payment System Integration</h2>
-                            <p>Customers can pay via card, cash, or bank transfer.</p>
+                            <h2>{t("siteRoot.homePage.serviceSection.paymentTitle")}</h2>
+                            <p>{t("siteRoot.homePage.serviceSection.paymentDesc")}</p>
                         </div>
                         <img src={payments} alt={"Image"} className={"payments"} />
                     </div>
@@ -81,16 +78,15 @@ function ServicesGrid() {
                         color: "black"
                     }}>
                         <div>
-                            <h2>SEO Support</h2>
-                            <p>Optimization is applied so your website ranks better on Google and other search
-                                engines.</p>
+                            <h2>{t("siteRoot.homePage.serviceSection.seoTitle")}</h2>
+                            <p>{t("siteRoot.homePage.serviceSection.seoDesc")}</p>
                         </div>
                         <img src={seo} alt={"Image"} className={"seo"} />
                     </div>
                     <div className="div div3 div100 div9">
                         <div>
-                            <h2>Technical Support & Updates</h2>
-                            <p>Continuous technical support and regular updates are provided after launch.</p>
+                            <h2>{t("siteRoot.homePage.serviceSection.technicTitle")}</h2>
+                            <p>{t("siteRoot.homePage.serviceSection.technicDesc")}</p>
                         </div>
                         <img src={technic} alt={"Image"} className={"seo"} />
                     </div>

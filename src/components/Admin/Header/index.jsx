@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import headerLogo from '/src/assets/header-logo.webp'
+import headerLogo from '/src/assets/sariLogo.png'
 import adminPlaceholder from '/src/assets/adminPlaceholder.webp'
-import logoEng from "/src/assets/header-logo.webp";
+import logoEng from "/src/assets/sariLogo.png";
 
 import Cookies from 'js-cookie'
 import toast from 'react-hot-toast'

@@ -19,7 +19,7 @@ const AboutPageSecond = () => {
                             {t("siteRoot.aboutPage.secondSection.titlePart1")}
                             <span className="span1"> {t("siteRoot.aboutPage.secondSection.titlePart2")}</span>{" "}
                             {t("siteRoot.aboutPage.secondSection.titlePart3")}
-                            <span className="span2">  {t("siteRoot.aboutPage.secondSection.titlePart4")}</span>
+                            <span className="span2">  {t("siteRoot.aboutPage.secondSection.titlePart4")}</span> {' '}
                             {t("siteRoot.aboutPage.secondSection.titlePart5")}
                         </h2>
                         <div className="text134">

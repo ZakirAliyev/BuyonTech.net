@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { Helmet } from 'react-helmet'
 import adminLogin from '/src/assets/adminLogin.mp4'
-import headerLogo from '/src/assets/header-logo.webp'
 import { useNavigate } from 'react-router'
 import toast from 'react-hot-toast';
 import Cookies from 'js-cookie';
@@ -9,6 +8,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next'
 import { useLoginAdminMutation } from '../../../services/apis/userApi'
+import headerLogo from "/src/assets/sariLogo.png"
 
 const AdminLogin = () => {
     const [showPassword, setShowPassword] = useState(false);

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./index.scss";
 import { TfiWorld } from "react-icons/tfi";
 import { IoClose } from "react-icons/io5";
-import logo from "/src/assets/sariLogo.webp";
+import logo from "/src/assets/sariLogo.png";
 import { useNavigate } from "react-router";
 import { FaBarsStaggered } from "react-icons/fa6";
 import LanguageSelectForHome from "../../SwitcherComponents/LanguageSwitcherForSite";

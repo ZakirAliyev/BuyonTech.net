@@ -4,12 +4,12 @@
       "searchProject": "Layihə axtar",
       "loading": "Loading…",
       "nothingFound": "Nothing found",
-      "rangeBox":"Tarix aralığını seç"
+      "rangeBox": "Tarix aralığını seç"
     },
     "homePage": {
       "homeBanner": {
-        "title": "Gələcəyə davamlı rəqəmsal həllər yaradırıq",
-        "text": "Biznesiniz üçün bir vizyonunuz var, amma haradan başlamalı olduğunuzu bilmirsiniz? Gəlin ideyalarınızı sizin üçün işləyən və uğurunuzla böyüyən güclü rəqəmsal həllərə çevirək.",
+        "title": "Texnologiya ilə Yaradıcılığın Qovuşduğu Məkan",
+        "text": "Növbəti böyük ideyanızın kodlanmasından tutmuş onun qlobal kimliyinin formalaşdırılmasına qədər — Buyontech vizyonunuzu dayanmadan irəliləyən rəqəmsal gücə çevirir.",
         "button": "Əlaqə"
       },
       "aboutSection": {
@@ -21,6 +21,27 @@
         "title": "PORTFOLİO",
         "button": "Hamısına bax"
       },
+       "serviceSection": {
+        "title": "Xidmətlər",
+        "mobileAppTitle": "Mobil Tətbiq İnkişafı",
+        "mobileAppDesc": "Biz iOS və Android üçün istifadəçi dostu mobil tətbiqlər dizayn edib qururuq, biznes ehtiyaclarınıza uyğunlaşdırılmış şəkildə.",
+        "frontendTitle": "Frontend İnkişafı",
+        "frontendDesc": "Sayt həm mobil, həm də masaüstü cihazlar üçün optimallaşdırılır və sürətli, estetik interfeysə malik olur.",
+        "backendTitle": "Backend İnkişafı",
+        "backendDesc": "Məhsulların, sifarişlərin və istifadəçilərin idarə olunması üçün güclü idarəetmə sistemi yaradılır.",
+        "domainTitle": "Domen və Hosting Qurulumu",
+        "domainDesc": "Saytınızın domen adı qeydiyyatdan keçirilir və etibarlı serverdə yerləşdirilir.",
+        "designTitle": "Dizayn və UI/UX",
+        "designDesc": "Müasir və istifadəsi rahat interfeys yaradılaraq yüksək istifadəçi təcrübəsi təmin olunur.",
+        "adminTitle": "Admin Panel",
+        "adminDesc": "Biznes sahibləri üçün sadə və istifadəsi rahat idarəetmə paneli təqdim olunur.",
+        "paymentTitle": "Ödəniş Sistemi İnterqasiyası",
+        "paymentDesc": "Müştərilər kartla, nağd və ya bank köçürməsi ilə ödəniş edə bilirlər.",
+        "seoTitle": "SEO Dəstəyi",
+        "seoDesc": "Saytınız Google və digər axtarış sistemlərində daha yüksək sıralama əldə etsin deyə optimizasiya tətbiq olunur.",
+        "technicTitle": "Texniki Dəstək və Yeniləmələr",
+        "technicDesc": "Sayt istifadəyə verildikdən sonra davamlı texniki dəstək və müntəzəm yeniləmələr təqdim olunur."
+      },
       "whyChooseSection": {
         "title": "Növbəti böyük ideyanız üçün niyə BuyonTech-i seçməlisiniz?",
         "button": "Əlaqə",
@@ -30,24 +51,24 @@
             "description": "Komandamız illərin təcrübəsi ilə etibarlı və innovativ həllər təqdim edir."
           },
           {
-            "title": "Yaradıcı Baxış",
-            "description": "Markanızı önə çıxarmaq üçün təsəvvür və strategiya ilə dizayn edirik."
+            "title": "Tam Həll Yanaşması",
+            "description": "İdeyadan yayıma qədər — rəqəmsal səyahətinizin hər mərhələsini idarə edirik və biznesiniz üçün davamlı, miqyaslana bilən inkişaf təmin edirik."
           },
           {
-            "title": "Tam Dəstək Prosesi",
-            "description": "Strategiyadan tutmuş texniki dəstəyə qədər hər mərhələdə yanınızdayıq."
+            "title": "Yaradıcılıq Vizyonu",
+            "description": "Biz dizaynı təsəvvür və məqsədlə birləşdiririk — brendinizə inam yaradan və fərqləndirən rəqəmsal kimliklər qururuq."
           },
           {
-            "title": "Müasir Texnologiyalar",
-            "description": "Layihənizin trendlərdən geri qalmaması üçün ən son texnologiyalardan istifadə edirik."
+            "title": "Etibarlılıq və Şəffaflıq",
+            "description": "Biz uzunmüddətli tərəfdaşlıqları dəyərləndiririk — açıq ünsiyyət, güvən və yüksək keyfiyyətli nəticələr bizim əsas prinsiplərimizdir."
           },
           {
-            "title": "Nəticəyönümlü Yanaşma",
-            "description": "Biz yalnız dizayna deyil, konkret nəticələrə fokuslanırıq."
+            "title": "İnnovasiyaya Əsaslanan Yanaşma",
+            "description": "BuyonTech-də innovasiya əlavə dəyər deyil — bizim əsasımızdır. Müasir texnologiyalar və ağıllı strategiyalarla ideyalarınızı irəli aparırıq."
           },
           {
-            "title": "Etibarlı Əməkdaşlıq",
-            "description": "Uzunmüddətli, şəffaf və etimad üzərində qurulan tərəfdaşlığa dəyər veririk."
+            "title": "Qlobal Baxış",
+            "description": "Biz sərhədləri aşan düşüncəyə malikik — brendinizə sadiq qalaraq, qlobal səviyyədə uğur qazanan rəqəmsal məhsul və kampaniyalar yaradırıq."
           }
         ]
       },
@@ -55,24 +76,28 @@
         "title": "Tez-tez verilən suallar",
         "faqs": [
           {
-            "question": "Veb inkişaf üçün hansı texnologiyalardan istifadə edirsiniz?",
-            "answer": "Layihənizə uyğun, sürətli, təhlükəsiz və miqyaslana bilən həllər yaratmaq üçün React, Next.js və ASP.NET Core kimi müasir texnologiyalardan istifadə edirik."
+            "question": "Veb inkişafı üçün hansı texnologiyalardan istifadə edirsiniz?",
+            "answer": "Biz *React, Next.js, ASP.NET Core, Node.js və PostgreSQL* kimi müasir və etibarlı texnologiyalardan istifadə edirik. Məqsədimiz təhlükəsiz, miqyaslana bilən və yüksək performanslı rəqəmsal platformalar yaratmaqdır."
           },
           {
-            "question": "Fərdi veb-saytın hazırlanması nə qədər vaxt aparır?",
-            "answer": "Layihənin mürəkkəbliyindən asılı olaraq, dizayndan yayımlanmağa qədər orta hesabla 4-8 həftə çəkir."
+            "question": "Üçüncü tərəf alətləri və API-ləri inteqrasiya edə bilirsinizmi?",
+            "answer": "Bəli — biz *ödəmə sistemləri, CRM alətləri, analitika, chatbotlar* və digər xidmətləri problemsiz şəkildə inteqrasiya edirik. Məqsədimiz biznesinizdəki bütün alətlərin bir-biri ilə tam uyğun işləməsini təmin etməkdir."
           },
           {
-            "question": "Sayt istifadəyə verildikdən sonra texniki dəstək göstərirsinizmi?",
-            "answer": "Bəli, saytın daim aktual və stabil qalması üçün davamlı texniki dəstək və baxım xidməti təqdim edirik."
+            "question": "Layihə tamamlandıqdan sonra texniki dəstək göstərirsinizmi?",
+            "answer": "Bəli, əlbəttə. Layihəniz yayımlandıqdan sonra komandamız onu *dəstəkləməyə, yeniləmələr aparmağa, performansı izləməyə və sabit işləməsini təmin etməyə* davam edir."
           },
           {
-            "question": "Üçüncü tərəf alətlərini və API-ləri inteqrasiya edə bilirsinizmi?",
-            "answer": "Əlbəttə. API, CRM və digər biznes alətlərinin veb-saytlara və tətbiqlərə inteqrasiyasında geniş təcrübəmiz var."
+            "question": "Layihələrin təhlükəsizliyini və etibarlılığını necə təmin edirsiniz?",
+            "answer": "Təhlükəsizlik bizim üçün prioritetdir. *Məlumatların şifrələnməsi, autentifikasiya protokolları (JWT / OAuth), SSL sertifikatları və server tərəfli yoxlama mexanizmləri* ilə tam təhlükəsizlik və sistem sabitliyi təmin edirik."
           },
           {
-            "question": "Layihənin dəyəri adətən nə qədər olur?",
-            "answer": "Qiymət layihənin həcmi və tələblərindən asılıdır. Biz məqsədlərinizi öyrəndikdən sonra ətraflı təklif təqdim edirik."
+            "question": "İnkişaf prosesiniz necədir?",
+            "answer": "Layihələri 5 mərhələdə həyata keçiririk:Tədqiqat → Dizayn → İnkişaf → Test → Dəstək.Bu yanaşma prosesi aydın, çevik və şəffaf şəkildə idarə etməyə imkan verir."
+          },
+          {
+            "question": "Beynəlxalq müştərilərlə işləyirsinizmi?",
+            "answer": "Bəli — BuyonTech müxtəlif ölkələrdən olan müştərilərlə əməkdaşlıq edir. Həllərimiz *çoxdilli, qlobal səviyyədə miqyaslana bilən* və müxtəlif bazarlara uyğunlaşdırıla bilən şəkildə hazırlanır."
           }
         ]
       }
@@ -106,16 +131,16 @@
     },
     "aboutPage": {
       "firstSection": {
-        "title": "Biz ideyaları dizayn, kod və marketinq ilə həyata keçiririk.",
-        "text": "Biz yalnız saytlar və tətbiqlər yaratmırıq — onları strategiyalarla gücləndiririk. Dizayn, inkişaf və marketinq layihənizin dəyərini artırır."
+        "title": "Vizyonun reallığa çevrildiyi yer — biz rəqəmsal xəyalları gerçəkliyə çeviririk.",
+        "text": "Dizayn, kod və marketinq vasitəsilə biz cəsarətli ideyaları ilham verən, performanslı və uzunömürlü rəqəmsal təcrübələrə çeviririk."
       },
       "secondSection": {
-        "titlePart1": "Əməkdaşlığımızın",
-        "titlePart2": "Qüdrətini",
-        "titlePart3": "Göstərən",
-        "titlePart4": "Rəqəmlər",
+        "titlePart1": "Rəqəmlər — İşimizin",
+        "titlePart2": "Gücünü",
+        "titlePart3": "Əks Etdirən",
+        "titlePart4": "Göstəricilər",
         "titlePart5": ".",
-        "description": "Hər layihə, hər müştəri və hər addım bizi daha güclü edir. Uğurumuz rəqəmlərlə deyil, yaratdığımız dəyərlə ölçülür.",
+        "description": "Hər layihə, hər müştəri və hər nəticə bizim hekayəmizi danışır — etibar, yaradıcılıq və peşəkarlıq üzərində qurulmuş bir hekayə.",
         "cards": {
           "completedProjects": "Tamamlanmış layihə",
           "adSpend": "Reklam büdcəsi",

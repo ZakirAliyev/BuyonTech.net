@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import './index.scss'
 import { useTranslation } from "react-i18next";
 import { TfiWorld } from "react-icons/tfi";
-import logo from "/src/assets/sariLogo.webp"
+import logo from "/src/assets/sariLogo.png"
 import { useNavigate } from "react-router";
 
 import MobileMenu from '../MobileMenu';
