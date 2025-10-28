@@ -2,9 +2,11 @@ import './index.scss'
 import growth from "/src/assets/growth.png"
 import buyontechFrame from "/src/assets/buyontechFrame.png"
 import { useNavigate } from 'react-router'
+import { useTranslation } from 'react-i18next'
 
 function CreativeMarketing() {
     const navigate = useNavigate()
+    const {t}=useTranslation()
     const handleClickLink = (navigator) => {
         navigate(navigator)
         window.scrollTo({
@@ -15,15 +17,24 @@ function CreativeMarketing() {
     return (
         <section id={"creativeMarketing"}>
             <div className={"wordWrapper"}>
-                <span className={"marketingText"}>Creative</span>
-                <span className={"marketingText marketingTextColor"}>Marketing</span>
+                <span className={"marketingText"}>
+                        {t("siteRoot.homePageMarketing.firstSection.creative")}
+                </span>
+                <span className={"marketingText marketingTextColor"}>
+
+                     {t("siteRoot.homePageMarketing.firstSection.marketing")}
+                </span>
             </div>
             <div className={"wordWrapper"}>
-                <span className={"marketingText"}>That</span>
+                <span className={"marketingText"}>
+                     {t("siteRoot.homePageMarketing.firstSection.that")}
+                </span>
                 <img src={growth} alt={"Image"} className={"growth"} />
-                <span className={"marketingText"}>Drives Results</span>
+                <span className={"marketingText"}>
+                      {t("siteRoot.homePageMarketing.firstSection.drivesResults")}
+                </span>
             </div>
-            <p>We help your brand grow with smart strategies and engaging content.</p>
+ <p>{t("siteRoot.homePageMarketing.firstSection.description")}</p>
             <button onClick={()=>{
                 handleClickLink('/contact')
             }}>
@@ -37,7 +48,7 @@ function CreativeMarketing() {
                     <path d="M5.5 6.5H3M5.5 12.5H3M5.5 18.5H3" stroke="white" strokeWidth="1.5" strokeLinecap="round"
                         strokeLinejoin="round" />
                 </svg>
-                Contact
+             {t("siteRoot.homePageMarketing.firstSection.button")}
             </button>
             <img src={buyontechFrame} alt={"Image"} className={"buyontechFrame"} />
         </section>

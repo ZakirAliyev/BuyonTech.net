@@ -47,6 +47,8 @@ function OurWorksPageDetail() {
                 position: "relative",
                 zIndex: 100,
                 background: "var(--bg-color)",
+                   borderBottomLeftRadius: "35px",
+                borderBottomRightRadius: "35px"
             }}>
                 <Navbar />
                 {/* <OurWorksPageDetailFirst imageBox={imageBox} /> */}

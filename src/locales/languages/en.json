@@ -102,7 +102,59 @@
         ]
       }
     },
-    "homePageMarketing":{},
+    "homePageMarketing": {
+      "firstSection": {
+        "creative": "Creative",
+        "marketing": "Marketing",
+        "that": "That",
+        "drivesResults": "Drives Results",
+        "description": "We help your brand grow with smart strategies and engaging content.",
+        "button": "Contact"
+      },
+      "secondSection": {
+        "about": "( About )",
+        "discover": "Discover",
+        "who": "Who",
+        "weAre": "We Are",
+        "paragraph": "Our story is built on creativity and strategy that make every campaign stand out. We combine data-driven insights with fresh ideas to craft marketing that works. From small startups to established brands, we adapt our approach to fit every need. Discover how we help businesses grow and why so many trust us.",
+        "button": "Learn More"
+      },
+      "thirdSection": {
+        "cards": [
+          {
+            "title": "Creative Approach",
+            "description": "We bring fresh ideas and storytelling into every campaign to make your brand stand out."
+          },
+          {
+            "title": "Data Driven",
+            "description": "Our strategies are backed by research and analytics to ensure measurable growth."
+          },
+          {
+            "title": "Client Focus",
+            "description": "We work closely with you, tailoring every step to your goals and building lasting partnerships."
+          }
+        ]
+      },
+      "marketingServices": {
+        "title": "Services",
+        "digitalTitle": "Digital Advertising Campaign",
+        "digitalDesc": "Daily management of Instagram, Facebook, TikTok, and LinkedIn pages.",
+        "brandingTitle": "Branding & Identity",
+        "brandingDesc": "Developing logos, color palettes, and overall brand strategy.",
+        "productionTitle": "Video & Photo Production",
+        "productionDesc": "High-quality promotional materials for products and services.",
+        "socialTitle": "Social Media Management",
+        "socialDesc": "Daily management of Instagram, Facebook, TikTok, and LinkedIn pages.",
+        "contentTitle": "Content Creation",
+        "contentDesc": "Creative production of photos, videos, and graphic design materials.",
+        "analyticsTitle": "Analytics & Reporting",
+        "analyticsDesc": "Tracking ad campaign performance and delivering monthly reports.",
+        "strategyTitle": "Marketing Strategy Development",
+        "strategyDesc": "Building a long-term marketing roadmap tailored to business goals.",
+        "seoTitle": "SEO-SAM Support",
+        "seoDesc": "We enhance your online visibility with effective SEO solutions tailored to your business."
+      }
+    },
     "contactPage": {
       "titlePart1": "Let’s Build",
       "titlePart2": "Something",

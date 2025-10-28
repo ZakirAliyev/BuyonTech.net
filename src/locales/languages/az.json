@@ -21,7 +21,7 @@
         "title": "PORTFOLİO",
         "button": "Hamısına bax"
       },
-       "serviceSection": {
+      "serviceSection": {
         "title": "Xidmətlər",
         "mobileAppTitle": "Mobil Tətbiq İnkişafı",
         "mobileAppDesc": "Biz iOS və Android üçün istifadəçi dostu mobil tətbiqlər dizayn edib qururuq, biznes ehtiyaclarınıza uyğunlaşdırılmış şəkildə.",
@@ -100,6 +100,59 @@
             "answer": "Bəli — BuyonTech müxtəlif ölkələrdən olan müştərilərlə əməkdaşlıq edir. Həllərimiz *çoxdilli, qlobal səviyyədə miqyaslana bilən* və müxtəlif bazarlara uyğunlaşdırıla bilən şəkildə hazırlanır."
           }
         ]
+      }
+    },
+    "homePageMarketing": {
+      "firstSection": {
+        "creative": "Yaradıcı",
+        "marketing": "Marketinq",
+        "that": "Ki",
+        "drivesResults": "Nəticə gətirir",
+        "description": "Brendinizin böyüməsi üçün ağıllı strategiyalar və cəlbedici kontentlə sizə kömək edirik.",
+        "button": "Əlaqə"
+      },
+      "secondSection": {
+        "about": "( Haqqımızda )",
+        "discover": "Kəşf edin",
+        "who": "Biz",
+        "weAre": "Kimik",
+        "paragraph": "Hekayəmiz yaradıcılıq və strategiya üzərində qurulub — hər kampaniyanın fərqlənməsini təmin edirik. Məlumat yönümlü analizləri təzə ideyalarla birləşdirərək effektiv marketinq strategiyaları yaradırıq. Kiçik startuplardan tutmuş böyük brendlərə qədər, yanaşmamızı hər ehtiyaca uyğunlaşdırırıq. Bizneslərin necə böyüməsinə kömək etdiyimizi və niyə bu qədər insanın bizə güvəndiyini kəşf edin.",
+        "button": "Daha Ətraflı"
+      },
+      "thirdSection": {
+        "cards": [
+          {
+            "title": "Yaradıcı Yanaşma",
+            "description": "Hər kampaniyada brendinizi önə çıxarmaq üçün yeni ideyalar və hekayəçilik tətbiq edirik."
+          },
+          {
+            "title": "Məlumat Əsaslı",
+            "description": "Strategiyalarımız tədqiqat və analitik məlumatlara əsaslanır, ölçülə bilən nəticələr üçün."
+          },
+          {
+            "title": "Müştəri Mərkəzli",
+            "description": "Hər addımı məqsədlərinizə uyğunlaşdıraraq, sizinlə yaxın əməkdaşlıqda qalıcı tərəfdaşlıqlar qururuq."
+          }
+        ]
+      },
+      "marketingServices": {
+        "title": "Xidmətlər",
+        "digitalTitle": "Rəqəmsal Reklam Kampaniyası",
+        "digitalDesc": "Instagram, Facebook, TikTok və LinkedIn səhifələrinin gündəlik idarə olunması.",
+        "brandingTitle": "Brendinq və Kimlik",
+        "brandingDesc": "Loqoların, rəng palitralarının və ümumi brend strategiyasının hazırlanması.",
+        "productionTitle": "Video və Foto Çəkilişlər",
+        "productionDesc": "Məhsul və xidmətlər üçün yüksək keyfiyyətli promo materialların hazırlanması.",
+        "socialTitle": "Sosial Media İdarəçiliyi",
+        "socialDesc": "Instagram, Facebook, TikTok və LinkedIn səhifələrinin gündəlik idarə olunması.",
+        "contentTitle": "Kontent Yaradılması",
+        "contentDesc": "Foto, video və qrafik dizayn materiallarının yaradıcı hazırlanması.",
+        "analyticsTitle": "Analitika və Hesabatlıq",
+        "analyticsDesc": "Reklam kampaniyalarının nəticələrinin izlənməsi və aylıq hesabatların təqdim olunması.",
+        "strategyTitle": "Marketinq Strategiyasının Hazırlanması",
+        "strategyDesc": "Biznes məqsədlərinə uyğun uzunmüddətli marketinq xəritəsinin qurulması.",
+        "seoTitle": "SEO-SAM Dəstəyi",
+        "seoDesc": "Biznesinizə uyğunlaşdırılmış effektiv SEO həlləri ilə onlayn görünürlüğünüzü artırırıq."
       }
     },
     "contactPage": {

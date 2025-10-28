@@ -9,6 +9,7 @@ import AboutFourthSection from "../../../components/UserComponents/AboutPageComp
 import { useGetAllOurTeamsQuery } from "../../../services/apis/userApi";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
+import LoadingScreen from "../../../components/SwitcherComponents/OurLoading";
 
 function AboutPage() {
     const [footerHeight, setFooterHeight] = useState(0);
@@ -41,6 +42,8 @@ function AboutPage() {
                 position: "relative",
                 zIndex: 100,
                 background: "var(--bg-color)",
+                   borderBottomLeftRadius: "35px",
+                borderBottomRightRadius: "35px"
             }}>
                 <Navbar />
                 <AboutPageFirst />

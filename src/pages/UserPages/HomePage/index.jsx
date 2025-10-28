@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
 
 import Navbar from "../../../components/UserComponents/Navbar/index.jsx";
 import HomeBanner from "../../../components/UserComponents/HomeBanner/index.jsx";
@@ -23,9 +24,12 @@ import { useTranslation } from "react-i18next";
 import { useGetAllLogosQuery, useGetAllProjectsQuery } from "../../../services/apis/userApi.jsx";
 
 function HomePage() {
+    const [searchParams, setSearchParams] = useSearchParams();
     const [footerHeight, setFooterHeight] = useState(0);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const [active, setActive] = useState("development");
+    const categoryParam = searchParams.get("category");
+    const [active, setActive] = useState( categoryParam ||"development");
+    
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [showFooter, setShowFooter] = useState(false);
     const [isFirstLoad, setIsFirstLoad] = useState(true); // ✅ ilk açılışı izləmək
@@ -64,6 +68,14 @@ function HomePage() {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+    useEffect(() => {
+  if (!categoryParam) {
+    setSearchParams({ category: "development" });
+  } else if (categoryParam !== active) {
+    setSearchParams({ category: active });
+  }
+}, [active]);
+
 
     const variants = {
         enter: (direction) => ({
@@ -90,7 +102,7 @@ function HomePage() {
         setShowFooter(false);
 
         setActive(next);
-
+ setSearchParams({ category: next }); 
         setTimeout(() => {
             setIsTransitioning(false);
             setShowFooter(true);

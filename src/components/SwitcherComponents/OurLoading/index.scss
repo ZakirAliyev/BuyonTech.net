@@ -1,0 +1,49 @@
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 9999;
+
+    .loadingBox {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .shape {
+        position: absolute;
+
+        svg {
+            width: 80px;
+            height: 80px;
+            fill: black;
+        }
+
+        &.center svg {
+            width: 120px;
+            height: 120px;
+        }
+
+        &.top {
+            top: 10%;
+        }
+
+        &.bottom {
+            bottom: 10%;
+        }
+
+        &.left {
+            left: 10%;
+        }
+
+        &.right {
+            right: 10%;
+        }
+    }
+}

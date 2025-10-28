@@ -10,6 +10,7 @@ import seo from "/src/assets/seo.png"
 import technic from "/src/assets/technic.png"
 import dnsImage from '/src/assets/dnsImage.png'
 import payments from '/src/assets/payments.png'
+import linesBack from '/src/assets/linesBack.png'
 import { useTranslation } from 'react-i18next'
 function ServicesGrid() {
     const { t } = useTranslation()
@@ -23,7 +24,10 @@ function ServicesGrid() {
                         <p>{t("siteRoot.homePage.serviceSection.mobileAppDesc")}</p>
                         <img src={mobileApp} alt={"Image"} className={"mobileApp"} />
                     </div>
-                    <div className="secondDiv div2">
+                    <div
+                        className="secondDiv div2"
+                
+                    >
                         <div>
                             <h2>{t("siteRoot.homePage.serviceSection.frontendTitle")}</h2>
                             <p>{t("siteRoot.homePage.serviceSection.frontendDesc")}</p>

@@ -3,11 +3,12 @@ import './index.scss';
 import { BsArrowRight } from "react-icons/bs";
 import rocket from "/src/assets/rocket.png"
 import { useNavigate } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 const AboutScrollMarketing = () => {
-    const text = "Our story is built on creativity and strategy that make every campaign stand out. We combine data-driven insights with fresh ideas to craft marketing that works. From small startups to established brands, we adapt our approach to fit every need. Discover how we help businesses grow and why so many trust us."
+    const { t } = useTranslation()
+    const text = t("siteRoot.homePageMarketing.secondSection.paragraph")
     const words = text.split(' ');
-
     // useRef kullanarak elemente daha performanslı erişim sağlıyoruz
     const sectionRef = useRef(null);
 
@@ -66,10 +67,10 @@ const AboutScrollMarketing = () => {
     }
     return (
         <section id="aboutScrollMarketing" ref={sectionRef}>
-            <div className={"aboutText"}>( {' '} About {' '} )</div>
-            <div className={"discover"}>Discover
-                <div className={"discoverColor"}>Who</div>
-                We Are
+            <div className={"aboutText"}>{t("siteRoot.homePageMarketing.secondSection.about")}</div>
+            <div className={"discover"}>  {t("siteRoot.homePageMarketing.secondSection.discover")}
+                <div className={"discoverColor"}> {t("siteRoot.homePageMarketing.secondSection.who")}</div>
+               {t("siteRoot.homePageMarketing.secondSection.weAre")}
                 <img src={rocket} alt={"Image"} className={"rocket"} />
             </div>
             <div className="text-container">
@@ -79,10 +80,10 @@ const AboutScrollMarketing = () => {
                     </span>
                 ))}
             </div>
-            <button onClick={()=>{
+            <button onClick={() => {
                 handleClickLink('/about')
             }}>
-                Learn More
+                  {t("siteRoot.homePageMarketing.secondSection.button")}
                 <BsArrowRight className='icon' />
             </button>
         </section>

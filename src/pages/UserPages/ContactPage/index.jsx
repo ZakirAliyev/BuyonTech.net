@@ -82,6 +82,8 @@ function ContactPage() {
                 position: "relative",
                 zIndex: 100,
                 background: "var(--bg-color)",
+                borderBottomLeftRadius: "35px",
+                borderBottomRightRadius: "35px"
             }}>
                 <Navbar />
                 <div className={"container"}>
@@ -177,13 +179,24 @@ function ContactPage() {
                             </div>
                         </div>
                     </div>
+
+
                     <iframe
+                        title="Buyontech on Google Maps"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.73587326813!2d49.85662227679556!3d40.41470167143994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403087fef0e167f9%3A0x2d47dbedc1eea9e7!2sChinar%20Park!5e0!3m2!1sen!2saz!4v1760434163278!5m2!1sen!2saz"
+
+                        referrerPolicy="no-referrer-when-downgrade"
                         style={{
                             border: 0,
                             outline: 0,
-                        }} allowFullScreen="" loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"></iframe>
+
+                            // width: "100%",
+                            // filter: "grayscale(100%) invert(1)",
+                            // transition: "filter 0.3s ease-in-out",
+                        }}
+                        loading="lazy"
+                        allowFullScreen
+                    ></iframe>
                 </div>
 
             </div>

@@ -9,7 +9,7 @@ export default function SearchBoxWithFilter({
     placeholder = "Search Product",
     minMaxRange = { min: "", max: "" },
 }) {
-    const {t}=useTranslation()
+    const { t } = useTranslation()
     const id = useId();
     const [isOpen, setIsOpen] = useState(false);
     const [startDate, setStartDate] = useState("");
@@ -101,6 +101,14 @@ export default function SearchBoxWithFilter({
                         }
                     </p>
                     <div className="inputs">
+                        <button className="refreshBtn" onClick={()=>{
+                            setStartDate('')
+                            setEndDate('')
+                        }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 5H10V10H9V6.5C6.65 7.47 5 9.79 5 12.5C5 16.08 7.91 19 11.5 19C13.2239 19 14.8772 18.3152 16.0962 17.0962C17.3152 15.8772 18 14.2239 18 12.5C18 9.42 15.86 6.84 13 6.17V5.14C16.42 5.84 19 8.86 19 12.5C19 16.63 15.64 20 11.5 20C9.51088 20 7.60322 19.2098 6.1967 17.8033C4.79018 16.3968 4 14.4891 4 12.5C4 9.72 5.5 7.3 7.74 6H5V5Z" fill="#CCCCCC" />
+                            </svg>
+                        </button>
                         {/* ======= Start Date ======= */}
                         <div className="dateBox">
                             <input
