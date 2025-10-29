@@ -14,7 +14,7 @@ function Footer({ setFooterHeight }) {
             let newHeight = footerRef.current.offsetHeight;
 
             if (window.innerWidth > 992) {
-                newHeight += 200;
+                newHeight += 100;
             }
 
             footerRef.current.style.height = newHeight + "px";
@@ -108,7 +108,7 @@ function Footer({ setFooterHeight }) {
                     </div>
                 </div>
                 <div className="bottomFooter">
-                        {t("siteRoot.footer.bottom")}
+                    {t("siteRoot.footer.bottom")}
 
                 </div>
                 <img src={mavisi} alt="Image" className="mavisi" />

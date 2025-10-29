@@ -119,6 +119,28 @@
         "paragraph": "Hekayəmiz yaradıcılıq və strategiya üzərində qurulub — hər kampaniyanın fərqlənməsini təmin edirik. Məlumat yönümlü analizləri təzə ideyalarla birləşdirərək effektiv marketinq strategiyaları yaradırıq. Kiçik startuplardan tutmuş böyük brendlərə qədər, yanaşmamızı hər ehtiyaca uyğunlaşdırırıq. Bizneslərin necə böyüməsinə kömək etdiyimizi və niyə bu qədər insanın bizə güvəndiyini kəşf edin.",
         "button": "Daha Ətraflı"
       },
+      "marketingFag": {
+        "q1": {
+          "qu": "Marketinq strategiyanızı necə hazırlayırsınız?",
+          "a": "Biz strategiyanı biznes məqsədlərinə və auditoriya davranışlarına əsaslanaraq formalaşdırırıq.Rəqib və bazar analizi, istifadəçi səyahəti (customer journey) və data əsaslı qərarlar üzərindən vahid marketinq ekosistemi qururuq.Məqsəd — yalnız görünürlük deyil, ölçülə bilən dönüşüm və ROI təmin etməkdir."
+        },
+        "q2": {
+          "qu": "SEO xidmətləriniz hansı nəticələr verir?",
+          "a": "SEO ilə saytın axtarış görünürlüğünü, orqanik trafiki və etibarlılığını artırırıq.Texniki optimizasiya, kontent və backlink strategiyası ilə nəticələri davamlı izləyir və təkmilləşdiririk.Fokusumuz — trafik artımı deyil, real biznes dəyəri yaratmaqdır."
+        },
+        "q3": {
+          "qu": "Marketinq xidmətlərinizin qiyməti necə müəyyən olunur?",
+          "a": "Qiymətlər layihənin məqsədi, həcmi və istifadə olunan kanallardan asılıdır.Biz dəyər əsaslı yanaşma ilə ROI və nəticə üzərindən təklif hazırlayırıq.Şəffaf və çevik qiymət modelləri tətbiq edirik — retainer, kampaniya və ya performans əsaslı."
+        },
+        "q4": {
+          "qu": "Sosial media marketinqi biznesimə necə təsir edir?",
+          "a": "Sosial media ilə brendin görünürlüğünü və müştəri loyallığını artırırıq.Hədəf auditoriyaya uyğun məzmun, reklam və kommunikasiya strategiyası qururuq.Məqsəd — aktiv icma formalaşdırmaq və satışlara real təsir göstərməkdir."
+        },
+        "q5": {
+          "qu": "Reklam büdcəsini necə optimallaşdırırsınız?",
+          "a": "Büdcəni platforma performansına və auditoriya davranışına əsasən dinamik paylayırıq.AI əsaslı analiz və A/B testlər vasitəsilə ən yüksək dönüşüm gətirən kanallara fokuslanırıq.Nəticə: minimum xərclə maksimum təsir."
+        }
+      },
       "thirdSection": {
         "cards": [
           {
@@ -199,7 +221,7 @@
           "adSpend": "Reklam büdcəsi",
           "yearExperience": "İllik təcrübə",
           "country": "Ölkə",
-          "coffeeDrank": "İçilən qəhvə"
+          "coffeeDrank": "İçilmiş kofe"
         }
       },
       "fourthSection": {

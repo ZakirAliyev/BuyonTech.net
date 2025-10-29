@@ -1,10 +1,9 @@
 import './index.scss'
 import WorkCard from "../WorkCard/index.jsx";
-import mid from "../../../assets/mid.png";
-import nas from "../../../assets/nas.png";
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 function PortfolioGrid({ developmentProjects = [] }) {
     const navigate = useNavigate()
@@ -18,6 +17,7 @@ function PortfolioGrid({ developmentProjects = [] }) {
     }
     const allProjects = developmentProjects?.slice(0, 3)
 
+    
 
     return (
         <section id={"portfolioGrid"}>
@@ -28,8 +28,10 @@ function PortfolioGrid({ developmentProjects = [] }) {
                     }
                 </div>
                 <div className='portfolioCards' >
-                    {allProjects?.map((work) => (
-                        <WorkCard key={work.id} item={work} />
+                    {allProjects?.map((work,index) => (
+                        <div className="worksCard"  style={{ zIndex: 10 - index }}>
+                            <WorkCard key={work.id} item={work} />
+                        </div>
                     ))}
                 </div>
                 <div className="workCardViewAll">
@@ -82,3 +84,4 @@ function PortfolioGrid({ developmentProjects = [] }) {
 }
 
 export default PortfolioGrid;
+

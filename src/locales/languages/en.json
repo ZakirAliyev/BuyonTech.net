@@ -119,6 +119,28 @@
         "paragraph": "Our story is built on creativity and strategy that make every campaign stand out. We combine data-driven insights with fresh ideas to craft marketing that works. From small startups to established brands, we adapt our approach to fit every need. Discover how we help businesses grow and why so many trust us.",
         "button": "Learn More"
       },
+      "marketingFag": {
+        "q1": {
+          "qu": "How do you develop your marketing strategy?",
+          "a": "We craft our strategy based on business objectives and audience behavior.Through competitor and market analysis, customer journey mapping, and data-driven insights, we build a unified marketing ecosystem.Our goal is not just visibility — but measurable conversion and ROI."
+        },
+        "q2": {
+          "qu": "What results do your SEO services deliver?",
+          "a": "Our SEO approach enhances search visibility, organic traffic, and brand credibility.Through technical optimization, content strategy, and backlink building, we continuously monitor and refine performance.Our focus is not traffic growth — but creating real business value."
+        },
+        "q3": {
+          "qu": "How do you determine the pricing for your marketing services?",
+          "a": "Our pricing depends on project goals, scale, and chosen marketing channels.We apply a value-based approach — building proposals around ROI and measurable outcomes.Transparent and flexible pricing models are used — retainer, campaign-based, or performance-based."
+        },
+        "q4": {
+          "qu": "How does social media marketing impact my business?",
+          "a": "We use social media to strengthen brand visibility and customer loyalty.By building tailored content, ad, and communication strategies for your audience, we create meaningful engagement.The goal — to form an active community and drive real sales impact."
+        },
+        "q5": {
+          "qu": "How do you optimize advertising budgets?",
+          "a": "We allocate budgets dynamically based on platform performance and audience behavior.Using AI-driven analytics and A/B testing, we focus on the highest-converting channels.The result: maximum impact with minimum cost."
+        }
+      },
       "thirdSection": {
         "cards": [
           {
@@ -217,7 +239,7 @@
           "adSpend": "Ad Spend",
           "yearExperience": "Year Experience",
           "country": "Country",
-          "coffeeDrank": "Coffee Drank"
+          "coffeeDrank": "Finished Coffee"
         }
       },
       "thirdSection": {

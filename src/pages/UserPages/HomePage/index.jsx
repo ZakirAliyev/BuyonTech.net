@@ -28,8 +28,8 @@ function HomePage() {
     const [footerHeight, setFooterHeight] = useState(0);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const categoryParam = searchParams.get("category");
-    const [active, setActive] = useState( categoryParam ||"development");
-    
+    const [active, setActive] = useState(categoryParam || "development");
+
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [showFooter, setShowFooter] = useState(false);
     const [isFirstLoad, setIsFirstLoad] = useState(true); // ✅ ilk açılışı izləmək
@@ -69,12 +69,12 @@ function HomePage() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
     useEffect(() => {
-  if (!categoryParam) {
-    setSearchParams({ category: "development" });
-  } else if (categoryParam !== active) {
-    setSearchParams({ category: active });
-  }
-}, [active]);
+        if (!categoryParam) {
+            setSearchParams({ category: "development" });
+        } else if (categoryParam !== active) {
+            setSearchParams({ category: active });
+        }
+    }, [active]);
 
 
     const variants = {
@@ -102,7 +102,7 @@ function HomePage() {
         setShowFooter(false);
 
         setActive(next);
- setSearchParams({ category: next }); 
+        setSearchParams({ category: next });
         setTimeout(() => {
             setIsTransitioning(false);
             setShowFooter(true);
@@ -125,6 +125,7 @@ function HomePage() {
                 width: "100%",
                 minHeight: "100vh",
                 overflow: "hidden",
+
             }}>
                 <AnimatePresence mode="sync" custom={direction}>
                     <motion.div
@@ -141,6 +142,8 @@ function HomePage() {
                             position: "relative",
                             zIndex: 100,
                             background: "var(--bg-color)",
+                            borderBottomLeftRadius: "35px",
+                            borderBottomRightRadius: "35px"
                         }}>
                             <div className="container">
                                 {active === "development" ? (
@@ -149,14 +152,14 @@ function HomePage() {
                                         <LogoScroll developmentLogos={developmentLogos} />
                                         <AboutScroll />
                                         <ServicesGrid />
-                                        <PortfolioGrid  developmentProjects={developmentProjects}/>
+                                        <PortfolioGrid developmentProjects={developmentProjects} />
                                         <WhyChoose />
                                         <Faq />
                                     </>
                                 ) : (
                                     <>
                                         <CreativeMarketing />
-                                        <LogoScroll  marketingLogos={marketingLogos}/>
+                                        <LogoScroll marketingLogos={marketingLogos} />
                                         <AboutScrollMarketing />
                                         <PerspectiveSection />
                                         <MarketingServices />

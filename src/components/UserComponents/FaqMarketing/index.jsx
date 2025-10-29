@@ -1,30 +1,33 @@
 import './index.scss'
-import {useState, useRef, useEffect} from "react";
-import {FaMinus, FaPlus} from "react-icons/fa6";
+import { useState, useRef, useEffect } from "react";
+import { FaMinus, FaPlus } from "react-icons/fa6";
 import question from "/src/assets/question.png";
+import { useTranslation } from 'react-i18next';
 
 function FaqMarketing() {
+    const { t } = useTranslation()
     const faqs = [
         {
-            title: "Why should you choose our company?",
-            content: "Because we focus only on results – delivering measurable, creative, and sales-driven marketing strategies that grow your business."
+            title: t('siteRoot.homePageMarketing.marketingFag.q1.qu'),
+            content: t('siteRoot.homePageMarketing.marketingFag.q1.a'),
         },
         {
-            title: "Who can benefit from our services?",
-            content: "Our services are tailored for startups, SMEs, and enterprises looking to boost their online presence and drive real growth."
+            title: t('siteRoot.homePageMarketing.marketingFag.q2.qu'),
+            content: t('siteRoot.homePageMarketing.marketingFag.q2.a'),
         },
         {
-            title: "What kind of results do our services deliver?",
-            content: "From higher conversion rates to increased engagement and brand awareness, we deliver tangible improvements that impact your bottom line."
+            title: t('siteRoot.homePageMarketing.marketingFag.q3.qu'),
+            content: t('siteRoot.homePageMarketing.marketingFag.q3.a'),
         },
         {
-            title: "How do we differentiate you from competitors?",
-            content: "We combine creativity with data-driven strategies, ensuring every campaign is both innovative and effective."
+            title: t('siteRoot.homePageMarketing.marketingFag.q4.qu'),
+            content: t('siteRoot.homePageMarketing.marketingFag.q4.a'),
         },
         {
-            title: "How can you get started with us?",
-            content: "Simply reach out through our contact form or book a consultation. We’ll guide you step by step."
+            title: t('siteRoot.homePageMarketing.marketingFag.q5.qu'),
+            content: t('siteRoot.homePageMarketing.marketingFag.q5.a'),
         }
+
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
@@ -42,7 +45,7 @@ function FaqMarketing() {
             <div className="container">
                 <div className="row">
                     <div className="col-5 col-md-5 col-sm-12 col-xs-12">
-                        <img src={question} className="question" alt="FAQ Illustration"/>
+                        <img src={question} className="question" alt="FAQ Illustration" />
                     </div>
                     <div className="col-7 col-md-12 col-sm-12 col-xs-12">
                         {faqs.map((faq, index) => (
@@ -62,7 +65,7 @@ function FaqMarketing() {
     );
 }
 
-const AccordionItem = ({title, content, isOpen, toggle, isLast}) => {
+const AccordionItem = ({ title, content, isOpen, toggle, isLast }) => {
     const contentRef = useRef(null);
 
     useEffect(() => {
@@ -88,7 +91,7 @@ const AccordionItem = ({title, content, isOpen, toggle, isLast}) => {
                         <p>{content}</p>
                     </div>
                 </div>
-                {isOpen ? <FaMinus className="icon"/> : <FaPlus className="icon"/>}
+                {isOpen ? <FaMinus className="icon" /> : <FaPlus className="icon" />}
             </div>
         </>
     );

@@ -1,12 +1,90 @@
+// #switchProduct {
+//   position: relative;
+//   z-index: 10;
+//   background: var(--bg-color);
+//   margin-top: 64px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 15px 10px;
+
+//   .zakirinki {
+//     box-shadow: 0px 0px 8px 0px #33333340 inset;
+//     max-width: 350px;
+//     width: 100%;
+//     padding: 8px;
+//     border-radius: 50px;
+//     overflow: hidden;
+//   }
+
+//   @media screen and (max-width: 992px) {
+//     margin-top: 75px;
+//   }
+
+//   .switch-container {
+//     position: relative;
+//     display: flex;
+//     justify-content: space-between;
+//     width: 100%;
+//     max-width: 350px;
+//     overflow: hidden;
+//     cursor: pointer;
+//     background: transparent;
+//     border-radius: 100px;
+
+//     .switch-option {
+//       flex: 1;
+//       text-align: center;
+//       padding: 8px 0;
+//       font-size: 12px;
+//       font-weight: 500;
+//       color: #000;
+//       z-index: 2;
+//       transition: color 0.3s ease;
+//     }
+
+//     .switch-option.active {
+//       color: #fff;
+//     }
+
+//     .slider {
+//       position: absolute;
+//       top: 0;
+//       bottom: 0;
+//       width: 50%;
+//       border-radius: 50px;
+//       transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+//       background 0.3s ease;
+//       z-index: 1;
+//       background: #527FE9; // default development rəngi
+//     }
+
+//     .slider.development {
+//       transform: translateX(0%);
+//       background: #527FE9; // mavi
+//     }
+
+//     .slider.marketing {
+//       transform: translateX(100%);
+//       background: #FFBB00; // sarı
+//     }
+//   }
+// }
+
+
+
+
+
 #switchProduct {
   position: relative;
-  z-index: 10;
+  z-index: 999;
   background: var(--bg-color);
   margin-top: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 15px 10px;
+  transition: all 0.4s ease;
 
   .zakirinki {
     box-shadow: 0px 0px 8px 0px #33333340 inset;
@@ -17,10 +95,6 @@
     overflow: hidden;
   }
 
-  @media screen and (max-width: 992px) {
-    margin-top: 75px;
-  }
-
   .switch-container {
     position: relative;
     display: flex;
@@ -29,7 +103,6 @@
     max-width: 350px;
     overflow: hidden;
     cursor: pointer;
-    background: transparent;
     border-radius: 100px;
 
     .switch-option {
@@ -54,19 +127,150 @@
       width: 50%;
       border-radius: 50px;
       transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-      background 0.3s ease;
+        background 0.3s ease;
       z-index: 1;
-      background: #527FE9; // default development rəngi
+      background: #527fe9;
     }
 
     .slider.development {
       transform: translateX(0%);
-      background: #527FE9; // mavi
+      background: #527fe9;
     }
 
     .slider.marketing {
       transform: translateX(100%);
-      background: #FFBB00; // sarı
+      background: #ffbb00;
     }
+  }
+}
+
+/* === Klon üçün === */
+.switchProductClone {
+  position: fixed;
+  top: 67px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  border-radius: 50px;
+
+  .zakirinki {
+    box-shadow: 0px 0px 8px 0px #33333340 inset;
+    max-width: 350px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 50px;
+    overflow: hidden;
+    background: var(--bg-color);
+  }
+
+  .switch-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 100px;
+
+    .switch-option {
+      flex: 1;
+      text-align: center;
+      padding: 8px 0;
+      font-size: 12px;
+      font-weight: 500;
+      color: #000;
+      z-index: 2;
+      transition: color 0.3s ease;
+    }
+
+    .switch-option.active {
+      color: #fff;
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      border-radius: 50px;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+        background 0.3s ease;
+      z-index: 1;
+      background: #527fe9;
+    }
+
+    .slider.development {
+      transform: translateX(0%);
+      background: #527fe9;
+    }
+
+    .slider.marketing {
+      transform: translateX(100%);
+      background: #ffbb00;
+    }
+  }
+
+  &.appearing {
+    animation: cloneDrop 0.5s ease forwards;
+  }
+
+  &.disappearing {
+    animation: cloneMerge 0.5s ease forwards;
+  }
+    &.fadeOutDown {
+    animation: cloneFadeOut 0.5s ease forwards;
+  }
+}
+
+/* Gəlmə animasiyası */
+@keyframes cloneDrop {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+
+
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* İtmə — orijinal komponentə “yeriyərək” daxil olur */
+@keyframes cloneMerge {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  60% {
+    transform: translateY(-20px);
+    opacity: 0.6;
+  }
+
+  80% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}
+
+@keyframes cloneFadeOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(-10px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
   }
 }

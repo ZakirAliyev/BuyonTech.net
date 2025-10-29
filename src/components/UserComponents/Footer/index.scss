@@ -8,7 +8,6 @@
   z-index: 9;
   padding: 60px 8px;
   overflow: hidden;
-
   @media screen and (max-width: 992px) {
     padding: 30px 8px 60px;
   }
@@ -120,9 +119,8 @@
     }
   }
 
-  // ✅ Mobil və tablet üçün düzəliş → scroll problemsiz olsun
   @media screen and (max-width: 992px) {
-    position: relative; // fixed olmayacaq
+    position: relative; 
     bottom: auto;
     right: auto;
     left: auto;
