@@ -15,6 +15,9 @@ function Footer({ setFooterHeight }) {
 
             if (window.innerWidth > 992) {
                 newHeight += 100;
+            }else{
+                newHeight += 50;
+
             }
 
             footerRef.current.style.height = newHeight + "px";
@@ -33,7 +36,7 @@ function Footer({ setFooterHeight }) {
         <section id="footer" ref={footerRef}>
             <div className="container">
                 <div className="row">
-                    <div className="col-4 col-md-6 col-sm-12 col-xs-12">
+                    <div className="col-4 col-md-6 col-xs-6 col-sm-6">
                         <div className="title">
                             {t("siteRoot.footer.sections.navigation.title")}
                         </div>
@@ -62,7 +65,7 @@ function Footer({ setFooterHeight }) {
 
                         </p>
                     </div>
-                    <div className="col-4 col-md-6 col-sm-12 col-xs-12">
+                    <div className="col-4 col-md-6 col-xs-6 col-sm-6 leftCol">
                         <div className="title">
                             {t("siteRoot.footer.sections.social.title")}
 
@@ -120,3 +123,5 @@ function Footer({ setFooterHeight }) {
 }
 
 export default Footer;
+
+

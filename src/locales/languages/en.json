@@ -4,7 +4,9 @@
       "searchProject": "Search Project",
       "loading": "Loading…",
       "nothingFound": "Nothing found",
-      "rangeBox": "Select date range"
+      "rangeBox": "Select date range",
+      "btn":"Apply"
+
     },
     "homePage": {
       "homeBanner": {

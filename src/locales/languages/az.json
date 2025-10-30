@@ -4,7 +4,8 @@
       "searchProject": "Layihə axtar",
       "loading": "Loading…",
       "nothingFound": "Nothing found",
-      "rangeBox": "Tarix aralığını seç"
+      "rangeBox": "Tarix aralığını seç",
+      "btn":"Tətbiq et"
     },
     "homePage": {
       "homeBanner": {
@@ -19,7 +20,7 @@
       },
       "worksSection": {
         "title": "PORTFOLİO",
-        "button": "Hamısına bax"
+        "button": "Daha çox"
       },
       "serviceSection": {
         "title": "Xidmətlər",

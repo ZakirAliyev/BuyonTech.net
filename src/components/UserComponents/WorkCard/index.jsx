@@ -91,7 +91,7 @@ function WorkCard({ item }) {
                         <div className="detailBlock detailBlock-services">
                             <p>{t("siteRoot.portfolioPage.workCard.services")}</p>
 
-                            {item?.services && item?.services.map((service, i) => (
+                            {item?.services && item?.services?.slice(0,3).map((service, i) => (
                                 <div className="p" key={i}>{service?.name}</div>
                             ))}
                         </div>

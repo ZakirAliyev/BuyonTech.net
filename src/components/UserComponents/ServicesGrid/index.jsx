@@ -25,8 +25,8 @@ function ServicesGrid() {
                         <img src={mobileApp} alt={"Image"} className={"mobileApp"} />
                     </div>
                     <div
-                        className="secondDiv div2"
-                
+                        className="secondDiv div2 resDiv"
+
                     >
                         <div>
                             <h2>{t("siteRoot.homePage.serviceSection.frontendTitle")}</h2>
@@ -49,7 +49,7 @@ function ServicesGrid() {
                         </div>
                         <img src={dnsImage} alt={"Image"} className={"dnsImage"} />
                     </div>
-                    <div className="divdivdiv fifthDiv div5">
+                    <div className="divdivdiv fifthDiv  div5">
                         <div>
                             <h2>{t("siteRoot.homePage.serviceSection.designTitle")}</h2>
                             <p style={{
@@ -59,7 +59,7 @@ function ServicesGrid() {
                         </div>
                         <img src={design} alt={"Image"} className={"design"} />
                     </div>
-                    <div className="divdivdiv sixthDiv div6" style={{
+                    <div className="divdivdiv sixthDiv  div6" style={{
                         color: "black"
                     }}>
                         <div>
@@ -71,14 +71,14 @@ function ServicesGrid() {
                         </div>
                         <img src={adminPanel} alt={"Image"} className={"adminPanel"} />
                     </div>
-                    <div className="div div3 div100 div7">
+                    <div className="div div3 div100  div7">
                         <div>
                             <h2>{t("siteRoot.homePage.serviceSection.paymentTitle")}</h2>
                             <p>{t("siteRoot.homePage.serviceSection.paymentDesc")}</p>
                         </div>
                         <img src={payments} alt={"Image"} className={"payments"} />
                     </div>
-                    <div className="div div3 div100 div8" style={{
+                    <div className="div div3 div100  div8" style={{
                         color: "black"
                     }}>
                         <div>

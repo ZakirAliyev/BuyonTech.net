@@ -364,7 +364,7 @@ export default function SearchBoxWithFilter({
                         }
                     </p>
                     <div className="inputs">
-                        <button className="refreshBtn" onClick={()=>{
+                        <button className="refreshBtn" onClick={() => {
                             setStartDate('')
                             setEndDate('')
                         }}>
@@ -404,7 +404,7 @@ export default function SearchBoxWithFilter({
                                 value={endDate}
                                 onChange={(e) => setEndDate(e.target.value)}
                                 id="endDateInput"
-                                min={startDate || minMaxRange.min} 
+                                min={startDate || minMaxRange.min}
                                 max={minMaxRange.max}
                             />
                             <div
@@ -420,7 +420,7 @@ export default function SearchBoxWithFilter({
                             </div>
                         </div>
 
-                        <button className="searchBtn" onClick={handleSearch}>
+                        <button className="searchBtn searchBtn2" onClick={handleSearch}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -436,6 +436,9 @@ export default function SearchBoxWithFilter({
                                     strokeLinejoin="round"
                                 />
                             </svg>
+                        </button>
+                        <button className="searchBtn searchBtn1" onClick={handleSearch}>
+                            {t('siteRoot.common.btn')}
                         </button>
                     </div>
                 </div>

@@ -14,9 +14,10 @@ function CaseStudyHeaderMarketing({ oneProje }) {
     const [activeVideo, setActiveVideo] = useState(0); // 0 və ya 1 — hansı video göstərilir
     const videoRefs = [useRef(null), useRef(null)];
     const timerRef = useRef(null);
+
     const { t, i18n } = useTranslation()
     const currentStory = stories[currentIndex];
-
+    const storyRef = useRef(null)
     useEffect(() => {
         clearTimeout(timerRef.current);
 
@@ -50,6 +51,20 @@ function CaseStudyHeaderMarketing({ oneProje }) {
             clearTimeout(timerRef.current);
         };
     }, [currentIndex]);
+    const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        if (x < 50) {
+                     storyRef.current.style.cursor = `url("/src/assets/leftArrow.svg") 16 16, auto`;
+
+        } else if (x > rect.width - 50) {
+            storyRef.current.style.cursor = `url("/src/assets/rightArrow.svg") 16 16, auto`;
+
+        } else {
+            storyRef.current.style.cursor = "default";
+        }
+    };
+
 
     const startProgress = (duration) => {
         const fills = document.querySelectorAll('.progressFill');
@@ -93,6 +108,7 @@ function CaseStudyHeaderMarketing({ oneProje }) {
 
         if (clickX < 50) {
             goPrev();
+
         } else if (clickX > width - 50) {
             goNext();
         }
@@ -147,12 +163,14 @@ function CaseStudyHeaderMarketing({ oneProje }) {
 
                                 })
                             }
+                            <div className="des">Post Design</div>
                         </div>
                     </div>
                     <div className="col-4 col-md-4 col-sm-12 col-xs-12">
                         <div className="storyWrapper">
-                            <div className="story" onClick={handleClick}>
+                            <div className="story" ref={storyRef} onMouseMove={handleMouseMove} onClick={handleClick}>
                                 <div className="storyContentWrapper">
+
                                     <div className="storyHeader">
                                         <div className="progressBars">
                                             {stories.map((_, idx) => (

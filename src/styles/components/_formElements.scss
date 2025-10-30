@@ -563,6 +563,7 @@
         top: 5px;
         right: 20px;
 
+   
 
         width: 32px;
         height: 32px;
@@ -666,9 +667,19 @@
             gap: 10px;
             width: 100%;
 
+            @media screen and (max-width:575px) {
+                flex-direction: column;
+            }
+
             .dateBox {
                 position: relative;
                 width: 50%;
+
+                @media screen and (max-width:575px) {
+                    width: 100%;
+
+                }
+
                 input[type="date"] {
                     position: absolute;
                     display: none;
@@ -717,6 +728,22 @@
                 }
             }
 
+            .searchBtn2 {
+                display: flex;
+
+                @media screen and (max-width:575px) {
+                    display: none;
+                }
+            }
+
+            .searchBtn1 {
+                display: none;
+width: 100% !important;
+                @media screen and (max-width:575px) {
+                    display: flex;
+                }
+            }
+
             .searchBtn {
                 width: 42px;
                 height: 42px;
@@ -724,10 +751,11 @@
                 border: 1px solid #e4e4e4;
                 border-radius: 8px;
                 cursor: pointer;
-                display: flex;
                 align-items: center;
                 justify-content: center;
                 transition: 0.2s ease;
+
+
 
                 &:hover {
                     background: #000;

@@ -1,7 +1,7 @@
 #faqMarketing {
   background-color: var(--bg-color);
   color: var(--text-color);
-  padding: 50px 8px ;
+  padding: 50px 8px;
   position: relative;
   z-index: 10;
   border-bottom-left-radius: 20px;
@@ -11,6 +11,11 @@
   .faq-head {
     text-align: center;
     margin-bottom: 24px;
+
+    @media screen and (max-width: 992px) {
+      margin-bottom: -12px;
+
+    }
 
     .faq-title {
       /* şəkilə uyğun qalın başlıq */

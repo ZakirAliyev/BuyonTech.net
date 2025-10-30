@@ -108,7 +108,7 @@ function ContactPage() {
                                     </div>
 
                                     <div className="row">
-                                        <div className="colsifirla col-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div className="colsifirla col-6 col-md-6 col-sm-12 col-xs-12">
                                             <input
                                                 name="name"
                                                 placeholder={t("siteRoot.contactPage.form.placeholders.name")}
@@ -121,7 +121,7 @@ function ContactPage() {
                                             )}
                                         </div>
 
-                                        <div className="colsifirla col-6 col-md-6 col-sm-6 col-xs-6">
+                                        <div className="colsifirla col-6 col-md-6 col-sm-12 col-xs-12">
                                             <input
                                                 name="surname"
                                                 placeholder={t("siteRoot.contactPage.form.placeholders.surname")}
