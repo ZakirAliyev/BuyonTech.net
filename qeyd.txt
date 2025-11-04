@@ -1,0 +1,5 @@
+marketing bolmesinde hero sectionda yazini responsa tam ayarla.
+
+bide ourworksda search inputundaki date overlkayini active iconunu tenzimle
+
+animasiyaya bax

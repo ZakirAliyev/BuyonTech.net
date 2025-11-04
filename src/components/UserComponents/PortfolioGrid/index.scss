@@ -42,7 +42,8 @@
 
   .portfolioCards {
     margin-top: -75px;
-
+position: relative;
+overflow: hidden;
     @media screen and (max-width: 992px) {
       margin-top: -60px;
     }
@@ -141,5 +142,3 @@
     }
   }
 }
-
-

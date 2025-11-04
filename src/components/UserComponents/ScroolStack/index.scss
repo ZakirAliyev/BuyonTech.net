@@ -1,0 +1,34 @@
+.scroll-stack-scroller {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: visible;
+  scroll-behavior: smooth;
+}
+
+.scroll-stack-inner {
+  padding: 20vh 0 40vh;
+  min-height: 100vh;
+}
+
+.scroll-stack-card {
+  transform-origin: top center;
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  width: 100%;
+  margin: 40px 0;
+  padding: 2rem;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background: var(--card-bg, #fff);
+  transition: all 0.3s ease;
+}
+
+.scroll-stack-end {
+  width: 100%;
+  height: 1px;
+}
